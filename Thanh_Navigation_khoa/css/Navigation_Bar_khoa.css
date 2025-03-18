@@ -1,0 +1,186 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+}
+
+/* NAVBAR CHUNG */
+.navbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* LOGO */
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+.logo img {
+  height: 30px;
+  margin-right: 10px;
+}
+
+/* NAV-LINKS (MENU) */
+.nav-links {
+  display: flex;
+  list-style: none;
+  position: relative;
+}
+
+.nav-links li {
+  margin: 0 15px;
+  position: relative;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  padding: 10px 20px;
+  transition: color 0.3s ease-in-out;
+  position: relative;
+  z-index: 2; /* Giữ chữ ở trên pseudo-element */
+  display: inline-block;
+}
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  top: -19px;
+  bottom: 0px;
+  left: 50%;
+  width: 100;
+  height:210%;
+  background: linear-gradient(to right, #6CA9C3 0%, #122CD4 47%, #3F6BCC 100%);
+  transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+  z-index: -1; /* Giữ chữ ở trên pseudo-element */
+  border-radius: 2px;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+  left:0;
+  height: 210%;
+  border-radius: 2px;
+}
+
+/* INDICATOR (dùng cho hiệu ứng JS nếu cần) */
+.indicator {
+  position: absolute;
+  bottom: -5px;
+  height: 4px;
+  background: linear-gradient(to right, #4c83ee, #0026ff);
+  width: 0;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+  border-radius: 2px;
+}
+
+/* USER SECTION */
+.user-section {
+  display: flex;
+  align-items: center;
+  padding:10px 20px;
+}
+
+.user-section i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.user-profile img {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+/* 🛎️ Biểu tượng chuông */
+.notification-icon {
+  position: relative;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.notification-icon img {
+  width: 20px;
+  height: auto;
+  display: block;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* 🔔 Hiệu ứng hover */
+.notification-icon:hover img {
+  transform: scale(1.1);
+}
+
+/* 📜 Popup thông báo */
+.notification-popup {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: -10px;
+  width: 250px;
+  background-color: white;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 10px;
+  z-index: 100;
+}
+
+.notification-popup h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.notification-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.notification-list li {
+  font-size: 14px;
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.notification-list li:hover { /*hiệu ứng hover cho caí chuông và mục thông báo */
+  background-color: #f1f1f1;
+}
+
+/* Thêm animation cho popup khi hiển thị */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.notification-popup[style*="display: block"] {
+  animation: fadeIn 0.3s ease-out;
+}
