@@ -100,23 +100,18 @@ body {
 }
 
 .user-section i {
+  color: #ffff;
   font-size: 20px;
   margin-right: 10px;
 }
 
 .user-profile {
+  background: linear-gradient(to right, #6CA9C3 0%, #122CD4 47%, #3F6BCC 100%);
   display: flex;
   align-items: center;
-  border: 1px solid black;
+  color: #ffff;
   padding: 5px 10px;
   border-radius: 20px;
-}
-
-.user-profile img {
-  height: 30px;
-  width: 30px;
-  border-radius: 50%;
-  margin-right: 5px;
 }
 
 /* 🛎️ Biểu tượng chuông */
