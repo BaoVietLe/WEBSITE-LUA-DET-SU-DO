@@ -1,0 +1,293 @@
+ /* RESET: Xóa margin, padding mặc định và thiết lập box-sizing cho tất cả các phần tử */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Thiết lập font và nền cho body */
+  body {
+    font-family: Roboto, sans-serif; /* Sử dụng font Roboto */
+    background-color: #ffffff; /* Màu nền trắng */
+    min-height: 100vh; /* Chiều cao tối thiểu bằng chiều cao màn hình */
+  }
+  
+  /* --- MAIN CONTENT --- */
+  .main-content {
+    display: flex; /* Sử dụng flexbox để chia layout làm 2 phần */
+    align-items: flex-start; /* Canh giữa theo chiều dọc */
+    justify-content: space-between; /* Căn đều khoảng cách giữa 2 phần */
+    padding: 130px 120px 50px; /* Padding xung quanh nội dung chính */
+    min-height: 100vh; /* Chiều cao tối thiểu bằng chiều cao màn hình */
+    margin-top: 70px; /* Để tránh trùng với navbar */
+  }
+  
+  /* --- PHẦN WELCOME --- */
+  .welcome-section {
+    flex: 1; /* Chiếm không gian linh hoạt */
+    max-width: 50%; /* Giới hạn chiều rộng tối đa theo thiết kế */
+    margin-top: 70px; /* hạ xuống 10px*/
+  }
+  
+  .welcome-text {
+    font-size: 40px; /* Kích thước chữ lớn */
+    font-weight: bold; /* In đậm */
+    letter-spacing: 2px; /* Khoảng cách giữa các ký tự */
+    line-height: 1.2; /* Chiều cao dòng */
+  }
+  
+  /* Định dạng cho phần chữ nổi bật */
+  .welcome-text .highlight {
+    color: #5A96F8; /* Màu sắc theo thiết kế */
+    position: relative;
+    display: inline-block;
+    animation:  glitch 0.7s infinite alternate; /* Hiệu ứng nhấp nháy */
+    vertical-align: baseline;
+  }
+  
+  
+  /* Hiệu ứng glitch nhẹ */
+  @keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(2px, -2px); }
+    60% { transform: translate(-2px, -2px); }
+    80% { transform: translate(2px, 2px); }
+    100% { transform: translate(0); }
+  }
+  
+  /* Hiệu ứng đường kẻ dưới chữ */
+  .welcome-line {
+    position: relative;
+    display: inline-block;
+    overflow: hidden; /* Ẩn phần tràn ra ngoài */
+  }
+  
+  .welcome-line::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Chiếm toàn bộ chiều rộng của chữ */
+    height: 3px; /* Độ dày của đường kẻ */
+    background-color: #5A96F8; /* Màu của đường kẻ */
+    animation: slideInOut 4s infinite; /* Hiệu ứng chạy */
+    animation-delay: 2s; /* Delay trước khi bắt đầu hiệu ứng */
+  }
+  
+  /* Keyframes cho hiệu ứng slide cho đường kẻ */
+  @keyframes slideInOut {
+    0%   { transform: translateX(-100%); }
+    50%  { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+  
+  /* --- PHẦN LOGIN --- */
+  .login-section {
+    flex: 1; /* Chiếm không gian linh hoạt */
+    max-width: 350px; /* Giới hạn chiều rộng theo thiết kế */
+    padding: 0;
+    margin-left: 20px; /* Khoảng cách giữa login và welcome */
+  }
+  
+  .login-form {
+    width: 100%; /* Đảm bảo form chiếm hết chiều rộng của login-section */
+  }
+  
+  .form-group {
+    margin-bottom: 20px; /* Khoảng cách giữa các nhóm form */
+  }
+  
+  .form-label {
+    display: block;
+    margin-bottom: 8px; /* Khoảng cách dưới label */
+    font-weight: 500;
+    font-size: 24px; /* Kích thước chữ label */
+  }
+  
+  .input-group {
+    position: relative; /* Cho phép định vị phần icon bên trong input */
+  }
+  
+  .form-input {
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    padding: 20px 24px; /* Padding bên trong input */
+    border: 1px solid #333; /* Đường viền input */
+    border-radius: 8px; /* Bo góc */
+    font-size: 20px; /* Kích thước chữ input */
+    background-color: #000; /* Màu nền input */
+    color: #fff; /* Màu chữ input */
+  }
+  
+  .input-icon {
+    position: absolute; /* Định vị tuyệt đối bên trong input-group */
+    right: 15px; /* Cách bên phải */
+    top: 50%; /* Canh giữa theo chiều dọc */
+    transform: translateY(-50%); /* Điều chỉnh vị trí theo chiều dọc */
+    color: #fff; /* Màu icon */
+    cursor: pointer; /* Thay đổi con trỏ khi hover */
+    font-size: 18px; /* Kích thước icon */
+  }
+  
+  .forgot-password {
+    display: block;
+    text-align: right; /* Căn phải */
+    margin-top: 6px;
+    color: #333; /* Màu chữ */
+    text-decoration: none; /* Loại bỏ gạch chân */
+    font-size: 12px; /* Kích thước chữ nhỏ */
+  }
+  
+  .signin-btn {
+    width: 100%; /* Nút chiếm toàn bộ chiều rộng */
+    padding: 15px;
+    background-color: #000; /* Nền nút */
+    color: #fff; /* Màu chữ */
+    border: none; /* Loại bỏ viền */
+    border-radius: 6px; /* Bo góc nút */
+    font-size: 14px; /* Kích thước chữ nút */
+    font-weight: bold;
+    cursor: pointer; /* Con trỏ khi hover */
+    margin-top: 15px; /* Khoảng cách phía trên nút */
+  }
+  
+  /* Divider giữa nút sign in và nút social */
+  .divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+    color: #888;
+    font-size: 12px;
+    justify-content: center;
+  }
+  
+  /* Nút social login */
+  .social-login {
+    width: 100%;
+    padding: 20px;
+    border: none;
+    border-radius: 16px;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: #031129; /* Màu nền mặc định cho social login */
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    text-align: left;
+  }
+  
+  /* Nút Facebook có màu khác */
+  .facebook-btn {
+    background-color: #1e3a8a;
+  }
+  
+  /* Icon cho nút social */
+  .social-icon {
+    margin-right: 32px;
+    font-size: 30px;
+    vertical-align: middle;
+    align-items:middle;
+  }
+  .social-img {
+    width: 40px; /* Kích thước ảnh */
+    height: 40px;
+    margin-right: 32px; /* Khoảng cách giữa ảnh và chữ */
+    vertical-align: middle;
+  }
+  
+  
+  /* --- MEDIA QUERIES - RESPONSIVE --- */
+  /* Điều chỉnh cho màn hình có chiều rộng dưới 1024px */
+  @media screen and (max-width: 1024px) {
+    .main-content {
+      padding: 40px 60px 40px; /* Giảm padding cho phù hợp */
+      flex-direction: column; /* Chuyển layout từ hàng ngang sang cột */
+    }
+    
+    .welcome-section,
+    .login-section {
+      max-width: 100%; /* Các phần chiếm toàn bộ chiều rộng */
+      width: 100%;
+    }
+    
+    .login-section {
+      margin-left: 0;
+      margin-top: 30px; /* Tạo khoảng cách giữa welcome và login */
+    }
+    
+    .welcome-text {
+      font-size: 32px; /* Giảm kích thước chữ cho phù hợp */
+    }
+    
+    .form-label {
+      font-size: 20px;
+    }
+    
+    .form-input {
+      padding: 16px 20px;
+      font-size: 18px;
+    }
+    
+    .signin-btn {
+      font-size: 16px;
+      padding: 12px;
+    }
+    
+    .social-login {
+      font-size: 18px;
+      padding: 16px;
+    }
+  }
+  
+  /* Điều chỉnh thêm cho màn hình có chiều rộng dưới 480px */
+  @media screen and (max-width: 480px) {
+    .navbar {
+      padding: 8px 15px;
+    }
+    
+    .logo {
+      padding: 8px 15px;
+    }
+    
+    .nav-links a {
+      padding: 8px 15px;
+      font-size: 14px;
+    }
+    
+    .main-content {
+      padding: 30px 20px 30px;
+    }
+    
+    .welcome-text {
+      font-size: 28px;
+    }
+    
+    .form-label {
+      font-size: 18px;
+    }
+    
+    .form-input {
+      padding: 12px 16px;
+      font-size: 16px;
+    }
+    
+    .signin-btn {
+      font-size: 14px;
+      padding: 10px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .social-login {
+      font-size: 16px;
+      padding: 12px;
+    }
+  
+    .social-login img {
+      width: 20px;
+      height: 20px;
+    }
+  }
