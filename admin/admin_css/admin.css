@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    margin: 0;
+}
+.sidebar {
+    width: 250px;
+    background: linear-gradient(to bottom, #000, #2b6cf3);
+    color: white;
+    height: 100vh;
+    
+}
+.admin_logo {
+    text-align: center;
+    margin: 20px 0;
+}
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+.sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    width: 100%;
+}
+.sidebar ul li a {
+    padding: 15px 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.sidebar ul li a:hover, .sidebar ul li:active {
+    background: white;
+    color: black;
+    cursor: pointer;
+    width: 100%;
+    display: block;
+}
+.main-content {
+    flex: 1;
+    padding: 40px;
+    text-align: center;
+}
+.main-content h1 {
+    font-weight: bold;
+}
+.main-content h2 {
+    font-weight: bold;
+    color: #3628F4;
+}
+.btn {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    padding: 15px;
+    background: linear-gradient(to right, #2b6cf3, #82c3ff);
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.task-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.task-input input {
+    padding: 10px;
+    width: 60%;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+.task-input button {
+    background: #ccc;
+    border: none;
+    padding: 10px;
+    margin-left: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.admin_logo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+.admin_logo a {
+    text-decoration: none;
+}
+  
+  .BIT-logo {
+    width: 120px;
+    max-width: 100%;
+  }
