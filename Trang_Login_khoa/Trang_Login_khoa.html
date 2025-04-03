@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <!-- Cấu hình viewport cho responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trang Sign In</title>
+  <!-- Liên kết tới Google Fonts để sử dụng font Roboto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <!-- Kết nối file CSS chính -->
+  <link rel="stylesheet" href="./Trang_Login_khoa.css">
+</head>
+<body>
+  <!-- Vùng navbar sẽ được load từ file navbar.html bằng JavaScript -->
+  <iframe 
+  src="../Thanh_Navigation_khoa/Navigation_Bar_khoa.html" 
+  style="position: fixed; top: 0; left: 0; width: 100%; height: 10%; z-index: 999; border: none;">
+</iframe>
+
+  <!-- Nội dung chính của trang -->
+  <div class="main-content">
+    <!-- Phần welcome hiển thị lời chào -->
+    <div class="welcome-section">
+      <h1 class="welcome-text">
+        CHÀO MỪNG <span class="welcome-line"><span class="highlight">BIT-ER</span></span> TRỞ LẠI
+      </h1>
+    </div>
+    <!-- Phần đăng nhập -->
+    <div class="login-section">
+      <div class="login-form">
+        <!-- Nhóm Email -->
+        <div class="form-group">
+            <label class="form-label">Email</label>
+            <div class="input-group">
+              <input type="email" class="form-input" id="email" placeholder="Example@gmail.com" autocomplete="off">
+              <span class="input-icon" id="clear-email" onclick="clearEmail()" style="display: none;">
+                <i class="fa-regular fa-circle-xmark"></i>
+            </span>
+            </div>
+          </div>          
+        <!-- Nhóm Password -->
+        <div class="form-group">
+            <label class="form-label">Password</label>
+            <div class="input-group">
+              <input type="password" class="form-input" id="password" placeholder="Nhập mật khẩu">
+              <span class="input-icon" onclick="togglePassword()">
+                <i class="fa-regular fa-eye" id="eye-icon"></i>
+              </span>
+            </div>
+          </div>
+          <!-- Link Quên mật khẩu -->
+          <a href="#" class="forgot-password">Forgot Password?</a>
+        </div>
+        <!-- Nút Sign In -->
+        <button class="signin-btn">SIGN IN</button>
+        <!-- Divider giữa form đăng nhập và social login -->
+        <div class="divider">——————— OR CONTINUE WITH ———————</div>
+        <!-- Google Login Button -->
+        <button class="social-login google-btn">
+            <img src="./assets/google-icon.webp" alt="Google" class="social-img">Sign in with Google
+        </button>
+  
+        <!-- Facebook Login Button -->
+        <button class="social-login facebook-btn">
+            <img src="./assets/facebook-icon.webp" alt="Facebook" class="social-img">Sign in with Facebook
+         </button>
+      </div>
+    </div>
+  </div>
+<!-- Kết nối file JavaScript -->
+  <script src="./Trang_Login_khoa.js"></script>
+</body>
+</html>
