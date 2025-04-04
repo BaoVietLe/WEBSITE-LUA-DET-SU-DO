@@ -11,7 +11,7 @@ body {
 
 /* NAVBAR CHUNG */
 .navbar {
-  position: relative;
+  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -38,6 +38,9 @@ body {
   display: flex;
   list-style: none;
   position: relative;
+  justify-content: center; /* Căn giữa các phần tử theo chiều ngang */
+  align-items: center;     /* Căn giữa các phần tử theo chiều dọc */
+  width: 100%;             /* Đảm bảo thanh chứa chiếm đầy chiều ngang */
 }
 
 .nav-links li {
@@ -58,7 +61,7 @@ body {
 .nav-links a::after {
   content: "";
   position: absolute;
-  top: -19px;
+  top: -28px;
   bottom: 0px;
   left: 50%;
   width: 100;

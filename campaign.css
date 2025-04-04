@@ -20,18 +20,32 @@ flex-direction: column;
     --light-text: #FFF;
     --background-color: #F9FAFB;
     --border-radius: 8px;
+    --navbar-height: 60px;
 }
 /* Container styles */
-#navbar-container, #footer-container {
+#navbar-container {
     width: 100%;
-  }
+    position: fixed;
+    top: 0;
+    z-index: 10000;
+    height: var(--navbar-height);
+}
+#footer-container {
+    width: 100%;
+    margin-top: auto; 
+}
+
+
   
   /* Ensure navbar stays at top */
   #navbar-container .navbar {
     width: 100%;
-    position: sticky;
+    position: relative;
     top: 0;
     z-index: 100;
+  }
+  main, .main-content {
+    padding-top: var(--navbar-height);
   }
   
 .campaign-container {
@@ -39,6 +53,10 @@ flex-direction: column;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height:auto;
 }
 
 /* Hero Section */
@@ -82,7 +100,6 @@ flex-direction: column;
     border-radius: var(--border-radius);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin: 30px 0;
-    overflow: hidden;
     padding: 40px 20px;
 }
 
