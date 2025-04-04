@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
    */
   function loadRequiredStyles() {
     // Load navbar and footer CSS files
-    const navbarCSS = 'Thanh_Navigation_khoa/css/Navigation_Bar_khoa.css';
-    const footerCSS = 'footer.css';
+    const navbarCSS = './Thanh_Navigation_khoa/css/Navigation_Bar_khoa.css';
+    const footerCSS = './footer.css';
   
     // Load navbar CSS first with higher priority
     const navbarLink = loadStylesheet(navbarCSS, true);
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
       return;
     }
     
-    fetch('Thanh_Navigation_khoa/Navigation_Bar_khoa.html')
+    fetch('./Thanh_Navigation_khoa/Navigation_Bar_khoa.html')
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
           navbarContainer.appendChild(navbar);
   
           // Load associated JavaScript
-          loadScript('Thanh_Navigation_khoa/css/js/Navigation_Bar_khoa.js');
+          loadScript('./Thanh_Navigation_khoa/js/Navigation_Bar_khoa.js');
         } else {
           console.error('Could not find navbar element');
         }
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
       return;
     }
     
-    fetch('footer.html')
+    fetch('./footer.html')
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
