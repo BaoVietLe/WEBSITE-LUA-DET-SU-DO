@@ -1,0 +1,126 @@
+/* Định nghĩa biến màu sắc trong biến cục bộ giao diện */
+:root {
+    /* Các biến cho giao diện chung */
+    --web-khoa: #3628F4;               /* Màu chủ đạo cho web khoa */
+    --web-khoa-1: #000000;            /* Màu thứ đạo 1 cho web khoa */
+    --web-khoa-2: #ffff;             /* Màu thứ đạo 2 cho web khoa */
+    --web-campaign-1: #C00016;        /*bộ màu cho web campaign */
+    --web-campaign-2: #FFF6A1;     /*bộ màu cho web campaign */
+    --web-campaign-3: #726767;    /*bộ màu cho web campaign */
+    --mau-chu: #CC1A1A;                  /*bộ màu cho web campaign */
+    --background-web-campaign: #FBF3B7; /*bộ màu cho web campaign */
+  }
+/* Thuộc tính nút bấm - Viết Bảo */
+.btn {
+
+}
+
+/* Bảng thông tin về số liệu chương trình - Viết Bảo */
+.program-info {
+
+}
+
+/* Thanh tìm kiếm - Viết Bảo */
+.search-bar {
+
+}
+
+/* Khung chứa ảnh + thông tin no action trigger - Viết Bảo */
+.image-info-no-action {
+
+}
+
+/* Ảnh avatar - Viết Bảo */
+.avatar {
+
+}
+
+/* Khung chứa ảnh mẹ VNAH - Quang Đại */
+.image-container {
+
+}
+
+/* Khung chứa thông tin hoạt động - Quang Đại */
+.activity-info {
+
+}
+
+/* Hiệu ứng 3 thanh ngang - Quang Đại */
+.hamburger-menu {
+
+}
+
+/* Bảng thông tin báo - Quang Đại */
+.news-info {
+
+}
+
+/* Hiệu ứng scroll thấy trên trang Về chiến dịch - Quang Đại */
+.campaign-scroll {
+
+}
+
+/* Bảng tin tức - Quân Hoàng */
+.news-table {
+
+}
+
+/* Pagination Bar - Quân Hoàng */
+.pagination-bar {
+
+}
+
+/* Bảng pop-up mẹ VNAH - Quân Hoàng */
+.vnah-popup {
+
+}
+
+/* Bảng thanh dài chi tiết hoạt động - Quân Hoàng */
+.activity-detail-bar {
+
+}
+
+/* Bảng title đề mục cách kiểu/ Bảng title vuông - Tâm Đan */
+.section-title {
+
+}
+
+/* Thuộc tính preview ảnh trên các page chi tiết hoạt động - Tâm Đan */
+.image-preview {
+
+}
+
+/* Bảng database (mục bảng + thông tin bảng) - Tâm Đan */
+.database-table {
+
+}
+
+/* Hiệu ứng chọn option trên thông tin bảng trang Admin - Hoa Lê */
+.admin-option-select {
+
+}
+
+/* Kiểu sub-title (gạch chữ ngạch) - Hoa Lê */
+.subtitle {
+
+}
+
+/* Kiểu chữ title (cho homepage về nguồn) - Hoa Lê */
+.homepage-title {
+
+}
+
+/* Thanh nhập trường dữ liệu - Vĩnh Kim */
+.input-bar {
+
+}
+
+/* Bảng pop-up khi có lệnh - Vĩnh Kim */
+.command-popup {
+
+}
+
+/* Pop-up trang Admin cho trường dữ liệu - Vĩnh Kim */
+.admin-data-popup {
+
+}
