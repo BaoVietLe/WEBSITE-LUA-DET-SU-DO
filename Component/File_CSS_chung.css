@@ -1,3 +1,17 @@
+/*
+ Để khởi tạo các file trong CSS chung, mọi người cần 
+ 1. Link file CSS chung này với phương thức  <link rel="stylesheet" href="./File_CSS_chung.css"> và
+ 1 file css riêng từng trang với phương thức tương tự trên
+ 2. Copy code html của component liên quan vào vị trí trong html các page riêng
+ 3. Đối với trang có sử dụng search bar, vui lòng sử dụng 2 file script bao gồm: file script trong 
+ folder component và file script riêng của trang (nếu có) 
+ Lưu ý: Với các component có thay đổi màu sắc ở từng trang hoặc bố cục vị trí, cả nhà vui lòng theo hướng dẫn như sau:
+ Trong file html riêng, cả nhà tạo class với component được sử dụng ở css chung (khi vào file css riêng sẽ lấy 
+ [tên class].[tên component ở css chung] { các thuộc tính về vị trí, màu săc riêng}; 
+ Để chúng bổ sung thuộc tính cho các file css chung này chỉ khả dụng ở file css riêng?
+
+ */
+
 /* Định nghĩa biến màu sắc trong biến cục bộ giao diện */
 :root {
     /* Các biến cho giao diện chung */
@@ -11,19 +25,181 @@
     --background-web-campaign: #FBF3B7; /*bộ màu cho web campaign */
   }
 /* Thuộc tính nút bấm - Viết Bảo */
-.btn {
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--web-campaign-1); /* Red color similar to the image */
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 0.8rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 
+  /* Dimensions converted to rem */
+  width: 15rem; /* 320px */
+  height: 3.9375rem; /* 63px */
+  padding: 0.5rem;
+}
+.button-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+.button:hover {
+  background-color: var(--web-campaign-1); /* Darker red on hover */
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3);
+}
+.button-container {
+  text-align: center;
 }
 
 /* Bảng thông tin về số liệu chương trình - Viết Bảo */
 .program-info {
-
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+  margin: auto;
+  gap: 2rem;
 }
+
+.program-info-box {
+  text-align: center;
+  flex: 1;
+}
+
+.program-info-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #9A9B41; /* Tông xanh vàng giống hình */
+}
+
+.sprogram-info-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: black;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+}
+
 
 /* Thanh tìm kiếm - Viết Bảo */
 .search-bar {
-
+  width: 100%;
+  max-width: 35rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 2rem;
+  padding: 0.75rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+  margin-bottom: 1rem;
+  position: relative; /* Cần thiết cho nút search cố định */
 }
+
+.search-bar-form {
+  display: flex;
+  align-items: flex-start; /* Căn trên để khi inputs xuống nhiều dòng, form không bị kéo dãn */
+  flex-wrap: nowrap;     /* Đảm bảo các phần tử không bị xuống hàng */
+}
+
+.search-bar-inputs {
+  display: flex;
+  flex: 1;               /* Chiếm không gian còn lại */
+  gap: 0.5rem;
+  flex-wrap: wrap;       /* Cho phép các value tag xuống dòng */
+  padding: 0.25rem;
+  padding-right: 3.5rem; /* Tạo không gian cho nút search */
+  overflow-y: auto;      /* Cho phép cuộn dọc nếu có quá nhiều tags */
+  max-height: 12rem;     /* Giới hạn chiều cao tối đa */
+}
+
+.search-bar-value-tag {
+  display: inline-flex;
+  align-items: center;
+  background-color: #f0f0f0;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.search-bar-value-text {
+  margin-right: 0.5rem;
+}
+
+.search-bar-remove-value {
+  background: none;
+  border: none;
+  color: #777;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-bar-main-input {
+  width: 100%;
+  min-width: 8rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 1.5rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+  margin-bottom: 0.25rem;
+}
+
+.search-bar-main-input:focus {
+  border-color: #666;
+}
+
+/* Cố định nút search ở bên phải */
+.search-bar-search-btn {
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  position: absolute;
+  right: 0.75rem;
+  top: 0.75rem;
+}
+
+.search-bar-search-btn:hover {
+  background-color: #555;
+}
+
+.search-bar-search-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.search-bar-suggestion {
+  padding: 0.5rem 1.5rem;
+  color: #a52a2a;
+  font-size: 0.9rem;
+  text-align: left;
+  cursor: pointer;
+}
+
 
 /* Khung chứa ảnh + thông tin no action trigger - Viết Bảo */
 .image-info-no-action {
@@ -46,7 +222,7 @@
 }
 
 /* Hiệu ứng 3 thanh ngang - Quang Đại */
-.hamburger-menu {
+.effect-ngang {
 
 }
 
