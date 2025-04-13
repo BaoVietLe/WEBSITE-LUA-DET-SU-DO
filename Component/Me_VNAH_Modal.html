@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông Tin Mẹ Việt Nam Anh Hùng</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+        }
+
+        .modal-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            background-color: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-header {
+            padding: 20px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
+            background-color: #e6e6e6;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            cursor: pointer;
+            border: none;
+            color: #333;
+        }
+
+        .modal-body {
+            padding: 20px;
+        }
+
+        .profile {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .profile {
+                flex-direction: row;
+            }
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 0 auto 20px;
+        }
+
+        @media (min-width: 768px) {
+            .profile-image {
+                margin: 0 20px 0 0;
+            }
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-info {
+            flex: 1;
+        }
+
+        .info-row {
+            margin-bottom: 15px;
+        }
+
+        .info-label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .section-title {
+            font-weight: bold;
+            font-size: 18px;
+            margin: 25px 0 15px;
+        }
+
+        .story-text {
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .gallery-item {
+            width: 32%;
+            height: 150px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 600px) {
+            .gallery-item {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+        }
+
+        .heart-icon {
+            font-size: 24px;
+            color: #888;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .heart-icon.active {
+            color: red;
+        }
+
+        .heart-container {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        @media (min-width: 768px) {
+            .heart-container {
+                justify-content: flex-start;
+            }
+        }
+
+        .gallery-title {
+            text-align: center;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="modal-container">
+        <div class="modal-header">
+            THÔNG TIN CHI TIẾT MẸ VIỆT NAM ANH HÙNG
+        </div>
+        <button class="close-button" id="closeModal">✕</button>
+
+        <div class="modal-body">
+            <div class="profile">
+                <div class="profile-image">
+                    <img src="/api/placeholder/200/200" alt="Mẹ Việt Nam Anh Hùng">
+                </div>
+                <div class="profile-info">
+                    <div class="info-row">
+                        <span class="info-label">HỌ VÀ TÊN:</span>
+                        <span>NGUYỄN THỊ KÉO</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">SINH NĂM:</span>
+                        <span>1925</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">ĐỊA CHỈ:</span>
+                        <span>PHƯỜNG HIỆP AN, TP. THỦ DẦU MỘT</span>
+                    </div>
+                    <div class="heart-container">
+                        <div class="heart-icon" id="heartIcon">♡</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-title">HOÀN CẢNH CỦA MẸ (HỌ VÀ TÊN)</div>
+            <div class="story-text">
+                Là Mẹ Việt Nam Anh hùng, có chồng là liệt sĩ (Phạm Văn Chiêu, đội viên
+                du kích hi sinh ở xã An Nhơn Tây, không rõ năm) và con là liệt sĩ (Phạm
+                Văn Anh, hi sinh chiến trường CPC năm 1985).
+            </div>
+
+            <div class="section-title">CHIẾN CÔNG CỦA MẸ</div>
+            <div class="story-text"></div>
+
+            <div class="section-title">GHI CHÚ</div>
+            <div class="story-text">
+                Có 4 người con, mất 1 người là Liệt sĩ, mẹ được phong tặng danh hiệu Mẹ
+                VNAH ngày 30/01/2015
+            </div>
+
+            <div class="gallery-title">-- MỘT SỐ HÌNH ẢNH, VIDEO VỀ MẸ --</div>
+            <div class="gallery">
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const closeButton = document.getElementById('closeModal');
+            const heartIcon = document.getElementById('heartIcon');
+            
+            // Close modal functionality
+            closeButton.addEventListener('click', function() {
+                document.body.innerHTML = '<div style="text-align: center; padding: 50px; font-family: Arial;">Modal closed</div>';
+            });
+            
+            // Heart icon toggle functionality
+            heartIcon.addEventListener('click', function() {
+                this.classList.toggle('active');
+                if (this.classList.contains('active')) {
+                    this.innerHTML = '♥';
+                    this.style.color = 'red';
+                } else {
+                    this.innerHTML = '♡';
+                    this.style.color = '#888';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
