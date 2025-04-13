@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Information Component</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .event-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #f0f0f0;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        @media (min-width: 768px) {
+            .event-container {
+                flex-direction: row;
+                align-items: stretch;
+            }
+        }
+
+        .event-info {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        @media (min-width: 768px) {
+            .event-info {
+                flex-direction: row;
+            }
+        }
+
+        .info-section {
+            padding: 15px;
+            flex: 1;
+        }
+
+        .section-title {
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .section-content {
+            font-size: 14px;
+            color: #222;
+        }
+
+        .time-section {
+            word-wrap: break-word;
+            hyphens: auto;
+        }
+
+        .participants-section {
+            text-align: left;
+        }
+
+        @media (min-width: 768px) {
+            .info-section:not(:last-child) {
+                border-right: 1px solid #000;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .info-section:not(:last-child) {
+                border-bottom: 1px solid #000;
+            }
+        }
+
+        .register-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+        }
+
+        .register-button {
+            background-color: #d02126;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .register-button:hover {
+            background-color: #b01a1f;
+        }
+
+        @media (max-width: 767px) {
+            .register-section {
+                padding: 20px 15px;
+            }
+
+            .register-button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="event-container">
+        <div class="event-info">
+            <div class="info-section">
+                <div class="section-title">ĐỊA ĐIỂM DỰ KIẾN</div>
+                <div class="section-content">ĐỊA CHỈ</div>
+            </div>
+            <div class="info-section time-section">
+                <div class="section-title">THỜI GIAN DỰ KIẾN</div>
+                <div class="section-content">7 : 00 : 00 | 20/04/2025 - 7 : 00 : 00 | 30/04/2025</div>
+            </div>
+            <div class="info-section participants-section">
+                <div class="section-title">SỐ LƯỢNG THAM GIA DỰ KIẾN</div>
+                <div class="section-content">50/100</div>
+            </div>
+        </div>
+        <div class="register-section">
+            <button class="register-button">ĐĂNG KÝ</button>
+        </div>
+    </div>
+
+    <script>
+        // Add any necessary JavaScript functionality here
+        document.querySelector('.register-button').addEventListener('click', function() {
+            alert('Registration button clicked!');
+            // Add registration logic here
+        });
+    </script>
+</body>
+</html>
