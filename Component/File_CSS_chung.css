@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  Để khởi tạo các file trong CSS chung, mọi người cần 
  1. Link file CSS chung này với phương thức  <link rel="stylesheet" href="./File_CSS_chung.css"> và
@@ -12,6 +13,8 @@
 
  */
 
+=======
+>>>>>>> 235d891 (Thêm css thông tin hoạt động và tạo mới file html component chung)
 /* Định nghĩa biến màu sắc trong biến cục bộ giao diện */
 :root {
     /* Các biến cho giao diện chung */
@@ -25,6 +28,7 @@
     --background-web-campaign: #FBF3B7; /*bộ màu cho web campaign */
   }
 /* Thuộc tính nút bấm - Viết Bảo */
+<<<<<<< HEAD
 .button {
   display: flex;
   justify-content: center;
@@ -59,10 +63,15 @@
 }
 .button-container {
   text-align: center;
+=======
+.btn {
+
+>>>>>>> 235d891 (Thêm css thông tin hoạt động và tạo mới file html component chung)
 }
 
 /* Bảng thông tin về số liệu chương trình - Viết Bảo */
 .program-info {
+<<<<<<< HEAD
   display: flex;
   justify-content: space-between;
   background-color: white;
@@ -201,6 +210,16 @@
 }
 
 
+=======
+
+}
+
+/* Thanh tìm kiếm - Viết Bảo */
+.search-bar {
+
+}
+
+>>>>>>> 235d891 (Thêm css thông tin hoạt động và tạo mới file html component chung)
 /* Khung chứa ảnh + thông tin no action trigger - Viết Bảo */
 .image-info-no-action {
 
@@ -208,6 +227,7 @@
 
 /* Ảnh avatar - Viết Bảo */
 .avatar {
+<<<<<<< HEAD
   width: 17rem;              /* Chiều rộng khung */
   height: 17rem;             /* Chiều cao khung */
   border-radius: 50%;        /* Làm cho khung tròn */
@@ -234,6 +254,91 @@
 
 /* Hiệu ứng 3 thanh ngang - Quang Đại */
 .effect-ngang {
+=======
+
+}
+
+/* Khung chứa ảnh mẹ VNAH - Quang Đại */
+.image-container{
+  width: 320px;
+  height: 368px;
+  border-radius: 50px;
+  overflow: hidden;
+  background-color: white;
+}
+.image-container-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Khung chứa thông tin hoạt động - Quang Đại */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto;
+}
+.activity-info {
+  width: 294px;
+  height: 384px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 4px 5px 8px rgba(0, 0, 0, 0.3);
+  background-color: white;
+}
+.activity-info-image {
+  width: 100%;
+  height: 284px;
+  object-fit: cover;
+}
+
+.activity-info-content {
+  padding: 10px;
+  height: 100px;
+  display: flexbox;
+  justify-content: left;
+  align-items: center;
+}
+
+.activity-info-title {
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.activity-info-date-button{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.activity-info-date {
+  font-size: 16px;
+  color: #555;
+}
+
+.activity-info-button {
+  background-color: black;
+  color: white;
+  padding: 3px 20px 3px 20px;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.activity-info-button:hover{
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: scale(1.1);
+}
+/* Hiệu ứng 3 thanh ngang - Quang Đại */
+.hamburger-menu {
+>>>>>>> 235d891 (Thêm css thông tin hoạt động và tạo mới file html component chung)
 
 }
 
@@ -287,6 +392,7 @@
 
 }
 
+<<<<<<< HEAD
 /* Kiểu chữ title (cho homepage về nguồn) - Hoa Lê */
 .homepage-title {
   font-size: 70px;
@@ -318,6 +424,17 @@
       vertical-align: middle;
       margin: 0 10px;
     }
+=======
+/* Kiểu sub-title (gạch chữ ngạch) - Hoa Lê */
+.subtitle {
+
+}
+
+/* Kiểu chữ title (cho homepage về nguồn) - Hoa Lê */
+.homepage-title {
+
+}
+>>>>>>> 235d891 (Thêm css thông tin hoạt động và tạo mới file html component chung)
 
 /* Thanh nhập trường dữ liệu - Vĩnh Kim */
 .input-bar {
