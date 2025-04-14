@@ -36,6 +36,7 @@
 }
 
 /* Khung chứa ảnh mẹ VNAH - Quang Đại */
+<<<<<<< HEAD
 .image-container {
 
 }
@@ -45,6 +46,85 @@
 
 }
 
+=======
+.image-container{
+  width: 320px;
+  height: 368px;
+  border-radius: 50px;
+  overflow: hidden;
+  background-color: white;
+}
+.image-container-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Khung chứa thông tin hoạt động - Quang Đại */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto;
+}
+.activity-info {
+  width: 294px;
+  height: 384px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 4px 5px 8px rgba(0, 0, 0, 0.3);
+  background-color: white;
+}
+.activity-info-image {
+  width: 100%;
+  height: 284px;
+  object-fit: cover;
+}
+
+.activity-info-content {
+  padding: 10px;
+  height: 100px;
+  display: flexbox;
+  justify-content: left;
+  align-items: center;
+}
+
+.activity-info-title {
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.activity-info-date-button{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.activity-info-date {
+  font-size: 16px;
+  color: #555;
+}
+
+.activity-info-button {
+  background-color: black;
+  color: white;
+  padding: 3px 20px 3px 20px;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.activity-info-button:hover{
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: scale(1.1);
+}
+>>>>>>> origin/hqd
 /* Hiệu ứng 3 thanh ngang - Quang Đại */
 .hamburger-menu {
 
