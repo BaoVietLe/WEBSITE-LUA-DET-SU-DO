@@ -208,7 +208,18 @@
 
 /* Ảnh avatar - Viết Bảo */
 .avatar {
+  width: 17rem;              /* Chiều rộng khung */
+  height: 17rem;             /* Chiều cao khung */
+  border-radius: 50%;        /* Làm cho khung tròn */
+  overflow: hidden;          /* Ẩn phần vượt ra ngoài khung */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.avatar img {
+  width: 100%;               /* Điều chỉnh ảnh để phù hợp với khung */
+  height: auto;              /* Giữ tỷ lệ ban đầu của ảnh */
 }
 
 /* Khung chứa ảnh mẹ VNAH - Quang Đại */
@@ -276,15 +287,37 @@
 
 }
 
-/* Kiểu sub-title (gạch chữ ngạch) - Hoa Lê */
-.subtitle {
-
-}
-
 /* Kiểu chữ title (cho homepage về nguồn) - Hoa Lê */
 .homepage-title {
-
+  font-size: 70px;
+  font-weight: 500;
+  background: linear-gradient(to right, #C00016 40%, #FBF3B7 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  text-align: left;
 }
+/* Kiểu sub-title (gạch chữ ngạch) - Hoa Lê */
+.sub-header {
+      margin-top: 30px;
+      font-size: 18px;
+      color: #333;
+      letter-spacing: 1px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .sub-header::before,
+    .sub-header::after {
+      content: "";
+      display: inline-block;
+      width: 204px;
+      height: 1px;
+      background: #000;
+      vertical-align: middle;
+      margin: 0 10px;
+    }
 
 /* Thanh nhập trường dữ liệu - Vĩnh Kim */
 .input-bar {
