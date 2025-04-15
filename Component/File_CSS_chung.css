@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+
+=======
+>>>>>>> 2f8e8ac746634c3fde290fb476b7a8740a8d8b5f
 /*
  Để khởi tạo các file trong CSS chung, mọi người cần 
  1. Link file CSS chung này với phương thức  <link rel="stylesheet" href="./File_CSS_chung.css"> và
@@ -11,7 +15,10 @@
  Để chúng bổ sung thuộc tính cho các file css chung này chỉ khả dụng ở file css riêng?
 
  */
+<<<<<<< HEAD
+=======
 
+>>>>>>> 2f8e8ac746634c3fde290fb476b7a8740a8d8b5f
 /* Định nghĩa biến màu sắc trong biến cục bộ giao diện */
 :root {
     /* Các biến cho giao diện chung */
@@ -59,8 +66,11 @@
 }
 .button-container {
   text-align: center;
+<<<<<<< HEAD
+=======
 .btn {
 
+>>>>>>> 2f8e8ac746634c3fde290fb476b7a8740a8d8b5f
 }
 
 /* Bảng thông tin về số liệu chương trình - Viết Bảo */
@@ -203,6 +213,8 @@
 }
 
 
+<<<<<<< HEAD
+=======
 
 }
 
@@ -211,6 +223,7 @@
 
 }
 
+>>>>>>> 2f8e8ac746634c3fde290fb476b7a8740a8d8b5f
 /* Khung chứa ảnh + thông tin no action trigger - Viết Bảo */
 .image-info-no-action {
 
@@ -319,17 +332,22 @@
   background-color: rgba(0, 0, 0, 0.7);
   transform: scale(1.1);
 }
+<<<<<<< HEAD
+/* Hiệu ứng 3 thanh ngang - Quang Đại */
+.effect-ngang {
+=======
 
 /* Hiệu ứng 3 thanh ngang - Quang Đại */
 .effect-ngang {
 
+>>>>>>> 2f8e8ac746634c3fde290fb476b7a8740a8d8b5f
 }
 
 /* Khung chứa ảnh mẹ VNAH - Quang Đại */
 .image-container{
-  width: 320px;
-  height: 368px;
-  border-radius: 50px;
+  width: 20rem;
+  height: 23rem;
+  border-radius: 3.125rem;
   overflow: hidden;
   background-color: white;
 }
@@ -347,29 +365,29 @@
   font-family: Roboto;
 }
 .activity-info {
-  width: 294px;
-  height: 384px;
-  border-radius: 16px;
+  width: 18.375rem;
+  height:   24rem;
+  border-radius: 1rem;
   overflow: hidden;
-  box-shadow: 4px 5px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0.25rem 0.313rem 0.5rem rgba(0, 0, 0, 0.3);
   background-color: white;
 }
 .activity-info-image {
   width: 100%;
-  height: 284px;
+  height: 17.75rem;
   object-fit: cover;
 }
 
 .activity-info-content {
-  padding: 10px;
-  height: 100px;
+  padding: 0.625rem;
+  height: 6.25rem;
   display: flexbox;
   justify-content: left;
   align-items: center;
 }
 
 .activity-info-title {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -378,20 +396,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 1.25rem;
 }
 
 .activity-info-date {
-  font-size: 16px;
+  font-size: 1rem;
   color: #555;
 }
 
 .activity-info-button {
   background-color: black;
   color: white;
-  padding: 3px 20px 3px 20px;
-  border-radius: 20px;
-  font-size: 16px;
+  padding: 0.188rem 1.25rem 0.188rem 1.25rem;
+  border-radius: 1.25rem;
+  font-size: 1rem;
   font-weight: bold;
   text-transform: uppercase;
   border: none;
@@ -409,13 +427,159 @@
 }
 
 /* Bảng thông tin báo - Quang Đại */
-.news-info {
+.fund-news-container {
+  position: relative;
+  max-width: 85rem;
+  height: 48.875rem;
+  background-color: rgb(192 0 22);
+}
 
+/* Layer 1 (Top) */
+.fund-news-sapotext {
+  position: absolute;
+  top: 0rem;
+  left: 63.125rem;
+  right: 0rem;
+  background-color: rgba(217, 0, 0, 0.68);
+  border-radius: 3.75rem;
+  width: 21.5rem;
+  height: 48.688rem;
+  display: flex;
+  flex-direction: column;
+  z-index: 3;
+  box-shadow: 0.125rem 0.188rem 0.313rem 0.25rem rgba(0, 0, 0, 0.7);
+}
+
+.fund-news-sapotext-textbox {
+  flex-grow: 1;
+  height: 40.5rem;
+  margin: 1.875rem 1.563rem 1.563rem 1.563rem;
+}
+
+.fund-news-sapotext-textbox p {
+  font-family: 'Roboto';
+  text-align: justify;
+  color: #FFF6A1;
+  font-size: 1.5rem;
+}
+
+.fund-news-sapotext-button-container {
+  display: flex;
+  width: 100%;
+  height: 3.188rem;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(114, 103, 103, 0.2);
+  border-radius: 0 0 3.75rem 3.75rem;
+  margin-top: 0.938rem;
+}
+
+.fund-news-sapotext-button {
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.fund-news-sapotext-text {
+  color: #FFF6A1;
+  font-size: 1.563rem; 
+}
+
+/* Layer 2 */
+.fund-news-picture {
+  position: absolute;
+  top: 0rem;
+  left: 0rem;
+  width: 64.25rem;
+  height: 34.938rem;
+  border-radius: 3.75rem;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.fund-news-picture-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Layer 3 (Bottom) */
+.fund-news-title {
+  position: absolute;
+  top: 0rem;
+  left:0.5rem;
+  width: 63.188rem;
+  height: 48.688rem;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.fund-news-title-textbox {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  border-radius: 3.75rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  box-shadow: 0rem 0.188rem 0.313rem 0.25rem rgba(0, 0, 0, 0.7);
+}
+
+.fund-news-title-text {
+  font-size: 3.125rem;
+  font-weight: 500;
+  background: linear-gradient(to right, #C00016 0%, #666666 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: left;
+  animation: shineText 4s ease-in-out infinite;
+  background-size: 200% auto;
+  padding-bottom: 3.125rem;
+  padding-left: 1.875rem;
+}
+
+@keyframes shineText {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
 }
 
 /* Hiệu ứng scroll thấy trên trang Về chiến dịch - Quang Đại */
 .campaign-scroll {
 
+}
+/* Apply to entire document */
+/* Width of the entire scrollbar */
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track (background of scrollbar) */
+body::-webkit-scrollbar-track {
+  background-color: #f0eded;
+  border-radius: 10px;
+}
+
+/* Scrollbar thumb (the draggable handle) */
+body::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(to bottom, #C00016 0%, #FFF6A1 100%);
+  border-radius: 10px;
+  border: 3px solid #f1f1f1;
+}
+
+/* Hover effect on the thumb */
+body::-webkit-scrollbar-thumb:hover {
+  opacity: 0.8;
+  background-image: linear-gradient(to bottom, #a00014 0%, #e8e08a 100%);
 }
 
 /* Bảng tin tức - Quân Hoàng */
@@ -453,12 +617,16 @@
 
 }
 
-/* Hiệu ứng chọn option trên thông tin bảng trang Admin - Hoa Lê */
+/* Hiệu ứng chọn option trên thông tin bảng trang Admin - Diệu Thảo */
 .admin-option-select {
 
 }
+<<<<<<< HEAD
+/* Kiểu chữ title (cho homepage về nguồn) - Diệu Thảo */
+=======
 
 /* Kiểu chữ title (cho homepage về nguồn) - Hoa Lê */
+>>>>>>> 2f8e8ac746634c3fde290fb476b7a8740a8d8b5f
 .homepage-title {
   font-size: 70px;
   font-weight: 500;
@@ -469,7 +637,7 @@
   display: inline-block;
   text-align: left;
 }
-/* Kiểu sub-title (gạch chữ ngạch) - Hoa Lê */
+/* Kiểu sub-title (gạch chữ ngạch) - Diệu Thảo */
 .sub-header {
       margin-top: 30px;
       font-size: 18px;
@@ -489,12 +657,16 @@
       vertical-align: middle;
       margin: 0 10px;
     }
+<<<<<<< HEAD
+/* Kiểu sub-title (gạch chữ ngạch) - Diệu Thảo */
+=======
 /* Kiểu sub-title (gạch chữ ngạch) - Hoa Lê */
+>>>>>>> 2f8e8ac746634c3fde290fb476b7a8740a8d8b5f
 .subtitle {
 
 }
 
-/* Kiểu chữ title (cho homepage về nguồn) - Hoa Lê */
+/* Kiểu chữ title (cho homepage về nguồn) - Diệu Thảo */
 .homepage-title {
 
 }
