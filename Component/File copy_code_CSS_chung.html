@@ -54,6 +54,52 @@
       <div class="avatar">
         <img src="./Ảnh/HD_1.png" alt="Ảnh tròn">
       </div>
+      <div class="image-info-no-action">
+        <img src="duongdan_anh_tu_mysql.jpg" alt="Hình ảnh hoạt động" class="activity-info-image">
+      
+        <div class="image-info-no-action-content">
+          <div class="image-info-no-action-title">
+            KỶ NIỆM 50 NĂM<br>NGÀY GIẢI PHÓNG MIỀN NAM
+          </div>
+          <div class="image-info-no-action-date">
+            30/04/1975 - 30/04/2025
+          </div>
+        </div>
+      </div>
+      
+      <?php
+// Kiểm tra xem GET parameter 'id' có tồn tại và là số không
+if (isset($_GET['id']) && is_numeric($_GET['id'])) {
+    $activity_id = intval($_GET['id']);
+} else {
+    echo "<p>ID không hợp lệ.</p>";
+    exit;
+}
+
+// Truy vấn dữ liệu theo ID
+$sql = "SELECT * FROM activity_info WHERE id = $activity_id";
+$result = $conn->query($sql);
+
+if ($result && $result->num_rows > 0) {
+    // Vì chỉ có 1 dòng dữ liệu với khóa chính, nên dùng fetch_assoc() trực tiếp
+    $row = $result->fetch_assoc();
+    echo '
+    <div class="image-info-no-action">
+        <img src="' . $row["image_path"] . '" alt="Hình ảnh hoạt động" class="activity-info-image">
+        <div class="image-info-no-action-content">
+            <div class="image-info-no-action-title">'
+              . strtoupper($row["title"]) . '<br>' . strtoupper($row["subtitle"]) .
+            '</div>
+            <div class="image-info-no-action-date">' . $row["date_range"] . '</div>
+        </div>
+    </div>';
+} else {
+    echo '<p>Không có dữ liệu hoạt động cho ID này.</p>';
+}
+
+$conn->close();
+?>
+
       <script src="./script_.js"></script>
 </body>
 </html>

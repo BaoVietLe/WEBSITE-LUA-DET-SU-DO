@@ -1,3 +1,4 @@
+<?php include 'datachuongtrinh.php'; // Kết nối đến CSDL ?>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -45,5 +46,52 @@
             </div>
         </div>
     </div>
+    <div class="activity-info-card">
+        <img src="duongdan_anh_tu_mysql.jpg" alt="Hình ảnh hoạt động" class="activity-info-image">
+      
+        <div class="activity-info-content">
+          <div class="activity-info-title">
+            KỶ NIỆM 50 NĂM<br>NGÀY GIẢI PHÓNG MIỀN NAM
+          </div>
+          <div class="activity-info-date">
+            30/04/1975 - 30/04/2025
+          </div>
+        </div>
+      </div>
+       <!-- Phần hiển thị thẻ thông tin hoạt động được lấy động từ database -->
+       <?php
+       $sql = "SELECT * FROM activity_info";
+       $result = $conn->query($sql);
+       if ($result->num_rows > 0) {
+           while($row = $result->fetch_assoc()) {
+               echo '
+               <div class="image-info-no-action">
+                   <img src="'.$row["image_path"].'" alt="Hình ảnh hoạt động" class="activity-info-image">
+                   <div class="image-info-no-action-content">
+                       <div class="image-info-no-action-title">'
+                         . strtoupper($row["title"]) . '<br>' . strtoupper($row["subtitle"]) .
+                       '</div>
+                       <div class="image-info-no-action-date">'.$row["date_range"].'</div>
+                   </div>
+               </div>';
+           }
+       } else {
+           echo '<p>Không có dữ liệu hoạt động.</p>';
+       }
+       $conn->close();
+    ?>   
+    <div class="image-info-no-action">
+        <img src="duongdan_anh_tu_mysql.jpg" alt="Hình ảnh hoạt động" class="activity-info-image">
+      
+        <div class="image-info-no-action-content">
+          <div class="image-info-no-action-title">
+            KỶ NIỆM 50 NĂM<br>NGÀY GIẢI PHÓNG MIỀN NAM
+          </div>
+          <div class="image-info-no-action-date">
+            30/04/1975 - 30/04/2025
+          </div>
+        </div>
+      </div>
+      
 </body>
 </html>
