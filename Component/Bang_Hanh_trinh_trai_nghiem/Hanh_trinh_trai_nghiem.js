@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let slidesData = [];
     
     // Fetch dữ liệu từ server 
-    fetch('get_slides_data.php')
+    fetch('Hanh_trinh_trai_nghiem.php')
         .then(response => response.json())
         .then(data => {
             slidesData = data;
