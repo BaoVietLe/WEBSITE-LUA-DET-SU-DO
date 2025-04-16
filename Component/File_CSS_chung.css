@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 2f8e8ac746634c3fde290fb476b7a8740a8d8b5f
 /*
  Để khởi tạo các file trong CSS chung, mọi người cần 
  1. Link file CSS chung này với phương thức  <link rel="stylesheet" href="./File_CSS_chung.css"> và
@@ -15,10 +11,6 @@
  Để chúng bổ sung thuộc tính cho các file css chung này chỉ khả dụng ở file css riêng?
 
  */
-<<<<<<< HEAD
-=======
-
->>>>>>> 2f8e8ac746634c3fde290fb476b7a8740a8d8b5f
 /* Định nghĩa biến màu sắc trong biến cục bộ giao diện */
 :root {
     /* Các biến cho giao diện chung */
@@ -52,6 +44,12 @@
   height: 3.9375rem; /* 63px */
   padding: 0.5rem;
 }
+.button-white {
+  background-color: transparent;
+  color: #333;
+  border: 2px solid #333;
+  box-shadow: none;
+}
 .button-text {
   display: flex;
   flex-direction: column;
@@ -66,11 +64,6 @@
 }
 .button-container {
   text-align: center;
-<<<<<<< HEAD
-=======
-.btn {
-
->>>>>>> 2f8e8ac746634c3fde290fb476b7a8740a8d8b5f
 }
 
 /* Bảng thông tin về số liệu chương trình - Viết Bảo */
@@ -213,21 +206,45 @@
 }
 
 
-<<<<<<< HEAD
-=======
-
-}
-
-/* Thanh tìm kiếm - Viết Bảo */
-.search-bar {
-
-}
-
->>>>>>> 2f8e8ac746634c3fde290fb476b7a8740a8d8b5f
 /* Khung chứa ảnh + thông tin no action trigger - Viết Bảo */
 .image-info-no-action {
-
+  width: 294px;
+  height: 384px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 4px 5px 8px rgba(0, 0, 0, 0.3);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
 }
+
+.image-info-no-action-image {
+  width: 100%;
+  height: 284px;
+  object-fit: cover;
+}
+
+.image-info-no-action-content {
+  padding: 10px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.image-info-no-action-title {
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.4;
+  color: #000;
+}
+
+.image-info-no-action-date {
+  font-size: 14px;
+  color: #555;
+}
+
 
 /* Ảnh avatar - Viết Bảo */
 .avatar {
@@ -245,15 +262,6 @@
   height: auto;              /* Giữ tỷ lệ ban đầu của ảnh */
 }
 
-/* Khung chứa ảnh mẹ VNAH - Quang Đại */
-.image-container {
-
-}
-
-/* Khung chứa thông tin hoạt động - Quang Đại */
-.activity-info {
-
-}
 
 .image-container{
   width: 320px;
@@ -332,15 +340,8 @@
   background-color: rgba(0, 0, 0, 0.7);
   transform: scale(1.1);
 }
-<<<<<<< HEAD
 /* Hiệu ứng 3 thanh ngang - Quang Đại */
 .effect-ngang {
-=======
-
-/* Hiệu ứng 3 thanh ngang - Quang Đại */
-.effect-ngang {
-
->>>>>>> 2f8e8ac746634c3fde290fb476b7a8740a8d8b5f
 }
 
 /* Khung chứa ảnh mẹ VNAH - Quang Đại */
@@ -621,12 +622,7 @@ body::-webkit-scrollbar-thumb:hover {
 .admin-option-select {
 
 }
-<<<<<<< HEAD
 /* Kiểu chữ title (cho homepage về nguồn) - Diệu Thảo */
-=======
-
-/* Kiểu chữ title (cho homepage về nguồn) - Hoa Lê */
->>>>>>> 2f8e8ac746634c3fde290fb476b7a8740a8d8b5f
 .homepage-title {
   font-size: 70px;
   font-weight: 500;
@@ -657,11 +653,7 @@ body::-webkit-scrollbar-thumb:hover {
       vertical-align: middle;
       margin: 0 10px;
     }
-<<<<<<< HEAD
 /* Kiểu sub-title (gạch chữ ngạch) - Diệu Thảo */
-=======
-/* Kiểu sub-title (gạch chữ ngạch) - Hoa Lê */
->>>>>>> 2f8e8ac746634c3fde290fb476b7a8740a8d8b5f
 .subtitle {
 
 }
