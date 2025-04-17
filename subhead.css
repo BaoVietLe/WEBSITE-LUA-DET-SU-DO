@@ -1,0 +1,20 @@
+.sub-header {
+    margin-top: 30px;
+    font-size: 18px;
+    color: #333;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .sub-header::before,
+  .sub-header::after {
+    content: "";
+    display: inline-block;
+    width: 204px;
+    height: 1px;
+    background: #000;
+    vertical-align: middle;
+    margin: 0 10px;
+  }
+  
