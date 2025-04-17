@@ -16,7 +16,7 @@
     }
     .slider-container {
       width: 100%;
-      max-width: 72rem; /* Điều chỉnh tùy theo số thẻ hiển thị */
+      max-width: 72rem;
       overflow: hidden;
       position: relative;
     }
@@ -25,7 +25,7 @@
       transition: transform 0.5s ease-in-out;
     }
     .slide {
-      flex: 0 0 calc(100% / var(--slides-per-view)); /* Chia đều dựa trên số thẻ hiển thị */
+      flex: 0 0 calc(100% / var(--slides-per-view));
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -33,7 +33,6 @@
       box-sizing: border-box;
       padding: 0 10px;
     }
-    /* Khung chứa ảnh mẹ VNAH */
     .image-container {
       width: 20rem;
       height: 23rem;
@@ -75,68 +74,99 @@
 <body>
   <div class="slider-container">
     <div class="slider">
-      <div class="slide">
-        <div class="image-container">
-          <img class="image-container-image" src="https://via.placeholder.com/320x368" alt="Mẹ Bùi Thị Lăng">
-        </div>
-        <div class="info">
-          <p><strong>Mẹ Bùi Thị Lăng</strong></p>
-          <p>Sinh năm 1926</p>
-          <p>phường Hiệp An, TP. Thủ Dầu Một</p>
-        </div>
-      </div>
-      <div class="slide">
-        <div class="image-container">
-          <img class="image-container-image" src="https://via.placeholder.com/320x368" alt="Mẹ Nguyễn Thị Kéo">
-        </div>
-        <div class="info">
-          <p><strong>Mẹ Nguyễn Thị Kéo</strong></p>
-          <p>Sinh năm 1925</p>
-          <p>phường Hiệp An, TP. Thủ Dầu Một</p>
-        </div>
-      </div>
-      <div class="slide">
-        <div class="image-container">
-          <img class="image-container-image" src="https://via.placeholder.com/320x368" alt="Mẹ Trần Thị Tư">
-        </div>
-        <div class="info">
-          <p><strong>Mẹ Trần Thị Tư</strong></p>
-          <p>Sinh năm 1940</p>
-          <p>xã An Sơn, TX. Thuận An</p>
-        </div>
-      </div>
+      <!-- Slides sẽ được tạo động từ JavaScript -->
     </div>
     <div class="dots">
-      <!-- Dots sẽ được tạo động bằng JS -->
+      <!-- Dots sẽ được tạo động -->
     </div>
   </div>
 
   <script>
-    const slidesPerView = 3; 
-
+    const slidesPerView = 3;
     document.documentElement.style.setProperty('--slides-per-view', slidesPerView);
 
-    const slides = document.querySelectorAll('.slide');
-    const totalSlides = slides.length;
+    const slider = document.querySelector('.slider');
     const dotsContainer = document.querySelector('.dots');
     let slideIndex = 0;
+    let slides = [];
+    let dots = [];
 
-    const totalDots = Math.ceil(totalSlides / slidesPerView);
-    for (let i = 0; i < totalDots; i++) {
-      const dot = document.createElement('span');
-      dot.classList.add('dot');
-      if (i === 0) dot.classList.add('active');
-      dot.addEventListener('click', () => currentSlide(i));
-      dotsContainer.appendChild(dot);
+    async function fetchData() {
+      const data = [
+        {
+          image: "https://via.placeholder.com/320x368",
+          name: "Mẹ Bùi Thị Lăng",
+          birthYear: 1926,
+          address: "phường Hiệp An, TP. Thủ Dầu Một"
+        },
+        {
+          image: "https://via.placeholder.com/320x368",
+          name: "Mẹ Nguyễn Thị Kéo",
+          birthYear: 1925,
+          address: "phường Hiệp An, TP. Thủ Dầu Một"
+        },
+        {
+          image: "https://via.placeholder.com/320x368",
+          name: "Mẹ Trần Thị Tư",
+          birthYear: 1940,
+          address: "xã An Sơn, TX. Thuận An"
+        }
+      ];
+      return Promise.resolve(data);
+
+      // Nếu dùng API thực tế, thay bằng:
+      // const response = await fetch('your-api-url');
+      // return await response.json();
     }
 
-    const dots = document.querySelectorAll('.dot');
+    function createSlides(data) {
+      data.forEach(item => {
+        const slide = document.createElement('div');
+        slide.classList.add('slide');
+        slide.innerHTML = `
+          <div class="image-container">
+            <img class="image-container-image" src="${item.image}" alt="${item.name}">
+          </div>
+          <div class="info">
+            <p><strong>${item.name}</strong></p>
+            <p>Sinh năm ${item.birthYear}</p>
+            <p>${item.address}</p>
+          </div>
+        `;
+        slider.appendChild(slide);
+      });
+    }
+
+    async function initSlider() {
+      const data = await fetchData();
+      createSlides(data);
+
+      slides = document.querySelectorAll('.slide');
+      const totalSlides = slides.length;
+      const totalDots = Math.ceil(totalSlides / slidesPerView);
+
+      for (let i = 0; i < totalDots; i++) {
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => currentSlide(i));
+        dotsContainer.appendChild(dot);
+      }
+
+      dots = document.querySelectorAll('.dot');
+      showSlides(slideIndex);
+
+      setInterval(() => {
+        slideIndex++;
+        showSlides(slideIndex);
+      }, 2000);
+    }
 
     function showSlides(index) {
+      const totalDots = Math.ceil(slides.length / slidesPerView);
       if (index >= totalDots) slideIndex = 0;
       if (index < 0) slideIndex = totalDots - 1;
 
-      const slider = document.querySelector('.slider');
       const offset = slideIndex * (100 / slidesPerView) * slidesPerView;
       slider.style.transform = `translateX(-${offset}%)`;
 
@@ -149,12 +179,7 @@
       showSlides(slideIndex);
     }
 
-    setInterval(() => {
-      slideIndex++;
-      showSlides(slideIndex);
-    }, 2000);
-
-    showSlides(slideIndex);
+    initSlider();
   </script>
 </body>
 </html>
