@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slider Mẹ Việt Nam Anh Hùng</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+    .slider-container {
+      width: 100%;
+      max-width: 72rem; /* Điều chỉnh tùy theo số thẻ hiển thị */
+      overflow: hidden;
+      position: relative;
+    }
+    .slider {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    .slide {
+      flex: 0 0 calc(100% / var(--slides-per-view)); /* Chia đều dựa trên số thẻ hiển thị */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      box-sizing: border-box;
+      padding: 0 10px;
+    }
+    /* Khung chứa ảnh mẹ VNAH */
+    .image-container {
+      width: 20rem;
+      height: 23rem;
+      border-radius: 3.125rem;
+      overflow: hidden;
+      background-color: white;
+    }
+    .image-container-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .info {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+    .info p {
+      margin: 0.2rem 0;
+    }
+    .dots {
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .dot {
+      height: 10px;
+      width: 10px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+    .dot.active {
+      background-color: #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="slider-container">
+    <div class="slider">
+      <div class="slide">
+        <div class="image-container">
+          <img class="image-container-image" src="https://via.placeholder.com/320x368" alt="Mẹ Bùi Thị Lăng">
+        </div>
+        <div class="info">
+          <p><strong>Mẹ Bùi Thị Lăng</strong></p>
+          <p>Sinh năm 1926</p>
+          <p>phường Hiệp An, TP. Thủ Dầu Một</p>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="image-container">
+          <img class="image-container-image" src="https://via.placeholder.com/320x368" alt="Mẹ Nguyễn Thị Kéo">
+        </div>
+        <div class="info">
+          <p><strong>Mẹ Nguyễn Thị Kéo</strong></p>
+          <p>Sinh năm 1925</p>
+          <p>phường Hiệp An, TP. Thủ Dầu Một</p>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="image-container">
+          <img class="image-container-image" src="https://via.placeholder.com/320x368" alt="Mẹ Trần Thị Tư">
+        </div>
+        <div class="info">
+          <p><strong>Mẹ Trần Thị Tư</strong></p>
+          <p>Sinh năm 1940</p>
+          <p>xã An Sơn, TX. Thuận An</p>
+        </div>
+      </div>
+    </div>
+    <div class="dots">
+      <!-- Dots sẽ được tạo động bằng JS -->
+    </div>
+  </div>
+
+  <script>
+    const slidesPerView = 3; 
+
+    document.documentElement.style.setProperty('--slides-per-view', slidesPerView);
+
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+    const dotsContainer = document.querySelector('.dots');
+    let slideIndex = 0;
+
+    const totalDots = Math.ceil(totalSlides / slidesPerView);
+    for (let i = 0; i < totalDots; i++) {
+      const dot = document.createElement('span');
+      dot.classList.add('dot');
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => currentSlide(i));
+      dotsContainer.appendChild(dot);
+    }
+
+    const dots = document.querySelectorAll('.dot');
+
+    function showSlides(index) {
+      if (index >= totalDots) slideIndex = 0;
+      if (index < 0) slideIndex = totalDots - 1;
+
+      const slider = document.querySelector('.slider');
+      const offset = slideIndex * (100 / slidesPerView) * slidesPerView;
+      slider.style.transform = `translateX(-${offset}%)`;
+
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[slideIndex].classList.add('active');
+    }
+
+    function currentSlide(index) {
+      slideIndex = index;
+      showSlides(slideIndex);
+    }
+
+    setInterval(() => {
+      slideIndex++;
+      showSlides(slideIndex);
+    }, 2000);
+
+    showSlides(slideIndex);
+  </script>
+</body>
+</html>
