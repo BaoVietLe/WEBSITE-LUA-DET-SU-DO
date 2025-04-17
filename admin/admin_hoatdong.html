@@ -12,6 +12,7 @@
     href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" 
     rel="stylesheet"
   >
+  <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
   <!-- Kết nối file CSS chính -->
   <link rel="stylesheet" href="./admin_css/admin.css">
@@ -37,10 +38,12 @@
           <h2>QUẢN LÝ <span>HOẠT ĐỘNG</span></h2>
           <div class="actions">
             <input type="text" placeholder="Tìm kiếm ..." />
+            <div class="button-group">
             <button class="filter-button">
-              <i class="filter-icon">🧩</i> Sắp xếp
+              <i class="fa-solid fa-filter"></i> Sắp xếp
             </button>
             <button class="add-button">Thêm mới</button>
+          </div>
           </div>
         </div>
       
@@ -58,7 +61,15 @@
             <div>ABCXYZ</div>
             <div>EYFG</div>
             <div>EEEE</div>
-            <div>QQQQQ</div>
+            <div class="action-buttons">
+              <button class="edit-btn">
+                <i class="fas fa-pen-to-square"></i>
+              </button>
+              <button class="delete-btn">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+            
           </div>
         </div>
       </div>
