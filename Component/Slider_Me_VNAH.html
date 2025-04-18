@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slider Mẹ Việt Nam Anh Hùng</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+    .slider-container {
+      width: 100%;
+      max-width: 72rem;
+      overflow: hidden;
+      position: relative;
+    }
+    .slider {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    .slide {
+      flex: 0 0 calc(100% / var(--slides-per-view));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      box-sizing: border-box;
+      padding: 0 10px;
+    }
+    .image-container {
+      width: 20rem;
+      height: 23rem;
+      border-radius: 3.125rem;
+      overflow: hidden;
+      background-color: white;
+    }
+    .image-container-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .info {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+    .info p {
+      margin: 0.2rem 0;
+    }
+    .dots {
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .dot {
+      height: 10px;
+      width: 10px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+    .dot.active {
+      background-color: #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="slider-container">
+    <div class="slider">
+      <!-- Slides sẽ được tạo động từ JavaScript -->
+    </div>
+    <div class="dots">
+      <!-- Dots sẽ được tạo động -->
+    </div>
+  </div>
+
+  <script>
+    const slidesPerView = 3;
+    document.documentElement.style.setProperty('--slides-per-view', slidesPerView);
+
+    const slider = document.querySelector('.slider');
+    const dotsContainer = document.querySelector('.dots');
+    let slideIndex = 0;
+    let slides = [];
+    let dots = [];
+
+    async function fetchData() {
+      const data = [
+        {
+          image: "https://via.placeholder.com/320x368",
+          name: "Mẹ Bùi Thị Lăng",
+          birthYear: 1926,
+          address: "phường Hiệp An, TP. Thủ Dầu Một"
+        },
+        {
+          image: "https://via.placeholder.com/320x368",
+          name: "Mẹ Nguyễn Thị Kéo",
+          birthYear: 1925,
+          address: "phường Hiệp An, TP. Thủ Dầu Một"
+        },
+        {
+          image: "https://via.placeholder.com/320x368",
+          name: "Mẹ Trần Thị Tư",
+          birthYear: 1940,
+          address: "xã An Sơn, TX. Thuận An"
+        }
+      ];
+      return Promise.resolve(data);
+
+      // Nếu dùng API thực tế, thay bằng:
+      // const response = await fetch('your-api-url');
+      // return await response.json();
+    }
+
+    function createSlides(data) {
+      data.forEach(item => {
+        const slide = document.createElement('div');
+        slide.classList.add('slide');
+        slide.innerHTML = `
+          <div class="image-container">
+            <img class="image-container-image" src="${item.image}" alt="${item.name}">
+          </div>
+          <div class="info">
+            <p><strong>${item.name}</strong></p>
+            <p>Sinh năm ${item.birthYear}</p>
+            <p>${item.address}</p>
+          </div>
+        `;
+        slider.appendChild(slide);
+      });
+    }
+
+    async function initSlider() {
+      const data = await fetchData();
+      createSlides(data);
+
+      slides = document.querySelectorAll('.slide');
+      const totalSlides = slides.length;
+      const totalDots = Math.ceil(totalSlides / slidesPerView);
+
+      for (let i = 0; i < totalDots; i++) {
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => currentSlide(i));
+        dotsContainer.appendChild(dot);
+      }
+
+      dots = document.querySelectorAll('.dot');
+      showSlides(slideIndex);
+
+      setInterval(() => {
+        slideIndex++;
+        showSlides(slideIndex);
+      }, 2000);
+    }
+
+    function showSlides(index) {
+      const totalDots = Math.ceil(slides.length / slidesPerView);
+      if (index >= totalDots) slideIndex = 0;
+      if (index < 0) slideIndex = totalDots - 1;
+
+      const offset = slideIndex * (100 / slidesPerView) * slidesPerView;
+      slider.style.transform = `translateX(-${offset}%)`;
+
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[slideIndex].classList.add('active');
+    }
+
+    function currentSlide(index) {
+      slideIndex = index;
+      showSlides(slideIndex);
+    }
+
+    initSlider();
+  </script>
+</body>
+</html>
