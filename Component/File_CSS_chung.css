@@ -605,7 +605,20 @@ body::-webkit-scrollbar-thumb:hover {
 
 /* Bảng title đề mục cách kiểu/ Bảng title vuông - Tâm Đan */
 .section-title {
+  position: relative;
+  text-align: center;
+  padding: 10px 20px;
+}
 
+.section-title-nd {
+  background-color: #c42f2f;
+  color: #f5d387;
+  font-weight: bold;
+  padding: 15px 30px;
+  border-radius: 0 0 50px 50px;
+  display: inline-block;
+  font-size: 18px;
+  margin: 0 auto;
 }
 
 /* Thuộc tính preview ảnh trên các page chi tiết hoạt động - Tâm Đan */
