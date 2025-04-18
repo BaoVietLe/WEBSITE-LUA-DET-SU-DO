@@ -173,7 +173,7 @@ body {
   .custom-table th,
   .custom-table td {
     padding: 12px 16px;
-    text-align: center;
+    text-align: left !important;
     border-bottom: 1px solid #eee;
   }
   
