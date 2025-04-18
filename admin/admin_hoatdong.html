@@ -32,6 +32,7 @@
             <li><a href="./admin_hoatdong.html">Thông tin mẹ VNAH</a></li>
         </ul>
     </div>
+
     <div class="main-content">
       <div class="activity-management">
         <div class="header">
@@ -47,31 +48,53 @@
           </div>
         </div>
       
-        <div class="table-container">
-          <div class="table-header">
-            <div>ID</div>
-            <div>Thuộc tính 1</div>
-            <div>Thuộc tính 2</div>
-            <div>Thuộc tính 3</div>
-            <div>Thuộc tính 4</div>
-          </div>
+        <table class="custom-table">
+
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Thuộc tính 1</th>
+              <th>Thuộc tính 2</th>
+              <th>Thuộc tính 3</th>
+              <th>Thuộc tính 4</th>
+            </tr>
+          </thead>
+          
+          <tbody>
+            <tr>
+              <td>01</td>
+              <td>ABCXYZ</td>
+              <td>EYFG</td>
+              <td>EEEE</td>
+              <td class="action-buttons">
+                <button class="edit-btn"><i class="fas fa-pen-to-square"></i></button>
+                <button class="delete-btn"><i class="fas fa-trash"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td>01</td>
+              <td>ABCXYZ</td>
+              <td>EYFG</td>
+              <td>EEEE</td>
+              <td class="action-buttons">
+                <button class="edit-btn"><i class="fas fa-pen-to-square"></i></button>
+                <button class="delete-btn"><i class="fas fa-trash"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td>01</td>
+              <td>ABCXYZ</td>
+              <td>EYFG</td>
+              <td>EEEE</td>
+              <td class="action-buttons">
+                <button class="edit-btn"><i class="fas fa-pen-to-square"></i></button>
+                <button class="delete-btn" onclick="return confirm('Bạn có chắc chắn muốn xóa không?')"><i class="fas fa-trash"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       
-          <div class="table-row">
-            <div>01</div>
-            <div>ABCXYZ</div>
-            <div>EYFG</div>
-            <div>EEEE</div>
-            <div class="action-buttons">
-              <button class="edit-btn">
-                <i class="fas fa-pen-to-square"></i>
-              </button>
-              <button class="delete-btn">
-                <i class="fas fa-trash"></i>
-              </button>
-            </div>
-            
-          </div>
-        </div>
+      
       </div>
       
     </div>

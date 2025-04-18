@@ -154,40 +154,37 @@ body {
     color: white;
   }
   
-  .table-container {
+  .custom-table {
+    width: 100%;
+    border-collapse: collapse;
     background: white;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
   }
   
-  .table-header,
-  .table-row {
-    display: grid;
-    grid-template-columns: 1fr 2fr 2fr 2fr 2fr;
-    padding: 12px 16px;
-    align-items: center;
-  }
-  
-  .table-header {
-    background: rgb(157, 166, 252);
-    font-weight: bold;
-    border-bottom: 2px solid #eee;
-    color: #4c4cff;
-  }
-  
-  .table-row {
-    background: #0f0f23;
+  .custom-table thead {
+    background-color: #1919ba;
     color: white;
-    margin: 8px;
-    border-radius: 12px;
+    font-weight: bold;
   }
-
-  /* Nút hành động */
+  
+  .custom-table th,
+  .custom-table td {
+    padding: 12px 16px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .custom-table tr:last-child td {
+    border-bottom: none;
+  }
+  
   .action-buttons {
     display: flex;
-    gap: 10px;
     justify-content: center;
+    gap: 10px;
   }
   
   .action-buttons button {
@@ -212,4 +209,8 @@ body {
     background-color: #dc3545; /* Red */
   }
   
-  
+  /* Optional: Hover effect for better UI */
+  .custom-table tbody tr:hover {
+    background-color: #f9f9f9;
+  }
+    
