@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File copy code html của css chung </title>
+    <link rel="stylesheet" href="./File_CSS_chung.css">
+</head>
+<body>
+  <button class="button">
+    <div class="button-text">
+        <span>TÌM HIỂU THÊM VỀ</span>
+        <span>MẸ VIỆT NAM ANH HÙNG</span>
+    </div>
+</button>
+    <div class="search-bar">
+        <form class="search-bar-form" id="searchForm">
+          <div class="search-bar-inputs" id="searchInputs">
+            <input type="text" class="search-bar-main-input" id="mainInput" placeholder="search-bar-value-tag">
+          </div>
+          <button type="submit" class="search-bar-search-btn">
+            <svg class="search-bar-search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+        </form>
+      </div>
+      
+      <div class="search-bar-suggestion" id="suggestion">
+        Gợi ý: Mẹ Trần Văn Kéo, Quận 4, Chiến dịch Mậu Thân 1968
+      </div>
+
+      <div class="program-info">
+        <div class="program-info-box">
+          <div class="program-info-number">18K+</div>
+          <div class="program-info-label">LƯỢT TIẾP CẬN</div>
+        </div>
+        <div class="program-info-box">
+          <div class="program-info-number">12K+</div>
+          <div class="program-info-label">LƯỢT THÍCH</div>
+        </div>
+        <div class="program-info-box">
+          <div class="program-info-number">100+</div>
+          <div class="program-info-label">NGƯỜI THAM GIA</div>
+        </div>
+      </div>
+      <div class="homepage-title">
+        Chuỗi hoạt động về nguồn<br>cùng khoa Công nghệ thông tin kinh doanh
+      </div>
+      <div class="sub-header">
+        NHỮNG HOẠT ĐỘNG ĐÃ THỰC HIỆN
+      </div>
+      <div class="avatar">
+        <img src="./Ảnh/HD_1.png" alt="Ảnh tròn">
+      </div>
+      <div class="image-info-no-action">
+        <img src="duongdan_anh_tu_mysql.jpg" alt="Hình ảnh hoạt động" class="activity-info-image">
+      
+        <div class="image-info-no-action-content">
+          <div class="image-info-no-action-title">
+            KỶ NIỆM 50 NĂM<br>NGÀY GIẢI PHÓNG MIỀN NAM
+          </div>
+          <div class="image-info-no-action-date">
+            30/04/1975 - 30/04/2025
+          </div>
+        </div>
+      </div>
+      
+      <?php
+// Kiểm tra xem GET parameter 'id' có tồn tại và là số không
+if (isset($_GET['id']) && is_numeric($_GET['id'])) {
+    $activity_id = intval($_GET['id']);
+} else {
+    echo "<p>ID không hợp lệ.</p>";
+    exit;
+}
+
+// Truy vấn dữ liệu theo ID
+$sql = "SELECT * FROM activity_info WHERE id = $activity_id";
+$result = $conn->query($sql);
+
+if ($result && $result->num_rows > 0) {
+    // Vì chỉ có 1 dòng dữ liệu với khóa chính, nên dùng fetch_assoc() trực tiếp
+    $row = $result->fetch_assoc();
+    echo '
+    <div class="image-info-no-action">
+        <img src="' . $row["image_path"] . '" alt="Hình ảnh hoạt động" class="activity-info-image">
+        <div class="image-info-no-action-content">
+            <div class="image-info-no-action-title">'
+              . strtoupper($row["title"]) . '<br>' . strtoupper($row["subtitle"]) .
+            '</div>
+            <div class="image-info-no-action-date">' . $row["date_range"] . '</div>
+        </div>
+    </div>';
+} else {
+    echo '<p>Không có dữ liệu hoạt động cho ID này.</p>';
+}
+
+$conn->close();
+?>
+
+      <script src="./script_.js"></script>
+</body>
+</html>
