@@ -1,0 +1,401 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+.Quy_container {
+    max-width: 90rem;
+    margin: 0 auto;
+    border: green 0.0625rem solid;
+}
+
+/* Hero Section */
+.Quy_hero_section {
+    position: relative;
+    color: white;
+    text-align: center;
+    padding: 3.75rem 0;
+    overflow: hidden;
+    height: 59.6875rem;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Quy_hero_section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.Quy_hero_section h1 {
+    font-size: 4rem;
+    color: #D20920;
+    font-weight: bold;
+    margin-bottom: 4rem;
+    line-height: 1.3;
+    position: absolute;
+    top:7.5rem;
+    z-index: 1;
+}
+
+.Quy_hero_section_total_amount {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(1, 119, 190, 0.87);
+    padding: 1.25rem 1.25rem 1.25rem 0;
+    margin-top: 6.25rem;
+    border-radius: 3.75rem;
+    width: 67.9375rem;
+    height: 16.625rem;
+    margin: 0 auto;
+    position: absolute;
+    z-index: 1;
+    top:25rem;
+}
+
+.Quy_hero_section_total_amount p {
+    font-size: 2.375rem;
+    margin-bottom: 0.625rem;
+    color: var(--web-campaign-2);
+}
+
+.Quy_hero_section_total_amount h2 {
+    font-size: 6.875rem;
+    font-weight: bold;
+    color:#F1EADE;
+}
+
+.Quy_hero_section_sub_text {
+    color: white;
+    font-size: 1.375rem;
+    font-weight: bold;
+    margin-top: auto;
+    margin-bottom: 0.9375rem;
+    animation: bounce 2s infinite;
+    text-shadow: 0 0 0.3125rem rgba(0, 0, 0, 0.5);
+    position: absolute;
+    bottom: 1.25rem;
+    z-index: 1;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-0.4375rem);
+    }
+}
+
+/* QR Code Section */
+.Quy_QR_section {
+    padding: 2.5rem 0;
+}
+
+.Quy_QR_section_div {
+    background-color: #D7283C;
+    border-radius: 5.625rem;
+    padding: 1.875rem;
+    height: 37.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1.875rem;
+    margin-right: 1.875rem;
+}
+
+.Quy_QR_section_QR {
+    width: 30.375rem;
+    height: 30.375rem;
+    margin-left: 3.125rem;
+    border-radius: 0.625rem;
+    overflow: hidden;
+}
+
+.Quy_QR_section_QR img {
+    width: 100%;
+    height:100%;    
+    object-fit: cover;
+}
+
+.Quy_QR_section_QR_info {
+    margin-left: 6.25rem;
+    color: white;
+    max-width: 43.75rem;
+}
+
+.Quy_QR_section_QR_info h3 {
+    font-size: 3.125rem;
+    font-weight: bold;
+    margin-bottom: 1.25rem;
+}
+
+.Quy_QR_section_QR_info p {
+    font-size: 2.5rem;
+    margin-bottom: 0.625rem;    
+}
+
+/* Revenue Stats */
+.Thong_ke_section_div {
+    padding: 1.875rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: lightpink;
+    border-radius: 3.125rem;
+}
+
+.Thong_ke_section_title {
+    width: 54.375rem;
+    background: linear-gradient(to right, #D20920 0%, #BF3444);
+    color: var(--web-campaign-2);
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.125rem;
+    padding: 1.625rem;
+    border-radius: 6.25rem 0 6.25rem 0;
+    margin-bottom: 1.875rem;
+    text-align: center;
+}
+
+.Remove {
+    border: 0.0625rem solid blue;
+}
+
+.search-filter {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+}
+
+.search-bar {
+    flex: 1;
+    position: relative;
+    max-width: 37.5rem;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 0.75rem 1.25rem;
+    border-radius: 1.5625rem;
+    border: 0.0625rem solid #ddd;
+    background-color: #111;
+    color: white;
+}
+
+.filter-btn {
+    background-color: white;
+    border: 0.0625rem solid #ddd;
+    padding: 0.5rem 0.9375rem;
+    border-radius: 0.3125rem;
+    cursor: pointer;
+}
+
+.tabs {
+    display: flex;
+    margin-bottom: 1.25rem;
+}
+
+.tab {
+    background: none;
+    border: none;
+    padding: 0.625rem 1.25rem;
+    cursor: pointer;
+    color: #666;
+}
+
+.tab.active {
+    color: #0e73b9;
+    border-bottom: 0.125rem solid #0e73b9;
+}
+
+.revenue-table {
+    margin-bottom: 1.875rem;
+}
+
+.table-row {
+    display: flex;
+    background-color: #151632;
+    color: white;
+    padding: 0.9375rem;
+    margin-bottom: 0.625rem;
+    border-radius: 0.625rem;
+}
+
+.amount {
+    flex: 0 0 6.25rem;
+}
+
+.account, .type, .date {
+    flex: 1;
+}
+
+/* News Section */
+.News_section {
+    padding: 1.875rem 0;
+}
+
+.News_section h2 {
+    text-align: center;
+    margin-bottom: 1.875rem;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.News_item_list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5625rem;
+}
+
+.News_item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 1.875rem;
+    padding: 0.625rem;
+    height: 12.3125rem;
+    overflow: hidden;
+    box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.5);
+}
+
+.News_item_image {
+    height: 8.5625rem;
+    width: 23.375rem;
+}
+
+.News_item_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.News_item_title {
+    padding-left: 0.9375rem;
+    flex: 1;
+}
+
+.News_item_title p {
+    font-size: 1.25rem;
+    color: gray;
+    margin-bottom: 0.625rem;
+}
+
+.News_item_title h3 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+/* Stats Section */
+.Stats_section {
+    display: flex;
+    width: 84.8125rem;
+    border-radius: 0.625rem;
+    justify-content: space-around;
+    padding: 1.875rem 0;
+    background-color: white;
+    text-align: center;
+    margin: 1.875rem;
+}
+
+.Stats_item h2 {
+    color: #9D9D18;
+    font-size: 5rem;
+    margin-bottom: 0.625rem;
+}
+
+.Stats_item p {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+/* Quy Info Section */
+.Quy_info_section {
+    padding: 1.875rem 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Quy_info_section_title {
+    width: 54.375rem;
+    background-color: #FBF3B7;
+    color: var(--web-campaign-1);
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.125rem;
+    padding: 1.625rem;
+    border-radius: 6.25rem 0 6.25rem 0;
+    margin-bottom: 1.875rem;
+    text-align: center;
+}
+
+.Quy_info_section_content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--web-campaign-1);
+    height: 20.4375rem;
+    margin: 0 auto;
+    padding: 1.875rem;
+}
+
+.Quy_info_section_content_title {
+    flex: 1;
+    padding-right: 2.1875rem;
+}
+
+.Quy_info_section_content_title h3 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--web-campaign-2);
+    text-shadow:
+        -0.0625rem -0.0625rem 0 #c4001a,
+        0.0625rem -0.0625rem 0 #c4001a,
+        -0.0625rem 0.0625rem 0 #c4001a,
+        0.0625rem 0.0625rem 0 #c4001a;
+    margin-bottom: 1rem;
+}
+
+.Quy_info_section_content_title p {
+    color: var(--web-campaign-2);
+    font-weight: normal;
+    padding: 0.25rem 0.625rem;
+    font-size: 1rem;
+    text-align: justify;
+}
+
+.Quy_info_section_image {
+    border-radius: 3.125rem;
+    height: 20.4375rem;
+    width: 37.125rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Quy_info_section_image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}

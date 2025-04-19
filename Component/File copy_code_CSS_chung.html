@@ -99,7 +99,89 @@ if ($result && $result->num_rows > 0) {
 
 $conn->close();
 ?>
-
+      <!--Khung chứa thông tin hoạt động-->
+    <div class="activity-info">
+        <img src="Ảnh\HD_1.png" alt="Khu di tích lịch sử Củ Chi" class="activity-info-image">
+        <div class="activity-info-content">
+            <div class="activity-info-title">Khu di tích lịch sử Củ Chi</div>
+            <div class="activity-info-date-button">
+                <div class="activity-info-date">26/03/2024</div>
+                <button class="activity-info-button">Chi tiết</button>
+            </div>            
+        </div>
+    </div>
+    <!--Khung chứa ảnh mẹ Việt Nam anh hùng-->
+    <div class="image-container"><img src="Ảnh\HD_1.png" alt="Ảnh mẹ Việt Nam anh hùng" class=" image-container-image"></div>
+    <!--Bản tin hoạt động quỹ theo tháng-->
+    <div class="fund-news-container">
+        <div class="fund-news-sapotext">
+            <div class="fund-news-sapotext-textbox">
+                <p>
+                    Tháng Tư – tháng của những kỷ ức lịch sử và lòng biết ơn – Quỹ Vinh danh Anh hùng tiếp tục hành trình tri ân, lan tỏa những giá trị cao đẹp của tinh thần yêu nước và sự hy sinh thầm lặng. Bản tổng kết tháng 04/2025 không chỉ ghi lại những con số đóng góp đầy ý nghĩa, mà còn là câu chuyện về sự chung tay của cộng đồng trong việc giữ gìn và tôn vinh hình ảnh những người Anh hùng – những ngọn đuốc soi đường cho thế hệ hôm nay. Hãy cùng nhìn lại những dấu ấn đặc biệt trong tháng vừa qua và cùng thắp sáng thêm ngọn lửa tri ân.
+                </p>
+            </div>
+            <div class="fund-news-sapotext-button-container">
+                <button class="fund-news-sapotext-button"><p class="fund-news-sapotext-text">XEM TIẾP</p></button>
+            </div>
+        </div>
+        
+        <div class="fund-news-picture">
+            <img src="Ảnh/HD_1.png" alt="Ảnh tổng kết" class="fund-news-picture-img">
+        </div>
+        <div class="fund-news-title">
+            <div class="fund-news-title-textbox"> 
+                <div class="fund-news-title-text">
+                    Tổng kết quỹ vinh danh anh hùng tháng 3 - 2025
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="activity-info-card">
+        <img src="duongdan_anh_tu_mysql.jpg" alt="Hình ảnh hoạt động" class="activity-info-image">
+      
+        <div class="activity-info-content">
+          <div class="activity-info-title">
+            KỶ NIỆM 50 NĂM<br>NGÀY GIẢI PHÓNG MIỀN NAM
+          </div>
+          <div class="activity-info-date">
+            30/04/1975 - 30/04/2025
+          </div>
+        </div>
+      </div>
+       <!-- Phần hiển thị thẻ thông tin hoạt động được lấy động từ database -->
+       <?php
+       $sql = "SELECT * FROM activity_info";
+       $result = $conn->query($sql);
+       if ($result->num_rows > 0) {
+           while($row = $result->fetch_assoc()) {
+               echo '
+               <div class="image-info-no-action">
+                   <img src="'.$row["image_path"].'" alt="Hình ảnh hoạt động" class="activity-info-image">
+                   <div class="image-info-no-action-content">
+                       <div class="image-info-no-action-title">'
+                         . strtoupper($row["title"]) . '<br>' . strtoupper($row["subtitle"]) .
+                       '</div>
+                       <div class="image-info-no-action-date">'.$row["date_range"].'</div>
+                   </div>
+               </div>';
+           }
+       } else {
+           echo '<p>Không có dữ liệu hoạt động.</p>';
+       }
+       $conn->close();
+    ?>   
+    <div class="image-info-no-action">
+        <img src="duongdan_anh_tu_mysql.jpg" alt="Hình ảnh hoạt động" class="activity-info-image">
+      
+        <div class="image-info-no-action-content">
+          <div class="image-info-no-action-title">
+            KỶ NIỆM 50 NĂM<br>NGÀY GIẢI PHÓNG MIỀN NAM
+          </div>
+          <div class="image-info-no-action-date">
+            30/04/1975 - 30/04/2025
+          </div>
+        </div>
+      </div>
       <script src="./script_.js"></script>
 </body>
 </html>
