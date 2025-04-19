@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trang Vinh Danh</title>
+  <link rel="stylesheet" href="./Bang_vinh_danh.css" />
+  <link rel="stylesheet" href="../Component/File_CSS_chung.css"/>
+
+</head>
+<body>
+  <div style="height:101px">Header</div>
+  <div style="height:923px; background-color: coral": red></div>Slide picture</div>
+  
+  <button id="scroll-button" class="scroll-button">
+    <img id="scroll-button-icon" src="../Component/Ảnh/Chevrons up.png" alt="scroll up">
+  </button>
+
+  <script>
+    const scroll_button = document.getElementById('scroll-button');
+    const scroll_button_icon = document.getElementById('scroll-button-icon');
+  
+    let at_top_of_page = false;
+  
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 500) {
+        scroll_button.style.display = 'block';
+      } else {
+        scroll_button.style.display = 'none';
+      }
+    });
+  
+    scroll_button.addEventListener('click', function () {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>  
+
+  <section class="Section_BVD">
+    <div class="Section_BVD_title_div"; id="Section_BVD_id">
+      <div class="Header_BVD_title_text">BẢNG VINH DANH</div>
+      <div class="Header_BVD_sub_text">COMMING SOON</div>
+    </div>
+  </section>
+  
+</body>
+</html>
