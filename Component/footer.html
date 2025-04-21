@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>FOOTER</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Reset some styles to prevent conflicts */
+.footer, .footer * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Footer main container - positioned independently from the main layout */
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative; /* Changed from fixed to relative to avoid affecting layout */
+  bottom: auto; /* Auto positioning instead of fixed 20px */
+  background-color: #f5f5f5;
+  padding: 30px 0;
+  margin-top: 50px; /* Add space above footer */
+  z-index: 1; /* Keep above other elements but not interfering with modals */
+}
+
+.footer-CTA {
+  width: 31rem;
+  max-width: 90%; /* Make it responsive */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #6CA9C3 0%, #122CD4 47%, #3F6BCC 100%);
+  padding: 30px 50px;
+  border-radius: 100px 0 100px 0;
+  color: white;
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+}
+
+.footer-CTA-btn {
+  background: white;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 10px;
+  color: #122CD4;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.footer-CTA-btn:hover {
+  transform: scale(1.1);
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 1200px;
+  max-width: 95%; /* Make it responsive */
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+/* Cột đầu tiên chứa logo + brand-name + slogan + social-icons */
+.footer-left {
+  display: flex;
+  flex: 1;
+  width: 50%;
+  min-width: 300px; /* Ensure minimum width for small screens */
+  align-items: center;
+  white-space: nowrap;
+  margin-bottom: 20px; /* Add space for wrapping on small screens */
+}
+
+.footer-left-logo {
+  flex: 1;
+  max-width: 120px; /* Limit logo width */
+  display: flex;
+  justify-content: center;
+}
+
+.BIT-logo {
+  width: 100%;
+  max-width: 120px;
+}
+
+.footer-left-content {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 20px;
+}
+
+.brand-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  text-align: left;
+  margin: 16px 16px 16px 0;
+}
+
+.brand-slogan {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.social-icons i {
+  font-size: 24px;
+  color: #3F6BCC;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.social-icons i:hover {
+  transform: scale(1.1);
+}
+
+/* Các cột khác (My Account, Resources, Company) */
+.footer-right {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 30%;
+  min-width: 300px; /* Ensure minimum width for small screens */
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 100px;
+  margin-bottom: 20px; /* Add space for wrapping on small screens */
+}
+
+.footer-column h3 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #122CD4;
+  margin-bottom: 5px;
+}
+
+.footer-column a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.footer-column a:hover {
+  color: #122CD4;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-CTA {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .footer-left {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  
+  .footer-right {
+    width: 100%;
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-left {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-left-content {
+    padding-left: 0;
+    align-items: center;
+  }
+  
+  .brand-name, .brand-slogan {
+    text-align: center;
+    margin: 10px 0;
+  }
+  
+  .footer-right {
+    justify-content: center;
+    gap: 40px;
+  }
+}
+    </style>
+    <script src=""></script>
+</head>
+
+<body>
+  <footer class="footer">
+
+    <div class="footer-CTA">
+      <span>BECOME BIT - ER</span>
+      <button class="footer-CTA-btn">JOIN COMMUNITY</button>
+    </div>
+
+    <div class="footer-container">
+      <!-- Cột chứa logo, tên, slogan, social -->
+      <div class="footer-left">
+            <div class="footer-left-logo">
+                <img src="Thanh_Navigation_khoa/assets/images/bit-logo.png" alt="Logo" class="BIT-logo">
+            </div>
+
+            <div class="footer-left-content">
+                <h4 class="brand-name">Đoàn - Hội Khoa Công nghệ Thông tin kinh doanh</h4>
+                <p class="brand-slogan">Bring Business and Technology Together</p>
+                <div class="social-icons">
+                    <i class="fa-brands fa-facebook-square"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-solid fa-envelope"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                </div>
+            </div>
+      </div>
+  
+      <!-- Các cột khác -->
+      <div class="footer-right">
+          <div class="footer-column">
+              <h3>My Account</h3>
+              <a href="#">Profile</a>
+              <a href="#">Settings</a>
+              <a href="#">Billing</a>
+          </div>
+  
+          <div class="footer-column">
+              <h3>Resources</h3>
+              <a href="#">Documentation</a>
+              <a href="#">FAQ</a>
+              <a href="#">Support</a>
+          </div>
+  
+          <div class="footer-column">
+              <h3>Company</h3>
+              <a href="#">About Us</a>
+              <a href="#">Careers</a>
+              <a href="#">Contact</a>
+          </div>
+      </div>
+  </div>
+  
+  </footer>
+</body>
+
+</html>
