@@ -286,10 +286,14 @@ session_start();
   <!-- Edit data -->
   <!-- Delete data -->
   <script>
-    $(document).ready(function name(params) {
+    $(document).ready(function () {
 
       $('.delete-btn').click(function (e) {
         e.preventDefault();
+        var confirmDelete = confirm("Bạn có chắc chắn muốn xóa mục này không?");
+        if (!confirmDelete) {
+          return; // Nếu người dùng chọn Hủy thì thoát khỏi hàm
+        }
         var anhhung_id = $(this).closest('tr').find('.anhhung_id').text();
         $.ajax({
           method: 'POST',
@@ -299,6 +303,8 @@ session_start();
             'anhhung_id': anhhung_id,
           },
           success: function (response) {
+            console.log(response);
+            window.location.reload();
           }
         })
       });
