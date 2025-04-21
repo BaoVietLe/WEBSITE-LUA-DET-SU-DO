@@ -207,7 +207,7 @@ body {
   gap: 10px;
 }
 
-.action-buttons button {
+.action-buttons a {
   border: none;
   border-radius: 8px;
   padding: 10px;
@@ -219,6 +219,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
 }
 
 .edit-btn {
@@ -228,6 +229,16 @@ body {
 
 .delete-btn {
   background-color: #dc3545;
+  /* Red */
+}
+
+.edit-btn:hover {
+  background-color: #28a745;
+  background-color: #218838;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
   /* Red */
 }
 
