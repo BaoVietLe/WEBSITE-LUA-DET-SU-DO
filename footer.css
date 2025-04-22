@@ -54,16 +54,16 @@ body {
     justify-content: space-between;
     align-items: flex-start;
     width: 1200px;
-    margin: 0 auto;
     flex-wrap: wrap;
-    margin: 30px 0;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
   }
   
   /* Cột đầu tiên chứa logo + brand-name + slogan + social-icons */
   .footer-left {
     display: flex;
+    flex-direction: column;
     flex: 1;
-    width: 50%;
     align-items: center; 
     white-space: nowrap;
   }
@@ -71,16 +71,21 @@ body {
     flex: 1;
     display: flex;
     justify-content: center;
+    align-items: center;
   }
-  
-  .BIT-logo {
-    width: 120px;
+  .footer-left-logo img {
+    height: 30px;
+    margin: 0 10px;
     max-width: 100%;
+  }
+  .BIT-logo {
+    height: 25px !important;
   }
   .footer-left-content {
     flex: 1.5;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center; /* Canh giữa nội dung theo chiều dọc */
     padding-left: 20px; /* Tạo khoảng cách với logo */
   }
@@ -90,14 +95,14 @@ body {
     font-weight: bold;
     color: #333;
     text-align: left;
-    margin: 16px 16px 16px 0;
+    margin: 16px;
   }
   
   .brand-slogan {
     font-size: 14px;
     color: #666;
     margin-bottom: 10px;
-    margin-top: 10px;
+    margin-top: 0px;
     text-align: left;
   }
   
@@ -121,6 +126,7 @@ body {
   /* Các cột khác (My Account, Resources, Company) */
   .footer-right {
     display: flex;
+    flex:1;
     gap: 40px;
     flex-wrap: wrap;
   }
@@ -136,6 +142,7 @@ body {
     font-size: 16px;
     font-weight: bold;
     color: #122CD4;
+    margin-top: 0;
     margin-bottom: 5px;
   }
   
