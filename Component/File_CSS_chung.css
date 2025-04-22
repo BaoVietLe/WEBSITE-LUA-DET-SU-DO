@@ -53,8 +53,8 @@
 }
 .button-white {
   background-color: transparent;
-  color: var(--web-khoa-1);
-  border: 2px solid #333;
+  color: var(--web-khoa-2);
+  border: 2px solid var(--web-khoa-2);
   box-shadow: none;
 }
 .button-text {
@@ -67,6 +67,7 @@
 }
 .button:hover {
   background-color: var(--web-campaign-2); /* Darker red on hover */
+  color: var(--web-khoa-1);
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3);
 }
 .button-container {
@@ -359,9 +360,9 @@
 }
 
 .activity-info-button {
-  background-color: var(--web-khoa-1);
+background-color: var(--web-khoa-1);
   color: var(--web-khoa-2);
-  padding: 3px 20px 3px 20px;
+  padding: 3px 12px; /* Giảm padding ngang */
   border-radius: 20px;
   font-size: 13px !important;
   font-weight: bold;
@@ -369,6 +370,7 @@
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  width: fit-content; /* Nút co lại đúng bằng nội dung */
 }
 
 .activity-info-button:hover{
@@ -458,20 +460,19 @@
 .fund-news-container {
   position: relative;
   max-width: 85rem;
-  height: 48.875rem;
-  background-color: var(--web-campaign-1);
+  height: 40rem;
 }
 
 /* Layer 1 (Top) */
 .fund-news-sapotext {
   position: absolute;
   top: 0rem;
-  left: 63.125rem;
+  left: 50rem;
   right: 0rem;
   background-color: rgba(217, 0, 0, 0.68);
   border-radius: 3.75rem;
-  width: 21.5rem;
-  height: 48.688rem;
+  width: 20rem;
+  height: 43rem;
   display: flex;
   flex-direction: column;
   z-index: 3;
@@ -480,7 +481,7 @@
 
 .fund-news-sapotext-textbox {
   flex-grow: 1;
-  height: 40.5rem;
+  height: 40rem;
   margin: 1.875rem 1.563rem 1.563rem 1.563rem;
 }
 
@@ -488,7 +489,7 @@
   font-family: 'Roboto';
   text-align: justify;
   color: var(--web-campaign-2);
-  font-size: 1.5rem;
+  font-size: 1.345rem;
 }
 
 .fund-news-sapotext-button-container {
@@ -499,7 +500,7 @@
   align-items: center;
   background-color: rgba(114, 103, 103, 0.2);
   border-radius: 0 0 3.75rem 3.75rem;
-  margin-top: 0.938rem;
+  margin-top: -0.525rem;
 }
 
 .fund-news-sapotext-button {
@@ -520,8 +521,8 @@
   position: absolute;
   top: 0rem;
   left: 0rem;
-  width: 64.25rem;
-  height: 34.938rem;
+  width: 50rem;
+  height: 30rem;
   border-radius: 3.75rem;
   overflow: hidden;
   z-index: 2;
@@ -538,8 +539,8 @@
   position: absolute;
   top: 0rem;
   left:0.5rem;
-  width: 63.188rem;
-  height: 48.688rem;
+  width: 50rem;
+  height: 43rem;
   text-transform: uppercase;
   z-index: 1;
 }
