@@ -7,7 +7,7 @@ session_start();
 <head>
   <meta charset="UTF-8"> <!-- Thiết lập mã hóa ký tự -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive cho di động -->
-  <title>Quản lý anh hùng</title>
+  <title>Quản lý sinh viên</title>
 
   <!-- Preconnect & Import Font Roboto -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,14 +24,14 @@ session_start();
     </symbol>
   </svg>
   <!-- Kết nối file CSS chính -->
-  <link rel="stylesheet" href="./admin_css/admin.css">
+  <link rel="stylesheet" href="../admin_css/admin.css">
 </head>
 
 <body>
   <div class="sidebar">
     <div class="admin_logo">
-      <a href="./admin.html">
-        <img src="./BIT-logo-white.png" alt="Logo" class="BIT-logo">
+      <a href="../admin.html">
+        <img src="../BIT-logo-white.png" alt="Logo" class="BIT-logo">
       </a>
     </div>
 
@@ -46,7 +46,7 @@ session_start();
   <div class="main-content">
     <div class="activity-management">
       <div class="header">
-        <h2>QUẢN LÝ <span>MẸ VIỆT NAM ANH HÙNG</span></h2>
+        <h2>QUẢN LÝ <span>Sinh viên chia sẻ</span></h2>
         <!-- Thông báo status -->
         <?php
         if (isset($_SESSION['status']) && $_SESSION['status'] != '') {
@@ -87,7 +87,7 @@ session_start();
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
-            <form action="solve_admin.php" method="POST">
+            <form action="../admin_solve/solve_anhhung.php" method="POST" enctype="multipart/form-data">
               <div class="modal-body">
 
                 <div class="form-group mb-4">
@@ -141,7 +141,7 @@ session_start();
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
-            <form action="solve_admin.php" method="POST">
+            <form action="../admin_solve/solve_anhhung.php" method="POST" enctype="multipart/form-data">
               <div class="modal-body">
                 <div class="form-group mb-4">
                   <input type="hidden" name="anhhung_id" id="anhhung_id" class="form-control">
@@ -209,7 +209,7 @@ session_start();
 
         <tbody>
           <?php
-          include('../Config/connect.php');
+          include('../../Config/connect.php');
           $query = "SELECT anhhung_id, anhhung_img, anhhung_name, anhhung_date, anhhung_home, anhhung_chiencong, anhhung_note FROM anhhung";
           $result = $conn->query($query);
           if ($result->num_rows > 0) {
@@ -260,7 +260,7 @@ session_start();
 
         $.ajax({
           method: 'POST',
-          url: 'solve_admin.php',
+          url: '../admin_solve/solve_anhhung.php',
           data: {
             'click_edit_btn': true,
             'anhhung_id': anhhung_id,
@@ -297,7 +297,7 @@ session_start();
         var anhhung_id = $(this).closest('tr').find('.anhhung_id').text();
         $.ajax({
           method: 'POST',
-          url: 'solve_admin.php',
+          url: '../admin_solve/solve_anhhung.php',
           data: {
             'click_delete_btn': true,
             'anhhung_id': anhhung_id,
