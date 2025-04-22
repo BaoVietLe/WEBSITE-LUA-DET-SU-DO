@@ -8,6 +8,7 @@
 }
 
 body {
+    background: url('../Component/background-img.png');
     overflow-x: hidden;
 }
 .slider-container {
@@ -128,43 +129,6 @@ body {
     flex-wrap: none;
     gap: 20px;
     margin-top: 20px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 15px 25px;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 15px;
-    transition: all 0.3s ease;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.btn-primary {
-    background-color: #c41111;
-    color: white;
-    border: 2px solid #c41111;
-    max-width: 300px;
-}
-
-.btn-primary:hover {
-    background-color: #a30d0d;
-    border-color: #a30d0d;
-}
-
-.btn-outline {
-    background-color: transparent;
-    color: #c41111;
-    border: 2px solid #c41111;
-    display: flex;
-    align-items: center;
-}
-
-.btn-outline:hover {
-    background-color: #c41111;
-    color: white;
 }
 
 .event-card {
@@ -458,8 +422,8 @@ body {
 
 /* Styles from test1.html */
 .hero-section {
-    background: url('../Component/background-img.png');
-    padding: 40px 0;
+    background: linear-gradient(rgba(245, 106, 56, 0.6), rgba(245, 106, 56, 0.6)),url('../Component/background-img.png');
+    padding: 4px 0;
 }
 
 .container {
