@@ -28,6 +28,7 @@ ul {
     align-items: center;
     padding: 10px 20px;
     background-color: #fff;
+    border-radus: 10px;
     border-bottom: 1px solid #e5e5e5;
 }
 
@@ -86,6 +87,7 @@ ul {
 
 .hero-content {
     display: flex;
+    flex: 1;
     max-width: 75rem;
     margin: 0 auto;
     padding: 1.25rem;
@@ -137,16 +139,17 @@ ul {
 }
 
 .hero-pagination .dot.active {
-    background-color: #e32212;
+    background-color: var(--web-khoa-1);
 }
 
 /* Right column containing the team photo */
 .hero-right-column {
     flex: 1;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     min-width: 25.75rem;
+    margin: 0 0 0 auto;
 }
 
 .hero-image {
@@ -342,7 +345,7 @@ ul {
 }
 
 .dot.active {
-    background-color: #e32212;
+    background-color: var(--web-khoa-1);
 }
 
 
