@@ -1,3 +1,6 @@
+<? php
+include '../Component/Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.php';
+?>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -7,6 +10,8 @@
     <link rel="stylesheet" href="Homepage_Ve_Nguon.css">
 </head>
 <body>
+        <!-- Header will be loaded dynamically -->
+        <div id="header-container"></div>
     <!-- Content from test.html -->
     <div class="banner-container">
         <div class="banner-texture"></div>
@@ -15,9 +20,9 @@
         <div class="content-wrapper">
             <div class="left-content">
                 <div class="left-content-top">
-                    <h1 class="title">Cổng thông tin</h1>
-                    <h2 class="subtitle">Lửa Dệt Sử Đỏ</h2>
-                    <p class="description">Mô tả về website tại đây</p>
+                    <div class="title">Cổng thông tin</div>
+                    <div class="subtitle">Lửa Dệt Sử Đỏ</div>
+                    <div class="description">Mô tả về website tại đây</div>
                 </div>
                 
                 <div class="left-content-bottom">
@@ -29,134 +34,59 @@
             </div>
             
             <div class="right-content">
-                <div class="event-card">
-                    <div class="event-info">
-                        <h3 class="event-title">BÀI PHÁT ĐỘNG CỦA CÁC CHƯƠNG TRÌNH THUỘC CAMPAIGN SẮP TỚI DIỄN RA</h3>
+                <div class="image-info-no-action">
+                    <img
+                      src="../Component/Ảnh/HD_1.png"
+                      alt="Hình ảnh hoạt động"
+                      class="image-info-no-action-image"
+                    >
+                    <div class="image-info-no-action-content">
+                      <div class="image-info-no-action-title">
+                        CHƯƠNG TRÌNH KỶ NIỆM<br>50 NĂM GIẢI PHÓNG MIỀN NAM - THỐNG NHẤT ĐẤT NƯỚC
+                      </div>
+                      <div class="image-info-no-action-date">
+                        06/04/2025 - 30/04/2025
+                      </div>
                     </div>
-                    <div class="event-footer">
-                        <div class="time-column">
-                            <div class="time-label">DIỄN RA VÀO</div>
-                            <div class="time-value">7: 00: 00</div>
-                            <div class="time-value">20/04/2025</div>
-                        </div>
-                        <div class="time-column">
-                            <div class="time-label">KẾT THÚC</div>
-                            <div class="time-value">7: 00: 00</div>
-                            <div class="time-value">30/04/2025</div>
-                        </div>
-                    </div>
-                </div>
+                  </div>
+                  
             </div>
         </div>
     </div>
 
     <!-- Activities Section from test.html -->
     <div class="activities-container">
-        <h2 class="gradient-heading">Chuỗi hoạt động về nguồn cùng khoa Công nghệ thông tin kinh doanh</h2>
+        <div class="homepage-title">
+            Chuỗi hoạt động về nguồn<br>cùng khoa Công nghệ thông tin kinh doanh
+          </div>
         
-        <div class="section-heading">NHỮNG HOẠT ĐỘNG ĐÃ THỰC HIỆN</div>
+          <div class="sub-header-wrapper">
+            <div class="sub-header">NHỮNG HOẠT ĐỘNG ĐÃ VÀ ĐANG THỰC HIỆN
+            </div>
+          </div>
         
-        <div class="carousel-container">
-            <div class="carousel-track" id="activitiesCarousel">
-                <!-- Activity Card 1 -->
-                <div class="carousel-item">
-                    <img src="placeholder1.jpg" alt="Khu di tích lịch sử Củ Chi">
-                    <div class="carousel-caption">KHU DI TÍCH LỊCH SỬ CỦ CHI</div>
-                    <div class="carousel-details">
-                        <div class="carousel-date">02/09/2024</div>
-                        <a href="#" class="carousel-btn">CHI TIẾT</a>
-                    </div>
-                </div>
-                
-                <!-- Activity Card 2 -->
-                <div class="carousel-item">
-                    <img src="placeholder2.jpg" alt="Khu di tích cách mạng Vườn Trầu">
-                    <div class="carousel-caption">KHU DI TÍCH CÁCH MẠNG VƯỜN TRẦU</div>
-                    <div class="carousel-details">
-                        <div class="carousel-date">02/09/2024</div>
-                        <a href="#" class="carousel-btn">CHI TIẾT</a>
-                    </div>
-                </div>
-                
-                <!-- Activity Card 3 -->
-                <div class="carousel-item">
-                    <img src="placeholder3.jpg" alt="Khu di tích lịch sử Củ Chi">
-                    <div class="carousel-caption">KHU DI TÍCH LỊCH SỬ CỦ CHI</div>
-                    <div class="carousel-details">
-                        <div class="carousel-date">26/03/2024</div>
-                        <a href="#" class="carousel-btn">CHI TIẾT</a>
-                    </div>
-                </div>
-                
-                <!-- Activity Card 4 -->
-                <div class="carousel-item">
-                    <img src="placeholder4.jpg" alt="Khu di tích núi và chùa Châu Thới">
-                    <div class="carousel-caption">KHU DI TÍCH NÚI VÀ CHÙA CHÂU THỚI</div>
-                    <div class="carousel-details">
-                        <div class="carousel-date">30/04/2024</div>
-                        <a href="#" class="carousel-btn">CHI TIẾT</a>
-                    </div>
-                </div>
-                
-                <!-- Activity Card 5 -->
-                <div class="carousel-item">
-                    <img src="placeholder5.jpg" alt="Khu di tích lịch sử Củ Chi">
-                    <div class="carousel-caption">KHU DI TÍCH LỊCH SỬ CỦ CHI</div>
-                    <div class="carousel-details">
-                        <div class="carousel-date">26/03/2024</div>
-                        <a href="#" class="carousel-btn">CHI TIẾT</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="carousel-dots" id="carouselDots">
-                <span class="carousel-dot active"></span>
-                <span class="carousel-dot"></span>
-                <span class="carousel-dot"></span>
-                <span class="carousel-dot"></span>
-                <span class="carousel-dot"></span>
-                <span class="carousel-dot"></span>
-                <span class="carousel-dot"></span>
-                <span class="carousel-dot"></span>
-                <span class="carousel-dot"></span>
-                <span class="carousel-dot"></span>
-                <span class="carousel-dot"></span>
-                <span class="carousel-dot"></span>
-                <span class="carousel-dot"></span>
-                <span class="carousel-dot"></span>
-                <span class="carousel-dot"></span>
-            </div>
         </div>
-        
-        <!-- Journey Section -->
-        <div class="journey-section">
-            <div class="student-image">
-                <img src="student.jpg" alt="Student participating in journey">
-            </div>
-            
-            <div class="journey-content">
-                <p class="journey-heading">KINH NGHIỆM & TRẢI NGHIỆM</p>
-                <h2 class="journey-title">HÀNH TRÌNH VỀ NGUỒN CÙNG BIT2024</h2>
-                <p class="journey-text">Tham gia các campaign về cội nguồn lịch sử giúp ta hiểu sâu hơn về văn hóa, truyền thống và tinh thần dân tộc. Những chuyến đi ấy không chỉ khơi dậy lòng tự hào mà còn truyền cảm hứng để thế hệ trẻ gìn giữ và phát huy giá trị lịch sử.</p>
-                
-                <div class="progress-bar">
-                    <div class="progress-fill"></div>
-                </div>
-                
-                <div class="journey-buttons">
-                    <a href="#" class="journey-btn journey-btn-primary">NỘI DUNG CHƯƠNG TRÌNH</a>
-                    <a href="#" class="journey-btn journey-btn-outline">ĐĂNG KÝ THAM GIA</a>
-                </div>
-            </div>
-        </div>
+ <!-- Card Slider Container -->
+ <div class="slider-container">
+    <div class="slider-wrapper" id="sliderWrapper">
+        <!-- Cards will be added here dynamically -->
+    </div>
+    <!-- Pagination dots sẽ được thêm vào đây bởi JS -->
+</div>
+    
+    </div>
+     <div id="about-section"></div>
     </div>
 
     <!-- Content from test1.html -->
     <div class="hero-section">
         <div class="container">
             <div class="header">
-                <h1>Khơi nguồn cảm hứng nhân văn<br>với Quỹ Momo Vinh danh Anh Hùng</h1>
-                <button class="btn-more">TÌM HIỂU THÊM</button>
+                <div class="homepage-title">
+                    Khơi nguồn cảm hứng nhân văn<br>cùng Quỹ vinh danh Anh hùng
+                  </div>
+                  <button class="btn-more" onclick="location.href='../Quy_Vinh_danh_anh_hung/Quy_Vinh_danh_anh_hung.html'">TÌM HIỂU THÊM</button>
+
             </div>
             
             <div class="card">
@@ -190,7 +120,9 @@
             </div>
         </div>
     </div>
-
+       <!-- Footer will be loaded dynamically -->
+       <div id="footer-container"></div>
+       <script defer src="../Component/Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const buttons = document.querySelectorAll('.btn');
@@ -229,80 +161,8 @@
             }
             
             pulseCard();
-            
-            // Carousel functionality from test.html
-            const carouselTrack = document.getElementById('activitiesCarousel');
-            const carouselDots = document.getElementById('carouselDots').querySelectorAll('.carousel-dot');
-            const carouselItems = carouselTrack.querySelectorAll('.carousel-item');
-            
-            let currentIndex = 0;
-            let itemsPerPage = getItemsPerPage();
-            let totalPages = Math.ceil(carouselItems.length / itemsPerPage);
-            
-            function getItemsPerPage() {
-                if (window.innerWidth > 992) {
-                    return 5; // Show 5 items on large screens
-                } else if (window.innerWidth > 768) {
-                    return 3; // Show 3 items on medium screens
-                } else if (window.innerWidth > 576) {
-                    return 2; // Show 2 items on small screens
-                } else {
-                    return 1; // Show 1 item on extra small screens
-                }
-            }
-            
-            function updateCarousel() {
-                const itemWidth = carouselItems[0].offsetWidth + 15; // Item width + gapntIndex * itemWidth * itemsPerPage}px)`;
-                
-                // Update active dot
-                carouselDots.forEach((dot, index) => {
-                    dot.classList.toggle('active', index === currentIndex);
-                });
-            }
-            
-            // Initialize carousel
-            updateCarousel();
-            
-            // Add click event to dots
-            carouselDots.forEach((dot, index) => {
-                dot.addEventListener('click', () => {
-                    if (index < totalPages) {
-                        currentIndex = index;
-                        updateCarousel();
-                    }
-                });
-            });
-            
-            // Handle window resize
-            window.addEventListener('resize', () => {
-                const newItemsPerPage = getItemsPerPage();
-                if (newItemsPerPage !== itemsPerPage) {
-                    itemsPerPage = newItemsPerPage;
-                    totalPages = Math.ceil(carouselItems.length / itemsPerPage);
-                    currentIndex = 0; // Reset to first page
-                    updateCarousel();
-                }
-            });
-            
-            // Auto slide carousel
-            setInterval(() => {
-                currentIndex = (currentIndex + 1) % totalPages;
-                updateCarousel();
-            }, 5000);
-            
-            // Journey section button animations
-            const journeyButtons = document.querySelectorAll('.journey-btn');
-            journeyButtons.forEach(button => {
-                button.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-3px)';
-                    this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.2)';
-                });
-                
-                button.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0)';
-                    this.style.boxShadow = 'none';
-                });
-            });
+        
+           
             
             // Placeholder images handling
             const placeholderImages = document.querySelectorAll('.carousel-item img');
@@ -340,6 +200,320 @@
                 }, 300 * (index + 1));
             });
         });
+        document.addEventListener('DOMContentLoaded', function() {
+    // Load header
+    fetch('../Component/Header_dự_án/Header_dự_án.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+            initMobileMenu();
+        });
+    
+    // Load footer
+    fetch('../Component/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+        });
+    
+    // Load activities data
+    fetch('js/activities.json')
+        .then(response => response.json())
+        .then(data => {
+            renderActivities('past-activities', data.pastActivities);
+            renderActivities('upcoming-activities', data.upcomingActivities);
+        });
+     
+            // Load Hanh Trinh Trai Nghiem HTML
+    fetch('../Component/Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.html')
+    .then(response => response.text())
+    .then(html => {
+        document.getElementById('about-section').innerHTML = html;
+
+        // Load JS sau khi đã render HTML
+        const script = document.createElement('script');
+        script.src = '../Component/Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.js';
+        script.onload = () => {
+            console.log("JS slideshow loaded");
+
+            // Fetch PHP để lấy dữ liệu
+            fetch('../Component/Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.php')
+                .then(response => response.json())
+                .then(data => {
+                    if (typeof initSlideshow === 'function') {
+                        initSlideshow(data);
+                    } else {
+                        console.warn("initSlideshow chưa sẵn sàng");
+                    }
+                })
+                .catch(err => console.error('Lỗi fetch PHP:', err));
+        };
+        document.body.appendChild(script);
+    })
+    .catch(err => console.error('Lỗi fetch HTML slideshow:', err));
+          // Initialize Card Slider
+          initCardSlider();
+        });
+
+        // Dữ liệu cho slider
+        const cardData = [
+            {
+                image: "/api/placeholder/294/284",
+                title: "Lửa Dệt Sử Đỏ",
+                date: "20.04.2025",
+                buttonText: "Chi tiết"
+            },
+            {
+                image: "/api/placeholder/294/284",
+                title: "Hành trình về vùng đất thép",
+                date: "19.04.2025",
+                buttonText: "Chi tiết"
+            },
+            {
+                image: "/api/placeholder/294/284",
+                title: "Vinh quang người chiến sĩ",
+                date: "17.04.2025",
+                buttonText: "Chi tiết"
+            },
+            {
+                image: "/api/placeholder/294/284",
+                title: "Dấu chân anh hùng",
+                date: "17.04.2025",
+                buttonText: "Chi tiết"
+            }
+        ];
+
+        function initCardSlider() {
+            const sliderWrapper = document.getElementById('sliderWrapper');
+            if (!sliderWrapper) {
+                console.error('Slider wrapper not found');
+                return;
+            }
+
+            // Xóa nội dung cũ nếu có
+            sliderWrapper.innerHTML = '';
+
+            // Tạo các card từ dữ liệu
+            function createCardElement(cardInfo) {
+                const card = document.createElement('div');
+                card.className = 'activity-info';
+                
+                card.innerHTML = `
+                    <img class="activity-info-image" src="${cardInfo.image}" alt="${cardInfo.title}">
+                    <div class="activity-info-content">
+                        <div class="activity-info-title">${cardInfo.title}</div>
+                        <div class="activity-info-date-button">
+                            <div class="activity-info-date">${cardInfo.date}</div>
+                            <button class="activity-info-button">${cardInfo.buttonText}</button>
+                        </div>
+                    </div>
+                `;
+                
+                return card;
+            }
+
+     // Thêm tất cả các card vào slider
+     cardData.forEach(cardInfo => {
+        const cardElement = createCardElement(cardInfo);
+        sliderWrapper.appendChild(cardElement);
+    });
+
+    // Xác định các biến cấu hình slider
+    let cardsPerPage = 3; // Số lượng card hiển thị mỗi trang
+    let cardWidth = 400; // Chiều rộng mỗi card
+    let cardMargin = 20; // Khoảng cách giữa các card
+    let currentPage = 0; // Trang hiện tại
+    let totalPages = Math.ceil(cardData.length / cardsPerPage); // Tổng số trang
+    
+// Tìm hoặc tạo container cho pagination dots
+const sliderContainer = document.querySelector('.slider-container');
+let paginationContainer;
+
+// Tìm pagination đã có sẵn trong HTML
+const existingPagination = document.querySelector('.pagination');
+
+if (existingPagination) {
+    // Sử dụng pagination hiện có
+    paginationContainer = existingPagination;
+    paginationContainer.innerHTML = ''; // Xóa dots cũ
+} else {
+    // Tạo pagination mới nếu không tìm thấy
+    paginationContainer = document.createElement('div');
+    paginationContainer.className = 'pagination';
+    
+    // Thêm pagination vào sau slider container
+    if (sliderContainer) {
+        sliderContainer.parentNode.insertBefore(paginationContainer, sliderContainer.nextSibling);
+    }
+}
+
+// Tạo pagination dots
+for (let i = 0; i < totalPages; i++) {
+    const dot = document.createElement('span');
+    dot.className = 'dot';
+    if (i === 0) dot.classList.add('active');
+    dot.dataset.page = i;
+    paginationContainer.appendChild(dot);
+}
+    
+    // Hàm điều chỉnh số lượng card hiển thị theo kích thước màn hình
+    function updateCardsToShow() {
+        const containerWidth = document.querySelector('.slider-wrapper').clientWidth;
+        
+        if (containerWidth < 768) {
+            cardsPerPage = 1;
+        } else if (containerWidth < 1000) {
+            cardsPerPage = 2;
+        } else {
+            cardsPerPage = 3;
+        }
+        
+        // Cập nhật cardWidth dựa trên kích thước thực tế của card
+        if (sliderWrapper.children.length > 0) {
+            cardWidth = sliderWrapper.children[0].offsetWidth;
+        }
+        
+        // Tính lại tổng số trang
+        totalPages = Math.ceil(cardData.length / cardsPerPage);
+        
+        // Cập nhật lại pagination dots
+        updatePaginationDots();
+        
+        // Đảm bảo trang hiện tại không vượt quá tổng số trang
+        if (currentPage >= totalPages) {
+            currentPage = totalPages - 1;
+        }
+        
+        // Di chuyển slider đến trang hiện tại
+        moveToPage(currentPage);
+    }
+    
+    // Hàm cập nhật pagination dots
+    function updatePaginationDots() {
+        paginationContainer.innerHTML = '';
+        
+        for (let i = 0; i < totalPages; i++) {
+            const dot = document.createElement('div');
+            dot.className = 'dot';
+            if (i === currentPage) dot.classList.add('active');
+            dot.dataset.page = i;
+            paginationContainer.appendChild(dot);
+        }
+        
+        // Thêm lại event listener cho các dots mới
+        document.querySelectorAll('.dot').forEach(dot => {
+            dot.addEventListener('click', function() {
+                const page = parseInt(this.dataset.page);
+                moveToPage(page);
+            });
+        });
+    }
+    
+    // Hàm di chuyển slider đến trang cụ thể
+    function moveToPage(page) {
+        if (page < 0 || page >= totalPages) return;
+        
+        currentPage = page;
+        
+        // Di chuyển slider
+        const translateX = currentPage * -(cardsPerPage * (cardWidth + cardMargin));
+        sliderWrapper.style.transform = `translateX(${translateX}px)`;
+        sliderWrapper.style.transition = 'transform 0.3s ease-in-out';
+        
+        // Cập nhật trạng thái active của dots
+        document.querySelectorAll('.dot').forEach((dot, index) => {
+            if (index === currentPage) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    }
+    
+    // Thêm event listener cho các dots
+    document.querySelectorAll('.dot').forEach(dot => {
+        dot.addEventListener('click', function() {
+            const page = parseInt(this.dataset.page);
+            moveToPage(page);
+        });
+    });
+    
+    // Khởi tạo slider ban đầu
+    updateCardsToShow();
+    
+    // Cập nhật slider khi thay đổi kích thước màn hình
+    window.addEventListener('resize', updateCardsToShow);
+    
+
+        // Initialize mobile menu
+        function initMobileMenu() {
+            const toggleButton = document.querySelector('.mobile-menu-toggle');
+            if (!toggleButton) return;
+            
+            // Create mobile menu if it doesn't exist
+            if (!document.querySelector('.mobile-menu')) {
+                const mobileMenu = document.createElement('div');
+                mobileMenu.className = 'mobile-menu';
+                mobileMenu.innerHTML = `
+                    <div class="mobile-menu-close">
+                        <i class="fas fa-times"></i>
+                    </div>
+                    <ul>
+                        <li><a href="index.html">TRANG CHỦ</a></li>
+                        <li><a href="ve-chien-dich.html">VỀ CHIẾN DỊCH</a></li>
+                        <li><a href="bang-vinh-danh.html">BẢNG VINH DANH</a></li>
+                        <li><a href="quy-vinh-danh-anh-hung.html">QUỸ VINH DANH ANH HÙNG</a></li>
+                    </ul>
+                `;
+                document.body.appendChild(mobileMenu);
+                
+                const overlay = document.createElement('div');
+                overlay.className = 'mobile-menu-overlay';
+                document.body.appendChild(overlay);
+                
+                // Close menu when clicking on close button or overlay
+                document.querySelector('.mobile-menu-close').addEventListener('click', toggleMobileMenu);
+                overlay.addEventListener('click', toggleMobileMenu);
+            }
+            
+            // Toggle menu when clicking on menu button
+            toggleButton.addEventListener('click', toggleMobileMenu);
+        }
+
+        // Toggle mobile menu
+        function toggleMobileMenu() {
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const overlay = document.querySelector('.mobile-menu-overlay');
+            
+            mobileMenu.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+
+        // Pagination functionality
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('dot')) {
+                // Remove active class from all dots
+                document.querySelectorAll('.dot').forEach(dot => {
+                    dot.classList.remove('active');
+                });
+                
+                // Add active class to clicked dot
+                e.target.classList.add('active');
+                
+                // You can implement slide functionality here
+            }
+        });
+
+        // Helper function for rendering activities (if used elsewhere)
+        function renderActivities(containerId, activities) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            
+            container.innerHTML = '';
+            activities.forEach(activity => {
+                // Render activity elements
+            });
+        }}
     </script>
 </body>
 </html>

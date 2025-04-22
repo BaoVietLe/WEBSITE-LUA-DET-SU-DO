@@ -1,15 +1,27 @@
 /* Combined CSS from test.html and test1.html */
-
+@import url('../Component/File_CSS_chung.css');
 /* Common reset styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
 
 body {
     overflow-x: hidden;
+}
+.slider-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0;
+}
+
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 20px;
 }
 
 /* Styles from test.html */
@@ -21,7 +33,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 40px 20px;
-    background: linear-gradient(135deg, rgba(255, 233, 122, 0.8) 0%, rgba(255, 166, 43, 0.7) 50%, rgba(217, 28, 28, 0.8) 100%);
+    background: url('../Component/background-img.png');
     overflow: hidden;
 }
 
@@ -446,8 +458,7 @@ body {
 
 /* Styles from test1.html */
 .hero-section {
-    background-color: #e60000;
-    color: white;
+    background: url('../Component/background-img.png');
     padding: 40px 0;
 }
 

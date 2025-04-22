@@ -110,77 +110,138 @@ document.addEventListener('DOMContentLoaded', function() {
                 return card;
             }
 
-            // Thêm tất cả các card vào slider
-            cardData.forEach(cardInfo => {
-                const cardElement = createCardElement(cardInfo);
-                sliderWrapper.appendChild(cardElement);
-            });
+     // Thêm tất cả các card vào slider
+     cardData.forEach(cardInfo => {
+        const cardElement = createCardElement(cardInfo);
+        sliderWrapper.appendChild(cardElement);
+    });
 
-            // Xử lý logic slider
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
+    // Xác định các biến cấu hình slider
+    let cardsPerPage = 3; // Số lượng card hiển thị mỗi trang
+    let cardWidth = 400; // Chiều rộng mỗi card
+    let cardMargin = 20; // Khoảng cách giữa các card
+    let currentPage = 0; // Trang hiện tại
+    let totalPages = Math.ceil(cardData.length / cardsPerPage); // Tổng số trang
+    
+// Tìm hoặc tạo container cho pagination dots
+const sliderContainer = document.querySelector('.slider-container');
+let paginationContainer;
 
-            if (!prevBtn || !nextBtn) {
-                console.error('Slider buttons not found');
-                return;
-            }
+// Tìm pagination đã có sẵn trong HTML
+const existingPagination = document.querySelector('.pagination');
 
-            let currentPosition = 0;
-            let cardWidth = 400; // Chiều rộng card
-            let cardMargin = 20; // Khoảng cách giữa các card
-            let cardsToShow = 3; // Số lượng card hiển thị mỗi lần
+if (existingPagination) {
+    // Sử dụng pagination hiện có
+    paginationContainer = existingPagination;
+    paginationContainer.innerHTML = ''; // Xóa dots cũ
+} else {
+    // Tạo pagination mới nếu không tìm thấy
+    paginationContainer = document.createElement('div');
+    paginationContainer.className = 'pagination';
+    
+    // Thêm pagination vào sau slider container
+    if (sliderContainer) {
+        sliderContainer.parentNode.insertBefore(paginationContainer, sliderContainer.nextSibling);
+    }
+}
 
-            // Điều chỉnh số lượng card hiển thị theo kích thước màn hình
-            function updateCardsToShow() {
-                const containerWidth = document.querySelector('.slider-container').clientWidth;
-                
-                if (containerWidth < 768) {
-                    cardsToShow = 1;
-                } else if (containerWidth < 1000) {
-                    cardsToShow = 2;
-                } else {
-                    cardsToShow = 3;
-                }
-                
-                // Cập nhật cardWidth dựa trên kích thước thực tế của card
-                if (sliderWrapper.children.length > 0) {
-                    cardWidth = sliderWrapper.children[0].offsetWidth;
-                }
-                
-                // Reset vị trí slider
-                moveSlider(0);
-            }
-
-            function moveSlider(position) {
-                currentPosition = position;
-                
-                // Giới hạn vị trí
-                const maxPosition = cardData.length - cardsToShow;
-                currentPosition = Math.max(0, Math.min(currentPosition, maxPosition));
-                
-                const translateX = currentPosition * -(cardWidth + cardMargin);
-                sliderWrapper.style.transform = `translateX(${translateX}px)`;
-                
-                // Cập nhật trạng thái nút
-                prevBtn.disabled = currentPosition === 0;
-                nextBtn.disabled = currentPosition >= maxPosition;
-            }
-
-            // Xử lý sự kiện nút điều hướng
-            prevBtn.addEventListener('click', () => {
-                moveSlider(currentPosition - 1);
-            });
-
-            nextBtn.addEventListener('click', () => {
-                moveSlider(currentPosition + 1);
-            });
-
-            // Khởi tạo slider ban đầu
-            updateCardsToShow();
-            
-            // Cập nhật số lượng card hiển thị khi thay đổi kích thước màn hình
-            window.addEventListener('resize', updateCardsToShow);
+// Tạo pagination dots
+for (let i = 0; i < totalPages; i++) {
+    const dot = document.createElement('span');
+    dot.className = 'dot';
+    if (i === 0) dot.classList.add('active');
+    dot.dataset.page = i;
+    paginationContainer.appendChild(dot);
+}
+    
+    // Hàm điều chỉnh số lượng card hiển thị theo kích thước màn hình
+    function updateCardsToShow() {
+        const containerWidth = document.querySelector('.slider-wrapper').clientWidth;
+        
+        if (containerWidth < 768) {
+            cardsPerPage = 1;
+        } else if (containerWidth < 1000) {
+            cardsPerPage = 2;
+        } else {
+            cardsPerPage = 3;
         }
+        
+        // Cập nhật cardWidth dựa trên kích thước thực tế của card
+        if (sliderWrapper.children.length > 0) {
+            cardWidth = sliderWrapper.children[0].offsetWidth;
+        }
+        
+        // Tính lại tổng số trang
+        totalPages = Math.ceil(cardData.length / cardsPerPage);
+        
+        // Cập nhật lại pagination dots
+        updatePaginationDots();
+        
+        // Đảm bảo trang hiện tại không vượt quá tổng số trang
+        if (currentPage >= totalPages) {
+            currentPage = totalPages - 1;
+        }
+        
+        // Di chuyển slider đến trang hiện tại
+        moveToPage(currentPage);
+    }
+    
+    // Hàm cập nhật pagination dots
+    function updatePaginationDots() {
+        paginationContainer.innerHTML = '';
+        
+        for (let i = 0; i < totalPages; i++) {
+            const dot = document.createElement('div');
+            dot.className = 'dot';
+            if (i === currentPage) dot.classList.add('active');
+            dot.dataset.page = i;
+            paginationContainer.appendChild(dot);
+        }
+        
+        // Thêm lại event listener cho các dots mới
+        document.querySelectorAll('.dot').forEach(dot => {
+            dot.addEventListener('click', function() {
+                const page = parseInt(this.dataset.page);
+                moveToPage(page);
+            });
+        });
+    }
+    
+    // Hàm di chuyển slider đến trang cụ thể
+    function moveToPage(page) {
+        if (page < 0 || page >= totalPages) return;
+        
+        currentPage = page;
+        
+        // Di chuyển slider
+        const translateX = currentPage * -(cardsPerPage * (cardWidth + cardMargin));
+        sliderWrapper.style.transform = `translateX(${translateX}px)`;
+        sliderWrapper.style.transition = 'transform 0.3s ease-in-out';
+        
+        // Cập nhật trạng thái active của dots
+        document.querySelectorAll('.dot').forEach((dot, index) => {
+            if (index === currentPage) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    }
+    
+    // Thêm event listener cho các dots
+    document.querySelectorAll('.dot').forEach(dot => {
+        dot.addEventListener('click', function() {
+            const page = parseInt(this.dataset.page);
+            moveToPage(page);
+        });
+    });
+    
+    // Khởi tạo slider ban đầu
+    updateCardsToShow();
+    
+    // Cập nhật slider khi thay đổi kích thước màn hình
+    window.addEventListener('resize', updateCardsToShow);
+    
 
         // Initialize mobile menu
         function initMobileMenu() {
@@ -250,4 +311,4 @@ document.addEventListener('DOMContentLoaded', function() {
             activities.forEach(activity => {
                 // Render activity elements
             });
-        }
+        }}
