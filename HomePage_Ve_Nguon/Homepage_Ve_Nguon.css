@@ -458,8 +458,7 @@ body {
 
 /* Styles from test1.html */
 .hero-section {
-    background-color: #e60000;
-    color: white;
+    background: url('../Component/background-img.png');
     padding: 40px 0;
 }
 
