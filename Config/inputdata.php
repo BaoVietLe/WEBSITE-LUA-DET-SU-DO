@@ -7,7 +7,7 @@
             ('12345678902', 'image2.jpg', 'Tran Thi B', 'Chia sẻ về các hoạt động ngoại khóa và kinh nghiệm làm việc'),
             ('12345678903', 'image3.jpg', 'Le Minh C', 'Chia sẻ về các dự án nghiên cứu và sáng tạo trong học tập');
         
-        INSERT INTO btc (mssv, btc_img, btc_name, btc_title, btc_position, btc_phone, btc_email, btc_sharing, id_event)
+        INSERT INTO btc (mssv, btc_img, btc_name, btc_title, btc_position, btc_phone, btc_email, btc_sharing)
             VALUES
             ('12345678901', 'btc_image1.jpg', 'Nguyen Thi D', 'Chủ tịch', 'Trưởng ban tổ chức', '0123456789', 'nguyen.d@example.com', 'Chia sẻ về các chương trình tình nguyện và phát triển cộng đồng', 'EVT001'),
             ('12345678902', 'btc_image2.jpg', 'Tran Thi E', 'Phó chủ tịch', 'Trưởng ban tài chính', '0123456790', 'tran.e@example.com', 'Chia sẻ về các kế hoạch tài chính và quản lý quỹ', 'EVT002'),
