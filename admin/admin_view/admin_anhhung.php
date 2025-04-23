@@ -36,10 +36,10 @@ session_start();
     </div>
 
     <ul>
-      <li><a href="./admin_hoatdong.html">Quản lý Anh hùng</a></li>
-      <li><a href="./admin_hoatdong.html">Quản lý quỹ</a></li>
-      <li><a href="./admin_hoatdong.html">Thông tin sinh viên</a></li>
-      <li><a href="./admin_hoatdong.html">Thông tin mẹ VNAH</a></li>
+    <li><a href="./admin_anhhung.php">Thông tin mẹ VNAH</a></li>
+      <li><a href="./admin_btc.php">Thông tin BTC</a></li>
+      <li><a href="./admin_sv.php">Thông tin sinh viên</a></li>
+      <li><a href="./admin_data.php">Quỹ Momo</a></li>
     </ul>
   </div>
 

@@ -36,10 +36,10 @@ session_start();
     </div>
 
     <ul>
-      <li><a href="./admin_hoatdong.html">Quản lý Anh hùng</a></li>
-      <li><a href="./admin_hoatdong.html">Quản lý quỹ</a></li>
-      <li><a href="./admin_hoatdong.html">Thông tin sinh viên</a></li>
-      <li><a href="./admin_hoatdong.html">Thông tin mẹ VNAH</a></li>
+    <li><a href="./admin_anhhung.php">Thông tin mẹ VNAH</a></li>
+      <li><a href="./admin_btc.php">Thông tin BTC</a></li>
+      <li><a href="./admin_sv.php">Thông tin sinh viên</a></li>
+      <li><a href="./admin_data.php">Quỹ Momo</a></li>
     </ul>
   </div>
 
@@ -127,7 +127,8 @@ session_start();
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="editdataLabel">Chỉnh sửa thông tin <span id="sv_id_display" style="color: #679eff"></span></h1>
+              <h1 class="modal-title fs-5" id="editdataLabel">Chỉnh sửa thông tin <span id="sv_id_display"
+                  style="color: #679eff"></span></h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
@@ -145,7 +146,8 @@ session_start();
 
                 <div class="form-group mb-4">
                   <label for="sv_img">Thêm ảnh Sinh viên</label>
-                  <input type="file" name="sv_img" id="formFile" id="sv_img" class="form-control" placeholder="Thêm ảnh">
+                  <input type="file" name="sv_img" id="formFile" id="sv_img" class="form-control"
+                    placeholder="Thêm ảnh">
                   <small id="current-img-name" class="text-muted mt-1 d-block"></small>
                 </div>
 
@@ -155,7 +157,8 @@ session_start();
                 </div>
                 <div class="form-group mb-4">
                   <label for="sv_sharing">Sharing</label>
-                  <input type="text" name="sv_sharing" id="sv_sharing" name="sv_sharing" class="form-control" placeholder="Sharing">
+                  <input type="text" name="sv_sharing" id="sv_sharing" name="sv_sharing" class="form-control"
+                    placeholder="Sharing">
                 </div>
 
               </div>
