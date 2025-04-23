@@ -145,6 +145,7 @@ session_start();
               <div class="modal-body">
                 <div class="form-group mb-4">
                   <input type="hidden" name="anhhung_id" id="anhhung_id" class="form-control">
+                  <input type="hidden" name="current_img" id="current_img" class="form-control">
                 </div>
 
                 <div class="form-group mb-4">
@@ -269,6 +270,7 @@ session_start();
             $.each(response, function (Key, value) {
               $('#anhhung_id_display').text(value['anhhung_id']);
               $('#anhhung_id').val(value['anhhung_id']);
+              $('#current_img').val(value['anhhung_img']);
               $('#current-img-name').text('Hiện tại: ' + value['anhhung_img']);
               $('#anhhung_name').val(value['anhhung_name']);
               $('#anhhung_date').val(value['anhhung_date']);

@@ -67,6 +67,8 @@ if (isset($_POST['update_data'])) {
                 $error = $_FILES['anhhung_img']['error'];
                 echo "<script>alert('Lỗi upload hình ảnh: $error');</script>";
             }
+        } else {
+            $sv_img = $_POST['current_img'];
         }
     
     $update_query = "UPDATE anhhung SET anhhung_img = ?, anhhung_name = ?, anhhung_date = ?, anhhung_home = ?, anhhung_chiencong = ?, anhhung_note = ? WHERE anhhung_id = ?";

@@ -46,7 +46,7 @@ session_start();
   <div class="main-content">
     <div class="activity-management">
       <div class="header">
-        <h2>QUẢN LÝ <span>Sinh viên chia sẻ</span></h2>
+        <h2>QUẢN LÝ <span>SINH VIÊN CHIA SẺ</span></h2>
         <!-- Thông báo status -->
         <?php
         if (isset($_SESSION['status']) && $_SESSION['status'] != '') {
@@ -87,35 +87,26 @@ session_start();
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
-            <form action="../admin_solve/solve_anhhung.php" method="POST" enctype="multipart/form-data">
+            <form action="../admin_solve/solve_sv.php" method="POST" enctype="multipart/form-data">
               <div class="modal-body">
-
                 <div class="form-group mb-4">
-                  <label for="anhhung_img">Thêm ảnh Mẹ Việt Nam Anh hùng</label>
-                  <input type="file" name="anhhung_img" id="formFile" class="form-control" placeholder="Thêm ảnh">
+                  <label for="mssv">MSSV</label>
+                  <input type="text" name="mssv" class="form-control" placeholder="MSSV">
                 </div>
 
                 <div class="form-group mb-4">
-                  <label for="anhhung_name">Tên Mẹ Việt Nam Anh hùng</label>
-                  <input type="text" name="anhhung_name" class="form-control" placeholder="Tên Mẹ Việt Nam Anh hùng">
+                  <label for="sv_img">Thêm ảnh Sinh viên</label>
+                  <input type="file" name="sv_img" id="formFile" class="form-control" placeholder="Thêm ảnh">
                 </div>
 
                 <div class="form-group mb-4">
-                  <label for="anhhung_date">Ngày sinh</label>
-                  <input type="date" name="anhhung_date" class="form-control" placeholder="Ngày sinh">
+                  <label for="sv_name">Họ và Tên Sinh viên</label>
+                  <input type="text" name="sv_name" class="form-control" placeholder="Tên Sinh viên">
                 </div>
+
                 <div class="form-group mb-4">
-                  <label for="anhhung_home">Quê quán</label>
-                  <input type="text" name="anhhung_home" name="anhhung_home" class="form-control"
-                    placeholder="Quê quán">
-                </div>
-                <div class="form-group mb-4">
-                  <label for="anhhung_chiencong">Chiến công</label>
-                  <input type="text" name="anhhung_chiencong" class="form-control" placeholder="Chiến công">
-                </div>
-                <div class="form-group mb-4">
-                  <label for="anhhung_note">Ghi chú</label>
-                  <input type="text" name="anhhung_note" class="form-control" placeholder="Ghi chú">
+                  <label for="sv_sharing">Sharing</label>
+                  <input type="text" name="sv_sharing" class="form-control" placeholder="Quê quán">
                 </div>
 
               </div>
@@ -136,47 +127,35 @@ session_start();
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="editdataLabel">Chỉnh sửa thông tin <span id="anhhung_id_display"
-                  style="color: #679eff"></span></h1>
+              <h1 class="modal-title fs-5" id="editdataLabel">Chỉnh sửa thông tin <span id="sv_id_display" style="color: #679eff"></span></h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
-            <form action="../admin_solve/solve_anhhung.php" method="POST" enctype="multipart/form-data">
+            <form action="../admin_solve/solve_sv.php" method="POST" enctype="multipart/form-data">
               <div class="modal-body">
                 <div class="form-group mb-4">
-                  <input type="hidden" name="anhhung_id" id="anhhung_id" class="form-control">
+                  <input type="hidden" name="sv_id" id="sv_id" class="form-control">
+                  <input type="hidden" name="current_img" id="current_img" class="form-control">
                 </div>
 
                 <div class="form-group mb-4">
-                  <label for="anhhung_img">Thêm ảnh Mẹ Việt Nam Anh hùng</label>
-                  <input type="file" name="anhhung_img" id="formFile" id="anhhung_img" class="form-control"
-                    placeholder="Thêm ảnh">
+                  <label for="mssv">MSSV</label>
+                  <input type="text" name="mssv" class="form-control" id="mssv">
+                </div>
+
+                <div class="form-group mb-4">
+                  <label for="sv_img">Thêm ảnh Sinh viên</label>
+                  <input type="file" name="sv_img" id="formFile" id="sv_img" class="form-control" placeholder="Thêm ảnh">
                   <small id="current-img-name" class="text-muted mt-1 d-block"></small>
                 </div>
 
                 <div class="form-group mb-4">
-                  <label for="anhhung_name">Tên Mẹ Việt Nam Anh hùng</label>
-                  <input type="text" name="anhhung_name" id="anhhung_name" class="form-control"
-                    placeholder="Tên Mẹ Việt Nam Anh hùng">
-                </div>
-
-                <div class="form-group mb-4">
-                  <label for="anhhung_date">Ngày sinh</label>
-                  <input type="date" name="anhhung_date" id="anhhung_date" class="form-control" placeholder="Ngày sinh">
+                  <label for="sv_name">Tên Sinh viên</label>
+                  <input type="text" name="sv_name" id="sv_name" class="form-control" placeholder="Tên Sinh viên">
                 </div>
                 <div class="form-group mb-4">
-                  <label for="anhhung_home">Quê quán</label>
-                  <input type="text" name="anhhung_home" id="anhhung_home" name="anhhung_home" class="form-control"
-                    placeholder="Quê quán">
-                </div>
-                <div class="form-group mb-4">
-                  <label for="anhhung_chiencong">Chiến công</label>
-                  <input type="text" name="anhhung_chiencong" id="anhhung_chiencong" class="form-control"
-                    placeholder="Chiến công">
-                </div>
-                <div class="form-group mb-4">
-                  <label for="anhhung_note">Ghi chú</label>
-                  <input type="text" name="anhhung_note" id="anhhung_note" class="form-control" placeholder="Ghi chú">
+                  <label for="sv_sharing">Sharing</label>
+                  <input type="text" name="sv_sharing" id="sv_sharing" name="sv_sharing" class="form-control" placeholder="Sharing">
                 </div>
 
               </div>
@@ -197,12 +176,10 @@ session_start();
         <thead>
           <tr>
             <th>ID</th>
+            <th>MSSV</th>
             <th>img URL</th>
-            <th>Tên</th>
-            <th>Ngày sinh</th>
-            <th>Quê quán</th>
-            <th>Chiến công</th>
-            <th>Ghi chú</th>
+            <th>Tên SV</th>
+            <th>Sharing</th>
             <th>Hành động</th>
           </tr>
         </thead>
@@ -210,18 +187,16 @@ session_start();
         <tbody>
           <?php
           include('../../Config/connect.php');
-          $query = "SELECT anhhung_id, anhhung_img, anhhung_name, anhhung_date, anhhung_home, anhhung_chiencong, anhhung_note FROM anhhung";
+          $query = "SELECT sv_id, mssv, sv_img, sv_name, sv_sharing FROM sinhvien";
           $result = $conn->query($query);
           if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) { ?>
               <tr>
-                <td class="anhhung_id"><?= $row['anhhung_id'] ?></td>
-                <td><?= $row['anhhung_img'] ?></td>
-                <td><?= $row['anhhung_name'] ?></td>
-                <td><?= $row['anhhung_date'] ?></td>
-                <td><?= $row['anhhung_home'] ?></td>
-                <td><?= $row['anhhung_chiencong'] ?></td>
-                <td><?= $row['anhhung_note'] ?></td>
+                <td class="sv_id"><?= $row['sv_id'] ?></td>
+                <td><?= $row['mssv'] ?></td>
+                <td><?= $row['sv_img'] ?></td>
+                <td><?= $row['sv_name'] ?></td>
+                <td><?= $row['sv_sharing'] ?></td>
                 <td class="action-buttons">
                   <a href="#" class="edit-btn"><i class="fas fa-pen-to-square"></i></a>
                   <a href="#" class="delete-btn"><i class="fas fa-trash"></i></a>
@@ -256,25 +231,24 @@ session_start();
 
       $('.edit-btn').click(function (e) {
         e.preventDefault();
-        var anhhung_id = $(this).closest('tr').find('.anhhung_id').text();
+        var sv_id = $(this).closest('tr').find('.sv_id').text();
 
         $.ajax({
           method: 'POST',
-          url: '../admin_solve/solve_anhhung.php',
+          url: '../admin_solve/solve_sv.php',
           data: {
             'click_edit_btn': true,
-            'anhhung_id': anhhung_id,
+            'sv_id': sv_id,
           },
           success: function (response) {
             $.each(response, function (Key, value) {
-              $('#anhhung_id_display').text(value['anhhung_id']);
-              $('#anhhung_id').val(value['anhhung_id']);
-              $('#current-img-name').text('Hiện tại: ' + value['anhhung_img']);
-              $('#anhhung_name').val(value['anhhung_name']);
-              $('#anhhung_date').val(value['anhhung_date']);
-              $('#anhhung_home').val(value['anhhung_home']);
-              $('#anhhung_chiencong').val(value['anhhung_chiencong']);
-              $('#anhhung_note').val(value['anhhung_note']);
+              $('#sv_id_display').text(value['sv_id']);
+              $('#sv_id').val(value['sv_id']);
+              $('#current_img').val(value['sv_img']);
+              $('#mssv').val(value['mssv']);
+              $('#current-img-name').text('Hiện tại: ' + value['sv_img']);
+              $('#sv_name').val(value['sv_name']);
+              $('#sv_sharing').val(value['sv_sharing']);
             });
 
             $('#editdata').modal('show');
@@ -294,13 +268,13 @@ session_start();
         if (!confirmDelete) {
           return; // Nếu người dùng chọn Hủy thì thoát khỏi hàm
         }
-        var anhhung_id = $(this).closest('tr').find('.anhhung_id').text();
+        var sv_id = $(this).closest('tr').find('.sv_id').text();
         $.ajax({
           method: 'POST',
-          url: '../admin_solve/solve_anhhung.php',
+          url: '../admin_solve/solve_sv.php',
           data: {
             'click_delete_btn': true,
-            'anhhung_id': anhhung_id,
+            'sv_id': sv_id,
           },
           success: function (response) {
             console.log(response);
