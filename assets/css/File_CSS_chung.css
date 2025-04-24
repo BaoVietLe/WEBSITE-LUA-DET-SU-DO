@@ -457,15 +457,24 @@ background-color: var(--web-khoa-1);
 }
 
 /* Bảng thông tin báo - Quang Đại */
-.fund-news-container {
+/* .fund-news-container {
   position: relative;
   max-width: 85rem;
   height: 40rem;
+} */
+.fund-news-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem;
+  max-width: 85rem;
+  margin: auto;
+  padding: 2rem 0;
+  flex-wrap: wrap;
 }
-
 /* Layer 1 (Top) */
-.fund-news-sapotext {
-  position: absolute;
+/* .fund-news-sapotext {
+  position:relative;
   top: 0rem;
   left: 50rem;
   right: 0rem;
@@ -477,22 +486,37 @@ background-color: var(--web-khoa-1);
   flex-direction: column;
   z-index: 3;
   box-shadow: 0.125rem 0.188rem 0.313rem 0.25rem rgba(0, 0, 0, 0.7);
+} */
+
+.fund-news-sapotext {
+  max-width: 30%;
+  background-color: rgba(217, 0, 0, 0.68);
+  border-radius: 2rem;
+  padding: 2rem;
+  box-shadow: 0.125rem 0.188rem 0.313rem 0.25rem rgba(0, 0, 0, 0.7);
+  color: var(--web-campaign-2);
+  font-family: 'Roboto', sans-serif;
+  text-align: justify;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.fund-news-sapotext-textbox {
+/* .fund-news-sapotext-textbox {
   flex-grow: 1;
   height: 40rem;
   margin: 1.875rem 1.563rem 1.563rem 1.563rem;
-}
+} */
 
-.fund-news-sapotext-textbox p {
+/* .fund-news-sapotext-textbox p {
   font-family: 'Roboto';
   text-align: justify;
   color: var(--web-campaign-2);
   font-size: 1.345rem;
-}
+} */
 
-.fund-news-sapotext-button-container {
+/* .fund-news-sapotext-button-container {
   display: flex;
   width: 100%;
   height: 3.188rem;
@@ -501,23 +525,42 @@ background-color: var(--web-khoa-1);
   background-color: rgba(114, 103, 103, 0.2);
   border-radius: 0 0 3.75rem 3.75rem;
   margin-top: -0.525rem;
+} */
+.fund-news-sapotext-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
 }
 
-.fund-news-sapotext-button {
+/* .fund-news-sapotext-button {
   background-color: transparent;
   color: var(--web-khoa-2);
   border: none;
   cursor: pointer;
   text-transform: uppercase;
+} */
+.fund-news-sapotext-button {
+  background-color: transparent;
+  color: var(--web-khoa-2);
+  border: 2px solid var(--web-khoa-2);
+  padding: 0.5rem 1.5rem;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
-.fund-news-sapotext-text {
+/* .fund-news-sapotext-text {
   color: #FFF6A1;
   font-size: 1.563rem; 
+} */
+
+.fund-news-sapotext-text {
+  font-size: 1.125rem;
 }
 
 /* Layer 2 */
-.fund-news-picture {
+/* .fund-news-picture {
   position: absolute;
   top: 0rem;
   left: 0rem;
@@ -526,16 +569,35 @@ background-color: var(--web-khoa-1);
   border-radius: 3.75rem;
   overflow: hidden;
   z-index: 2;
+} */
+.fund-news-picture {
+  flex: 1;
+  width: 60%;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.fund-news-picture-img {
+/* .fund-news-picture-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+} */
+
+.fund-news-picture-img {
+  width: 100%;
+  display: block;
+  border-radius: 0;
+  object-fit: cover;
+  height: 30rem;
 }
 
 /* Layer 3 (Bottom) */
-.fund-news-title {
+/* .fund-news-title {
   position: absolute;
   top: 0rem;
   left:0.5rem;
@@ -543,6 +605,17 @@ background-color: var(--web-khoa-1);
   height: 43rem;
   text-transform: uppercase;
   z-index: 1;
+} */
+.fund-news-title-box {
+  padding: 1rem;
+  text-align: center;
+  background-color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #991b1b;
+  text-transform: uppercase;
+  border-bottom-left-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
 }
 
 .fund-news-title-textbox {
@@ -633,7 +706,7 @@ body::-webkit-scrollbar-thumb:hover {
 .homepage-title {
   font-size: 45px;
   font-weight: 500;
-  background: linear-gradient(to right, #C00016 40%, #FBF3B7 100%);
+  background: linear-gradient(to right, #C00016 40%, #bb4b26d9 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
