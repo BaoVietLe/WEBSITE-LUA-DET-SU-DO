@@ -10,7 +10,7 @@ const autoPlayInterval = 5000; // 5 seconds per slide
 
 function loadStaffData() {
     // AJAX call to get data from PHP backend
-    fetch('Bang_BTC.php')
+    fetch('./Bang_BTC.php')
         .then(response => response.json())
         .then(data => {
             // Display first staff member by default

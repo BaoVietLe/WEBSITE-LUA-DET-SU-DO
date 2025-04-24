@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Load header
-    fetch('../Component/Header_dự_án/Header_dự_án.html')
+    fetch('../ModelViews/Header_dự_án/Header_dự_án.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('header-container').innerHTML = data;
@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     
     // Load footer
-    fetch('../Component/footer.html')
+    fetch('../ModelViews/Footer/footer.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('footer-container').innerHTML = data;
@@ -23,19 +23,19 @@ document.addEventListener('DOMContentLoaded', function() {
         });
      
             // Load Hanh Trinh Trai Nghiem HTML
-    fetch('../Component/Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.html')
+    fetch('../ModelViews/Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.html')
     .then(response => response.text())
     .then(html => {
         document.getElementById('about-section').innerHTML = html;
 
         // Load JS sau khi đã render HTML
         const script = document.createElement('script');
-        script.src = '../Component/Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.js';
+        script.src = '../ModelViews/Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.js';
         script.onload = () => {
             console.log("JS slideshow loaded");
 
             // Fetch PHP để lấy dữ liệu
-            fetch('../Component/Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.php')
+            fetch('../ModelViews/Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.php')
                 .then(response => response.json())
                 .then(data => {
                     if (typeof initSlideshow === 'function') {
@@ -56,26 +56,26 @@ document.addEventListener('DOMContentLoaded', function() {
         // Dữ liệu cho slider
         const cardData = [
             {
-                image: "/api/placeholder/294/284",
+                image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/LDSD.jpg",
                 title: "Lửa Dệt Sử Đỏ",
                 date: "20.04.2025",
                 buttonText: "Chi tiết"
             },
             {
-                image: "/api/placeholder/294/284",
+                image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/Vùng đất thép.jpg",
                 title: "Hành trình về vùng đất thép",
                 date: "19.04.2025",
                 buttonText: "Chi tiết"
             },
             {
-                image: "/api/placeholder/294/284",
+                image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/VQNCS.jpg",
                 title: "Vinh quang người chiến sĩ",
                 date: "17.04.2025",
                 buttonText: "Chi tiết"
             },
             {
-                image: "/api/placeholder/294/284",
-                title: "Dấu chân anh hùng",
+                image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/DẤU ẤN ANH HÙNG.jpg",
+                title: "Dấu ấn anh hùng",
                 date: "17.04.2025",
                 buttonText: "Chi tiết"
             }
