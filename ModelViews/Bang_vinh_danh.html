@@ -4,19 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Trang Vinh Danh</title>
-  <link rel="stylesheet" href="./assets/css/Bang_vinh_danh.css" />
-  <link rel="stylesheet" href="./assets/css/File_CSS_chung.css"/>
-
+  <link rel="stylesheet" href="../assets/css/Bang_vinh_danh.css">
 </head>
 <body>
-  <div style="height:101px">Header</div>
+    <!-- Header will be loaded dynamically -->
+    <div id="header-container"></div>
   <div style="height:923px; background-color: coral": red></div>Slide picture</div>
   
   <button id="scroll-button" class="scroll-button">
     <img id="scroll-button-icon" src="./Footer/Ảnh/Chevrons up.png" alt="scroll up">
   </button>
 
-  <script>
+  <section class="Section_BVD">
+    <div class="Section_BVD_title_div"; id="Section_BVD_id">
+      <div class="Header_BVD_title_text">BẢNG VINH DANH</div>
+      <div class="Header_BVD_sub_text">COMMING SOON</div>
+    </div>
+  </section>
+        <!-- Header will be loaded dynamically -->
+        <div id="footer-container"></div>
+  <script src="../assets/js/Bang_vinh_danh.js" defer ></script>
+<script>
     const scroll_button = document.getElementById('scroll-button');
     const scroll_button_icon = document.getElementById('scroll-button-icon');
   
@@ -37,13 +45,5 @@
       });
     });
   </script>  
-
-  <section class="Section_BVD">
-    <div class="Section_BVD_title_div"; id="Section_BVD_id">
-      <div class="Header_BVD_title_text">BẢNG VINH DANH</div>
-      <div class="Header_BVD_sub_text">COMMING SOON</div>
-    </div>
-  </section>
-  
 </body>
 </html>
