@@ -1,11 +1,11 @@
 /* Combined CSS from test.html and test1.html */
 @import url('./File_CSS_chung.css');
 /* Common reset styles */
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+} */
 
 body {
     background: url('../Component/background-img.png');
@@ -88,7 +88,6 @@ body {
     justify-content: space-between; 
     height: 70vh; 
 }
-
 .right-content {
     flex: 1;
     display: flex;

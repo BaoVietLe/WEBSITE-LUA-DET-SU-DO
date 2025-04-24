@@ -1,13 +1,10 @@
-<? php
-include './Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.php';
-?>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lửa Dệt Sử Đỏ Campaign</title>
-    <link rel="stylesheet" href="./assets/css/Homepage_Ve_Nguon.css">
+    <link rel="stylesheet" href="../assets/css/Homepage_Ve_Nguon.css">
 </head>
 <body>
         <!-- Header will be loaded dynamically -->
@@ -20,9 +17,9 @@ include './Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.php';
         <div class="content-wrapper">
             <div class="left-content">
                 <div class="left-content-top">
-                    <div class="title">Cổng thông tin</div>
-                    <div class="subtitle">Lửa Dệt Sử Đỏ</div>
-                    <div class="description">Mô tả về website tại đây</div>
+                    <div class="title" style="font-size: 90px;">Cổng thông tin</div>
+                    <div class="subtitle" style="font-size: 70px;">Lửa Dệt Sử Đỏ</div>
+                    <div class="description" style="font-size: 30px;">Mô tả về website tại đây</div>
                 </div>
                 
                 <div class="left-content-bottom">
@@ -257,25 +254,25 @@ include './Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.php';
         // Dữ liệu cho slider
         const cardData = [
             {
-                image: "./assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/LDSD.jpg",
+                image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/LDSD.jpg",
                 title: "Lửa Dệt Sử Đỏ",
                 date: "20.04.2025",
                 buttonText: "Chi tiết"
             },
             {
-                image: "./assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/Vùng đất thép.jpg",
+                image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/Vùng đất thép.jpg",
                 title: "Hành trình về vùng đất thép",
                 date: "19.04.2025",
                 buttonText: "Chi tiết"
             },
             {
-                image: "./assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/VQNCS.jpg",
+                image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/VQNCS.jpg",
                 title: "Vinh quang người chiến sĩ",
                 date: "17.04.2025",
                 buttonText: "Chi tiết"
             },
             {
-                image: "./assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/DẤU ẤN ANH HÙNG.jpg",
+                image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/DẤU ẤN ANH HÙNG.jpg",
                 title: "Dấu ấn anh hùng",
                 date: "17.04.2025",
                 buttonText: "Chi tiết"

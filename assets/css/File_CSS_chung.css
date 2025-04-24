@@ -313,12 +313,12 @@
 }
 
 /* Khung chứa thông tin hoạt động - Quang Đại */
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Roboto;
-}
+} */
 .activity-info {
   width: 400px;
   height: 384px;
@@ -392,12 +392,12 @@ background-color: var(--web-khoa-1);
 }
 
 /* Khung chứa thông tin hoạt động - Quang Đại */
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Roboto;
-}
+} */
 .activity-info {
   width: 18.375rem;
   height:   24rem;
