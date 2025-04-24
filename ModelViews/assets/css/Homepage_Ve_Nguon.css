@@ -1,5 +1,5 @@
 /* Combined CSS from test.html and test1.html */
-@import url('../Component/File_CSS_chung.css');
+@import url('./File_CSS_chung.css');
 /* Common reset styles */
 * {
     margin: 0;

@@ -1,4 +1,4 @@
-@import url('../Component/File_CSS_chung.css');
+@import url('./File_CSS_chung.css');
 /* Base Styles */
 * {
     margin: 0;
