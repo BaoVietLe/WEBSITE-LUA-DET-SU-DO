@@ -1,5 +1,5 @@
 <? php
-include '../Component/Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.php';
+include './Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.php';
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -7,7 +7,7 @@ include '../Component/Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lửa Dệt Sử Đỏ Campaign</title>
-    <link rel="stylesheet" href="Homepage_Ve_Nguon.css">
+    <link rel="stylesheet" href="../assets/css/Homepage_Ve_Nguon.css">
 </head>
 <body>
         <!-- Header will be loaded dynamically -->
@@ -27,13 +27,13 @@ include '../Component/Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.php';
                 
                 <div class="left-content-bottom">
                     <div class="button-group">
-                        <a href="../Ve_chien_dich/ve_chien_dich.html" class="button">
+                        <a href="./ve_chien_dich.html" class="button">
                             <div class="button-text">
                               <span>TÌM HIỂU THÊM VỀ</span>
                               <span>VIỆT HÙNG LỤC</span>
                             </div>
                           </a>
-                          <a href="../Ve_chien_dich/ve_chien_dich.html" class="button button-white">
+                          <a href="./ve_chien_dich.html" class="button button-white">
                             <div class="button-text">
                               <span>ĐĂNG KÝ THAM GIA</span>
                               <span>VIỆT HÙNG LỤC</span>
@@ -46,7 +46,7 @@ include '../Component/Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.php';
             <div class="right-content">
                 <div class="image-info-no-action">
                     <img
-                      src="../Component/Ảnh/HD_1.png"
+                      src="./Footer/Ảnh/HD_1.png"
                       alt="Hình ảnh hoạt động"
                       class="image-info-no-action-image"
                     >
@@ -96,7 +96,7 @@ include '../Component/Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.php';
                 <div class="homepage-title">
                     Khơi nguồn cảm hứng nhân văn<br>cùng Quỹ vinh danh Anh hùng
                   </div>
-                  <button class="btn-more" onclick="location.href='../Quy_Vinh_danh_anh_hung/Quy_Vinh_danh_anh_hung.html'">TÌM HIỂU THÊM</button>
+                  <button class="btn-more" onclick="location.href='./Quy_Vinh_danh_anh_hung.html'">TÌM HIỂU THÊM</button>
 
             </div>
             
@@ -129,7 +129,7 @@ include '../Component/Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.php';
        <!-- Footer will be loaded dynamically -->
        <div id="footer-container"></div>
     </div>
-       <script defer src="../Component/Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.js"></script>
+       <script defer src="./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const buttons = document.querySelectorAll('.btn');
@@ -217,34 +217,26 @@ include '../Component/Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.php';
         });
     
     // Load footer
-    fetch('../Component/footer.html')
+    fetch('./Footer/footer.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('footer-container').innerHTML = data;
         });
-    
-    // Load activities data
-    fetch('js/activities.json')
-        .then(response => response.json())
-        .then(data => {
-            renderActivities('past-activities', data.pastActivities);
-            renderActivities('upcoming-activities', data.upcomingActivities);
-        });
      
             // Load Hanh Trinh Trai Nghiem HTML
-    fetch('../Component/Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.html')
+    fetch('./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.html')
     .then(response => response.text())
     .then(html => {
         document.getElementById('about-section').innerHTML = html;
 
         // Load JS sau khi đã render HTML
         const script = document.createElement('script');
-        script.src = '../Component/Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.js';
+        script.src = './Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.js';
         script.onload = () => {
             console.log("JS slideshow loaded");
 
             // Fetch PHP để lấy dữ liệu
-            fetch('../Component/Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.php')
+            fetch('./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.php')
                 .then(response => response.json())
                 .then(data => {
                     if (typeof initSlideshow === 'function') {
@@ -265,25 +257,25 @@ include '../Component/Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.php';
         // Dữ liệu cho slider
         const cardData = [
             {
-                image: "../Component/Tổng hợp ctrinh về nguồn/Bài phát động/LDSD.jpg",
+                image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/LDSD.jpg",
                 title: "Lửa Dệt Sử Đỏ",
                 date: "20.04.2025",
                 buttonText: "Chi tiết"
             },
             {
-                image: "../Component/Tổng hợp ctrinh về nguồn/Bài phát động/Vùng đất thép.jpg",
+                image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/Vùng đất thép.jpg",
                 title: "Hành trình về vùng đất thép",
                 date: "19.04.2025",
                 buttonText: "Chi tiết"
             },
             {
-                image: "../Component/Tổng hợp ctrinh về nguồn/Bài phát động/VQNCS.jpg",
+                image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/VQNCS.jpg",
                 title: "Vinh quang người chiến sĩ",
                 date: "17.04.2025",
                 buttonText: "Chi tiết"
             },
             {
-                image: "../Component/Tổng hợp ctrinh về nguồn/Bài phát động/DẤU ẤN ANH HÙNG.jpg",
+                image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/DẤU ẤN ANH HÙNG.jpg",
                 title: "Dấu ấn anh hùng",
                 date: "17.04.2025",
                 buttonText: "Chi tiết"
