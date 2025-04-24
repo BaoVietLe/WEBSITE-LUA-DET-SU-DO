@@ -11,9 +11,9 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
+} 
 /* Footer main container - positioned independently from the main layout */
+ /* Footer main container - positioned independently from the main layout */
 .footer {
   display: flex;
   flex-direction: column;
@@ -27,7 +27,7 @@
   margin-top: 50px; /* Add space above footer */
   z-index: 1; /* Keep above other elements but not interfering with modals */
 }
-
+  
 .footer-CTA {
   width: 31rem;
   max-width: 90%; /* Make it responsive */
@@ -44,180 +44,133 @@
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
   margin-bottom: 30px;
 }
-
-.footer-CTA-btn {
-  background: white;
-  border: none;
-  padding: 5px 15px;
-  border-radius: 10px;
-  color: #122CD4;
-  font-size: 14px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.footer-CTA-btn:hover {
-  transform: scale(1.1);
-}
-
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 1200px;
-  max-width: 95%; /* Make it responsive */
-  margin: 0 auto;
-  flex-wrap: wrap;
-}
-
-/* Cột đầu tiên chứa logo + brand-name + slogan + social-icons */
-.footer-left {
-  display: flex;
-  flex: 1;
-  width: 50%;
-  min-width: 300px; /* Ensure minimum width for small screens */
-  align-items: center;
-  white-space: nowrap;
-  margin-bottom: 20px; /* Add space for wrapping on small screens */
-}
-
-.footer-left-logo {
-  flex: 1;
-  max-width: 120px; /* Limit logo width */
-  display: flex;
-  justify-content: center;
-}
-
-.BIT-logo {
-  width: 100%;
-  max-width: 120px;
-}
-
-.footer-left-content {
-  flex: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-left: 20px;
-}
-
-.brand-name {
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
-  text-align: left;
-  margin: 16px 16px 16px 0;
-}
-
-.brand-slogan {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  text-align: left;
-}
-
-.social-icons {
-  display: flex;
-  gap: 10px;
-  margin-top: 5px;
-}
-
-.social-icons i {
-  font-size: 24px;
-  color: #3F6BCC;
-  cursor: pointer;
-  transition: transform 0.3s;
-}
-
-.social-icons i:hover {
-  transform: scale(1.1);
-}
-
-/* Các cột khác (My Account, Resources, Company) */
-.footer-right {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  width: 30%;
-  min-width: 300px; /* Ensure minimum width for small screens */
-}
-
-.footer-column {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  min-width: 100px;
-  margin-bottom: 20px; /* Add space for wrapping on small screens */
-}
-
-.footer-column h3 {
-  font-size: 16px;
-  font-weight: bold;
-  color: #122CD4;
-  margin-bottom: 5px;
-}
-
-.footer-column a {
-  text-decoration: none;
-  color: #333;
-  font-size: 14px;
-  transition: color 0.3s;
-}
-
-.footer-column a:hover {
-  color: #122CD4;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .footer-CTA {
-    flex-direction: column;
-    gap: 15px;
-    padding: 20px;
-    text-align: center;
+  
+  
+  .footer-CTA-btn {
+    background: white;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 10px;
+    color: #122CD4;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .footer-CTA-btn:hover {
+    transform: scale(1.1);
   }
   
   .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 1200px;
+    flex-wrap: wrap;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+  }
+  
+  /* Cột đầu tiên chứa logo + brand-name + slogan + social-icons */
+  .footer-left {
+    display: flex;
     flex-direction: column;
+    flex: 1;
+    align-items: center; 
+    white-space: nowrap;
+  }
+  .footer-left-logo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
     align-items: center;
   }
-  
-  .footer-left {
-    width: 100%;
-    justify-content: center;
-    margin-bottom: 30px;
+  .footer-left-logo img {
+    height: 30px;
+    margin: 0 10px;
+    max-width: 100%;
   }
-  
-  .footer-right {
-    width: 100%;
-    justify-content: space-around;
+  .BIT-logo {
+    height: 25px !important;
   }
-}
-
-@media (max-width: 576px) {
-  .footer-left {
-    flex-direction: column;
-    text-align: center;
-  }
-  
   .footer-left-content {
-    padding-left: 0;
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center; /* Canh giữa nội dung theo chiều dọc */
+    padding-left: 20px; /* Tạo khoảng cách với logo */
   }
   
-  .brand-name, .brand-slogan {
-    text-align: center;
-    margin: 10px 0;
+  .brand-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+    margin: 16px;
   }
   
+  .brand-slogan {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+    margin-top: 0px;
+    text-align: left;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+  }
+  
+  .social-icons i {
+    font-size: 24px;
+    color: #3F6BCC;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  
+  .social-icons i:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Các cột khác (My Account, Resources, Company) */
   .footer-right {
-    justify-content: center;
+    display: flex;
+    flex:1;
     gap: 40px;
+    flex-wrap: wrap;
   }
-}
-    </style>
+  
+  .footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 100px;
+  }
+  
+  .footer-column h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #122CD4;
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+  
+  .footer-column a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    transition: color 0.3s;
+  }
+  
+  .footer-column a:hover {
+    color: #122CD4;
+  }
+  
+  </style>
     <script src=""></script>
 </head>
 
@@ -233,7 +186,10 @@
       <!-- Cột chứa logo, tên, slogan, social -->
       <div class="footer-left">
             <div class="footer-left-logo">
-                <img src="Thanh_Navigation_khoa/assets/images/bit-logo.png" alt="Logo" class="BIT-logo">
+                <img src="./Ảnh/UEH.png" alt="Logo" class="UEH-logo">
+                <img src="./Ảnh/LogoDoan.png" alt="Logo" class="Doan-logo">
+                <img src="./Ảnh/LogoHoi.png" alt="Logo" class="Hoi-logo">
+                <img src="./Ảnh/bit-logo.png" alt="Logo" class="BIT-logo">
             </div>
 
             <div class="footer-left-content">
@@ -251,24 +207,24 @@
       <!-- Các cột khác -->
       <div class="footer-right">
           <div class="footer-column">
-              <h3>My Account</h3>
-              <a href="#">Profile</a>
-              <a href="#">Settings</a>
-              <a href="#">Billing</a>
+              <h3>Về Đoàn - Hội khoa</h3>
+              <a href="#">Giới thiệu</a>
+              <a href="#">Chuyên ngành</a>
+              <a href="#">Các hoạt động</a>
           </div>
   
           <div class="footer-column">
-              <h3>Resources</h3>
-              <a href="#">Documentation</a>
-              <a href="#">FAQ</a>
-              <a href="#">Support</a>
+              <h3>Tin tức</h3>
+              <a href="#">Về tuyển dụng</a>
+              <a href="#">Về khoa</a>
+              <a href="#">Về chuyên ngành</a>
           </div>
   
           <div class="footer-column">
-              <h3>Company</h3>
-              <a href="#">About Us</a>
-              <a href="#">Careers</a>
-              <a href="#">Contact</a>
+              <h3>Liên hệ</h3>
+              <a href="#">Ban Chấp Hành</a>
+              <a href="#">Hợp tác</a>
+              <a href="#">Giải đáp</a>
           </div>
       </div>
   </div>

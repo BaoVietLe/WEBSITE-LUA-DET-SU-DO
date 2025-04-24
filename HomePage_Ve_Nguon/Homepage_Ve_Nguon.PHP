@@ -265,26 +265,26 @@ include '../Component/Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.php';
         // Dữ liệu cho slider
         const cardData = [
             {
-                image: "/api/placeholder/294/284",
+                image: "../Component/Tổng hợp ctrinh về nguồn/Bài phát động/LDSD.jpg",
                 title: "Lửa Dệt Sử Đỏ",
                 date: "20.04.2025",
                 buttonText: "Chi tiết"
             },
             {
-                image: "/api/placeholder/294/284",
+                image: "../Component/Tổng hợp ctrinh về nguồn/Bài phát động/Vùng đất thép.jpg",
                 title: "Hành trình về vùng đất thép",
                 date: "19.04.2025",
                 buttonText: "Chi tiết"
             },
             {
-                image: "/api/placeholder/294/284",
+                image: "../Component/Tổng hợp ctrinh về nguồn/Bài phát động/VQNCS.jpg",
                 title: "Vinh quang người chiến sĩ",
                 date: "17.04.2025",
                 buttonText: "Chi tiết"
             },
             {
-                image: "/api/placeholder/294/284",
-                title: "Dấu chân anh hùng",
+                image: "../Component/Tổng hợp ctrinh về nguồn/Bài phát động/DẤU ẤN ANH HÙNG.jpg",
+                title: "Dấu ấn anh hùng",
                 date: "17.04.2025",
                 buttonText: "Chi tiết"
             }
@@ -326,9 +326,9 @@ include '../Component/Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.php';
     });
 
     // Xác định các biến cấu hình slider
-    let cardsPerPage = 3; // Số lượng card hiển thị mỗi trang
+    let cardsPerPage = 4; // Số lượng card hiển thị mỗi trang
     let cardWidth = 400; // Chiều rộng mỗi card
-    let cardMargin = 20; // Khoảng cách giữa các card
+    let cardMargin = 80; // Khoảng cách giữa các card
     let currentPage = 0; // Trang hiện tại
     let totalPages = Math.ceil(cardData.length / cardsPerPage); // Tổng số trang
     
