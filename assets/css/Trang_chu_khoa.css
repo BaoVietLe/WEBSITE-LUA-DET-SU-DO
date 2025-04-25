@@ -10,12 +10,11 @@ body, html {
     position: relative;
     width: 100%;
     height: 100vh; /* Chiếm toàn bộ chiều cao màn hình */
-    background-color: #000000; /* Hoặc background-image, background: url(...) */ 
     /* Dùng Flex để đẩy .hero-content sang bên phải */
     display: flex;
     justify-content: flex-end;  /* Canh sang phải */
     align-items: center;        /* Canh giữa theo chiều dọc */
-    background: url("../homepage-assets/Intro-logo.gif");
+    background: url("/ModelViews/Thanh_Navigation_khoa/assets/Intro-logo.gif");
     background-repeat: no-repeat;
     background-size: cover;
   /* Điều quan trọng: chỉnh background-position để "xê dịch" ảnh nền sang trái */
