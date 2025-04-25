@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Tin Tức</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            padding: 10px 0;
+        }
+        
+        .logo img {
+            height: 50px;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: #fff;
+            border-bottom: 1px solid #eee;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav li {
+            margin-right: 10px;
+        }
+        
+        nav a {
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+        nav a.active {
+            background-color: #d30000;
+            color: white;
+        }
+        
+        /* Banner */
+        .banner {
+            height: 80px;
+            background: linear-gradient(to right, #ffb347, #d30000);
+            margin-bottom: 20px;
+        }
+        
+        /* Section title */
+        .section-title {
+            text-align: center;
+            position: relative;
+            margin: 30px 0;
+        }
+        
+        .section-title h2 {
+            background-color: #fff;
+            display: inline-block;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+            text-transform: uppercase;
+            font-size: 18px;
+        }
+        
+        .section-title:before {
+            content: "";
+            height: 1px;
+            background-color: #ddd;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            z-index: 0;
+        }
+        
+        /* Article */
+        .article {
+            background-color: #fff;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .article-category {
+            color: #666;
+            font-size: 14px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        
+        .article-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .article-date {
+            font-size: 16px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        .article-content {
+            line-height: 1.6;
+            color: #444;
+        }
+        
+        .article-image {
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .article-image img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .article-caption {
+            text-align: center;
+            font-style: italic;
+            color: #666;
+            margin-top: 10px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #f0f0f0;
+            padding: 40px 0;
+            margin-top: 30px;
+            border-top: 5px solid #d30000;
+        }
+        
+        .footer-title {
+            background-color: #d30000;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-columns {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+            margin: 0 10px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .footer-column img {
+            height: 40px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .footer-contact {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .footer-nav {
+            display: flex;
+        }
+        
+        .footer-nav a {
+            margin-right: 20px;
+            color: #333;
+            text-decoration: none;
+        }
+        
+        .social-links a {
+            margin-left: 15px;
+            color: #333;
+            font-size: 18px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="/api/placeholder/200/80" alt="Logo">
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#" class="active">Về chiến dịch</a></li>
+                <li><a href="#">Bảng vinh danh</a></li>
+                <li><a href="#">Quỹ vinh danh anh hùng</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="banner"></div>
+    
+    <main class="container">
+        <div class="section-title">
+            <h2>Tin tức hoạt động quỹ</h2>
+        </div>
+        
+        <article class="article" id="article-content">
+<!-- Thêm các placeholder này vào vị trí tương ứng trong mẫu HTML -->
+<h1 class="article-title"><!-- ARTICLE_TITLE --></h1>
+<div class="article-date"><!-- ARTICLE_DATE --></div>
+<div class="article-category"><a href="#"><!-- ARTICLE_CATEGORY --></a></div>
+<div class="article-content"><!-- ARTICLE_CONTENT --></div>
+        </article>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-title">Thông tin liên hệ</div>
+            
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>Đơn vị tổ chức</h3>
+                    <div>
+                        <img src="/api/placeholder/100/40" alt="Logo 1">
+                        <img src="/api/placeholder/100/40" alt="Logo 2">
+                        <img src="/api/placeholder/100/40" alt="Logo 3">
+                    </div>
+                    <div class="footer-contact">
+                        <p>Địa chỉ: 82-84 - 279 Nguyễn Tri Phương, Phường 05, Quận 10</p>
+                        <p>Email: doankhoi.bit@ueh.edu.vn | SĐT: 028.3xxx.xxxx</p>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Đơn vị bảo trợ chuyên môn</h3>
+                    <div>
+                        <img src="/api/placeholder/100/40" alt="Logo 4">
+                    </div>
+                    <div class="footer-contact">
+                        <p>Địa chỉ: 159 Pasteur, Phường 6, Quận 3, Hồ Chí Minh</p>
+                        <p>Email: sldtbxh@tphcm.gov.vn | SĐT: 028.3829.1302</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-nav">
+                    <a href="#">Trang chủ</a>
+                    <a href="#">Bảng vinh danh</a>
+                    <a href="#">Về chiến dịch</a>
+                    <a href="#">Quỹ momo vinh danh hùng</a>
+                </div>
+                
+                <div class="social-links">
+                    <a href="#">📱</a>
+                    <a href="#">📷</a>
+                    <a href="#">📺</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // This script will be replaced by the docx processing script
+        console.log("Page loaded successfully");
+    </script>
+</body>
+</html>
