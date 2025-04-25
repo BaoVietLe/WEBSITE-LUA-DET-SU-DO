@@ -26,9 +26,9 @@
   /* Import Font LostType vào đây */
   @font-face {
     font-family: 'LostType';
-    src: url('./Font/LostType2023-Regular.woff2') format('woff2');
-    src: url('./Font/LostType2023-Regular.woff') format('woff');
-    src: url('./Font/LostType2023-Regular.otf') format('otf');
+    src: url('/ModelViews/Font/LostType2023-Regular.woff2') format('woff2');
+    src: url('/ModelViews/Font/LostType2023-Regular.woff') format('woff');
+    src: url('/ModelViews/Font/LostType2023-Regular.otf') format('otf');
   }
 /* Thuộc tính nút bấm - Viết Bảo */
 .button {
@@ -78,7 +78,7 @@
 .program-info {
   display: flex;
   justify-content: space-between;
-  background-color: var(--web-campaign-2);
+  background-color: var(--web-khoa-2);
   border-radius: 1rem;
   padding: 1.5rem 2rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
