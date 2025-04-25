@@ -330,7 +330,7 @@
 .activity-info-image {
   width: 100%;
   height: 400px;
-  object-fit: cover;
+  object-fit: none;
 }
 
 .activity-info-content {
@@ -718,7 +718,7 @@ body::-webkit-scrollbar-thumb:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 30px;
+  margin-bottom: 50px;
 }
 
 .sub-header {
