@@ -1,5 +1,5 @@
 <? php
-include '../Component/Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.php';
+include './Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.php';
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -23,7 +23,6 @@ include '../Component/Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.php';
     <!-- Main Content -->
      <div class="hero-section">
         <h1>LỬA DỆT SỬ ĐỎ</h1>
-     </div>
     <div class="hero-content">
         <!-- Left Column -->
         <div class="hero-left-column">
@@ -60,7 +59,7 @@ include '../Component/Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.php';
         <!-- Right Column -->
         <div class="hero-right-column">
             <div class="hero-image">
-                <img src="../Component/Ảnh/HD_1.png" alt="Team Photo">
+                <img src="./Footer/Ảnh/HD_1.png" alt="Team Photo">
             </div>
         </div>
     </div>
@@ -79,6 +78,7 @@ include '../Component/Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.php';
             <div class="photo-item"><img src="images/placeholder.jpg" alt="Hoạt động"></div>
         </div>
     </div>
+</div>
 
     <div class="activities-section">
         <div class="section-header">
