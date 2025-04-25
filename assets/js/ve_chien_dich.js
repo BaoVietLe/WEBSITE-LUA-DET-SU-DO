@@ -312,3 +312,47 @@ for (let i = 0; i < totalPages; i++) {
                 // Render activity elements
             });
         }}
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const dots = document.querySelectorAll('.hero-pagination .dot');
+            const slides = document.querySelectorAll('.hero-text[id^="slide-"]');
+            
+            // Make sure all slides except the first one are hidden initially
+            slides.forEach((slide, index) => {
+                if (index !== 0) {
+                    slide.style.display = 'none';
+                }
+            });
+            
+            // Add click event listeners to dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    // Remove active class from all dots
+                    dots.forEach(d => d.classList.remove('active'));
+                    
+                    // Add active class to clicked dot
+                    dot.classList.add('active');
+                    
+                    // Hide all slides
+                    slides.forEach(slide => {
+                        slide.style.display = 'none';
+                    });
+                    
+                    // Show the corresponding slide
+                    slides[index].style.display = 'block';
+                    
+                    // Add fade-in animation
+                    slides[index].classList.add('fade-in');
+                    setTimeout(() => {
+                        slides[index].classList.remove('fade-in');
+                    }, 500);
+                });
+            });
+            
+            // Optional: Auto-rotate slides every 5 seconds
+            let currentSlide = 0;
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % dots.length;
+                dots[currentSlide].click();
+            }, 5000);
+        });

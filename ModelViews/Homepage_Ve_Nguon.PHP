@@ -89,7 +89,7 @@
         <div class="container">
             <div class="header">
                 <div class="homepage-title">
-                    Khơi nguồn cảm hứng nhân văn<br>cùng Quỹ vinh danh Anh hùng
+                    Khơi nguồn cảm hứng<br>nhân văn cùng Quỹ vinh danh Anh hùng
                 </div>
                 <button class="btn-more" onclick="location.href='./Quy_Vinh_danh_anh_hung.html'">TÌM HIỂU THÊM</button>
 
@@ -113,9 +113,9 @@
                             ấn đặc biệt trong tháng vừa qua và cùng thắp sáng thêm ngọn lửa tri ân.
                         </p>
                         <div class="fund-news-sapotext-button-container">
-                            <button class="fund-news-sapotext-button">
-                                <span class="fund-news-sapotext-text">XEM TIẾP</span>
-                            </button>
+                        <a href="./Trang_tin_bao.html" class="fund-news-sapotext-button">
+                         <span class="fund-news-sapotext-text">XEM TIẾP</span>
+                        </a>
                         </div>
                     </div>
 

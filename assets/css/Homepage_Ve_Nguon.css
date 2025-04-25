@@ -24,7 +24,7 @@ body {
     margin: 0 auto;
     display: flex;
     transition: transform 0.5s ease;
-    gap: 1px;
+    gap: 20px;
 }
 
 /* Styles from test.html */
