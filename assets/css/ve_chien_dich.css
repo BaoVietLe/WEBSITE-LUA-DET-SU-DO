@@ -28,7 +28,7 @@ ul {
     align-items: center;
     padding: 10px 20px;
     background-color: #fff;
-    border-radus: 10px;
+    border-radius: 10px;
     border-bottom: 1px solid #e5e5e5;
 }
 
@@ -123,56 +123,26 @@ ul {
 }
 
 /* Pagination dots for content navigation */
-/* Styling for pagination dots */
 .hero-pagination {
     display: flex;
     justify-content: center;
-    margin: 20px 0;
+    margin: 1rem 0;
 }
 
 .hero-pagination .dot {
-    width: 12px;
-    height: 12px;
+    width: 0.625rem;
+    height: 0.625rem;
+    background-color: #ccc;
     border-radius: 50%;
-    background-color: #ddd;
-    margin: 0 8px;
+    margin: 0 0.3125rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .hero-pagination .dot.active {
-    background-color: #e74c3c; /* Red color to match your theme */
-    transform: scale(1.2);
+    background-color: var(--web-khoa-1);
 }
 
-/* Animation for slide transitions */
-.hero-text {
-    transition: opacity 0.4s ease-in-out;
-}
-
-.fade-in {
-    animation: fadeIn 0.5s;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* Make hero text more visually appealing */
-.hero-text h2 {
-    color: #e74c3c;
-    margin-bottom: 15px;
-    font-size: 28px;
-    font-weight: 700;
-}
-
-.hero-text p {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #333;
-    max-width: 90%;
-}
 /* Right column containing the team photo */
 .hero-right-column {
     flex: 1;
