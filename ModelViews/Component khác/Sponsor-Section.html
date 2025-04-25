@@ -6,99 +6,131 @@
   <title>Danh sách nhà tài trợ</title>
   <style>
     body {
-      background: white;
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
+      background-color: #ffffff;
     }
-
+    
+    .sponsor-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 30px 15px;
+      border-top: 3px solid #eaeaea;
+      border-bottom: 3px solid #eaeaea;
+    }
+    
     .sponsor-section {
       display: flex;
+      justify-content: space-between;
       flex-wrap: wrap;
-      justify-content: space-evenly;
-      align-items: flex-start;
-      padding: 30px 20px;
-      background-color: #ffffff;
-      border-top: 3px solid #ccc;
-      border-bottom: 3px solid #ccc;
+      margin-bottom: 40px;
     }
-
-    .sponsor-group {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 10px;
-      min-width: 160px;
+    
+    .sponsor-category {
+      flex: 1;
+      min-width: 250px;
+      margin: 0 15px 20px;
       text-align: center;
     }
-
-    .sponsor-group p {
+    
+    .sponsor-title {
       font-weight: bold;
-      font-size: 14px;
-      margin-bottom: 10px;
-      text-transform: uppercase;
       color: #2c3e50;
+      font-size: 16px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
     }
-
-    .sponsor-group img {
-      max-height: 40px;
-      margin: 5px 0;
+    
+    .logo-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    
+    .organizer-logo {
+      height: 50px;
+      margin: 0 10px;
       object-fit: contain;
-      max-width: 120px;
     }
-
+    /*
+    .diamond-logo {
+      height: 50px; 
+      margin: 0 10px;
+      object-fit: contain;
+    }
+    
+    .gold-logo {
+      height: 40px; 
+      margin: 0 10px;
+      object-fit: contain;
+    }
+    */
+    .silver-logo {
+      height: 35px; /* 70% of organizer logo */
+      margin: 0 10px;
+      object-fit: contain;
+    }
+    
+    .partner-logo {
+      height: 30px;
+      margin: 0 10px;
+      object-fit: contain;
+    }
+    
     @media (max-width: 768px) {
       .sponsor-section {
         flex-direction: column;
-        align-items: center;
       }
-
-      .sponsor-group {
-        margin: 15px 0;
+      
+      .logo-row {
+        margin-bottom: 15px;
       }
     }
   </style>
 </head>
 <body>
-
-  <div class="sponsor-section">
-    <div class="sponsor-group">
-      <p>Đơn vị tổ chức</p>
-      <img src="logo-ueh.png">
-      <img src="logo-doan.png">
-      <img src="logo-bit.png">
+  <div class="sponsor-container">
+    <div class="sponsor-section">
+      <div class="sponsor-category">
+        <div class="sponsor-title">ĐƠN VỊ TỔ CHỨC</div>
+        <div class="logo-row">
+          <img src="./Footer/Ảnh/UEH.png" alt="UEH University" class="organizer-logo">
+          <img src="./Footer/Ảnh/LogoDoan.png" alt="Đoàn" class="organizer-logo">
+          <img src="../assets/img/sponsors/BIT LOGO RESIZE.png" alt="BIT" class="organizer-logo">
+        </div>
+      </div>
+      <!--
+      <div class="sponsor-category">
+        <div class="sponsor-title">NHÀ TÀI TRỢ KIM CƯƠNG</div>
+        <div class="logo-row">
+          <img src="logo-levinci.png" alt="LeVinci" class="diamond-logo">
+        </div>
+      </div>
+      
+      <div class="sponsor-category">
+        <div class="sponsor-title">NHÀ TÀI TRỢ VÀNG</div>
+        <div class="logo-row">
+          <img src="logo-hangcha.png" alt="Hangcha" class="gold-logo">
+        </div>
+      </div>
+      -->
+      <div class="sponsor-category">
+        <div class="sponsor-title">NHÀ TÀI TRỢ BẠC</div>
+        <div class="logo-row">
+          <img src="../assets/img/sponsors/Want Want logo1-01.png" alt="Want Want" class="silver-logo">
+        </div>
+      </div>
+      
+      <div class="sponsor-category">
+        <div class="sponsor-title">NHÀ TÀI TRỢ ĐỒNG HÀNH</div>
+        <div class="logo-row">
+          <img src="../assets/img/sponsors/NTT ARES.png" alt="Ares" class="partner-logo">
+          <img src="../assets/img/sponsors/NTT EDU EVENT SPONSOR.png" alt="Edu Event Sponsor" class="partner-logo">
+        </div>
+      </div>
     </div>
-<!--
-    <div class="sponsor-group">
-      <p>Nhà tài trợ kim cương</p>
-      <img src="logo-levinci.png">
-    </div>
-
-    <div class="sponsor-group">
-      <p>Nhà tài trợ vàng</p>
-      <img src="logo-hangcha.png">
-    </div>
--->
-    <div class="sponsor-group">
-      <p>Nhà tài trợ bạc</p>
-      <img src="logo-fis.png">
-    </div>
-
-    <div class="sponsor-group">
-      <p>Nhà tài trợ đồng hành</p>
-      <img src="logo-bosch.png">
-      <img src="logo-california.png">
-    </div>
-    <!--
-
-    <div class="sponsor-group">
-      <p>Đối tác hỗ trợ truyền thông</p>
-      <img src="logo-ybox.png">
-      <img src="logo-adayroi.png">
-      <img src="logo-moh.png" alt="MOH">
-    </div>
-    -->
   </div>
-
 </body>
 </html>
