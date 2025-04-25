@@ -8,7 +8,7 @@
 } */
 
 body {
-    background: url('../Component/background-img.png');
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('../img/background-img.png');
     overflow-x: hidden;
     font-family:'Roboto';
 }
@@ -97,6 +97,7 @@ body {
 }
 
 .title {
+    font-family:'Style Script';
     font-size: 50px;
     font-weight: bold;
     color: #c41111;
@@ -106,6 +107,7 @@ body {
 }
 
 .subtitle {
+    font-family:'Style Script';
     font-size: 60px;
     font-weight: bold;
     background: linear-gradient(to bottom, #c41111 0%, #ff9900 100%);
