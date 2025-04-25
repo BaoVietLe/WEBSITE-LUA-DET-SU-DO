@@ -27,106 +27,175 @@ document.addEventListener('DOMContentLoaded', function() {
                     chevronUp.querySelector('svg').innerHTML = '<path d="M18 15l-6-6-6 6"/>';
                 }
             });
-    
-            // Simulated hero data
-            const heroesData = [
-                [
-                    {
-                        name: "Mẹ Bùi Thị Lảng",
-                        year: "Sinh năm 1926",
-                        location: "phường Hiệp An, TP.Thủ Dầu Một",
-                        image: "/api/placeholder/300/250"
-                    },
-                    {
-                        name: "Mẹ Nguyễn Thị Kéo",
-                        year: "Sinh năm 1925",
-                        location: "phường Hiệp An, TP.Thủ Dầu Một",
-                        image: "/api/placeholder/300/250"
-                    },
-                    {
-                        name: "Mẹ Trần Thị Tư",
-                        year: "Sinh năm 1940",
-                        location: "xã An Sơn, TX.Thuận An",
-                        image: "/api/placeholder/300/250"
-                    }
-                ],
-                // More pages of heroes would be added here
-                [
-                    {
-                        name: "Mẹ Lê Thị Hoa",
-                        year: "Sinh năm 1930",
-                        location: "phường Phú Hòa, TP.Thủ Dầu Một",
-                        image: "/api/placeholder/300/250"
-                    },
-                    {
-                        name: "Mẹ Phạm Thị Mai",
-                        year: "Sinh năm 1928",
-                        location: "phường Phú Lợi, TP.Thủ Dầu Một",
-                        image: "/api/placeholder/300/250"
-                    },
-                    {
-                        name: "Mẹ Võ Thị Ngọc",
-                        year: "Sinh năm 1935",
-                        location: "xã Bình Nhâm, TX.Thuận An",
-                        image: "/api/placeholder/300/250"
-                    }
-                ],
-                // Additional pages for pagination simulation
-                [], [], [], [], [], [], [], [], [], [], [], []
-            ];
-    
-            // Pagination functionality
-            const paginationDots = document.querySelectorAll('.pagination-dot');
-            const heroesGrid = document.getElementById('heroes-grid');
+
+            function initCarousel(buttonLeft, buttonRight, track, itemSelector, visibleItems = 2) {
+                const items = document.querySelectorAll(itemSelector);
+                const totalItems = items.length;
+                let currentIndex = 0;
+                let itemWidth = items[0].offsetWidth;
             
-            paginationDots.forEach((dot, index) => {
-                dot.addEventListener('click', () => {
-                    // Update active dot
-                    document.querySelector('.pagination-dot.active').classList.remove('active');
-                    dot.classList.add('active');
-                    
-                    // Update heroes display
-                    if (heroesData[index] && heroesData[index].length > 0) {
-                        updateHeroesDisplay(heroesData[index]);
-                    } else {
-                        // Sample data for other pages
-                        updateHeroesDisplay([
-                            {
-                                name: "Mẹ Việt Nam Anh Hùng " + (index + 1),
-                                year: "Sinh năm 19XX",
-                                location: "Tỉnh/Thành phố",
-                                image: "/api/placeholder/300/250"
-                            },
-                            {
-                                name: "Mẹ Việt Nam Anh Hùng " + (index + 2),
-                                year: "Sinh năm 19XX",
-                                location: "Tỉnh/Thành phố",
-                                image: "/api/placeholder/300/250"
-                            },
-                            {
-                                name: "Mẹ Việt Nam Anh Hùng " + (index + 3),
-                                year: "Sinh năm 19XX",
-                                location: "Tỉnh/Thành phố",
-                                image: "/api/placeholder/300/250"
-                            }
-                        ]);
-                    }
-                });
-            });
+                function updatePosition() {
+                    const newPosition = -(currentIndex * itemWidth);
+                    track.style.transform = `translateX(${newPosition}px)`;
+                }
             
-            function updateHeroesDisplay(heroes) {
-                heroesGrid.innerHTML = '';
-                heroes.forEach(hero => {
-                    const heroCard = document.createElement('div');
-                    heroCard.className = 'hero-card';
-                    heroCard.innerHTML = `
-                        <img src="${hero.image}" alt="${hero.name}">
-                        <div class="hero-card-info">
-                            <div class="hero-card-name">${hero.name}</div>
-                            <div class="hero-card-year">${hero.year}</div>
-                            <div class="hero-card-location">${hero.location}</div>
-                        </div>
-                    `;
-                    heroesGrid.appendChild(heroCard);
+                buttonLeft.addEventListener('click', () => {
+                    currentIndex = Math.max(currentIndex - 1, 0); // Không lùi quá 0
+                    updatePosition();
                 });
+            
+                buttonRight.addEventListener('click', () => {
+                    currentIndex = Math.min(currentIndex + 1, totalItems - visibleItems); // Không tiến quá số thẻ hiển thị
+                    updatePosition();
+                });
+            
+                window.addEventListener('resize', () => {
+                    itemWidth = items[0].offsetWidth;
+                    updatePosition();
+                    updateVisibleItems();
+                });
+                function autoSlide(interval = 3000) {
+                    setInterval(() => {
+                        if (currentIndex < totalItems - visibleItems) {
+                            currentIndex++;
+                        } else {
+                            currentIndex = 0; // Quay lại từ đầu nếu hết thẻ
+                        }
+                        updatePosition();
+                    }, interval);
+                }
+                function updateVisibleItems() {
+                    visibleItems = getVisibleItems();
+                    currentIndex = Math.min(currentIndex, totalItems - visibleItems);
+                    updatePosition();
+                }
+                updatePosition();
+                autoSlide();
             }
+            
+            // Gọi hàm cho từng carousel
+            function getVisibleItems() {
+                // Tính số lượng thẻ hiển thị dựa trên kích thước màn hình
+                if (window.innerWidth < 768) {
+                    return 1;
+                } else if (window.innerWidth < 1024) {
+                    return 2;
+                } else {
+                    return 3; // Mặc định hiển thị 3 thẻ
+                }
+            }
+            
+            document.addEventListener('DOMContentLoaded', function () {
+                const visibleItems = getVisibleItems();
+                initCarousel(
+                    document.querySelector('.left-btn'),
+                    document.querySelector('.right-btn'),
+                    document.querySelector('.heroes-grid'),
+                    '.hero-card',
+                    visibleItems
+                );
+            });
+
+    
+            // // Simulated hero data
+            // const heroesData = [
+            //     [
+            //         {
+            //             name: "Mẹ Bùi Thị Lảng",
+            //             year: "Sinh năm 1926",
+            //             location: "phường Hiệp An, TP.Thủ Dầu Một",
+            //             image: "/api/placeholder/300/250"
+            //         },
+            //         {
+            //             name: "Mẹ Nguyễn Thị Kéo",
+            //             year: "Sinh năm 1925",
+            //             location: "phường Hiệp An, TP.Thủ Dầu Một",
+            //             image: "/api/placeholder/300/250"
+            //         },
+            //         {
+            //             name: "Mẹ Trần Thị Tư",
+            //             year: "Sinh năm 1940",
+            //             location: "xã An Sơn, TX.Thuận An",
+            //             image: "/api/placeholder/300/250"
+            //         }
+            //     ],
+            //     // More pages of heroes would be added here
+            //     [
+            //         {
+            //             name: "Mẹ Lê Thị Hoa",
+            //             year: "Sinh năm 1930",
+            //             location: "phường Phú Hòa, TP.Thủ Dầu Một",
+            //             image: "/api/placeholder/300/250"
+            //         },
+            //         {
+            //             name: "Mẹ Phạm Thị Mai",
+            //             year: "Sinh năm 1928",
+            //             location: "phường Phú Lợi, TP.Thủ Dầu Một",
+            //             image: "/api/placeholder/300/250"
+            //         },
+            //         {
+            //             name: "Mẹ Võ Thị Ngọc",
+            //             year: "Sinh năm 1935",
+            //             location: "xã Bình Nhâm, TX.Thuận An",
+            //             image: "/api/placeholder/300/250"
+            //         }
+            //     ],
+            //     // Additional pages for pagination simulation
+            //     [], [], [], [], [], [], [], [], [], [], [], []
+            // ];
+    
+            // // Pagination functionality
+            // const paginationDots = document.querySelectorAll('.pagination-dot');
+            // const heroesGrid = document.getElementById('heroes-grid');
+            
+            // paginationDots.forEach((dot, index) => {
+            //     dot.addEventListener('click', () => {
+            //         // Update active dot
+            //         document.querySelector('.pagination-dot.active').classList.remove('active');
+            //         dot.classList.add('active');
+                    
+            //         // Update heroes display
+            //         if (heroesData[index] && heroesData[index].length > 0) {
+            //             updateHeroesDisplay(heroesData[index]);
+            //         } else {
+            //             // Sample data for other pages
+            //             updateHeroesDisplay([
+            //                 {
+            //                     name: "Mẹ Việt Nam Anh Hùng " + (index + 1),
+            //                     year: "Sinh năm 19XX",
+            //                     location: "Tỉnh/Thành phố",
+            //                     image: "/api/placeholder/300/250"
+            //                 },
+            //                 {
+            //                     name: "Mẹ Việt Nam Anh Hùng " + (index + 2),
+            //                     year: "Sinh năm 19XX",
+            //                     location: "Tỉnh/Thành phố",
+            //                     image: "/api/placeholder/300/250"
+            //                 },
+            //                 {
+            //                     name: "Mẹ Việt Nam Anh Hùng " + (index + 3),
+            //                     year: "Sinh năm 19XX",
+            //                     location: "Tỉnh/Thành phố",
+            //                     image: "/api/placeholder/300/250"
+            //                 }
+            //             ]);
+            //         }
+            //     });
+            // });
+            
+            // function updateHeroesDisplay(heroes) {
+            //     heroesGrid.innerHTML = '';
+            //     heroes.forEach(hero => {
+            //         const heroCard = document.createElement('div');
+            //         heroCard.className = 'hero-card';
+            //         heroCard.innerHTML = `
+            //             <img src="${hero.image}" alt="${hero.name}">
+            //             <div class="hero-card-info">
+            //                 <div class="hero-card-name">${hero.name}</div>
+            //                 <div class="hero-card-year">${hero.year}</div>
+            //                 <div class="hero-card-location">${hero.location}</div>
+            //             </div>
+            //         `;
+            //         heroesGrid.appendChild(heroCard);
+            //     });
+            // }

@@ -181,26 +181,104 @@ body {
     background-color: #c0272d;
 }
 
-.heroes-container {
+/* .heroes-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+} */
+ 
+/* New css */
+
+.heroes-container {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+.heroes-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    max-width: 80%;
+}
+.heroes-carousel-wrapper {
+    display: flex;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    align-items: center;
+    justify-content: center;
+    white-space: wrap;
+    padding-bottom: 1.25rem;
+    max-width: 80%;
+    margin: 0 auto;
+}
+/* Arrow Button Base */
+.arrow-btn {
+    position: absolute; /* Positioning relative to parent container */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for perfect vertical centering */
+    background-color: rgba(255, 255, 255, 0.833); /* Slightly transparent background */
+    border: none; /* Remove default border */
+    font-size: 24px; /* Larger font size for visibility */
+    cursor: pointer; /* Pointer cursor on hover */
+    z-index: 10; /* Ensure buttons are on top */
+    padding: 10px; /* Add padding for better button size */
+    border-radius: 50%; /* Circular button */
+    transition: all 0.3s ease; /* Smooth transition for hover and click effects */
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center; /* Canh giữa biểu tượng */
+    justify-content: center; /* Canh giữa biểu tượng */
+}
+
+/* Left Button */
+.left-btn {
+    left: 5%; /* Position it on the left */
+    z-index: 10;
+}
+
+/* Right Button */
+.right-btn {
+    right: 5%; /* Position it on the right */
+    z-index: 10;
+}
+
+/* Hover Effect */
+.arrow-btn:hover {
+    background-color: #c0272d; /* Change to theme color on hover */
+    color: white; /* Arrow turns white */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transform: translateY(-50%) scale(1.1); /* Scale up slightly on hover */
+}
+
+/* Active state effect */
+.arrow-btn:active {
+    transform: translateY(-50%) scale(1); /* Reset scale when clicked */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Reduce shadow on click */
+}
+
+/* New css */
 
 .heroes-subtitle {
     text-align: center;
     margin-bottom: 30px;
     font-size: 18px;
     color: #333;
+    display: block;
 }
 
-.heroes-grid {
+/* .heroes-grid {
     display: flex;
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
     margin-bottom: 30px;
-}
+} */
 
 .hero-card {
     width: 300px;
@@ -209,7 +287,17 @@ body {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     background-color: white;
     text-align: center;
+    margin-bottom:20px;
+    flex: 0 0 auto;
+    width: 250px;
 }
+
+.hero-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
 
 .hero-card img {
     width: 100%;
