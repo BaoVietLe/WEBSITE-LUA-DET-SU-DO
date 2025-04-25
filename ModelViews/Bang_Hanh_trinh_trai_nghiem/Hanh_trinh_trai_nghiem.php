@@ -6,7 +6,7 @@ header('Content-Type: application/json');
 $servername = "localhost";
 $username = "root"; // Thay thế bằng username MySQL của bạn
 $password = ""; // Thay thế bằng password MySQL của bạn
-$dbname = "bit2024"; // Tên database
+$dbname = "luadetsudo"; // Tên database
 
 // Tạo kết nối
 $conn = new mysqli($servername, $username, $password, $dbname);

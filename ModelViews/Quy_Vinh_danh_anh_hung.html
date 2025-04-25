@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quỹ MOMO Vinh Danh Anh Hùng</title>
+    <!-- Preconnect & Import Font Roboto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" 
+    rel="stylesheet"
+  >
     <link rel="stylesheet" href="../assets/css/Quy_Vinh_danh_anh_hung.css">
     <link rel="stylesheet" href="../assets/css/File_CSS_chung.css">
 </head>
@@ -56,11 +63,11 @@
             <!-- Chỉ số góp quỹ -->
                 <section class="Stats_section">
                     <div class="Stats_item">
-                        <h2>18K+</h2>
+                        <h2>60</h2>
                         <p>LƯỢT ĐÓNG GÓP / TUẦN</p>
                     </div>
                     <div class="Stats_item">
-                        <h2>12K+</h2>
+                        <h2>80</h2>
                         <p>GIA ĐÌNH ĐƯỢC HỖ TRỢ</p>
                     </div>
                     <div class="Stats_item">
@@ -70,20 +77,58 @@
                 </section>
             </section>
 
-            <!-- Thông tin chi tiết về quỹ -->
-            <section class="Quy_info_section">
-                <div class="Quy_info_section_title">Thông tin chi tiết về quỹ</div>
-            </section>
-            
-            <section class="Quy_info_section_content">
-                <div class="Quy_info_section_content_title">
-                    <h3>QUỸ MOMO VINH DANH ANH HÙNG</h3>
-                    <p>Quỹ do Đoàn - Hội khoa Công nghệ thông tin kinh doanh quản lý với cam kết rằng toàn bộ số tiền quyên góp sẽ được sao kê đầy đủ trên website và được trao tặng cho các ông bà thương binh liệt sĩ, các bà mẹ Việt Nam anh hùng và những gia đình có công với cách mạng.</p>
-                </div>
-                <div class="Quy_info_section_image">
-                    <img src="./Footer/Ảnh/Background trang chủ quỹ.png" alt="Đội ngũ quỹ">
-                </div>
-            </section>
+          <!-- Thông tin chi tiết về quỹ -->
+<section class="Quy_info_section">
+    <div class="Quy_info_section_title">Thông tin chi tiết về quỹ</div>
+</section>
+
+<section class="Quy_info_slider">
+    <div class="Quy_info_slides">
+        <!-- Slide 1 -->
+        <div class="Quy_info_section_content active">
+            <div class="Quy_info_section_content_title">
+                <h3>QUỸ MOMO VINH DANH ANH HÙNG</h3>
+                <p>Quỹ do Đoàn - Hội khoa Công nghệ thông tin kinh doanh quản lý với cam kết rằng toàn bộ số tiền quyên góp sẽ được sao kê đầy đủ trên website và được trao tặng cho các ông bà thương binh liệt sĩ, các bà mẹ Việt Nam anh hùng và những gia đình có công với cách mạng.</p>
+            </div>
+            <div class="Quy_info_section_image">
+                <img src="./Footer/Ảnh/Background trang chủ quỹ.png" alt="Đội ngũ quỹ">
+            </div>
+        </div>
+        
+        <!-- Slide 2 -->
+        <div class="Quy_info_section_content">
+            <div class="Quy_info_section_content_title">
+                <h3>MỤC TIÊU CỦA QUỸ</h3>
+                <p>Hỗ trợ các gia đình thương binh liệt sĩ, giúp đỡ các bà mẹ Việt Nam Anh hùng và tri ân những người có công với cách mạng. Quỹ cam kết minh bạch tài chính và đảm bảo 100% số tiền quyên góp được sử dụng đúng mục đích.</p>
+            </div>
+            <div class="Quy_info_section_image">
+                <img src="./Footer/Ảnh/Background trang chủ quỹ.png" alt="Mục tiêu quỹ">
+            </div>
+        </div>
+        
+        <!-- Slide 3 -->
+        <div class="Quy_info_section_content">
+            <div class="Quy_info_section_content_title">
+                <h3>THÀNH TỰU ĐẠT ĐƯỢC</h3>
+                <p>Trong năm qua, quỹ đã thành công trong việc hỗ trợ hơn 80 gia đình, tổ chức các hoạt động thăm hỏi và tặng quà định kỳ cho các bà mẹ Việt Nam Anh hùng, đồng thời thiết lập mạng lưới tình nguyện viên trên toàn quốc.</p>
+            </div>
+            <div class="Quy_info_section_image">
+                <img src="./Footer/Ảnh/Background trang chủ quỹ.png" alt="Thành tựu quỹ">
+            </div>
+        </div>
+    </div>
+    
+    <!-- Pagination Dots -->
+    <div class="pagination-dots">
+        <span class="dot active" data-slide="0"></span>
+        <span class="dot" data-slide="1"></span>
+        <span class="dot" data-slide="2"></span>
+    </div>
+    
+    <!-- Navigation buttons -->
+    <button class="slider-nav prev-btn">&#10094;</button>
+    <button class="slider-nav next-btn">&#10095;</button>
+</section>
         </div>
     </main>
     <div id="footer-container"></div>
