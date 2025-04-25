@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng Vinh danh Mẹ Việt Nam Anh Hùng: Nơi người hùng thầm lặng lên tiếng</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/Bang_vinh_danh.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header will be loaded dynamically -->
+    <div id="header-container"></div>
+
+    <div class="hero-container">
+        <section class="hero">
+            <div class="wave-bg"></div>
+            <h1 class="hero-title">Nơi người hùng thầm lặng lên tiếng</h1>
+        </section>
+
+        <div class="chevron-container" id="chevron-up">
+            <div class="chevron">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 15l-6-6-6 6" />
+                </svg>
+            </div>
+        </div>
+
+        <div class="content-panel" id="content-panel">
+            <section class="section-title">
+                <div class="title-banner">BẢNG VINH DANH</div>
+            </section>
+
+            <section class="heroes-container">
+                <h3 class="heroes-subtitle">NGƯỜI MẸ VIỆT NAM ANH HÙNG</h3>
+                <?php
+                include '../Config/connect.php';
+                $anhhung_query = mysqli_query($conn, "SELECT * FROM anhhung");
+                while ($row = mysqli_fetch_array($anhhung_query)){
+                ?>
+
+                <div class="heroes-grid" id="heroes-grid">
+                    <div class="hero-card">
+                        <img src="../assets/img/heroes/ <?php echo $row["anhhung_img"];}?>" alt="Mẹ Bùi Thị Lảng">
+                        <div class="hero-card-info">
+                            <div class="hero-card-name">Mẹ Bùi Thị Lảng</div>
+                            <div class="hero-card-year">Sinh năm 1926</div>
+                            <div class="hero-card-location">phường Hiệp An, TP.Thủ Dầu Một</div>
+                        </div>
+                    </div>
+
+                    <div class="hero-card">
+                        <img src="/api/placeholder/300/250" alt="Mẹ Nguyễn Thị Kéo">
+                        <div class="hero-card-info">
+                            <div class="hero-card-name">Mẹ Nguyễn Thị Kéo</div>
+                            <div class="hero-card-year">Sinh năm 1925</div>
+                            <div class="hero-card-location">phường Hiệp An, TP.Thủ Dầu Một</div>
+                        </div>
+                    </div>
+
+                    <div class="hero-card">
+                        <img src="/api/placeholder/300/250" alt="Mẹ Trần Thị Tư">
+                        <div class="hero-card-info">
+                            <div class="hero-card-name">Mẹ Trần Thị Tư</div>
+                            <div class="hero-card-year">Sinh năm 1940</div>
+                            <div class="hero-card-location">xã An Sơn, TX.Thuận An</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pagination" id="pagination">
+                    <div class="pagination-dot active"></div>
+                    <div class="pagination-dot"></div>
+                    <div class="pagination-dot"></div>
+                    <div class="pagination-dot"></div>
+                    <div class="pagination-dot"></div>
+                    <div class="pagination-dot"></div>
+                    <div class="pagination-dot"></div>
+                    <div class="pagination-dot"></div>
+                    <div class="pagination-dot"></div>
+                    <div class="pagination-dot"></div>
+                    <div class="pagination-dot"></div>
+                    <div class="pagination-dot"></div>
+                    <div class="pagination-dot"></div>
+                    <div class="pagination-dot"></div>
+                </div>
+            </section>
+
+            <section class="contact-section">
+                <div class="contact-title">THÔNG TIN LIÊN HỆ</div>
+
+                <!-- Footer will be loaded dynamically -->
+                <div id="footer-container"></div>
+
+
+
+        </div>
+    </div>
+
+    <script src="../assets/js/Bang_vinh_danh.js" defer></script>
+</body>
+
+</html>
