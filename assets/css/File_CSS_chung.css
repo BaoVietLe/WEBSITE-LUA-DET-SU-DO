@@ -26,9 +26,9 @@
   /* Import Font LostType vào đây */
   @font-face {
     font-family: 'LostType';
-    src: url('/ModelViews/Font/LostType2023-Regular.woff2') format('woff2');
-    src: url('/ModelViews/Font/LostType2023-Regular.woff') format('woff');
-    src: url('/ModelViews/Font/LostType2023-Regular.otf') format('otf');
+    src: url('./BANKYTHUAT-WEB/ModelViews/Font/LostType2023-Regular.woff2') format('woff2');
+    src: url('./BANKYTHUAT-WEB/ModelViews/Font/LostType2023-Regular.woff') format('woff');
+    src: url('./BANKYTHUAT-WEB/ModelViews/Font/LostType2023-Regular.otf') format('otf');
   }
 /* Thuộc tính nút bấm - Viết Bảo */
 .button {
@@ -330,7 +330,7 @@
 .activity-info-image {
   width: 100%;
   height: 400px;
-  object-fit: cover;
+  object-fit: none;
 }
 
 .activity-info-content {
@@ -704,7 +704,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 /* Kiểu chữ title (cho homepage về nguồn) - Diệu Thảo */
 .homepage-title {
-  font-size: 45px;
+  font-size: 70px;
   font-weight: 500;
   background: linear-gradient(to right, #C00016 40%, #bb4b26d9 100%);
   background-clip: text;
@@ -718,7 +718,7 @@ body::-webkit-scrollbar-thumb:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 30px;
+  margin-bottom: 50px;
 }
 
 .sub-header {
