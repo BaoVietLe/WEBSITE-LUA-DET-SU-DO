@@ -10,6 +10,7 @@
 body {
     background: url('../Component/background-img.png');
     overflow-x: hidden;
+    font-family:'Roboto';
 }
 .slider-container {
     max-width: 1400px;

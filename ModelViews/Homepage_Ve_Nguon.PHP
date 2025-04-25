@@ -5,6 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lửa Dệt Sử Đỏ Campaign</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" 
+      rel="stylesheet"
+    >
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/Homepage_Ve_Nguon.css">
 </head>
 
@@ -89,7 +98,7 @@
         <div class="container">
             <div class="header">
                 <div class="homepage-title">
-                    Khơi nguồn cảm hứng<br>nhân văn cùng Quỹ vinh danh Anh hùng
+                    Khơi nguồn cảm hứng<br>nhân văn cùng<br>Quỹ vinh danh Anh hùng
                 </div>
                 <button class="btn-more" onclick="location.href='./Quy_Vinh_danh_anh_hung.html'">TÌM HIỂU THÊM</button>
 
