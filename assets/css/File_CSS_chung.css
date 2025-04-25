@@ -78,7 +78,7 @@
 .program-info {
   display: flex;
   justify-content: space-between;
-  background-color: var(--web-campaign-2);
+  background-color: var(--web-khoa-2);
   border-radius: 1rem;
   padding: 1.5rem 2rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);

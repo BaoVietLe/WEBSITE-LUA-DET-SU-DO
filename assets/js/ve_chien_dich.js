@@ -64,19 +64,19 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 image: "./assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/Vùng đất thép.jpg",
                 title: "Hành trình về vùng đất thép",
-                date: "19.04.2025",
+                date: "26.03.2025",
                 buttonText: "Chi tiết"
             },
             {
                 image: "./assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/VQNCS.jpg",
                 title: "Vinh quang người chiến sĩ",
-                date: "17.04.2025",
+                date: "11.05.2024",
                 buttonText: "Chi tiết"
             },
             {
                 image: "./assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/DẤU ẤN ANH HÙNG.jpg",
                 title: "Dấu ấn anh hùng",
-                date: "17.04.2025",
+                date: "22.12.2023",
                 buttonText: "Chi tiết"
             }
         ];
