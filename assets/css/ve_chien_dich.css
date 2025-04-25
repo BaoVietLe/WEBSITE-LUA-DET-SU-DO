@@ -65,7 +65,8 @@ ul {
 
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('../img/background-img.png');
+    min-height:100vh;
+    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url('../img/background-img.png');
     background-size: cover;
     background-position: center;
     padding: 1.5rem 1.25rem 2.5rem; /* Increased top padding from 5rem to 6.5rem */
@@ -156,6 +157,7 @@ ul {
     width: 60rem;
     height: 20.438rem;
     overflow: hidden;
+    margin-left: 8rem;
 }
 
 .hero-image img {
@@ -328,7 +330,7 @@ ul {
     margin: 0 auto;
     display: flex;
     transition: transform 0.5s ease;
-    gap: 1px;
+    gap: 20px;
 }
 
 .pagination {
