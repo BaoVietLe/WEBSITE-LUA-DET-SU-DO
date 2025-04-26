@@ -289,29 +289,33 @@
         // Dữ liệu cho slider
         const cardData = [
             {
-                image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/LDSD.jpg",
-                title: "Lửa Dệt Sử Đỏ",
-                date: "20.04.2025",
-                buttonText: "Chi tiết"
-            },
-            {
-                image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/Vùng đất thép.jpg",
-                title: "Hành trình về vùng đất thép",
-                date: "19.04.2025",
-                buttonText: "Chi tiết"
-            },
-            {
-                image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/VQNCS.jpg",
-                title: "Vinh quang người chiến sĩ",
-                date: "17.04.2025",
-                buttonText: "Chi tiết"
-            },
-            {
-                image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/DẤU ẤN ANH HÙNG.jpg",
-                title: "Dấu ấn anh hùng",
-                date: "17.04.2025",
-                buttonText: "Chi tiết"
-            }
+        image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/LDSD.jpg",
+        title: "Lửa Dệt Sử Đỏ",
+        date: "20.04.2025",
+        buttonText: "Chi tiết",
+        link: "./Lửa-dệt-sử-đỏ.html"  // Thêm liên kết đến trang HTML tương ứng
+    },
+    {
+        image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/Vùng đất thép.jpg",
+        title: "Hành trình về vùng đất thép",
+        date: "19.04.2025",
+        buttonText: "Chi tiết",
+        link: "./Hành-trình-về-vùng-đất-thép.html"  // Thêm liên kết đến trang HTML tương ứng
+    },
+    {
+        image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/VQNCS.jpg",
+        title: "Vinh quang người chiến sĩ",
+        date: "17.04.2025",
+        buttonText: "Chi tiết",
+        link: "./Vinh-quang-người-chiến-sĩ.html"  // Thêm liên kết đến trang HTML tương ứng
+    },
+    {
+        image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/DẤU ẤN ANH HÙNG.jpg",
+        title: "Dấu ấn anh hùng",
+        date: "17.04.2025",
+        buttonText: "Chi tiết",
+        link: "./Dấu-ấn-anh-hùng.html"  // Thêm liên kết đến trang HTML tương ứng
+    }
         ];
 
         function initCardSlider() {
@@ -339,8 +343,17 @@
                         </div>
                     </div>
                 `;
+            
+        // Thêm sự kiện click cho button
+        const button = card.querySelector('.activity-info-button');
+        button.addEventListener('click', function() {
+            // Chuyển hướng đến trang HTML được chỉ định
+            window.location.href = this.getAttribute('data-link');
+        });
 
-                return card;
+        return card;
+    }
+
             }
 
             // Thêm tất cả các card vào slider
