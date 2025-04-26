@@ -23,32 +23,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
      
             // Load Hanh Trinh Trai Nghiem HTML
-    fetch('./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.html')
-    .then(response => response.text())
-    .then(html => {
-        document.getElementById('about-section').innerHTML = html;
-
-        // Load JS sau khi đã render HTML
-        const script = document.createElement('script');
-        script.src = './Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.js';
-        script.onload = () => {
-            console.log("JS slideshow loaded");
-
-            // Fetch PHP để lấy dữ liệu
-            fetch('./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.php')
-                .then(response => response.json())
-                .then(data => {
-                    if (typeof initSlideshow === 'function') {
-                        initSlideshow(data);
-                    } else {
-                        console.warn("initSlideshow chưa sẵn sàng");
-                    }
-                })
-                .catch(err => console.error('Lỗi fetch PHP:', err));
-        };
-        document.body.appendChild(script);
-    })
-    .catch(err => console.error('Lỗi fetch HTML slideshow:', err));
+            fetch('./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem1.php')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('about-section').innerHTML = data;
+            });
           // Initialize Card Slider
           initCardSlider();
         });
