@@ -35,13 +35,13 @@
 
                 <div class="left-content-bottom">
                     <div class="button-group">
-                        <a href="./ve_chien_dich.html" class="button">
+                        <a href="./ve_chien_dich.php" class="button">
                             <div class="button-text">
                                 <span>TÌM HIỂU THÊM VỀ</span>
                                 <span>LỬA DỆT SỬ ĐỎ</span>
                             </div>
                         </a>
-                        <a href="./ve_chien_dich.html" class="button button-white">
+                        <a href="./ve_chien_dich.php" class="button button-white">
                             <div class="button-text">
                                 <span>ĐĂNG KÝ THAM GIA</span>
                                 <span>LỬA DỆT SỬ ĐỎ</span>

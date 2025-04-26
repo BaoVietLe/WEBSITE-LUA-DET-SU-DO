@@ -39,61 +39,36 @@
 
             <section class="heroes-container">
                 <h3 class="heroes-subtitle">NGƯỜI MẸ VIỆT NAM ANH HÙNG</h3>
-                <?php
-                include '../Config/connect.php';
-                $anhhung_query = mysqli_query($conn, "SELECT * FROM anhhung");
-                while ($row = mysqli_fetch_array($anhhung_query)){
-                ?>
 
-                <div class="heroes-grid" id="heroes-grid">
-                    <div class="hero-card">
-                        <img src="../assets/img/heroes/ <?php echo $row["anhhung_img"];}?>" alt="Mẹ Bùi Thị Lảng">
-                        <div class="hero-card-info">
-                            <div class="hero-card-name">Mẹ Bùi Thị Lảng</div>
-                            <div class="hero-card-year">Sinh năm 1926</div>
-                            <div class="hero-card-location">phường Hiệp An, TP.Thủ Dầu Một</div>
-                        </div>
-                    </div>
+                <!-- Nút điều hướng trái -->
+                <button class="arrow-btn left-btn">&#10094;</button>
 
-                    <div class="hero-card">
-                        <img src="/api/placeholder/300/250" alt="Mẹ Nguyễn Thị Kéo">
-                        <div class="hero-card-info">
-                            <div class="hero-card-name">Mẹ Nguyễn Thị Kéo</div>
-                            <div class="hero-card-year">Sinh năm 1925</div>
-                            <div class="hero-card-location">phường Hiệp An, TP.Thủ Dầu Một</div>
-                        </div>
-                    </div>
-
-                    <div class="hero-card">
-                        <img src="/api/placeholder/300/250" alt="Mẹ Trần Thị Tư">
-                        <div class="hero-card-info">
-                            <div class="hero-card-name">Mẹ Trần Thị Tư</div>
-                            <div class="hero-card-year">Sinh năm 1940</div>
-                            <div class="hero-card-location">xã An Sơn, TX.Thuận An</div>
-                        </div>
+                <!-- Wrapper cho carousel -->
+                <div class="heroes-carousel-wrapper">
+                    <div class="heroes-grid" id="heroes-grid">
+                        <?php
+                        include '../Config/connect.php';
+                        $anhhung_query = mysqli_query($conn, "SELECT * FROM anhhung");
+                        while ($row = mysqli_fetch_array($anhhung_query)) {
+                            ?>
+                            <div class="hero-card">
+                                <img src="../assets/img/heroes/<?php echo $row["anhhung_img"]; ?>" alt="Mẹ VNAH">
+                                <div class="hero-card-info">
+                                    <div class="hero-card-name">Mẹ <?php echo $row["anhhung_name"]; ?></div>
+                                    <div class="hero-card-year">
+                                        Sinh ngày
+                                        <?php echo ($row["anhhung_date"] != "0000-00-00") ? date("d/m/Y", strtotime($row["anhhung_date"])) : "chưa rõ"; ?>
+                                    </div>
+                                    <div class="hero-card-location"><?php echo $row["anhhung_home"]; ?></div>
+                                </div>
+                            </div>
+                        <?php } ?>
                     </div>
                 </div>
 
-                <div class="pagination" id="pagination">
-                    <div class="pagination-dot active"></div>
-                    <div class="pagination-dot"></div>
-                    <div class="pagination-dot"></div>
-                    <div class="pagination-dot"></div>
-                    <div class="pagination-dot"></div>
-                    <div class="pagination-dot"></div>
-                    <div class="pagination-dot"></div>
-                    <div class="pagination-dot"></div>
-                    <div class="pagination-dot"></div>
-                    <div class="pagination-dot"></div>
-                    <div class="pagination-dot"></div>
-                    <div class="pagination-dot"></div>
-                    <div class="pagination-dot"></div>
-                    <div class="pagination-dot"></div>
-                </div>
+                <!-- Nút điều hướng phải -->
+                <button class="arrow-btn right-btn">&#10095;</button>
             </section>
-
-            <section class="contact-section">
-                <div class="contact-title">THÔNG TIN LIÊN HỆ</div>
 
                 <!-- Footer will be loaded dynamically -->
                 <div id="footer-container"></div>
