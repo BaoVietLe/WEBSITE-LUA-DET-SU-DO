@@ -28,8 +28,10 @@
         <div class="hero-left-column">
             <div class="hero-text" id="slide-1">
                 <h2>HOẠT ĐỘNG VỀ NGUỒN CÙNG BIT</h2>
-                <p>Những hoạt động để tìm về cội nguồn lịch sử dân tộc, tìm hiểu những địa danh, 
-                di tích lịch sử cách mạng và văn hóa truyền thống của dân tộc.</p>
+                <p>Chương trình thuộc chuỗi hoạt động Về nguồn - Khoa Công nghệ thông tin kinh doanh chào mừng 50 năm 
+                    ngày Giải phóng miền Nam - thống nhất Đất Nước. Hoạt động thường niên mang ý nghĩa vô cùng to lớn, 
+                    thể hiện tình yêu nước cùng tinh thần dân tộc, hướng về nguồn cội của sinh viên khoa BIT nói riêng 
+                    và sinh viên UEH nói chung.</p>
             </div>
             <div class="hero-text" id="slide-2" style="display: none;">
                 <h2>SỨ MỆNH LƯU GIỮ TRUYỀN THỐNG</h2>
