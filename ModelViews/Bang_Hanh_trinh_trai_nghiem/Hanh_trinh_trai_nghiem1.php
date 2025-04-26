@@ -13,7 +13,7 @@ $slidesData = [];
 try {
     // Fix the path issue - the .. after trai_nghiem is causing problems
     // Using absolute path based on your project structure
-    $connectPath = $_SERVER['DOCUMENT_ROOT'] . '/BANKYTHUAT-WEB/Config/connect.php';
+    $connectPath = __DIR__ . '/../../Config/connect.php';
     
     if (file_exists($connectPath)) {
         include_once $connectPath;
@@ -365,9 +365,16 @@ try {
         
         // Add event listener for pause button
         pauseBtn.addEventListener('click', function() {
-            isPaused = !isPaused;
-            pauseBtn.textContent = isPaused ? '▶️' : '⏸️';
-        });
+    isPaused = !isPaused;
+    if (isPaused) {
+        clearInterval(slideInterval);
+        pauseBtn.textContent = '▶️'; // đổi nút thành play
+    } else {
+        startInterval();
+        pauseBtn.textContent = '⏸️'; // đổi nút thành pause
+    }
+});
+
         
         // Create pagination dots function
         function createPagination() {
