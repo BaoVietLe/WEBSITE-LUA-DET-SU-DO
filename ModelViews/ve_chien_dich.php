@@ -1,6 +1,3 @@
-<?php
-include './Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.php';
-?>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -111,7 +108,10 @@ include './Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.php';
     </div>
 </div>
 
-    <div id="about-section"></div>
+<div class="bit-container" id="bit-container">
+    <!-- Content will be loaded here -->
+    <div class="loading">Loading...</div>
+</div>
 
     <!-- Footer will be loaded dynamically -->
     <div id="footer-container"></div>
