@@ -317,9 +317,6 @@ try {
                 </div>
             </div>
             
-            <div class="controls">
-                <button id="pauseBtn">⏸️</button>
-            </div>
             
             <div class="buttons">
                 <a href="/BANKYTHUAT-WEB/ModelViews/Ve_chien_dich/ve_chien_dich.html" class="button">NỘI DUNG CHƯƠNG TRÌNH</a>
