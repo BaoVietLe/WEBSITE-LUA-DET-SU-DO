@@ -118,6 +118,5 @@
 
 
     <script defer src="../assets/js/ve_chien_dich.js"></script>
-    <script defer src="./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.js"></script>
 </body>
 </html>
