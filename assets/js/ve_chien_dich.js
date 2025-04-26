@@ -22,12 +22,14 @@ document.addEventListener('DOMContentLoaded', function() {
             renderActivities('upcoming-activities', data.upcomingActivities);
         });
      
-            // Load Hanh Trinh Trai Nghiem HTML
-            fetch('./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem1.php')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('about-section').innerHTML = data;
-            });
+        fetch('./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem1.php')
+        .then(response => {
+            if (!response.ok) throw new Error('Không thể load footer: ' + response.status);
+            return response.text();
+        })
+        .then(html => {
+            document.getElementById('about-section').innerHTML = html;
+        })
           // Initialize Card Slider
           initCardSlider();
         });
@@ -335,3 +337,25 @@ for (let i = 0; i < totalPages; i++) {
                 dots[currentSlide].click();
             }, 5000);
         });
+        document.addEventListener('DOMContentLoaded', function() {
+            // Fetch the data from the PHP file
+            fetch('./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem1.php')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('bit-container').innerHTML = data;
+                    
+                    // Re-initialize any JavaScript that needs to run after content is loaded
+                    initializeSlideshow();
+                })
+                .catch(error => {
+                    console.error('Error fetching content:', error);
+                    document.getElementById('bit-container').innerHTML = 
+                        '<p>Error loading content. Please try again later.</p>';
+                });
+        });
+
+        // Function to initialize slideshow (define this separately or include from the PHP file)
+        function initializeSlideshow() {
+            // Your slideshow initialization code here
+            // This would be similar to the script in your PHP file
+        }

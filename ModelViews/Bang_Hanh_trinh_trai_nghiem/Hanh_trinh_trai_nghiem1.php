@@ -1,6 +1,53 @@
 <?php
-include "../Config/connect.php";
-include "./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.php";
+// Start the session only once
+session_start();
+
+// Enable error reporting for debugging
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+// Fixed path to connect.php
+// The file is located in the Config directory at the root of your project
+$slidesData = [];
+try {
+    // Fix the path issue - the .. after trai_nghiem is causing problems
+    // Using absolute path based on your project structure
+    $connectPath = $_SERVER['DOCUMENT_ROOT'] . '/BANKYTHUAT-WEB/Config/connect.php';
+    
+    if (file_exists($connectPath)) {
+        include_once $connectPath;
+        
+        // Check if $conn exists and is a valid connection
+        if (isset($conn) && $conn) {
+            // Get student data
+            $query = "SELECT sv_id, mssv, sv_img, sv_name, sv_sharing FROM sinhvien";
+            $result = $conn->query($query);
+            
+            if (!$result) {
+                throw new Exception('Query error: ' . $conn->error);
+            }
+            
+            while ($row = $result->fetch_assoc()) {
+                $slidesData[] = [
+                    'id' => $row['sv_id'],
+                    'mssv' => $row['mssv'],
+                    'name' => $row['sv_name'],
+                    'content' => $row['sv_sharing'],
+                    'avatar' => '../../assets/img/sv/' . $row['sv_img']
+                ];
+            }
+        } else {
+            throw new Exception('Database connection not established in connect.php');
+        }
+    } else {
+        throw new Exception('Connect.php file not found at: ' . $connectPath);
+    }
+} catch (Exception $e) {
+    // Log the error but continue with empty data
+    error_log($e->getMessage());
+    echo "<!-- Database Error: " . htmlspecialchars($e->getMessage()) . " -->";
+}
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -11,8 +58,6 @@ include "./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.php";
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
     <style>
         @import url('../assets/css/File_CSS_chung.css');
@@ -71,6 +116,12 @@ include "./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.php";
         .avatar-section {
             flex: 0 0 100%;
             text-align: center;
+        }
+
+        .avatar {
+            max-width: 100%;
+            height: auto;
+            border-radius: 50%;
         }
 
         @media (min-width: 768px) {
@@ -137,7 +188,6 @@ include "./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.php";
         }
 
         /* Buttons */
-        /* Custom buttons based on common button class */
         .buttons {
             display: flex;
             flex-direction: column;
@@ -153,6 +203,23 @@ include "./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.php";
             }
         }
 
+        /* Define button class if not in the external CSS */
+        .button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            background-color: #d32f2f;
+            color: white;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #b71c1c;
+            transform: translateY(-2px);
+        }
+
         /* Override for white button */
         .button-white {
             background-color: transparent;
@@ -162,8 +229,8 @@ include "./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.php";
         }
 
         .button-white:hover {
-            --button-hover-bg-color: #f5f5f5;
-            --button-hover-box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+            background-color: #f5f5f5;
+            box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
         }
 
         /* Slide content */
@@ -175,6 +242,11 @@ include "./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.php";
         .slide {
             display: none;
             animation: fadeEffect 1s;
+        }
+
+        .slide-content {
+            line-height: 1.6;
+            font-size: 1.1rem;
         }
 
         .slide.active {
@@ -208,41 +280,35 @@ include "./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.php";
 <body>
     <div class="bit-container">
         <div class="avatar-section">
-            <?php
-            // Hiển thị avatar sinh viên đầu tiên
-            if (!empty($slidesData)) {
-                echo '<img src="' . htmlspecialchars($slidesData[0]['avatar']) . '" alt="' . htmlspecialchars($slidesData[0]['name']) . '" class="avatar">';
-            } else {
-                echo '<img src="../assets/img/sv/default-avatar.jpg" alt="Default avatar" class="avatar">';
-            }
-            ?>
+            <?php if (!empty($slidesData)): ?>
+                <img src="<?= htmlspecialchars($slidesData[0]['avatar']) ?>" alt="<?= htmlspecialchars($slidesData[0]['name']) ?>" class="avatar">
+            <?php else: ?>
+                <img src="../../assets/img/sv/default-avatar.jpg" alt="Default avatar" class="avatar">
+            <?php endif; ?>
         </div>
         
         <div class="content-section">
+        <div class="pagination" id="pagination">
+                <!-- Pagination dots will be generated dynamically -->
+            </div>
             <div class="fixed-headers">
                 <div class="subtitle">KINH NGHIỆM & TRẢI NGHIỆM</div>
                 <h1 class="main-title">HÀNH TRÌNH VỀ NGUỒN CÙNG BIT2024</h1>
             </div>
             
-            <div class="pagination" id="pagination">
-                <!-- Pagination dots will be generated dynamically -->
-            </div>
             
             <div class="slides" id="slides-container">
-                <!-- Slides will be generated dynamically from database -->
-                <?php
-                if (!empty($slidesData)) {
-                    foreach ($slidesData as $index => $slide) {
-                        echo '<div class="slide ' . ($index === 0 ? 'active' : '') . '">';
-                        echo '<div class="slide-content">' . htmlspecialchars($slide['content']) . '</div>';
-                        echo '</div>';
-                    }
-                } else {
-                    echo '<div class="slide active">';
-                    echo '<div class="slide-content">Tham gia các campaign về cội nguồn lịch sử giúp ta hiểu sâu hơn về văn hóa, truyền thống và tinh thần dân tộc. Những chuyến đi ấy không chỉ khơi dậy lòng tự hào mà còn truyền cảm hứng để thế hệ trẻ gìn giữ và phát huy giá trị lịch sử.</div>';
-                    echo '</div>';
-                }
-                ?>
+                <?php if (!empty($slidesData)): ?>
+                    <?php foreach ($slidesData as $index => $slide): ?>
+                        <div class="slide <?= $index === 0 ? 'active' : '' ?>">
+                            <div class="slide-content"><?= htmlspecialchars($slide['content']) ?></div>
+                        </div>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <div class="slide active">
+                        <div class="slide-content">Tham gia các campaign về cội nguồn lịch sử giúp ta hiểu sâu hơn về văn hóa, truyền thống và tinh thần dân tộc. Những chuyến đi ấy không chỉ khơi dậy lòng tự hào mà còn truyền cảm hứng để thế hệ trẻ gìn giữ và phát huy giá trị lịch sử.</div>
+                    </div>
+                <?php endif; ?>
             </div>
 
             <div class="progress-container">
@@ -256,7 +322,7 @@ include "./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.php";
             </div>
             
             <div class="buttons">
-                <a href="/Ve_chien_dich/ve_chien_dich.html" class="button">NỘI DUNG CHƯƠNG TRÌNH</a>
+                <a href="/BANKYTHUAT-WEB/ModelViews/Ve_chien_dich/ve_chien_dich.html" class="button">NỘI DUNG CHƯƠNG TRÌNH</a>
                 <a href="#register" class="button button-white">ĐĂNG KÝ THAM GIA</a>
             </div>
         </div>
@@ -264,20 +330,23 @@ include "./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.php";
 
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Sử dụng dữ liệu trực tiếp từ PHP thay vì fetch
-        let slidesData = <?php echo json_encode($slidesData); ?>;
+        // Get slides data from PHP
+        let slidesData = <?= json_encode($slidesData) ?>;
         
-        // Nếu không có dữ liệu, sử dụng dữ liệu mẫu
+        // Use sample data if no data is available
         if (slidesData.length === 0) {
             slidesData = [
                 {
+                    id: 0,
+                    mssv: 'N/A',
+                    name: 'Sinh viên mẫu',
                     content: 'Tham gia các campaign về cội nguồn lịch sử giúp ta hiểu sâu hơn về văn hóa, truyền thống và tinh thần dân tộc. Những chuyến đi ấy không chỉ khơi dậy lòng tự hào mà còn truyền cảm hứng để thế hệ trẻ gìn giữ và phát huy giá trị lịch sử.',
-                    avatar: '../assets/img/sv/default-avatar.jpg'
+                    avatar: '../../assets/img/sv/default-avatar.jpg'
                 }
             ];
         }
         
-        // Các biến DOM
+        // DOM elements
         const slidesContainer = document.getElementById('slides-container');
         const paginationContainer = document.getElementById('pagination');
         const progressBar = document.getElementById('progress-bar');
@@ -286,17 +355,22 @@ include "./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.php";
         let currentSlideIndex = 0;
         let slideInterval;
         let isPaused = false;
-        const slideIntervalTime = 5000; // 5 giây mỗi slide
+        const slideIntervalTime = 5000; // 5 seconds per slide
         
-        // Tạo các chấm phân trang
+        // Create pagination dots
         createPagination();
         
-        // Bắt đầu slideshow
+        // Start slideshow
         startInterval();
         
-        // Tạo các chấm phân trang
+        // Add event listener for pause button
+        pauseBtn.addEventListener('click', function() {
+            isPaused = !isPaused;
+            pauseBtn.textContent = isPaused ? '▶️' : '⏸️';
+        });
+        
+        // Create pagination dots function
         function createPagination() {
-            // Xóa nội dung cũ
             paginationContainer.innerHTML = '';
             
             slidesData.forEach((_, index) => {
@@ -310,50 +384,50 @@ include "./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.php";
             });
         }
         
-        // Chuyển đến slide theo index
+        // Go to specific slide
         function goToSlide(index) {
             const slideElements = document.querySelectorAll('.slide');
             const dots = document.querySelectorAll('.dot');
             
             if (slideElements.length === 0) return;
 
-            // Loại bỏ class active từ tất cả slides và dots
+            // Remove active class from all slides and dots
             slideElements.forEach(slide => slide.classList.remove('active'));
             dots.forEach(dot => dot.classList.remove('active'));
             
-            // Thêm class active cho slide và dot hiện tại
+            // Add active class to current slide and dot
             slideElements[index].classList.add('active');
             dots[index].classList.add('active');
             
-            // Cập nhật avatar
+            // Update avatar
             const avatarImg = document.querySelector('.avatar');
             if (avatarImg && slidesData[index]) {
                 avatarImg.src = slidesData[index].avatar;
                 avatarImg.alt = slidesData[index].name || 'Student avatar';
             }
             
-            // Cập nhật progress bar
+            // Update progress bar
             updateProgressBar(0);
             
             currentSlideIndex = index;
         }
         
-        // Chuyển đến slide tiếp theo
+        // Go to next slide
         function nextSlide() {
             const nextIndex = (currentSlideIndex + 1) % slidesData.length;
             goToSlide(nextIndex);
         }
         
-        // Cập nhật thanh tiến trình
+        // Update progress bar
         function updateProgressBar(percent) {
             progressBar.style.width = `${percent}%`;
         }
         
-        // Thiết lập và khởi động interval cho slideshow
+        // Setup and start interval for slideshow
         function startInterval() {
             clearInterval(slideInterval);
             let progress = 0;
-            const increment = 100 / (slideIntervalTime / 100); // Cập nhật mỗi 100ms
+            const increment = 100 / (slideIntervalTime / 100); // Update every 100ms
             
             updateProgressBar(0);
             
@@ -371,12 +445,11 @@ include "./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.php";
             }, 100);
         }
         
-        // Reset interval khi người dùng tương tác
+        // Reset interval when user interacts
         function resetInterval() {
             clearInterval(slideInterval);
             startInterval();
         }
-        
     });
     </script>
 </body>
