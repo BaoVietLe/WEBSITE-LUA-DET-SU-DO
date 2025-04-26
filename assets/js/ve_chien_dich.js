@@ -14,41 +14,41 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('footer-container').innerHTML = data;
         });
     
-    // Load activities data
-    fetch('js/activities.json')
-        .then(response => response.json())
-        .then(data => {
-            renderActivities('past-activities', data.pastActivities);
-            renderActivities('upcoming-activities', data.upcomingActivities);
-        });
+    // // Load activities data
+    // fetch('js/activities.json')
+    //     .then(response => response.json())
+    //     .then(data => {
+    //         renderActivities('past-activities', data.pastActivities);
+    //         renderActivities('upcoming-activities', data.upcomingActivities);
+    //     });
      
-        fetch('./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem1.php')
-    .then(response => {
-        if (!response.ok) throw new Error('Không thể load nội dung: ' + response.status);
-        return response.text();
-    })
-    .then(html => {
-        const aboutSection = document.getElementById('bit-container');
-        aboutSection.innerHTML = html;
+    //     fetch('./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem1.php')
+    // .then(response => {
+    //     if (!response.ok) throw new Error('Không thể load nội dung: ' + response.status);
+    //     return response.text();
+    // })
+    // .then(html => {
+    //     const aboutSection = document.getElementById('bit-container');
+    //     aboutSection.innerHTML = html;
 
-        // Tìm tất cả thẻ <script> vừa mới gán vào
-        aboutSection.querySelectorAll('script').forEach(oldScript => {
-            const newScript = document.createElement('script');
-            // Copy thuộc tính src hoặc text
-            if (oldScript.src) {
-                newScript.src = oldScript.src;
-            } else {
-                newScript.textContent = oldScript.textContent;
-            }
-            document.body.appendChild(newScript);
-        });
+    //     // Tìm tất cả thẻ <script> vừa mới gán vào
+    //     aboutSection.querySelectorAll('script').forEach(oldScript => {
+    //         const newScript = document.createElement('script');
+    //         // Copy thuộc tính src hoặc text
+    //         if (oldScript.src) {
+    //             newScript.src = oldScript.src;
+    //         } else {
+    //             newScript.textContent = oldScript.textContent;
+    //         }
+    //         document.body.appendChild(newScript);
+    //     });
 
-        // Gán xong HTML + thực thi script => mới được phép init
-        initCardSlider();
-    })
-    .catch(error => {
-        console.error(error);
-    });
+    //     // Gán xong HTML + thực thi script => mới được phép init
+    //     initCardSlider();
+    // })
+    // .catch(error => {
+    //     console.error(error);
+    // });
 
     });
 
