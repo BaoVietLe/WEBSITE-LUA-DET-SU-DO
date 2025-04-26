@@ -37,65 +37,77 @@ document.addEventListener('DOMContentLoaded', function() {
         // Dữ liệu cho slider
         const cardData = [
             {
-                image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/LDSD.jpg",
-                title: "Lửa Dệt Sử Đỏ",
-                date: "20.04.2025",
-                buttonText: "Chi tiết"
-            },
-            {
-                image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/Vùng đất thép.jpg",
-                title: "Hành trình về vùng đất thép",
-                date: "26.03.2025",
-                buttonText: "Chi tiết"
-            },
-            {
-                image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/VQNCS.jpg",
-                title: "Vinh quang người chiến sĩ",
-                date: "11.05.2024",
-                buttonText: "Chi tiết"
-            },
-            {
-                image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/DẤU ẤN ANH HÙNG.jpg",
-                title: "Dấu ấn anh hùng",
-                date: "22.12.2023",
-                buttonText: "Chi tiết"
-            }
+        image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/LDSD.jpg",
+        title: "Lửa Dệt Sử Đỏ",
+        date: "20.04.2025",
+        buttonText: "Chi tiết",
+        link: "../ModelViews/Lửa-dệt-sử-đỏ.html"  // Thêm liên kết đến trang HTML tương ứng
+    },
+    {
+        image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/Vùng đất thép.jpg",
+        title: "Hành trình về vùng đất thép",
+        date: "19.04.2025",
+        buttonText: "Chi tiết",
+        link: "../ModelViews/Hành-trình-về-vùng-đất-thép.html"  // Thêm liên kết đến trang HTML tương ứng
+    },
+    {
+        image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/VQNCS.jpg",
+        title: "Vinh quang người chiến sĩ",
+        date: "17.04.2025",
+        buttonText: "Chi tiết",
+        link: "../ModelViews/Vinh-quang-người-chiến-sĩ.html"  // Thêm liên kết đến trang HTML tương ứng
+    },
+    {
+        image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/DẤU ẤN ANH HÙNG.jpg",
+        title: "Dấu ấn anh hùng",
+        date: "17.04.2025",
+        buttonText: "Chi tiết",
+        link: "./Dấu-ấn-anh-hùng.html"  // Thêm liên kết đến trang HTML tương ứng
+    }
         ];
 
         function initCardSlider() {
-            const sliderWrapper = document.getElementById('sliderWrapper');
-            if (!sliderWrapper) {
-                console.error('Slider wrapper not found');
-                return;
-            }
+    const sliderWrapper = document.getElementById('sliderWrapper');
+    if (!sliderWrapper) {
+        console.error('Slider wrapper not found');
+        return;
+    }
 
-            // Xóa nội dung cũ nếu có
-            sliderWrapper.innerHTML = '';
+    // Xóa nội dung cũ nếu có
+    sliderWrapper.innerHTML = '';
 
-            // Tạo các card từ dữ liệu
-            function createCardElement(cardInfo) {
-                const card = document.createElement('div');
-                card.className = 'activity-info';
-                
-                card.innerHTML = `
-                    <img class="activity-info-image" src="${cardInfo.image}" alt="${cardInfo.title}">
-                    <div class="activity-info-content">
-                        <div class="activity-info-title">${cardInfo.title}</div>
-                        <div class="activity-info-date-button">
-                            <div class="activity-info-date">${cardInfo.date}</div>
-                            <button class="activity-info-button">${cardInfo.buttonText}</button>
-                        </div>
-                    </div>
-                `;
-                
-                return card;
-            }
+    // Tạo các card từ dữ liệu
+    function createCardElement(cardInfo) {
+        const card = document.createElement('div');
+        card.className = 'activity-info';
 
-     // Thêm tất cả các card vào slider
-     cardData.forEach(cardInfo => {
+        card.innerHTML = `
+            <img class="activity-info-image" src="${cardInfo.image}" alt="${cardInfo.title}">
+            <div class="activity-info-content">
+                <div class="activity-info-title">${cardInfo.title}</div>
+                <div class="activity-info-date-button">
+                    <div class="activity-info-date">${cardInfo.date}</div>
+                    <button class="activity-info-button" data-link="${cardInfo.link}">${cardInfo.buttonText}</button>
+                </div>
+            </div>
+        `;
+
+        // Thêm sự kiện click cho button
+        const button = card.querySelector('.activity-info-button');
+        button.addEventListener('click', function() {
+            // Chuyển hướng đến trang HTML được chỉ định
+            window.location.href = this.getAttribute('data-link');
+        });
+
+        return card;
+    }
+
+    // Thêm tất cả các card vào slider
+    cardData.forEach(cardInfo => {
         const cardElement = createCardElement(cardInfo);
         sliderWrapper.appendChild(cardElement);
     });
+    
 
     // Xác định các biến cấu hình slider
     let cardsPerPage = 3; // Số lượng card hiển thị mỗi trang

@@ -319,31 +319,31 @@
         ];
 
         function initCardSlider() {
-            const sliderWrapper = document.getElementById('sliderWrapper');
-            if (!sliderWrapper) {
-                console.error('Slider wrapper not found');
-                return;
-            }
+    const sliderWrapper = document.getElementById('sliderWrapper');
+    if (!sliderWrapper) {
+        console.error('Slider wrapper not found');
+        return;
+    }
 
-            // Xóa nội dung cũ nếu có
-            sliderWrapper.innerHTML = '';
+    // Xóa nội dung cũ nếu có
+    sliderWrapper.innerHTML = '';
 
-            // Tạo các card từ dữ liệu
-            function createCardElement(cardInfo) {
-                const card = document.createElement('div');
-                card.className = 'activity-info';
+    // Tạo các card từ dữ liệu
+    function createCardElement(cardInfo) {
+        const card = document.createElement('div');
+        card.className = 'activity-info';
 
-                card.innerHTML = `
-                    <img class="activity-info-image" src="${cardInfo.image}" alt="${cardInfo.title}">
-                    <div class="activity-info-content">
-                        <div class="activity-info-title">${cardInfo.title}</div>
-                        <div class="activity-info-date-button">
-                            <div class="activity-info-date">${cardInfo.date}</div>
-                            <button class="activity-info-button">${cardInfo.buttonText}</button>
-                        </div>
-                    </div>
-                `;
-            
+        card.innerHTML = `
+            <img class="activity-info-image" src="${cardInfo.image}" alt="${cardInfo.title}">
+            <div class="activity-info-content">
+                <div class="activity-info-title">${cardInfo.title}</div>
+                <div class="activity-info-date-button">
+                    <div class="activity-info-date">${cardInfo.date}</div>
+                    <button class="activity-info-button" data-link="${cardInfo.link}">${cardInfo.buttonText}</button>
+                </div>
+            </div>
+        `;
+
         // Thêm sự kiện click cho button
         const button = card.querySelector('.activity-info-button');
         button.addEventListener('click', function() {
@@ -354,14 +354,12 @@
         return card;
     }
 
-            }
-
-            // Thêm tất cả các card vào slider
-            cardData.forEach(cardInfo => {
-                const cardElement = createCardElement(cardInfo);
-                sliderWrapper.appendChild(cardElement);
-            });
-
+    // Thêm tất cả các card vào slider
+    cardData.forEach(cardInfo => {
+        const cardElement = createCardElement(cardInfo);
+        sliderWrapper.appendChild(cardElement);
+    });
+    
             // Xác định các biến cấu hình slider
             let cardsPerPage = 4; // Số lượng card hiển thị mỗi trang
             let cardWidth = 400; // Chiều rộng mỗi card
