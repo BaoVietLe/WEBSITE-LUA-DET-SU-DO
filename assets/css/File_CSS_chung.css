@@ -704,6 +704,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 /* Kiểu chữ title (cho homepage về nguồn) - Diệu Thảo */
 .homepage-title {
+  font-family: 'Style Script';
   font-size: 70px;
   font-weight: 500;
   background: linear-gradient(to right, #C00016 40%, #bb4b26d9 100%);
@@ -722,6 +723,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .sub-header {
+      font-family: 'Roboto';
       margin-top: 30px;
       font-size: 18px;
       color: #333;

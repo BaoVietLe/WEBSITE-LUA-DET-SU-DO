@@ -5,6 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lửa Dệt Sử Đỏ Campaign</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" 
+      rel="stylesheet"
+    >
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/Homepage_Ve_Nguon.css">
 </head>
 
@@ -21,7 +30,7 @@
                 <div class="left-content-top">
                     <div class="title" style="font-size: 90px;">Cổng thông tin</div>
                     <div class="subtitle" style="font-size: 70px;">Lửa Dệt Sử Đỏ</div>
-                    <div class="description" style="font-size: 30px;">Mô tả về website tại đây</div>
+                    <div class="description" style="font-size: 20px;">Website “Lửa dệt sử đỏ” là dự án website thuộc chuỗi hoạt động chào mừng kỷ niệm 50 năm Giải phóng miền Nam Thống nhất đất nước (30-4-1975 - 30-4-2025) nhằm thúc đẩy tinh thần yêu tổ quốc, yêu đồng bào trong thế hệ sinh viên UEH thông qua giới thiệu các hoạt động về nguồn của khoa Công nghệ thông tin kinh doanh, đồng thời cung cấp đến sinh viên những hiểu biết về các mẹ Việt Nam Anh Hùng, và công khai minh bạch quá trình vận hành quỹ Vinh danh Anh hùng.</div>
                 </div>
 
                 <div class="left-content-bottom">
@@ -29,13 +38,13 @@
                         <a href="./ve_chien_dich.html" class="button">
                             <div class="button-text">
                                 <span>TÌM HIỂU THÊM VỀ</span>
-                                <span>VIỆT HÙNG LỤC</span>
+                                <span>LỬA DỆT SỬ ĐỎ</span>
                             </div>
                         </a>
                         <a href="./ve_chien_dich.html" class="button button-white">
                             <div class="button-text">
                                 <span>ĐĂNG KÝ THAM GIA</span>
-                                <span>VIỆT HÙNG LỤC</span>
+                                <span>LỬA DỆT SỬ ĐỎ</span>
                             </div>
                         </a>
                     </div>
@@ -44,7 +53,7 @@
 
             <div class="right-content">
                 <div class="image-info-no-action">
-                    <img src="./Footer/Ảnh/HD_1.png" alt="Hình ảnh hoạt động" class="image-info-no-action-image">
+                    <img src="../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/LDSD.jpg" alt="Hình ảnh hoạt động" class="image-info-no-action-image">
                     <div class="image-info-no-action-content">
                         <div class="image-info-no-action-title">
                             CHƯƠNG TRÌNH KỶ NIỆM<br>50 NĂM GIẢI PHÓNG MIỀN NAM - THỐNG NHẤT ĐẤT NƯỚC
@@ -89,7 +98,7 @@
         <div class="container">
             <div class="header">
                 <div class="homepage-title">
-                    Khơi nguồn cảm hứng<br>nhân văn cùng Quỹ vinh danh Anh hùng
+                    Khơi nguồn cảm hứng<br>cùng Quỹ vinh danh Anh hùng
                 </div>
                 <button class="btn-more" onclick="location.href='./Quy_Vinh_danh_anh_hung.html'">TÌM HIỂU THÊM</button>
 

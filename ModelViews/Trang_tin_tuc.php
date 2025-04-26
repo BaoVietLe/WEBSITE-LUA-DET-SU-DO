@@ -310,7 +310,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['docx_file'])) {
     <title>Upload DOCX News Article</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;

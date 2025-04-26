@@ -7,7 +7,6 @@
   
   /* Thiết lập font và nền cho body */
   body {
-    font-family: Roboto, sans-serif; /* Sử dụng font Roboto */
     background-color: #ffffff; /* Màu nền trắng */
     min-height: 100vh; /* Chiều cao tối thiểu bằng chiều cao màn hình */
   }
