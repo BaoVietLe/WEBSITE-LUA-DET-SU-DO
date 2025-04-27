@@ -5,6 +5,7 @@
     <title>FOOTER</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- CSS PC -->
     <style>
         /* Reset some styles to prevent conflicts */
 .footer, .footer * {
@@ -169,9 +170,35 @@
   .footer-column a:hover {
     color: #122CD4;
   }
-  
+  @media screen and (max-width: 768px) {
+  .footer-container {
+    flex-direction: column; /* Xếp dọc thay vì ngang */
+    align-items: center; /* Canh giữa các phần tử */
+    width: 90%; /* Thu nhỏ lại cho dễ đọc trên điện thoại */
+  }
+
+  .footer-left {
+    align-items: center; /* Canh giữa logo + slogan + social */
+    margin-bottom: 30px; /* Tạo khoảng cách với phần footer-right */
+  }
+
+  .footer-left-logo {
+    flex-wrap: wrap; /* Cho các logo tự xuống dòng nếu thiếu chỗ */
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .footer-left-content {
+    padding-left: 0; /* Xóa padding thừa khi lên mobile */
+    text-align: center; /* Căn giữa text */
+  }
+
+  .brand-name, .brand-slogan {
+    text-align: center; /* Đảm bảo slogan cũng căn giữa */
+  }
+}
+
   </style>
-    <script src=""></script>
 </head>
 
 <body>
