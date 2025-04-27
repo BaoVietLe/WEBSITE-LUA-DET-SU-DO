@@ -1,38 +1,57 @@
-/* Combined CSS from test.html and test1.html */
-@import url('./File_CSS_chung.css');
-/* Common reset styles */
-/* * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-} */
-
-body {
+/* CSS Variables for Responsive Design */
+:root {
+    --bp-sm: 576px;
+    --bp-md: 768px;
+    --bp-lg: 992px;
+    --bp-xl: 1200px;
+    --bp-xxl: 1400px;
+    --gutter: 20px;
+    --max-container: 1400px;
+  }
+  
+  /* Imports and Base Styles */
+  @import url('./File_CSS_chung.css');
+  
+  body {
     background: linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('../img/background-img.png');
     overflow-x: hidden;
-    font-family:'Roboto';
-}
-.slider-container {
-    max-width: 1400px;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Container styles */
+  .container {
+    width: 100%;
+    max-width: var(--max-container);
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  /* Slider Components */
+  .slider-container {
+    max-width: var(--max-container);
     margin: 0 auto;
     overflow: hidden;
     position: relative;
     padding: 1px 0;
-}
-
-.slider-wrapper {
+  }
+  
+  .slider-wrapper {
     width: max-content;
     margin: 0 auto;
     display: flex;
     transition: transform 0.5s ease;
-    gap: 20px;
-}
-.pagination {
-    display: flex;                   /* bật flexbox để justify-content hoạt động */
-    justify-content: center;         /* căn giữa các dot theo hàng ngang */
-    align-items: center;             /* căn giữa nếu bạn dùng height cố định */
-    margin: 20px 0;                  /* khoảng cách trên/dưới nếu muốn */
-    /* hoặc: position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); */
+    gap: var(--gutter);
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
   }
   
   .pagination .dot {
@@ -42,14 +61,15 @@ body {
     margin: 0 6px;
     border-radius: 50%;
     background-color: #ccc;
-    transition: background-color .3s;
+    transition: background-color 0.3s;
   }
+  
   .pagination .dot.active {
     background-color: #333;
   }
-
-/* Styles from test.html */
-.banner-container {
+  
+  /* Banner Section */
+  .banner-container {
     width: 100%;
     height: 100vh;
     position: relative;
@@ -59,9 +79,9 @@ body {
     padding: 40px 20px;
     background: url('../Component/background-img.png');
     overflow: hidden;
-}
-
-.banner-texture {
+  }
+  
+  .banner-texture {
     position: absolute;
     top: 0;
     left: 0;
@@ -71,63 +91,58 @@ body {
     background-repeat: repeat;
     z-index: 1;
     opacity: 0.5;
-}
-
-.banner-watercolor {
+  }
+  
+  .banner-watercolor {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: radial-gradient(circle at 20% 80%, rgba(255, 0, 0, 0.2) 0%, transparent 30%),
-                      radial-gradient(circle at 80% 20%, rgba(255, 200, 0, 0.2) 0%, transparent 30%);
+    background-image: 
+      radial-gradient(circle at 20% 80%, rgba(255, 0, 0, 0.2) 0%, transparent 30%),
+      radial-gradient(circle at 80% 20%, rgba(255, 200, 0, 0.2) 0%, transparent 30%);
     z-index: 0;
-}
-
-.content-wrapper {
+  }
+  
+  .content-wrapper {
     position: relative;
     z-index: 2;
     width: 100%;
-    max-width: 1400px;
+    max-width: var(--max-container);
     display: flex;
     flex-direction: column;
     gap: 30px;
-}
-
-@media (min-width: 768px) {
-    .content-wrapper {
-        flex-direction: row;
-        align-items: flex-start;
-    }
-}
-
-.left-content {
+  }
+  
+  .left-content {
     flex: 1;
     padding-right: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; 
-    height: 70vh; 
-}
-.right-content {
+    justify-content: space-between;
+    height: 70vh;
+  }
+  
+  .right-content {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.title {
-    font-family:'Style Script';
+  }
+  
+  .title {
+    font-family: 'Style Script', cursive;
     font-size: 50px;
     font-weight: bold;
     color: #c41111;
     margin-bottom: 10px;
     line-height: 1.1;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-}
-
-.subtitle {
-    font-family:'Style Script';
+  }
+  
+  .subtitle {
+    font-family: 'Style Script', cursive;
     font-size: 60px;
     font-weight: bold;
     background: linear-gradient(to bottom, #c41111 0%, #ff9900 100%);
@@ -138,24 +153,25 @@ body {
     margin-bottom: 30px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
     line-height: 1.1;
-}
-
-.description {
+  }
+  
+  .description {
     font-size: 16px;
     color: #8B0000;
     margin-bottom: 40px;
     font-weight: bold;
-}
-
-.button-group {
+  }
+  
+  .button-group {
     display: flex;
     flex-direction: row;
-    flex-wrap: none;
+    flex-wrap: wrap;
     gap: 20px;
     margin-top: 20px;
-}
-
-.event-card {
+  }
+  
+  /* Event Card */
+  .event-card {
     width: 100%;
     height: 70vh;
     max-width: 27rem;
@@ -165,56 +181,57 @@ body {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-}
-
-.event-info {
+  }
+  
+  .event-info {
     padding: 30px;
     background-color: #f3f3f3;
     flex: 1;
     display: flex;
     flex-direction: column;
-}
-
-.event-title {
+  }
+  
+  .event-title {
     font-size: 20px;
     font-weight: bold;
     color: #222;
     margin-bottom: 20px;
     text-align: center;
     line-height: 1.4;
-}
-
-.event-footer {
+  }
+  
+  .event-footer {
     background-color: #bbbbbb;
     padding: 20px 30px;
     display: flex;
     margin-top: auto;
-}
-
-.time-column {
+  }
+  
+  .time-column {
     flex: 1;
     text-align: center;
-}
-
-.time-label {
+  }
+  
+  .time-label {
     font-weight: bold;
     margin-bottom: 10px;
     color: #333;
-}
-
-.time-value {
+  }
+  
+  .time-value {
     color: #333;
     font-size: 16px;
     line-height: 1.4;
-}
-
-.activities-container {
+  }
+  
+  /* Activities Section */
+  .activities-container {
     width: 100%;
     padding: 60px 20px;
     background-color: #fff;
-}
-
-.gradient-heading {
+  }
+  
+  .gradient-heading {
     font-size: 36px;
     font-weight: bold;
     text-align: center;
@@ -223,9 +240,9 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-}
-
-.section-heading {
+  }
+  
+  .section-heading {
     position: relative;
     text-align: center;
     font-size: 22px;
@@ -234,47 +251,47 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.section-heading::before,
-.section-heading::after {
+  }
+  
+  .section-heading::before,
+  .section-heading::after {
     content: "";
     height: 1px;
     background-color: #ccc;
     width: 20%;
     margin: 0 15px;
-}
-
-/* Carousel styles */
-.carousel-container {
+  }
+  
+  /* Carousel styles */
+  .carousel-container {
     width: 100%;
     position: relative;
     overflow: hidden;
     margin: 40px 0;
-}
-
-.carousel-track {
+  }
+  
+  .carousel-track {
     display: flex;
     transition: transform 0.5s ease;
     gap: 15px;
-}
-
-.carousel-item {
+  }
+  
+  .carousel-item {
     min-width: 280px;
     width: calc(20% - 15px);
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     position: relative;
-}
-
-.carousel-item img {
+  }
+  
+  .carousel-item img {
     width: 100%;
     height: 200px;
     object-fit: cover;
-}
-
-.carousel-caption {
+  }
+  
+  .carousel-caption {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -284,22 +301,22 @@ body {
     color: white;
     font-size: 14px;
     font-weight: bold;
-}
-
-.carousel-details {
+  }
+  
+  .carousel-details {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
     background-color: white;
-}
-
-.carousel-date {
+  }
+  
+  .carousel-date {
     font-size: 14px;
     color: #666;
-}
-
-.carousel-btn {
+  }
+  
+  .carousel-btn {
     background-color: black;
     color: white;
     padding: 5px 15px;
@@ -307,45 +324,30 @@ body {
     font-size: 12px;
     text-decoration: none;
     text-transform: uppercase;
-}
-
-.carousel-dots {
+  }
+  
+  .carousel-dots {
     display: flex;
     justify-content: center;
     margin-top: 20px;
     gap: 8px;
-}
-
-.carousel-dot {
+  }
+  
+  .carousel-dot {
     width: 10px;
     height: 10px;
     border-radius: 50%;
     background-color: #ccc;
     cursor: pointer;
     transition: background-color 0.3s ease;
-}
-
-.carousel-dot.active {
+  }
+  
+  .carousel-dot.active {
     background-color: #333;
-}
-
-@media (min-width: 992px) {
-    .journey-section {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 40px;
-    }
-}
-
-@media (min-width: 768px) {
-    .journey-buttons {
-        flex-direction: row;
-        justify-content: center;
-    }
-}
-
-.journey-btn {
+  }
+  
+  /* Journey section buttons */
+  .journey-btn {
     padding: 15px 25px;
     font-weight: bold;
     text-align: center;
@@ -354,22 +356,22 @@ body {
     transition: all 0.3s ease;
     font-size: 16px;
     cursor: pointer;
-}
-
-.journey-btn-primary {
+  }
+  
+  .journey-btn-primary {
     background-color: #c41111;
     color: white;
     border: none;
-}
-
-.journey-btn-outline {
+  }
+  
+  .journey-btn-outline {
     background-color: white;
     color: #333;
     border: 1px solid #ccc;
-}
-
-/* Styles from test1.html */
-.hero-section {
+  }
+  
+  /* Hero Section */
+  .hero-section {
     position: relative;
     background: url('../img/background-img.png');
     background-size: cover;
@@ -397,22 +399,16 @@ body {
     z-index: 2;
   }
   
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.hero-section .header {
+  .hero-section .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     text-align: center;
     padding: 20px 0;
     margin-bottom: 20px;
-}
-
-.header h1 {
+  }
+  
+  .header h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
     background: linear-gradient(to right, #fff, #ffe6a1);
@@ -420,9 +416,9 @@ body {
     background-clip: text;
     color: transparent;
     text-shadow: 0px 2px 4px rgba(0,0,0,0.2);
-}
-
-.btn-more {
+  }
+  
+  .btn-more {
     background-color: white;
     color: #333;
     border: none;
@@ -432,51 +428,52 @@ body {
     cursor: pointer;
     float: right;
     margin: 10px;
-}
-
-.card {
+  }
+  
+  /* Card Components */
+  .card {
     background-color: white;
     border-radius: 20px;
     overflow: hidden;
     margin-bottom: 30px;
     position: relative;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-.card-image {
+  }
+  
+  .card-image {
     width: 100%;
     height: auto;
     object-fit: cover;
-}
-
-.card-footer {
+  }
+  
+  .card-footer {
     background: #bc0000;
     color: white;
     padding: 15px;
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
-}
-
-.card-content {
+  }
+  
+  .card-content {
     display: flex;
-}
-
-.card-text {
+  }
+  
+  .card-text {
     flex: 1;
     padding: 20px;
-}
-
-.card-sidebar {
+  }
+  
+  .card-sidebar {
     flex: 0 0 250px;
     background-color: #c00;
     padding: 20px;
     color: white;
     font-size: 0.95rem;
     line-height: 1.5;
-}
-
-.see-more {
+  }
+  
+  .see-more {
     display: block;
     text-align: center;
     margin-top: 20px;
@@ -484,108 +481,250 @@ body {
     text-decoration: none;
     font-weight: bold;
     cursor: pointer;
-}
-
-/* Responsive styles for test1.html content */
-@media (max-width: 768px) {
-    .header h1 {
-        font-size: 1.8rem;
+  }
+  
+  /* Fund News Specific Styles - ĐÃ ĐƯỢC CHỈNH SỬA */
+  .fund-news-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .fund-news-picture, 
+  .fund-news-picture-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin: 0;
+  }
+  
+  .fund-news-title-box {
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .fund-news-sapotext {
+    max-width: 100%;
+    padding: 0 var(--gutter);
+    box-sizing: border-box;
+    margin: 0;
+  }
+  
+  .fund-news-sapotext-text,
+  .fund-news-sapotext p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: var(--gutter);
+  }
+  
+  .fund-news-sapotext-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #c41111;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+  
+  /* Responsive Media Queries */
+  /* Extra large devices (large desktops, less than 1400px) */
+  @media (max-width: 1400px) {
+    .slider-container {
+      max-width: 100%;
+      margin: 0 1rem;
     }
     
-    .card-content {
-        flex-direction: column;
-    }
-    
-    .card-sidebar {
-        flex: 1;
-    }
-    
-    .card-footer {
-        font-size: 1.2rem;
+    .slider-wrapper {
+      gap: 15px;
     }
     
     .title {
-        font-size: 40px;
+      font-size: clamp(2.5rem, 3vw, 4.5rem);
     }
     
     .subtitle {
-        font-size: 46px;
-    }
-    
-    .left-content {
-        padding-right: 0;
-        margin-bottom: 30px;
-    }
-    
-    .right-content {
-        width: 100%;
+      font-size: clamp(3rem, 4vw, 5rem);
     }
     
     .event-card {
-        width: 100%;
+      max-width: 24rem;
     }
-    
+  }
+  
+  /* Large devices (desktops, less than 1200px) */
+  @media (max-width: 1200px) {
     .carousel-item {
-        width: calc(50% - 15px);
+      width: calc(25% - 15px);
     }
     
-    .gradient-heading {
-        font-size: 28px;
-    }
-    
-    .journey-title {
-        font-size: 24px;
-    }
-}
-
-@media (max-width: 576px) {
+    /* Bỏ quy tắc cũ về fund-news-container tại đây */
+  }
+  
+  /* Medium devices (tablets, less than 992px) */
+  @media (max-width: 992px) {
     .carousel-item {
-        width: calc(100% - 15px);
+      width: calc(33.333% - 15px);
     }
     
-    .gradient-heading {
-        font-size: 24px;
+    .journey-section {
+      flex-direction: column;
+      align-items: center;
     }
     
-    .section-heading::before,
-    .section-heading::after {
-        width: 15%;
-    }
-}
-
-@media (max-width: 480px) {
-    .header h1 {
-        font-size: 1.5rem;
-    }
-    
-    .btn-more {
-        font-size: 0.8rem;
-        padding: 8px 15px;
-    }
-    
-    .card-footer {
-        font-size: 1rem;
-        padding: 10px;
+    .card-content {
+      flex-direction: column;
     }
     
     .card-sidebar {
-        padding: 15px;
-        font-size: 0.85rem;
+      flex: 0 0 auto;
     }
     
+    /* Chỉnh sửa quy tắc cũ về fund-news */
+    .fund-news-title-box {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      padding: 0.75rem;
+      text-align: center;
+    }
+  }
+  
+  /* Small devices (landscape phones, less than 768px) */
+  @media (max-width: 768px) {
+    .content-wrapper {
+      flex-direction: column;
+    }
+    
+    .left-content {
+      padding-right: 0;
+      height: auto;
+      margin-bottom: 30px;
+    }
+    
+    .carousel-item {
+      width: calc(50% - 15px);
+    }
+    
+    .journey-buttons {
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+    }
+    
+    .banner-container {
+      padding: 30px 15px;
+      height: auto;
+    }
+    
+    .hero-section .header {
+      flex-direction: column;
+    }
+    
+    .fund-news-sapotext-button {
+      max-width: 100%;
+      padding: 0.5rem 1rem;
+      margin-top: var(--gutter);
+      text-align: center;
+    }
+    
+    .fund-news-sapotext-text,
+    .fund-news-sapotext p {
+      font-size: clamp(0.875rem, 2.5vw, 1rem);
+      line-height: 1.4;
+    }
+  }
+  
+  /* Extra small devices (portrait phones, less than 576px) */
+  @media (max-width: 576px) {
     .title {
-        font-size: 32px;
+      font-size: 2rem;
     }
     
     .subtitle {
-        font-size: 36px;
+      font-size: 2.5rem;
+    }
+    
+    .description {
+      font-size: 1rem;
+    }
+    
+    .carousel-item {
+      width: 100%;
+    }
+    
+    .pagination .dot {
+      width: 8px;
+      height: 8px;
+      margin: 0 3px;
     }
     
     .button-group {
-        flex-direction: column;
+      flex-direction: column;
+      gap: 10px;
     }
     
-    .btn {
-        width: 100%;
+    .event-card {
+      height: auto;
+      min-height: 400px;
     }
-}
+    
+    .gradient-heading {
+      font-size: 28px;
+    }
+    
+    .header h1 {
+      font-size: 1.75rem;
+    }
+    
+    .fund-news-title-box {
+      font-size: clamp(0.875rem, 2.5vw, 1rem);
+      padding: 0.5rem;
+    }
+    
+    .fund-news-sapotext {
+      font-size: clamp(0.75rem, 2vw, 0.875rem);
+    }
+  }
+  
+  /* Thêm container parent reset cho section có chứa fund-news */
+  .fund-news-section .container {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0;
+  }
+  .fund-news-sapotext {
+    max-width: none !important;
+  }
+.fund-news-picture {
+width: 100% !important;
+}  
+/* Responsive: */
+@media (max-width: 992px) {
+    .activity-item {
+      flex: 0 0 calc(33.333% - var(--gutter)); /* 3 items mỗi dòng */
+      max-width: calc(33.333% - var(--gutter));
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .activity-item {
+      flex: 0 0 calc(50% - var(--gutter)); /* 2 items mỗi dòng */
+      max-width: calc(50% - var(--gutter));
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .activity-item {
+      flex: 0 0 100%; /* 1 item mỗi dòng */
+      max-width: 100%;
+    }
+  }
