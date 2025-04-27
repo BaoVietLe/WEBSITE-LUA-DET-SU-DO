@@ -240,7 +240,6 @@
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('header-container').innerHTML = data;
-                    initMobileMenu();
                 });
 
             // Load footer
@@ -482,6 +481,7 @@ window.addEventListener('resize', updateCardsToShow);
                 });
             }
         }
+        
     </script>
 </body>
 
