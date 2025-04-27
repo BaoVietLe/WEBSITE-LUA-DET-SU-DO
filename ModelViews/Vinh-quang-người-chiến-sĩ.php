@@ -443,7 +443,7 @@ fetch('./Component khác/Thanh_chi_tiet_hoat_dong.html')
         // Có thể thay đổi cả nội dung của button
         const registerButton = tempDiv.querySelector('.register-button');
         if (registerButton) {
-            registerButton.textContent = 'ĐĂNG KÝ NGAY';
+            registerButton.textContent = 'ĐĂNG KÝ';
         }
         
         // Chèn HTML đã sửa đổi vào trang

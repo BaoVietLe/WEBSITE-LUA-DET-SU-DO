@@ -139,7 +139,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/VQNCS.jpg");
+    background-image: url("../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/DẤU ẤN ANH HÙNG.jpg");
     border-radius: 15px;
     opacity: 0.5;
     z-index: 0;
@@ -297,7 +297,7 @@
 
     <div class="head-container">
         <div class="sub-header-wrapper">
-            <div class="sub-header">HOẠT ĐỘNG ĐANG DIỄN RA
+            <div class="sub-header">HOẠT ĐỘNG ĐÃ DIỄN RA
             </div>
         </div>
 
@@ -333,7 +333,6 @@
 
         <div id="event-container"></div>
 
-        <div id="sponsor-section"></div>
         <div class="event-card-wrapper">
         <div class="event-card">
             <h2 class="card-title">KỶ NIỆM 34 NĂM NGÀY HỘI CỰU CHIẾN BINH VIỆT NAM</h2>
@@ -407,26 +406,51 @@
         .then(data => {
             document.getElementById('footer-container').innerHTML = data;
         });
-         // Load Thanh chi tiết hoạt động
-    fetch('./Component khác/Thanh_chi_tiet_hoat_dong.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('event-container').innerHTML = data;
+    // Load Thanh chi tiết hoạt động
+fetch('./Component khác/Thanh_chi_tiet_hoat_dong.html')
+    .then(response => response.text())
+    .then(data => {
+        // Tạo một phần tử DOM tạm thời để chứa HTML
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = data;
+        
+        // Bây giờ bạn có thể thay đổi các nội dung text
+        // Ví dụ: thay đổi địa điểm
+        const locationElement = tempDiv.querySelector('.info-section:nth-child(1) .section-content');
+        if (locationElement) {
+            locationElement.textContent = 'Huyện Củ Chi, TP. Hồ Chí Minh';
+        }
+        
+        // Thay đổi thời gian
+        const timeElement = tempDiv.querySelector('.time-section .section-content');
+        if (timeElement) {
+            timeElement.textContent = '8:00:00 | 23/12/2024 - 17:00:00 | 23/12/2024';
+        }
+        
+        // Thay đổi số lượng tham gia
+        const participantsElement = tempDiv.querySelector('.participants-section .section-content');
+        if (participantsElement) {
+            participantsElement.textContent = '30/30';
+        }
+        
+        // Có thể thay đổi cả nội dung của button
+        const registerButton = tempDiv.querySelector('.register-button');
+        if (registerButton) {
+            registerButton.textContent = 'ĐĂNG KÝ';
+        }
+        
+        // Chèn HTML đã sửa đổi vào trang
+        document.getElementById('event-container').innerHTML = tempDiv.innerHTML;
+        
+        // Thêm lại event listener cho button vì innerHTML sẽ xóa các event cũ
+        document.querySelector('.register-button').addEventListener('click', function() {
+            alert('Bạn đã nhấn nút đăng ký!');
+            // Thêm logic đăng ký ở đây
         });
-            // Load Sponsor
-    fetch('./Component khác/Sponsor-Section.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('sponsor-section').innerHTML = data;
-        });
-    
-    // Load activities data
-    fetch('js/activities.json')
-        .then(response => response.json())
-        .then(data => {
-            renderActivities('past-activities', data.pastActivities);
-            renderActivities('upcoming-activities', data.upcomingActivities);
-        });
+    })
+    .catch(error => {
+        console.error('Lỗi khi tải tệp HTML:', error);
+    });
 
           // Initialize Card Slider
           initCardSlider();
