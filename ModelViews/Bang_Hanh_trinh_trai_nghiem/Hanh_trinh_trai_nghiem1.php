@@ -34,7 +34,7 @@ try {
                     'mssv' => $row['mssv'],
                     'name' => $row['sv_name'],
                     'content' => $row['sv_sharing'],
-                    'avatar' => '../../assets/img/sv/' . $row['sv_img']
+                    'avatar_fix' => '../assets/img/sv/' . $row['sv_img']
                 ];
             }
         } else {
@@ -113,15 +113,18 @@ try {
         }
 
         /* Avatar section */
-        .avatar-section {
-            flex: 0 0 100%;
+        .avatar-section-fix {
+            width: 17rem;
+            height: 17rem;
             text-align: center;
+            overflow: hidden;
+            border-radius: 50%;
         }
 
-        .avatar {
-            max-width: 100%;
-            height: auto;
-            border-radius: 50%;
+        .avatar_fix {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         @media (min-width: 768px) {
@@ -279,11 +282,11 @@ try {
 </head>
 <body>
     <div class="bit-container">
-        <div class="avatar-section">
+        <div class="avatar-section-fix">
             <?php if (!empty($slidesData)): ?>
-                <img src="<?= htmlspecialchars($slidesData[0]['avatar']) ?>" alt="<?= htmlspecialchars($slidesData[0]['name']) ?>" class="avatar">
+                <img src="<?= htmlspecialchars($slidesData[0]['avatar_fix']) ?>" alt="<?= htmlspecialchars($slidesData[0]['name']) ?>" class="avatar_fix">
             <?php else: ?>
-                <img src="../../assets/img/sv/default-avatar.jpg" alt="Default avatar" class="avatar">
+                <img src="../../assets/img/sv/default-avatar.jpg" alt="Default avatar" class="avatar_fix">
             <?php endif; ?>
         </div>
         
@@ -352,7 +355,7 @@ try {
         let currentSlideIndex = 0;
         let slideInterval;
         let isPaused = false;
-        const slideIntervalTime = 5000; // 5 seconds per slide
+        const slideIntervalTime = 3000; // 5 seconds per slide
         
         // Create pagination dots
         createPagination();
@@ -404,7 +407,7 @@ try {
             dots[index].classList.add('active');
             
             // Update avatar
-            const avatarImg = document.querySelector('.avatar');
+            const avatarImg = document.querySelector('.avatar_fix');
             if (avatarImg && slidesData[index]) {
                 avatarImg.src = slidesData[index].avatar;
                 avatarImg.alt = slidesData[index].name || 'Student avatar';
