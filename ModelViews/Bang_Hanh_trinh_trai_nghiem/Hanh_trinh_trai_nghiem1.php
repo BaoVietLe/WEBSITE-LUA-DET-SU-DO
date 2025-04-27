@@ -34,7 +34,7 @@ try {
                     'mssv' => $row['mssv'],
                     'name' => $row['sv_name'],
                     'content' => $row['sv_sharing'],
-                    'avatar_fix' => '../assets/img/sv/' . $row['sv_img']
+                    'avatar_fix' => '../../assets/img/sv/' . $row['sv_img']
                 ];
             }
         } else {
@@ -409,7 +409,7 @@ try {
             // Update avatar
             const avatarImg = document.querySelector('.avatar_fix');
             if (avatarImg && slidesData[index]) {
-                avatarImg.src = slidesData[index].avatar;
+                avatarImg.src = slidesData[index].avatar_fix;
                 avatarImg.alt = slidesData[index].name || 'Student avatar';
             }
             

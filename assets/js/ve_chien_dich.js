@@ -15,45 +15,45 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     
     // // Load activities data
-    // fetch('js/activities.json')
-    //     .then(response => response.json())
-    //     .then(data => {
-    //         renderActivities('past-activities', data.pastActivities);
-    //         renderActivities('upcoming-activities', data.upcomingActivities);
-    //     });
+    fetch('js/activities.json')
+        .then(response => response.json())
+        .then(data => {
+            renderActivities('past-activities', data.pastActivities);
+            renderActivities('upcoming-activities', data.upcomingActivities);
+        });
      
-    //     fetch('./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem1.php')
-    // .then(response => {
-    //     if (!response.ok) throw new Error('Không thể load nội dung: ' + response.status);
-    //     return response.text();
-    // })
-    // .then(html => {
-    //     const aboutSection = document.getElementById('bit-container');
-    //     aboutSection.innerHTML = html;
+        fetch('./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem1.php')
+    .then(response => {
+        if (!response.ok) throw new Error('Không thể load nội dung: ' + response.status);
+        return response.text();
+    })
+    .then(html => {
+        const aboutSection = document.getElementById('bit-container');
+        aboutSection.innerHTML = html;
 
-    //     // Tìm tất cả thẻ <script> vừa mới gán vào
-    //     aboutSection.querySelectorAll('script').forEach(oldScript => {
-    //         const newScript = document.createElement('script');
-    //         // Copy thuộc tính src hoặc text
-    //         if (oldScript.src) {
-    //             newScript.src = oldScript.src;
-    //         } else {
-    //             newScript.textContent = oldScript.textContent;
-    //         }
-    //         document.body.appendChild(newScript);
-    //     });
-
-    //     // Gán xong HTML + thực thi script => mới được phép init
-    //     initCardSlider();
-    // })
-    // .catch(error => {
-    //     console.error(error);
-    // });
+        // Tìm tất cả thẻ <script> vừa mới gán vào
+        aboutSection.querySelectorAll('script').forEach(oldScript => {
+            const newScript = document.createElement('script');
+            // Copy thuộc tính src hoặc text
+            if (oldScript.src) {
+                newScript.src = oldScript.src;
+            } else {
+                newScript.textContent = oldScript.textContent;
+            }
+            document.body.appendChild(newScript);
+        });
+ 
+        // Gán xong HTML + thực thi script => mới được phép init
+        initCardSlider();
+    })
+    .catch(error => {
+        console.error(error);
+    });
 
     });
 
         // Dữ liệu cho slider
-        const cardData = [
+     const cardData = [
             {
         image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/LDSD.jpg",
         title: "Lửa Dệt Sử Đỏ",
@@ -64,21 +64,21 @@ document.addEventListener('DOMContentLoaded', function() {
     {
         image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/Vùng đất thép.jpg",
         title: "Hành trình về vùng đất thép",
-        date: "19.04.2025",
+        date: "21.03.2025",
         buttonText: "Chi tiết",
         link: "./Hành-trình-về-vùng-đất-thép.html"  // Thêm liên kết đến trang HTML tương ứng
     },
     {
         image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/VQNCS.jpg",
         title: "Vinh quang người chiến sĩ",
-        date: "17.04.2025",
+        date: "11.05.2024",
         buttonText: "Chi tiết",
         link: "./Vinh-quang-người-chiến-sĩ.html"  // Thêm liên kết đến trang HTML tương ứng
     },
     {
         image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/DẤU ẤN ANH HÙNG.jpg",
         title: "Dấu ấn anh hùng",
-        date: "17.04.2025",
+        date: "23.12.2023",
         buttonText: "Chi tiết",
         link: "./Dấu-ấn-anh-hùng.html"  // Thêm liên kết đến trang HTML tương ứng
     }
@@ -367,6 +367,7 @@ for (let i = 0; i < totalPages; i++) {
                 dots[currentSlide].click();
             }, 5000);
         });
+
         document.addEventListener('DOMContentLoaded', function() {
             // Fetch the data from the PHP file
             fetch('./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem1.php')
