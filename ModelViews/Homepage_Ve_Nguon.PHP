@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lửa Dệt Sử Đỏ Campaign</title>
+    <title>Trang chủ Lửa Dệt Sử Đỏ</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link 
@@ -29,7 +29,7 @@
             <div class="left-content">
                 <div class="left-content-top">
                     <div class="title" style="font-size: 90px;">Cổng thông tin</div>
-                    <div class="subtitle" style="font-size: 70px;">Lửa Dệt Sử Đỏ</div>
+                    <div class="subtitle" style="font-size: 90px;">Lửa Dệt Sử Đỏ</div>
                     <div class="description" style="font-size: 20px;">Website “Lửa dệt sử đỏ” là dự án website thuộc chuỗi hoạt động chào mừng kỷ niệm 50 năm Giải phóng miền Nam Thống nhất đất nước (30-4-1975 - 30-4-2025) nhằm thúc đẩy tinh thần yêu tổ quốc, yêu đồng bào trong thế hệ sinh viên UEH thông qua giới thiệu các hoạt động về nguồn của khoa Công nghệ thông tin kinh doanh, đồng thời cung cấp đến sinh viên những hiểu biết về các mẹ Việt Nam Anh Hùng, và công khai minh bạch quá trình vận hành quỹ Vinh danh Anh hùng.</div>
                 </div>
 
@@ -107,19 +107,15 @@
             <div class="fund-news-container">
                     <!-- Cột trái: ảnh + tiêu đề -->
                     <div class="fund-news-picture">
-                        <img src="./Footer/Ảnh/HD_1.png" alt="Ảnh tổng kết" class="fund-news-picture-img">
-                        <div class="fund-news-title-box">Tổng kết quỹ vinh danh anh hùng <br> tháng 3 - 2025</div>
+                        <img src="../assets/img/Tin bài 1/13.jpg" alt="Ảnh tổng kết" class="fund-news-picture-img">
+                        <div class="fund-news-title-box">Nhìn lại Chặng 1 - Hoạt động 2<br>Triển lãm tem thư Khoa Công nghệ thông tin kinh doanh</div>
                     </div>
 
                     <!-- Cột phải: nội dung + nút -->
                     <div class="fund-news-sapotext">
                         <p>
-                        Tháng Tư – tháng của những kỷ ức lịch sử và lòng biết ơn – Quỹ Vinh danh Anh hùng tiếp tục
-                            hành trình tri ân, lan tỏa những giá trị cao đẹp của tinh thần yêu nước và sự hy sinh thầm
-                            lặng. Bản tổng kết tháng 04/2025 không chỉ ghi lại những con số đóng góp đầy ý nghĩa, mà còn
-                            là câu chuyện về sự chung tay của cộng đồng trong việc giữ gìn và tôn vinh hình ảnh những
-                            người Anh hùng – những ngọn đuốc soi đường cho thế hệ hôm nay. Hãy cùng nhìn lại những dấu
-                            ấn đặc biệt trong tháng vừa qua và cùng thắp sáng thêm ngọn lửa tri ân.
+                        Từ ngày 16-18/04/2025, khoa Công nghệ thông tin kinh doanh đã tổ chức Triển lãm tem thư đưa sinh viên trở về với hình ảnh một Sài Gòn xưa – thân thương và sâu lắng qua từng con tem nhuốm màu thời gian. Là hoạt động thứ hai trong Chặng 1 của chuỗi chương trình “Lửa Dệt Sử Đỏ”, triển lãm đã góp phần lan tỏa tình yêu lịch sử, hun đúc niềm tự hào dân tộc và khơi gợi trong sinh viên tinh thần gìn giữ những giá trị truyền thống giữa dòng chảy đổi thay của thời đại.
+
                         </p>
                         <div class="fund-news-sapotext-button-container">
                         <a href="./Trang_tin_bao.html" class="fund-news-sapotext-button">
@@ -270,21 +266,21 @@
     {
         image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/Vùng đất thép.jpg",
         title: "Hành trình về vùng đất thép",
-        date: "19.04.2025",
+        date: "22.03.2025",
         buttonText: "Chi tiết",
         link: "./Hành-trình-về-vùng-đất-thép.php"  // Thêm liên kết đến trang HTML tương ứng
     },
     {
         image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/VQNCS.jpg",
         title: "Vinh quang người chiến sĩ",
-        date: "17.04.2025",
+        date: "11.05.2024",
         buttonText: "Chi tiết",
         link: "./Vinh-quang-người-chiến-sĩ.php"  // Thêm liên kết đến trang HTML tương ứng
     },
     {
         image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/DẤU ẤN ANH HÙNG.jpg",
         title: "Dấu ấn anh hùng",
-        date: "17.04.2025",
+        date: "23.12.2023",
         buttonText: "Chi tiết",
         link: "./Dấu-ấn-anh-hùng.php"  // Thêm liên kết đến trang HTML tương ứng
     }
@@ -459,51 +455,6 @@ updateCardsToShow();
 // Cập nhật slider khi thay đổi kích thước màn hình
 window.addEventListener('resize', updateCardsToShow);
 
-
-
-            // Initialize mobile menu
-            function initMobileMenu() {
-                const toggleButton = document.querySelector('.mobile-menu-toggle');
-                if (!toggleButton) return;
-
-                // Create mobile menu if it doesn't exist
-                if (!document.querySelector('.mobile-menu')) {
-                    const mobileMenu = document.createElement('div');
-                    mobileMenu.className = 'mobile-menu';
-                    mobileMenu.innerHTML = `
-                    <div class="mobile-menu-close">
-                        <i class="fas fa-times"></i>
-                    </div>
-                    <ul>
-                        <li><a href="index.html">TRANG CHỦ</a></li>
-                        <li><a href="ve-chien-dich.html">VỀ CHIẾN DỊCH</a></li>
-                        <li><a href="bang-vinh-danh.html">BẢNG VINH DANH</a></li>
-                        <li><a href="quy-vinh-danh-anh-hung.html">QUỸ VINH DANH ANH HÙNG</a></li>
-                    </ul>
-                `;
-                    document.body.appendChild(mobileMenu);
-
-                    const overlay = document.createElement('div');
-                    overlay.className = 'mobile-menu-overlay';
-                    document.body.appendChild(overlay);
-
-                    // Close menu when clicking on close button or overlay
-                    document.querySelector('.mobile-menu-close').addEventListener('click', toggleMobileMenu);
-                    overlay.addEventListener('click', toggleMobileMenu);
-                }
-
-                // Toggle menu when clicking on menu button
-                toggleButton.addEventListener('click', toggleMobileMenu);
-            }
-
-            // Toggle mobile menu
-            function toggleMobileMenu() {
-                const mobileMenu = document.querySelector('.mobile-menu');
-                const overlay = document.querySelector('.mobile-menu-overlay');
-
-                mobileMenu.classList.toggle('active');
-                overlay.classList.toggle('active');
-            }
 
             // Pagination functionality
             document.addEventListener('click', function (e) {
