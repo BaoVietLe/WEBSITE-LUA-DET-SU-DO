@@ -122,12 +122,51 @@
 
         
         /* Event Details Card */
+        .event-card-wrapper {
+    position: relative;
+    width: full-width;
+    margin-bottom: 40px;
+    padding: 15px;
+    background: linear-gradient(135deg, rgba(247, 118, 34, 0.1), rgba(214, 34, 34, 0.1));
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+}
+
+/* Tạo hiệu ứng nền trang trí */
+.event-card-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/LDSD.jpg");
+    border-radius: 15px;
+    opacity: 0.5;
+    z-index: 0;
+}
+
+/* Thêm border trang trí cho nền */
+.event-card-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 1px dashed rgba(214, 34, 34, 0.2);
+    border-radius: 12px;
+    z-index: 0;
+}
         .event-card {
             background-color: #fff;
             border-radius: 10px;
             padding: 30px;
             margin-bottom: 40px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1;
+            margin-bottom: 0; /* Bỏ margin vì wrapper đã có */
         }
 
         .card-title {
@@ -302,7 +341,8 @@
         <div id="event-container"></div>
 
         <div id="sponsor-section"></div>
-
+        
+        <div class="event-card-wrapper">
         <div class="event-card">
             <h2 class="card-title">KỈ NIỆM 50 NĂM NGÀY GIẢI PHÓNG MIỀN NAM</h2>
             <div class="card-date">30/04/1975 - 30/04/2025</div>
@@ -345,8 +385,9 @@
                 #LDSD #LUADETSUDO</p>
             </div>
         </div>
+        </div>
 
-        <div id="about-section"></div>
+        <?php include "./Bang_BTC_chia_se/Bang_BTC.php"?>
 
         <!-- Footer will be loaded dynamically -->
         <div id="footer-container"></div>
@@ -367,12 +408,51 @@
         .then(data => {
             document.getElementById('footer-container').innerHTML = data;
         });
-         // Load Thanh chi tiết hoạt động
-    fetch('./Component khác/Thanh_chi_tiet_hoat_dong.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('event-container').innerHTML = data;
+// Load Thanh chi tiết hoạt động
+fetch('./Component khác/Thanh_chi_tiet_hoat_dong.html')
+    .then(response => response.text())
+    .then(data => {
+        // Tạo một phần tử DOM tạm thời để chứa HTML
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = data;
+        
+        // Bây giờ bạn có thể thay đổi các nội dung text
+        // Ví dụ: thay đổi địa điểm
+        const locationElement = tempDiv.querySelector('.info-section:nth-child(1) .section-content');
+        if (locationElement) {
+            locationElement.textContent = 'Huyện Củ Chi, TP. Hồ Chí Minh';
+        }
+        
+        // Thay đổi thời gian
+        const timeElement = tempDiv.querySelector('.time-section .section-content');
+        if (timeElement) {
+            timeElement.textContent = '8:00:00 | 20/04/2025 - 17:00:00 | 20/04/2025';
+        }
+        
+        // Thay đổi số lượng tham gia
+        const participantsElement = tempDiv.querySelector('.participants-section .section-content');
+        if (participantsElement) {
+            participantsElement.textContent = '30/30';
+        }
+        
+        // Có thể thay đổi cả nội dung của button
+        const registerButton = tempDiv.querySelector('.register-button');
+        if (registerButton) {
+            registerButton.textContent = 'ĐĂNG KÝ NGAY';
+        }
+        
+        // Chèn HTML đã sửa đổi vào trang
+        document.getElementById('event-container').innerHTML = tempDiv.innerHTML;
+        
+        // Thêm lại event listener cho button vì innerHTML sẽ xóa các event cũ
+        document.querySelector('.register-button').addEventListener('click', function() {
+            alert('Bạn đã nhấn nút đăng ký!');
+            // Thêm logic đăng ký ở đây
         });
+    })
+    .catch(error => {
+        console.error('Lỗi khi tải tệp HTML:', error);
+    });
             // Load Sponsor
     fetch('./Component khác/Sponsor-Section.html')
         .then(response => response.text())

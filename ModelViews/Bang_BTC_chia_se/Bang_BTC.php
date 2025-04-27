@@ -36,7 +36,7 @@ try {
                     'phone' => $row['btc_phone'],
                     'email' => $row['btc_email'],
                     'sharing' => $row['btc_sharing'],
-                    'avatar' => '../../assets/img/btc/' . $row['btc_img']
+                    'avatar' => '../assets/img/btc/' . $row['btc_img']
                 ];
             }
         } else {
@@ -73,7 +73,7 @@ try {
         }
 
         .container {
-            max-width: 1200px;
+            max-width: full-width;
             margin: 0 auto;
             padding: 20px;
         }
