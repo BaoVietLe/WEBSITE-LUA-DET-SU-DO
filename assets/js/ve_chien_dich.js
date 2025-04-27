@@ -1,56 +1,31 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Load header
-    fetch('./Header_dự_án/Header_dự_án.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('header-container').innerHTML = data;
-            initMobileMenu();
-        });
+        // Load header
+        fetch('./Header_dự_án/Header_dự_án.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+                initMobileMenu();
+            });
     
-    // Load footer
-    fetch('./Footer/footer.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('footer-container').innerHTML = data;
-        });
+        // Load footer
+        fetch('./Footer/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            });
     
-    // // Load activities data
-    fetch('js/activities.json')
-        .then(response => response.json())
-        .then(data => {
-            renderActivities('past-activities', data.pastActivities);
-            renderActivities('upcoming-activities', data.upcomingActivities);
-        });
-     
-        fetch('./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem1.php')
-    .then(response => {
-        if (!response.ok) throw new Error('Không thể load nội dung: ' + response.status);
-        return response.text();
-    })
-    .then(html => {
-        const aboutSection = document.getElementById('bit-container');
-        aboutSection.innerHTML = html;
-
-        // Tìm tất cả thẻ <script> vừa mới gán vào
-        aboutSection.querySelectorAll('script').forEach(oldScript => {
-            const newScript = document.createElement('script');
-            // Copy thuộc tính src hoặc text
-            if (oldScript.src) {
-                newScript.src = oldScript.src;
-            } else {
-                newScript.textContent = oldScript.textContent;
-            }
-            document.body.appendChild(newScript);
-        });
- 
-        // Gán xong HTML + thực thi script => mới được phép init
-        initCardSlider();
-    })
-    .catch(error => {
-        console.error(error);
+        // Load activities
+        fetch('js/activities.json')
+            .then(response => response.json())
+            .then(data => {
+                renderActivities('past-activities', data.pastActivities);
+                renderActivities('upcoming-activities', data.upcomingActivities);
+            });
+    
+        // 👉 GỌI HÀM SLIDER SAU CÙNG
+        initCardSlider(); 
     });
 
-    });
 
         // Dữ liệu cho slider
      const cardData = [
@@ -367,26 +342,3 @@ for (let i = 0; i < totalPages; i++) {
                 dots[currentSlide].click();
             }, 5000);
         });
-
-        document.addEventListener('DOMContentLoaded', function() {
-            // Fetch the data from the PHP file
-            fetch('./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem1.php')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('bit-container').innerHTML = data;
-                    
-                    // Re-initialize any JavaScript that needs to run after content is loaded
-                    initializeSlideshow();
-                })
-                .catch(error => {
-                    console.error('Error fetching content:', error);
-                    document.getElementById('bit-container').innerHTML = 
-                        '<p>Error loading content. Please try again later.</p>';
-                });
-        });
-
-        // Function to initialize slideshow (define this separately or include from the PHP file)
-        function initializeSlideshow() {
-            // Your slideshow initialization code here
-            // This would be similar to the script in your PHP file
-        }

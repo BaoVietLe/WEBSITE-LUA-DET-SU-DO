@@ -41,7 +41,7 @@
                                 <span>LỬA DỆT SỬ ĐỎ</span>
                             </div>
                         </a>
-                        <a href="./ve_chien_dich.php" class="button button-white">
+                        <a href="./Lửa-dệt-sử-đỏ.html" class="button button-white">
                             <div class="button-text">
                                 <span>ĐĂNG KÝ THAM GIA</span>
                                 <span>LỬA DỆT SỬ ĐỎ</span>
@@ -90,7 +90,7 @@
         </div>
     </div>
     <div class="activities-container"> <!-- dùng lại class -->
-        <div id="about-section"></div>
+    <?php include "./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem1.php"?>
     </div>
 
     <!-- Content from test1.html -->
@@ -161,7 +161,6 @@
         <!-- Footer will be loaded dynamically -->
         <div id="footer-container"></div>
     </div>
-    <script defer src="./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const buttons = document.querySelectorAll('.btn');
@@ -255,33 +254,6 @@
                     document.getElementById('footer-container').innerHTML = data;
                 });
 
-            // Load Hanh Trinh Trai Nghiem HTML
-            fetch('./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.html')
-                .then(response => response.text())
-                .then(html => {
-                    document.getElementById('about-section').innerHTML = html;
-
-                    // Load JS sau khi đã render HTML
-                    const script = document.createElement('script');
-                    script.src = './Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.js';
-                    script.onload = () => {
-                        console.log("JS slideshow loaded");
-
-                        // Fetch PHP để lấy dữ liệu
-                        fetch('./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.php')
-                            .then(response => response.json())
-                            .then(data => {
-                                if (typeof initSlideshow === 'function') {
-                                    initSlideshow(data);
-                                } else {
-                                    console.warn("initSlideshow chưa sẵn sàng");
-                                }
-                            })
-                            .catch(err => console.error('Lỗi fetch PHP:', err));
-                    };
-                    document.body.appendChild(script);
-                })
-                .catch(err => console.error('Lỗi fetch HTML slideshow:', err));
             // Initialize Card Slider
             initCardSlider();
         });
@@ -325,166 +297,168 @@
         return;
     }
 
-    // Xóa nội dung cũ nếu có
-    sliderWrapper.innerHTML = '';
+     // Xóa nội dung cũ nếu có
+     sliderWrapper.innerHTML = '';
 
-    // Tạo các card từ dữ liệu
-    function createCardElement(cardInfo) {
-        const card = document.createElement('div');
-        card.className = 'activity-info';
+// Tạo các card từ dữ liệu
+function createCardElement(cardInfo) {
+    const card = document.createElement('div');
+    card.className = 'activity-info';
 
-        card.innerHTML = `
-            <img class="activity-info-image" src="${cardInfo.image}" alt="${cardInfo.title}">
-            <div class="activity-info-content">
-                <div class="activity-info-title">${cardInfo.title}</div>
-                <div class="activity-info-date-button">
-                    <div class="activity-info-date">${cardInfo.date}</div>
-                    <button class="activity-info-button" data-link="${cardInfo.link}">${cardInfo.buttonText}</button>
-                </div>
+    card.innerHTML = `
+        <img class="activity-info-image" src="${cardInfo.image}" alt="${cardInfo.title}">
+        <div class="activity-info-content">
+            <div class="activity-info-title">${cardInfo.title}</div>
+            <div class="activity-info-date-button">
+                <div class="activity-info-date">${cardInfo.date}</div>
+                <button class="activity-info-button" data-link="${cardInfo.link}">${cardInfo.buttonText}</button>
             </div>
-        `;
+        </div>
+    `;
 
-        // Thêm sự kiện click cho button
-        const button = card.querySelector('.activity-info-button');
-        button.addEventListener('click', function() {
-            // Chuyển hướng đến trang HTML được chỉ định
-            window.location.href = this.getAttribute('data-link');
-        });
-
-        return card;
-    }
-
-    // Thêm tất cả các card vào slider
-    cardData.forEach(cardInfo => {
-        const cardElement = createCardElement(cardInfo);
-        sliderWrapper.appendChild(cardElement);
+    // Thêm sự kiện click cho button
+    const button = card.querySelector('.activity-info-button');
+    button.addEventListener('click', function() {
+        // Chuyển hướng đến trang HTML được chỉ định
+        window.location.href = this.getAttribute('data-link');
     });
+
+    return card;
+}
+
+// Thêm tất cả các card vào slider
+cardData.forEach(cardInfo => {
+    const cardElement = createCardElement(cardInfo);
+    sliderWrapper.appendChild(cardElement);
+});
+
+
+// Xác định các biến cấu hình slider
+let cardsPerPage = 3; // Số lượng card hiển thị mỗi trang
+let cardWidth = 400; // Chiều rộng mỗi card
+let cardMargin = 20; // Khoảng cách giữa các card
+let currentPage = 0; // Trang hiện tại
+let totalPages = Math.ceil(cardData.length / cardsPerPage); // Tổng số trang
+
+// Tìm hoặc tạo container cho pagination dots
+const sliderContainer = document.querySelector('.slider-container');
+let paginationContainer;
+
+// Tìm pagination đã có sẵn trong HTML
+const existingPagination = document.querySelector('.pagination');
+
+if (existingPagination) {
+// Sử dụng pagination hiện có
+paginationContainer = existingPagination;
+paginationContainer.innerHTML = ''; // Xóa dots cũ
+} else {
+// Tạo pagination mới nếu không tìm thấy
+paginationContainer = document.createElement('div');
+paginationContainer.className = 'pagination';
+
+// Thêm pagination vào sau slider container
+if (sliderContainer) {
+    sliderContainer.parentNode.insertBefore(paginationContainer, sliderContainer.nextSibling);
+}
+}
+
+// Tạo pagination dots
+for (let i = 0; i < totalPages; i++) {
+const dot = document.createElement('span');
+dot.className = 'dot';
+if (i === 0) dot.classList.add('active');
+dot.dataset.page = i;
+paginationContainer.appendChild(dot);
+}
+
+// Hàm điều chỉnh số lượng card hiển thị theo kích thước màn hình
+function updateCardsToShow() {
+    const containerWidth = document.querySelector('.slider-wrapper').clientWidth;
     
-            // Xác định các biến cấu hình slider
-            let cardsPerPage = 4; // Số lượng card hiển thị mỗi trang
-            let cardWidth = 400; // Chiều rộng mỗi card
-            let cardMargin = 80; // Khoảng cách giữa các card
-            let currentPage = 0; // Trang hiện tại
-            let totalPages = Math.ceil(cardData.length / cardsPerPage); // Tổng số trang
+    if (containerWidth < 768) {
+        cardsPerPage = 1;
+    } else if (containerWidth < 1000) {
+        cardsPerPage = 2;
+    } else {
+        cardsPerPage = 3;
+    }
+    
+    // Cập nhật cardWidth dựa trên kích thước thực tế của card
+    if (sliderWrapper.children.length > 0) {
+        cardWidth = sliderWrapper.children[0].offsetWidth;
+    }
+    
+    // Tính lại tổng số trang
+    totalPages = Math.ceil(cardData.length / cardsPerPage);
+    
+    // Cập nhật lại pagination dots
+    updatePaginationDots();
+    
+    // Đảm bảo trang hiện tại không vượt quá tổng số trang
+    if (currentPage >= totalPages) {
+        currentPage = totalPages - 1;
+    }
+    
+    // Di chuyển slider đến trang hiện tại
+    moveToPage(currentPage);
+}
 
-            // Tìm hoặc tạo container cho pagination dots
-            const sliderContainer = document.querySelector('.slider-container');
-            let paginationContainer;
+// Hàm cập nhật pagination dots
+function updatePaginationDots() {
+    paginationContainer.innerHTML = '';
+    
+    for (let i = 0; i < totalPages; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'dot';
+        if (i === currentPage) dot.classList.add('active');
+        dot.dataset.page = i;
+        paginationContainer.appendChild(dot);
+    }
+    
+    // Thêm lại event listener cho các dots mới
+    document.querySelectorAll('.dot').forEach(dot => {
+        dot.addEventListener('click', function() {
+            const page = parseInt(this.dataset.page);
+            moveToPage(page);
+        });
+    });
+}
 
-            // Tìm pagination đã có sẵn trong HTML
-            const existingPagination = document.querySelector('.pagination');
+// Hàm di chuyển slider đến trang cụ thể
+function moveToPage(page) {
+    if (page < 0 || page >= totalPages) return;
+    
+    currentPage = page;
+    
+    // Di chuyển slider
+    const translateX = currentPage * -(cardsPerPage * (cardWidth + cardMargin));
+    sliderWrapper.style.transform = `translateX(${translateX}px)`;
+    sliderWrapper.style.transition = 'transform 0.3s ease-in-out';
+    
+    // Cập nhật trạng thái active của dots
+    document.querySelectorAll('.dot').forEach((dot, index) => {
+        if (index === currentPage) {
+            dot.classList.add('active');
+        } else {
+            dot.classList.remove('active');
+        }
+    });
+}
 
-            if (existingPagination) {
-                // Sử dụng pagination hiện có
-                paginationContainer = existingPagination;
-                paginationContainer.innerHTML = ''; // Xóa dots cũ
-            } else {
-                // Tạo pagination mới nếu không tìm thấy
-                paginationContainer = document.createElement('div');
-                paginationContainer.className = 'pagination';
+// Thêm event listener cho các dots
+document.querySelectorAll('.dot').forEach(dot => {
+    dot.addEventListener('click', function() {
+        const page = parseInt(this.dataset.page);
+        moveToPage(page);
+    });
+});
 
-                // Thêm pagination vào sau slider container
-                if (sliderContainer) {
-                    sliderContainer.parentNode.insertBefore(paginationContainer, sliderContainer.nextSibling);
-                }
-            }
+// Khởi tạo slider ban đầu
+updateCardsToShow();
 
-            // Tạo pagination dots
-            for (let i = 0; i < totalPages; i++) {
-                const dot = document.createElement('span');
-                dot.className = 'dot';
-                if (i === 0) dot.classList.add('active');
-                dot.dataset.page = i;
-                paginationContainer.appendChild(dot);
-            }
+// Cập nhật slider khi thay đổi kích thước màn hình
+window.addEventListener('resize', updateCardsToShow);
 
-            // Hàm điều chỉnh số lượng card hiển thị theo kích thước màn hình
-            function updateCardsToShow() {
-                const containerWidth = document.querySelector('.slider-container').clientWidth;
-
-                if (containerWidth < 768) {
-                    cardsPerPage = 1;
-                } else if (containerWidth < 1000) {
-                    cardsPerPage = 2;
-                } else {
-                    cardsPerPage = 3;
-                }
-
-                // Cập nhật cardWidth dựa trên kích thước thực tế của card
-                if (sliderWrapper.children.length > 0) {
-                    cardWidth = sliderWrapper.children[0].offsetWidth;
-                }
-
-                // Tính lại tổng số trang
-                totalPages = Math.ceil(cardData.length / cardsPerPage);
-
-                // Cập nhật lại pagination dots
-                updatePaginationDots();
-
-                // Đảm bảo trang hiện tại không vượt quá tổng số trang
-                if (currentPage >= totalPages) {
-                    currentPage = totalPages - 1;
-                }
-
-                // Di chuyển slider đến trang hiện tại
-                moveToPage(currentPage);
-            }
-
-            // Hàm cập nhật pagination dots
-            function updatePaginationDots() {
-                paginationContainer.innerHTML = '';
-
-                for (let i = 0; i < totalPages; i++) {
-                    const dot = document.createElement('div');
-                    dot.className = 'dot';
-                    if (i === currentPage) dot.classList.add('active');
-                    dot.dataset.page = i;
-                    paginationContainer.appendChild(dot);
-                }
-
-                // Thêm lại event listener cho các dots mới
-                document.querySelectorAll('.dot').forEach(dot => {
-                    dot.addEventListener('click', function () {
-                        const page = parseInt(this.dataset.page);
-                        moveToPage(page);
-                    });
-                });
-            }
-
-            // Hàm di chuyển slider đến trang cụ thể
-            function moveToPage(page) {
-                if (page < 0 || page >= totalPages) return;
-
-                currentPage = page;
-
-                // Di chuyển slider
-                const translateX = currentPage * -(cardsPerPage * (cardWidth + cardMargin));
-                sliderWrapper.style.transform = `translateX(${translateX}px)`;
-                sliderWrapper.style.transition = 'transform 0.3s ease-in-out';
-
-                // Cập nhật trạng thái active của dots
-                document.querySelectorAll('.dot').forEach((dot, index) => {
-                    if (index === currentPage) {
-                        dot.classList.add('active');
-                    } else {
-                        dot.classList.remove('active');
-                    }
-                });
-            }
-
-            // Thêm event listener cho các dots
-            document.querySelectorAll('.dot').forEach(dot => {
-                dot.addEventListener('click', function () {
-                    const page = parseInt(this.dataset.page);
-                    moveToPage(page);
-                });
-            });
-
-            // Khởi tạo slider ban đầu
-            updateCardsToShow();
-
-            // Cập nhật slider khi thay đổi kích thước màn hình
-            window.addEventListener('resize', updateCardsToShow);
 
 
             // Initialize mobile menu

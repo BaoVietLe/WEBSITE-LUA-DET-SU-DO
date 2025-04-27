@@ -91,7 +91,7 @@ try {
         }
 
         /* Pagination dots */
-        .pagination {
+        .journey-pagination {
             display: flex;
             justify-content: center;
             margin: 1rem 0 2rem;
@@ -291,7 +291,7 @@ try {
         </div>
         
         <div class="content-section">
-        <div class="pagination" id="pagination">
+        <div class="journey-pagination" id="j-pagination">
                 <!-- Pagination dots will be generated dynamically -->
             </div>
             <div class="fixed-headers">
@@ -348,7 +348,7 @@ try {
         
         // DOM elements
         const slidesContainer = document.getElementById('slides-container');
-        const paginationContainer = document.getElementById('pagination');
+        const paginationContainer = document.getElementById('j-pagination');
         const progressBar = document.getElementById('progress-bar');
         const pauseBtn = document.getElementById('pauseBtn');
         
