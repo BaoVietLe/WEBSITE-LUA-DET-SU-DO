@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang chi tiết hoạt động Hành trình về vùng đất thép</title>
+    <title>Thông tin chi tiết hoạt động Lửa dệt sử đỏ</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link 
@@ -116,14 +116,57 @@
             color: #666;
         }
 
+        .event-description-emphasize {
+            font-weight: bold;
+        }
+
         
         /* Event Details Card */
+        .event-card-wrapper {
+    position: relative;
+    width: full-width;
+    margin-bottom: 40px;
+    padding: 15px;
+    background: linear-gradient(135deg, rgba(247, 118, 34, 0.1), rgba(214, 34, 34, 0.1));
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+}
+
+/* Tạo hiệu ứng nền trang trí */
+.event-card-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/LDSD.jpg");
+    border-radius: 15px;
+    opacity: 0.5;
+    z-index: 0;
+}
+
+/* Thêm border trang trí cho nền */
+.event-card-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 1px dashed rgba(214, 34, 34, 0.2);
+    border-radius: 12px;
+    z-index: 0;
+}
         .event-card {
             background-color: #fff;
             border-radius: 10px;
             padding: 30px;
             margin-bottom: 40px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1;
+            margin-bottom: 0; /* Bỏ margin vì wrapper đã có */
         }
 
         .card-title {
@@ -262,24 +305,32 @@
 
         <div class="main-event">
             <div class="event-information">
-                <h1 class="event-title">CHÀO MỪNG KỈ NIỆM 94 NĂM<br>NGÀY THÀNH LẬP ĐOÀN TNCS HỒ CHÍ MINH</h1>
-                <div class="event-date">26/3/1931 - 26/3/2025</div>
+                <h1 class="event-title">KỈ NIỆM 50 NĂM<br>NGÀY GIẢI PHÓNG MIỀN NAM</h1>
+                <div class="event-date">30/04/1975 - 30/04/2025</div>
                 <div class="event-description">
-                    <br>Hoạt động 1: Thăm và tặng quà cho các gia đình chính sách tại địa phương.<br>
-                    <br>Hoạt động 2: Dâng hương tại đền tưởng niệm Liệt sĩ Bến Dược.<br>
-                    <br>Hoạt động 3: Tập huấn cán bộ Đoàn - Hội.<br>
-                    <br>Hoạt động 4: Tham quan tại Địa đạo Bến Dược thuộc Khu di tích lịch sử Địa đạo Củ Chi.<br>
+                    <p class="event-description-emphasize">Chặng 1: Hoạt động truyền thông</p>
+                    
+                    <br>  - Hoạt động 1: Truyền thông trực tuyến<br>
+                    <br>  - Hoạt động 2: Triển lãm tem thư “Sài Gòn – Thành phố mang tên Bác”</p>
+
+                    <br><p class="event-description-emphasize">Chặng 2: Chương trình nghệ thuật - “Lửa dệt sử đỏ”</p><br>
+
+                    <p class="event-description-emphasize">Chặng 3: Hoạt động về nguồn</p>
+                    <br>- Hoạt động 1: Tiếp tục triển khai Quỹ “Quỹ Vinh danh anh hùng” và hoạt động gây quỹ<br>
+                    <br>- Hoạt động 2: Hoạt động ra mắt website “Lửa dệt sử đỏ”<br>
+                    <br>- Hoạt động 3: Hoạt động về nguồn và tri ân những người lính, người mẹ Việt Nam anh hùng<br>
+
                 </div>
             </div>
             <div class="right-content">
                 <div class="image-info-no-action">
-                    <img src="../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/Vùng đất thép.jpg" alt="Hình ảnh hoạt động" class="image-info-no-action-image">
+                    <img src="../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/LDSD.jpg" alt="Hình ảnh hoạt động" class="image-info-no-action-image">
                     <div class="image-info-no-action-content">
                         <div class="image-info-no-action-title">
-                            CHÀO MỪNG KỈ NIỆM 94 NĂM<br>NGÀY THÀNH LẬP ĐOÀN TNCS HỒ CHÍ MINH
+                            CHƯƠNG TRÌNH KỶ NIỆM<br>50 NĂM GIẢI PHÓNG MIỀN NAM - THỐNG NHẤT ĐẤT NƯỚC
                         </div>
                         <div class="image-info-no-action-date">
-                            26/3/1931 - 26/3/2025
+                            06/04/2025 - 30/04/2025
                         </div>
                     </div>
                 </div>
@@ -290,50 +341,53 @@
         <div id="event-container"></div>
 
         <div id="sponsor-section"></div>
-
+        
+        <div class="event-card-wrapper">
         <div class="event-card">
-            <h2 class="card-title">CHÀO MỪNG KỈ NIỆM 94 NĂM NGÀY THÀNH LẬP ĐOÀN TNCS HỒ CHÍ MINH</h2>
-            <div class="card-date">26/3/1931 - 26/3/2025</div>
-            <div class="card-date-input">From: 17/3/2025 - To: 26/3/2025</div>
+            <h2 class="card-title">KỈ NIỆM 50 NĂM NGÀY GIẢI PHÓNG MIỀN NAM</h2>
+            <div class="card-date">30/04/1975 - 30/04/2025</div>
+            <div class="card-date-input">From: 6/4/2025 - To: 27/4/2025</div>
 
             <div class="event-description-list">
-                <p>[BIT][HTVVDT] PHÁT ĐỘNG HOẠT ĐỘNG VỀ NGUỒN NHÂN DỊP 94 NĂM NGÀY THÀNH LẬP ĐOÀN TNCS HỒ CHÍ MINH (26/3/1931 - 26/3/2025) - “HÀNH TRÌNH VỀ VÙNG ĐẤT THÉP”</p>
+                <p>[BIT][LDSD] PHÁT ĐỘNG CHUỖI HOẠT ĐỘNG CHÀO MỪNG KỶ NIỆM 50 NĂM NGÀY GIẢI PHÓNG MIỀN NAM, THỐNG NHẤT ĐẤT NƯỚC - LỬA DỆT SỬ ĐỎ (30/4/1975 - 30/4/2025)</p>
                 
-                <p>★ 94 năm rực rỡ một chặng đường, Đoàn TNCS Hồ Chí Minh chính biểu tượng của sức trẻ, của lý tưởng cách mạng và khát vọng cống hiến. Nhằm khơi dậy niềm tự hào về truyền thống vẻ vang của Đoàn TNCS Hồ Chí Minh trong mỗi cán bộ, Đoàn viên, thanh niên, cũng như tạo không khí sôi nổi chào mừng và kỷ niệm 94 năm ngày thành lập Đoàn TNCS Hồ Chí Minh (26/3/1931 - 26/3/2025), Đoàn - Hội khoa Công nghệ thông tin kinh doanh quyết định tổ chức hoạt động về nguồn - “Hành trình về vùng Đất thép”.</p>
+                <p>★ "Chúng ta đang sống trong những ngày yên bình, vì đã từng có người dũng cảm ngã xuống cho độc lập – tự do." Ngày 30/4/1975 là ngày đất nước ta chính thức thống nhất, khép lại những năm tháng khói lửa khốc liệt, mở ra kỷ nguyên mới hòa bình cho dân tộc. Biết bao chiến sĩ, anh hùng đã ngã xuống để đất nước có được hòa bình như hôm nay. Thân xác họ đã nằm lại cùng đất tổ, song linh hồn họ vẫn sống mãi với hồn thiêng sông núi như một phần bất tử của dân tộc Việt Nam.</p>
                 
-                <p>★ “Hành trình về vùng Đất thép” là một hoạt động về nguồn, thường gắn liền với các chuyến đi thực tế đến Củ Chi – nơi được mệnh danh là "Đất thép Thành Đồng" do những chiến công anh dũng trong kháng chiến. Cụ thể, "vùng Đất thép" thường được hiểu là huyện Củ Chi, TP.HCM, nơi có hệ thống địa đạo nổi tiếng, từng là căn cứ cách mạng quan trọng trong hai cuộc kháng chiến chống Pháp và chống Mỹ.</p>
+                <p>★ "Lửa dệt sử đỏ" như một lời khẳng định hòa bình của đất nước ngày hôm nay được đánh đổi bằng máu, mồ hôi và nước mắt của những người đi trước. Và giờ đây, câu chuyện hào hùng ấy sẽ được BIT tái hiện lại một cách sống động và đầy tự hào, như một lời tri ân sâu sắc gửi đến thế hệ cha anh. Chương trình cùng chuỗi hoạt động được tổ chức nhằm chào mừng và kỷ niệm cột mốc lịch sử trọng đại - 50 năm Ngày giải phóng miền Nam, thống nhất đất nước (30/4/1975 - 30/4/2025). Đây không chỉ là dịp để ôn lại những trang sử hào hùng của dân tộc mà còn là cơ hội để thế hệ trẻ thể hiện lòng yêu nước và phát huy tinh thần tự hào dân tộc.</p>
 
-                <p>★ Chương trình được tổ chức nhằm phát huy tinh thần xung kích, tình nguyện, sáng tạo của tuổi trẻ khoa Công nghệ thông tin kinh doanh nói riêng và sinh viên UEH nói chung, bên cạnh đó tri ân những người lính, người anh hùng đã hy sinh cho nền độc lập dân tộc, thể hiện lòng tôn trọng, lòng biết ơn và tinh thần “Uống nước nhớ nguồn”. </p>
+                <p>★ Hãy cùng đón chờ Đoàn khoa Công nghệ thông tin kinh doanh sẽ mang đến những hoạt động ý nghĩa nào để vinh danh những hy sinh âm thầm của các anh hùng đã góp sức hòa nên dòng chảy lịch sử hào hùng của dân tộc.</p>
 
-                <p class="section-heading">CÁC HOẠT ĐỘNG TRONG CHƯƠNG TRÌNH</p>
-                <p><br>Hoạt động 1: Thăm và tặng quà cho các gia đình chính sách tại địa phương.<br>
-                    <br>Hoạt động 2: Dâng hương tại đền tưởng niệm Liệt sĩ Bến Dược.<br>
-                    <br>Hoạt động 3: Tập huấn cán bộ Đoàn - Hội.<br>
-                    <br>Hoạt động 4: Tham quan tại Địa đạo Bến Dược thuộc Khu di tích lịch sử Địa đạo Củ Chi.<br></p>
+                <p class="section-heading">NỘI DUNG CÁC CHẶNG HOẠT ĐỘNG</p>
+                <p class="event-description-emphasize">Chặng 1: Hoạt động truyền thông</p>            
+                 - Hoạt động 1: Truyền thông trực tuyến<br>
+                 - Hoạt động 2: Triển lãm tem thư “Sài Gòn – Thành phố mang tên Bác”<br>
+                <br><p class="event-description-emphasize">Chặng 2: Chương trình nghệ thuật - “Lửa dệt sử đỏ”</p>
+                <p class="event-description-emphasize">Chặng 3: Hoạt động về nguồn</p>
+                    - Hoạt động 1: Tiếp tục triển khai Quỹ “Quỹ Vinh danh anh hùng” và hoạt động gây quỹ<br>
+                    - Hoạt động 2: Hoạt động ra mắt website “Lửa dệt sử đỏ”<br>
+                    - Hoạt động 3: Hoạt động về nguồn và tri ân những người lính, người mẹ Việt Nam anh hùng<br>
 
-                <p class="section-heading">THÔNG TIN CHƯƠNG TRÌNH</p>
-                <br>✿ Đối tượng tham gia: BCH Đoàn - Hội khoa, CTV Ban chuyên môn, BCH Chi đoàn - Chi hội trực thuộc khoa Công nghệ thông tin kinh doanh.<br>
-                ✿ Thời gian: Ngày 23/3/2025.<br>
-                ✿ Địa điểm diễn ra: Địa đạo Bến Dược thuộc Khu di tích lịch sử Địa đạo Củ Chi, đường tỉnh lộ 15, ấp Phú Hiệp, xã Phú Mỹ Hưng, huyện Củ Chi, thành phố Hồ Chí Minh.<br>
 
+                <p class="section-heading">THÔNG TIN CHUỖI HOẠT ĐỘNG</p>
+                <p>✿ Đối tượng tham gia: Toàn thể sinh viên Đại học UEH.</p>
+                <p>✿ Thời gian diễn ra (dự kiến): Từ 6/4/2025 đến 27/4/2025</p>
 
-                <p class="section-heading">QUYỀN LỢI SINH VIÊN</p>
-                <p>- Được tìm hiểu những thông tin bổ ích về lịch sử, cụ thể là khu di tích lịch sử Địa đạo Củ Chi<br>
-                   - Được đi thăm hỏi, tặng quà cho các gia đình chính sách tại huyện Củ Chi, TP. Hồ Chí Minh.<br>
-                   - Được đi tham quan, tập huấn trực tiếp tại Địa đạo Củ Chi.<br>
-                   - Được ghi nhận MSSV khi tham gia chương trình.</p>
+                <p class="section-heading"> Quyền lợi khi tham gia: </p>
+                    <br>- Sinh viên tham gia 2/3 chặng sẽ được ghi nhận MSSV; <br>
+                    <br>- Sinh viên tham gia hoạt động về nguồn và thực hiện phần việc thanh niên sẽ được tính 01 ngày tình nguyện. (Lưu ý: Hoạt động 3 chỉ dành cho sinh viên khoa Công nghệ thông tin kinh doanh)<br>
 
-                <p>Theo dõi Fanpage Đoàn - Hội khoa Công nghệ thông tin kinh doanh để biết thêm thông tin về chương trình nhé!</p>
+                <br><p>★ Các bạn sinh viên đã sẵn sàng để cùng lật lại những trang sử nhuốm màu gian khó của cha ông nhưng rất đỗi hào hùng của dân tộc? Mỗi đóng góp của các bạn, dù là nhỏ bé nhất, đều sẽ góp phần lan tỏa lòng biết ơn và niềm tự hào về người anh hùng Việt Nam - những người anh hùng thầm lặng nhưng quật cường bất khuất của dân tộc. Theo dõi Fanpage Đoàn - Hội khoa Công nghệ thông tin kinh doanh để biết thêm thông tin về chương trình nhé!</p>
 
                 <p class="section-heading">Mọi thắc mắc vui lòng liên hệ:</p>
                 <p>Fanpage: https://www.facebook.com/BIT.UEH<br>
-                Sđt: 0799860152 (Ngọc Lan) - 0989664606 (Thu Trang)<br>
+                Sđt: Nguyễn Thị Thúy Vân: 0854513189 - Nguyễn Võ Lan Thanh: 0906182064<br>
                 #UEH #BIT #CNTTKT<br>
-                #HTVVDT #HANHTRINHDIVEVUNGDATTHEP</p>
+                #LDSD #LUADETSUDO</p>
             </div>
         </div>
+        </div>
 
-        <div id="about-section"></div>
+        <?php include "./Bang_BTC_chia_se/Bang_BTC.php"?>
 
         <!-- Footer will be loaded dynamically -->
         <div id="footer-container"></div>
@@ -354,12 +408,51 @@
         .then(data => {
             document.getElementById('footer-container').innerHTML = data;
         });
-         // Load Thanh chi tiết hoạt động
-    fetch('./Component khác/Thanh_chi_tiet_hoat_dong.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('event-container').innerHTML = data;
+// Load Thanh chi tiết hoạt động
+fetch('./Component khác/Thanh_chi_tiet_hoat_dong.html')
+    .then(response => response.text())
+    .then(data => {
+        // Tạo một phần tử DOM tạm thời để chứa HTML
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = data;
+        
+        // Bây giờ bạn có thể thay đổi các nội dung text
+        // Ví dụ: thay đổi địa điểm
+        const locationElement = tempDiv.querySelector('.info-section:nth-child(1) .section-content');
+        if (locationElement) {
+            locationElement.textContent = 'Huyện Củ Chi, TP. Hồ Chí Minh';
+        }
+        
+        // Thay đổi thời gian
+        const timeElement = tempDiv.querySelector('.time-section .section-content');
+        if (timeElement) {
+            timeElement.textContent = '8:00:00 | 20/04/2025 - 17:00:00 | 20/04/2025';
+        }
+        
+        // Thay đổi số lượng tham gia
+        const participantsElement = tempDiv.querySelector('.participants-section .section-content');
+        if (participantsElement) {
+            participantsElement.textContent = '30/30';
+        }
+        
+        // Có thể thay đổi cả nội dung của button
+        const registerButton = tempDiv.querySelector('.register-button');
+        if (registerButton) {
+            registerButton.textContent = 'ĐĂNG KÝ NGAY';
+        }
+        
+        // Chèn HTML đã sửa đổi vào trang
+        document.getElementById('event-container').innerHTML = tempDiv.innerHTML;
+        
+        // Thêm lại event listener cho button vì innerHTML sẽ xóa các event cũ
+        document.querySelector('.register-button').addEventListener('click', function() {
+            alert('Bạn đã nhấn nút đăng ký!');
+            // Thêm logic đăng ký ở đây
         });
+    })
+    .catch(error => {
+        console.error('Lỗi khi tải tệp HTML:', error);
+    });
             // Load Sponsor
     fetch('./Component khác/Sponsor-Section.html')
         .then(response => response.text())

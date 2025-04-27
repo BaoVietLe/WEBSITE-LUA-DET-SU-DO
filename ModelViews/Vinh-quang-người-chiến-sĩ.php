@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thông tin chi tiết hoạt động Lửa dệt sử đỏ</title>
+    <title>Thông tin chi tiết hoạt động Vinh quang người chiến sĩ</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link 
@@ -116,18 +116,53 @@
             color: #666;
         }
 
-        .event-description-emphasize {
-            font-weight: bold;
-        }
-
         
         /* Event Details Card */
-        .event-card {
+        .event-card-wrapper {
+    position: relative;
+    width: full-width;
+    margin-bottom: 40px;
+    padding: 15px;
+    background: linear-gradient(135deg, rgba(247, 118, 34, 0.1), rgba(214, 34, 34, 0.1));
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+}
+
+/* Tạo hiệu ứng nền trang trí */
+.event-card-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/VQNCS.jpg");
+    border-radius: 15px;
+    opacity: 0.5;
+    z-index: 0;
+}
+
+/* Thêm border trang trí cho nền */
+.event-card-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 1px dashed rgba(214, 34, 34, 0.2);
+    border-radius: 12px;
+    z-index: 0;
+}
+.event-card {
             background-color: #fff;
             border-radius: 10px;
             padding: 30px;
             margin-bottom: 40px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1;
+            margin-bottom: 0; /* Bỏ margin vì wrapper đã có */
         }
 
         .card-title {
@@ -162,6 +197,9 @@
             font-weight: bold;
             margin: 15px 0 10px;
             color: #d62222;
+        }
+        .event-description-emphasize {
+            font-weight: bold;
         }
 
        
@@ -260,38 +298,39 @@
 
     <div class="head-container">
         <div class="sub-header-wrapper">
-            <div class="sub-header">HOẠT ĐỘNG ĐANG DIỄN RA
+            <div class="sub-header">HOẠT ĐỘNG ĐÃ DIỄN RA
             </div>
         </div>
 
         <div class="main-event">
             <div class="event-information">
-                <h1 class="event-title">KỈ NIỆM 50 NĂM<br>NGÀY GIẢI PHÓNG MIỀN NAM</h1>
-                <div class="event-date">30/04/1975 - 30/04/2025</div>
+                <h1 class="event-title">CHƯƠNG TRÌNH TRI ÂN NGƯỜI BỘ ĐỘI CỤ HỒ<br>VÀ TÌM HIỂU NGÀY GIẢI PHÓNG MIỀN NAM THỐNG NHẤT ĐẤT NƯỚC</h1>
+                <div class="event-date">30/04/1975 - 30/04/2024</div>
                 <div class="event-description">
-                    <p class="event-description-emphasize">Chặng 1: Hoạt động truyền thông</p>
+                    <p class="event-description-emphasize">Chặng 1: Chuỗi hoạt động Chặng 1 với tên gọi “Dấu ấn Việt Nam”</p>
                     
-                    <br>  - Hoạt động 1: Truyền thông trực tuyến<br>
-                    <br>  - Hoạt động 2: Triển lãm tem thư “Sài Gòn – Thành phố mang tên Bác”</p>
+                    <br>  - Hoạt động 1: Video truyền thông 1 “Dấu ấn Việt Nam” về hình ảnh lá thư thời chiến.<br>
+                    <br>  - Hoạt động 2: Video truyền thông 2 “Dấu ấn Việt Nam” về những hồi ức của người lính hoạt động cách mạng.<br>
+                    <br>  - Hoạt động 3: Hoạt động ra mắt khu triển lãm tư liệu lịch sử trực tuyến thông qua Artstep<br>và “Bức tường lịch sử” kết hợp với công nghệ AR.</p><br>
 
-                    <br><p class="event-description-emphasize">Chặng 2: Chương trình nghệ thuật - “Lửa dệt sử đỏ”</p><br>
-
-                    <p class="event-description-emphasize">Chặng 3: Hoạt động về nguồn</p>
-                    <br>- Hoạt động 1: Tiếp tục triển khai Quỹ “Quỹ Vinh danh anh hùng” và hoạt động gây quỹ<br>
-                    <br>- Hoạt động 2: Hoạt động ra mắt website “Lửa dệt sử đỏ”<br>
-                    <br>- Hoạt động 3: Hoạt động về nguồn và tri ân những người lính, người mẹ Việt Nam anh hùng<br>
+                    <p class="event-description-emphasize">Chặng 2: Chuỗi hoạt động Chặng 2 với tên gọi “Quỹ vinh danh anh hùng”</p>
+                    <br>- Hoạt động 1: Hoạt động ra mắt Quỹ Momo “Quỹ vinh danh anh hùng”.<br>
+                    <br>- Hoạt động 2: Hoạt động phát động gây quỹ về chi đoàn.<br>
+                    <br>- Hoạt động 3: Hoạt động Workshop gây quỹ “Thư Tỏ”.<br>
+                    <br>- Hoạt động 4: Hoạt động chiếu phim gây quỹ.<br>
+                    <br>- Hoạt động 5: Hoạt động Về nguồn.<br>
 
                 </div>
             </div>
             <div class="right-content">
                 <div class="image-info-no-action">
-                    <img src="../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/LDSD.jpg" alt="Hình ảnh hoạt động" class="image-info-no-action-image">
+                    <img src="../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/VQNCS.jpg" alt="Hình ảnh hoạt động" class="image-info-no-action-image">
                     <div class="image-info-no-action-content">
                         <div class="image-info-no-action-title">
-                            CHƯƠNG TRÌNH KỶ NIỆM<br>50 NĂM GIẢI PHÓNG MIỀN NAM - THỐNG NHẤT ĐẤT NƯỚC
+                            CHƯƠNG TRÌNH TRI ÂN NGƯỜI BỘ ĐỘI CỤ HỒ<br>VÀ TÌM HIỂU NGÀY GIẢI PHÓNG MIỀN NAM THỐNG NHẤT ĐẤT NƯỚC
                         </div>
                         <div class="image-info-no-action-date">
-                            06/04/2025 - 30/04/2025
+                            19/04/2024 - 10/05/2024
                         </div>
                     </div>
                 </div>
@@ -301,52 +340,59 @@
 
         <div id="event-container"></div>
 
-        <div id="sponsor-section"></div>
 
+        <div class="event-card-wrapper">
         <div class="event-card">
-            <h2 class="card-title">KỈ NIỆM 50 NĂM NGÀY GIẢI PHÓNG MIỀN NAM</h2>
-            <div class="card-date">30/04/1975 - 30/04/2025</div>
-            <div class="card-date-input">From: 6/4/2025 - To: 27/4/2025</div>
+            <h2 class="card-title">CHƯƠNG TRÌNH TRI ÂN NGƯỜI BỘ ĐỘI CỤ HỒ VÀ TÌM HIỂU NGÀY GIẢI PHÓNG MIỀN NAM THỐNG NHẤT ĐẤT NƯỚC</h2>
+            <div class="card-date">30/04/1975 - 30/04/2024</div>
+            <div class="card-date-input">From: 19/4/2024 - To: 10/5/2024</div>
 
             <div class="event-description-list">
-                <p>[BIT][LDSD] PHÁT ĐỘNG CHUỖI HOẠT ĐỘNG CHÀO MỪNG KỶ NIỆM 50 NĂM NGÀY GIẢI PHÓNG MIỀN NAM, THỐNG NHẤT ĐẤT NƯỚC - LỬA DỆT SỬ ĐỎ (30/4/1975 - 30/4/2025)</p>
+                <p>[BIT] [VINH QUANG NGƯỜI CHIẾN SĨ]PHÁT ĐỘNG CHƯƠNG TRÌNH TRI ÂN NGƯỜI BỘ ĐỘI CỤ HỒ VÀ TÌM HIỂU NGÀY GIẢI PHÓNG MIỀN NAM THỐNG NHẤT ĐẤT NƯỚC (30/4/1975 - 30/4/2024)</p>
                 
-                <p>★ "Chúng ta đang sống trong những ngày yên bình, vì đã từng có người dũng cảm ngã xuống cho độc lập – tự do." Ngày 30/4/1975 là ngày đất nước ta chính thức thống nhất, khép lại những năm tháng khói lửa khốc liệt, mở ra kỷ nguyên mới hòa bình cho dân tộc. Biết bao chiến sĩ, anh hùng đã ngã xuống để đất nước có được hòa bình như hôm nay. Thân xác họ đã nằm lại cùng đất tổ, song linh hồn họ vẫn sống mãi với hồn thiêng sông núi như một phần bất tử của dân tộc Việt Nam.</p>
+                <p>★ "Miền Nam ruột thịt đã hoàn toàn giải phóng. Non sông thu về một mối. Từ đây, không còn chia cắt hai miền. Nước Việt Nam thống nhất từ bờ Nam đến bờ Bắc." - Chủ tịch Hồ Chí Minh.</p>
                 
-                <p>★ "Lửa dệt sử đỏ" như một lời khẳng định hòa bình của đất nước ngày hôm nay được đánh đổi bằng máu, mồ hôi và nước mắt của những người đi trước. Và giờ đây, câu chuyện hào hùng ấy sẽ được BIT tái hiện lại một cách sống động và đầy tự hào, như một lời tri ân sâu sắc gửi đến thế hệ cha anh. Chương trình cùng chuỗi hoạt động được tổ chức nhằm chào mừng và kỷ niệm cột mốc lịch sử trọng đại - 50 năm Ngày giải phóng miền Nam, thống nhất đất nước (30/4/1975 - 30/4/2025). Đây không chỉ là dịp để ôn lại những trang sử hào hùng của dân tộc mà còn là cơ hội để thế hệ trẻ thể hiện lòng yêu nước và phát huy tinh thần tự hào dân tộc.</p>
+                <p>★ Ngày 30 tháng 4 năm 1975 là một ngày trọng đại của lịch sử dân tộc ta. Sự kiện này đánh dấu một cột mốc quan trọng trong sự nghiệp cách mạng của toàn dân ta đó là nước Việt Nam chính thức giành được độc lập, tự do, thoát khỏi ách đô hộ. Có không biết bao nhiêu người anh hùng, người chiến sĩ đã ngã xuống, đã hi sinh để đổi lấy những chiến thắng vang dội và nền độc lập dân tộc như hiện nay.</p>
 
-                <p>★ Hãy cùng đón chờ Đoàn khoa Công nghệ thông tin kinh doanh sẽ mang đến những hoạt động ý nghĩa nào để vinh danh những hy sinh âm thầm của các anh hùng đã góp sức hòa nên dòng chảy lịch sử hào hùng của dân tộc.</p>
+                <p>★ Chiến dịch “Vinh quang người chiến sĩ” là một hoạt động ý nghĩa nhằm giáo dục cho thế hệ trẻ về lòng yêu nước, tinh thần dũng cảm dân tộc Việt Nam. Ngoài ra chiến dịch còn gây quỹ để mang đến những món quà tri ân cho những người lính, thương binh, liệt sĩ, gia đình có công với cách mạng nhằm thể hiện tinh thần uống nước nhớ nguồn. Mọi người hãy cùng chung tay góp sức để chiến dịch thành công và lan tỏa lòng biết ơn đối với những người lính Việt Nam - những người anh hùng đã góp phần làm nên lịch sử hào hùng của dân tộc.</p>
 
-                <p class="section-heading">NỘI DUNG CÁC CHẶNG HOẠT ĐỘNG</p>
-                <p class="event-description-emphasize">Chặng 1: Hoạt động truyền thông</p>            
-                 - Hoạt động 1: Truyền thông trực tuyến<br>
-                 - Hoạt động 2: Triển lãm tem thư “Sài Gòn – Thành phố mang tên Bác”<br>
-                <br><p class="event-description-emphasize">Chặng 2: Chương trình nghệ thuật - “Lửa dệt sử đỏ”</p>
-                <p class="event-description-emphasize">Chặng 3: Hoạt động về nguồn</p>
-                    - Hoạt động 1: Tiếp tục triển khai Quỹ “Quỹ Vinh danh anh hùng” và hoạt động gây quỹ<br>
-                    - Hoạt động 2: Hoạt động ra mắt website “Lửa dệt sử đỏ”<br>
-                    - Hoạt động 3: Hoạt động về nguồn và tri ân những người lính, người mẹ Việt Nam anh hùng<br>
+                <p>★ Hãy cùng Đoàn khoa Công nghệ thông tin kinh doanh tham gia chiến dịch “Vinh danh người chiến sĩ” để thấu hiểu và trân trọng những hy sinh thầm lặng của người lính Việt Nam - những người anh hùng đã góp phần làm nên lịch sử hào hùng của dân tộc.</p>
+
+                <p class="section-heading">THÔNG TIN CÁC CHẶNG HOẠT ĐỘNG</p>
+                <p class="event-description-emphasize">Chặng 1: Chuỗi hoạt động Chặng 1 với tên gọi “Dấu ấn Việt Nam”</p>
+                    
+                    <br>  - Hoạt động 1: Video truyền thông 1 “Dấu ấn Việt Nam” về hình ảnh lá thư thời chiến.<br>
+                    <br>  - Hoạt động 2: Video truyền thông 2 “Dấu ấn Việt Nam” về những hồi ức của người lính hoạt động cách mạng.<br>
+                    <br>  - Hoạt động 3: Hoạt động ra mắt khu triển lãm tư liệu lịch sử trực tuyến thông qua Artstep và “Bức tường lịch sử” kết hợp với công nghệ AR.</p>
+
+                    <p class="event-description-emphasize">Chặng 2: Chuỗi hoạt động Chặng 2 với tên gọi “Quỹ vinh danh anh hùng”</p>
+                    <br>- Hoạt động 1: Hoạt động ra mắt Quỹ Momo “Quỹ vinh danh anh hùng”.<br>
+                    <br>- Hoạt động 2: Hoạt động phát động gây quỹ về chi đoàn.<br>
+                    <br>- Hoạt động 3: Hoạt động Workshop gây quỹ “Thư Tỏ”.<br>
+                    <br>- Hoạt động 4: Hoạt động chiếu phim gây quỹ.<br>
+                    <br>- Hoạt động 5: Hoạt động Về nguồn.<br>
 
 
                 <p class="section-heading">THÔNG TIN CHUỖI HOẠT ĐỘNG</p>
                 <p>✿ Đối tượng tham gia: Toàn thể sinh viên Đại học UEH.</p>
-                <p>✿ Thời gian diễn ra (dự kiến): Từ 6/4/2025 đến 27/4/2025</p>
+                <p>✿ Thời gian diễn ra (dự kiến): Từ 24/04/2024 đến 10/05/2024.</p>
 
                 <p class="section-heading"> Quyền lợi khi tham gia: </p>
-                    <br>- Sinh viên tham gia 2/3 chặng sẽ được ghi nhận MSSV; <br>
-                    <br>- Sinh viên tham gia hoạt động về nguồn và thực hiện phần việc thanh niên sẽ được tính 01 ngày tình nguyện. (Lưu ý: Hoạt động 3 chỉ dành cho sinh viên khoa Công nghệ thông tin kinh doanh)<br>
+                    <br>- Tham gia ít nhất 1 trong 2 chuỗi sẽ được ghi nhận MSSV. <br>
+                    <br>- Sinh viên tham gia hoạt động về nguồn và thực hiện phần việc thanh niên sẽ được tính 01 ngày tình nguyện. <br>
 
-                <br><p>★ Các bạn sinh viên đã sẵn sàng để cùng lật lại những trang sử nhuốm màu gian khó của cha ông nhưng rất đỗi hào hùng của dân tộc? Mỗi đóng góp của các bạn, dù là nhỏ bé nhất, đều sẽ góp phần lan tỏa lòng biết ơn và niềm tự hào về người anh hùng Việt Nam - những người anh hùng thầm lặng nhưng quật cường bất khuất của dân tộc. Theo dõi Fanpage Đoàn - Hội khoa Công nghệ thông tin kinh doanh để biết thêm thông tin về chương trình nhé!</p>
+                <br><p>★ Các bạn sinh viên đã sẵn sàng lên đường tìm hiểu về cội nguồn lịch sử của dân tộc hay chưa? Hãy cùng chung tay góp sức để chương trình được diễn ra thuận lợi và thành công như mong đợi. Mỗi đóng góp của bạn, dù là nhỏ bé nhất, đều sẽ góp phần lan tỏa lòng biết ơn và niềm tự hào về người lính Việt Nam - những người anh hùng thầm lặng của dân tộc. Theo dõi Fanpage Đoàn - Hội khoa Công nghệ thông tin kinh doanh để biết thêm thông tin về chương trình nhé!</p>
 
                 <p class="section-heading">Mọi thắc mắc vui lòng liên hệ:</p>
                 <p>Fanpage: https://www.facebook.com/BIT.UEH<br>
-                Sđt: Nguyễn Thị Thúy Vân: 0854513189 - Nguyễn Võ Lan Thanh: 0906182064<br>
+                Sđt: 823.971.080 (Minh Khôi) - 0793.546.403 (Hoàng Thị Ánh)<br>
                 #UEH #BIT #CNTTKT<br>
-                #LDSD #LUADETSUDO</p>
+                #VQNCS #VINHQUANGNGUOICHIENSI</p>
             </div>
         </div>
+    </div>
 
-        <div id="about-section"></div>
+        <?php include "./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem1.php"?>
 
         <!-- Footer will be loaded dynamically -->
         <div id="footer-container"></div>
@@ -367,18 +413,51 @@
         .then(data => {
             document.getElementById('footer-container').innerHTML = data;
         });
-         // Load Thanh chi tiết hoạt động
-    fetch('./Component khác/Thanh_chi_tiet_hoat_dong.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('event-container').innerHTML = data;
+// Load Thanh chi tiết hoạt động
+fetch('./Component khác/Thanh_chi_tiet_hoat_dong.html')
+    .then(response => response.text())
+    .then(data => {
+        // Tạo một phần tử DOM tạm thời để chứa HTML
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = data;
+        
+        // Bây giờ bạn có thể thay đổi các nội dung text
+        // Ví dụ: thay đổi địa điểm
+        const locationElement = tempDiv.querySelector('.info-section:nth-child(1) .section-content');
+        if (locationElement) {
+            locationElement.textContent = 'Xã Qui Đức, Huyện Bình Chánh, TP. Hồ Chí Minh';
+        }
+        
+        // Thay đổi thời gian
+        const timeElement = tempDiv.querySelector('.time-section .section-content');
+        if (timeElement) {
+            timeElement.textContent = '6:00:00 | 11/05/2024 - 14:00:00 | 11/05/2024';
+        }
+        
+        // Thay đổi số lượng tham gia
+        const participantsElement = tempDiv.querySelector('.participants-section .section-content');
+        if (participantsElement) {
+            participantsElement.textContent = '25/25';
+        }
+        
+        // Có thể thay đổi cả nội dung của button
+        const registerButton = tempDiv.querySelector('.register-button');
+        if (registerButton) {
+            registerButton.textContent = 'ĐĂNG KÝ';
+        }
+        
+        // Chèn HTML đã sửa đổi vào trang
+        document.getElementById('event-container').innerHTML = tempDiv.innerHTML;
+        
+        // Thêm lại event listener cho button vì innerHTML sẽ xóa các event cũ
+        document.querySelector('.register-button').addEventListener('click', function() {
+            alert('Bạn đã nhấn nút đăng ký!');
+            // Thêm logic đăng ký ở đây
         });
-            // Load Sponsor
-    fetch('./Component khác/Sponsor-Section.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('sponsor-section').innerHTML = data;
-        });
+    })
+    .catch(error => {
+        console.error('Lỗi khi tải tệp HTML:', error);
+    });
     
     // Load activities data
     fetch('js/activities.json')

@@ -1,86 +1,61 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Load header
-    fetch('./Header_dự_án/Header_dự_án.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('header-container').innerHTML = data;
-            initMobileMenu();
-        });
+        // Load header
+        fetch('./Header_dự_án/Header_dự_án.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+                initMobileMenu();
+            });
     
-    // Load footer
-    fetch('./Footer/footer.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('footer-container').innerHTML = data;
-        });
+        // Load footer
+        fetch('./Footer/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            });
     
-    // Load activities data
-    fetch('js/activities.json')
-        .then(response => response.json())
-        .then(data => {
-            renderActivities('past-activities', data.pastActivities);
-            renderActivities('upcoming-activities', data.upcomingActivities);
-        });
-     
-        fetch('./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem1.php')
-    .then(response => {
-        if (!response.ok) throw new Error('Không thể load nội dung: ' + response.status);
-        return response.text();
-    })
-    .then(html => {
-        const aboutSection = document.getElementById('bit-container');
-        aboutSection.innerHTML = html;
-
-        // Tìm tất cả thẻ <script> vừa mới gán vào
-        aboutSection.querySelectorAll('script').forEach(oldScript => {
-            const newScript = document.createElement('script');
-            // Copy thuộc tính src hoặc text
-            if (oldScript.src) {
-                newScript.src = oldScript.src;
-            } else {
-                newScript.textContent = oldScript.textContent;
-            }
-            document.body.appendChild(newScript);
-        });
-
-        // Gán xong HTML + thực thi script => mới được phép init
-        initCardSlider();
-    })
-    .catch(error => {
-        console.error(error);
+        // Load activities
+        fetch('js/activities.json')
+            .then(response => response.json())
+            .then(data => {
+                renderActivities('past-activities', data.pastActivities);
+                renderActivities('upcoming-activities', data.upcomingActivities);
+            });
+    
+        // 👉 GỌI HÀM SLIDER SAU CÙNG
+        initCardSlider(); 
     });
 
-    });
 
         // Dữ liệu cho slider
-        const cardData = [
+     const cardData = [
             {
         image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/LDSD.jpg",
         title: "Lửa Dệt Sử Đỏ",
         date: "20.04.2025",
         buttonText: "Chi tiết",
-        link: "./Lửa-dệt-sử-đỏ.html"  // Thêm liên kết đến trang HTML tương ứng
+        link: "./Lửa-dệt-sử-đỏ.php"  // Thêm liên kết đến trang HTML tương ứng
     },
     {
         image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/Vùng đất thép.jpg",
         title: "Hành trình về vùng đất thép",
-        date: "19.04.2025",
+        date: "21.03.2025",
         buttonText: "Chi tiết",
-        link: "./Hành-trình-về-vùng-đất-thép.html"  // Thêm liên kết đến trang HTML tương ứng
+        link: "./Hành-trình-về-vùng-đất-thép.php"  // Thêm liên kết đến trang HTML tương ứng
     },
     {
         image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/VQNCS.jpg",
         title: "Vinh quang người chiến sĩ",
-        date: "17.04.2025",
+        date: "11.05.2024",
         buttonText: "Chi tiết",
-        link: "./Vinh-quang-người-chiến-sĩ.html"  // Thêm liên kết đến trang HTML tương ứng
+        link: "./Vinh-quang-người-chiến-sĩ.php"  // Thêm liên kết đến trang HTML tương ứng
     },
     {
         image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/DẤU ẤN ANH HÙNG.jpg",
         title: "Dấu ấn anh hùng",
-        date: "17.04.2025",
+        date: "23.12.2023",
         buttonText: "Chi tiết",
-        link: "./Dấu-ấn-anh-hùng.html"  // Thêm liên kết đến trang HTML tương ứng
+        link: "./Dấu-ấn-anh-hùng.php"  // Thêm liên kết đến trang HTML tương ứng
     }
         ];
 
@@ -254,76 +229,6 @@ for (let i = 0; i < totalPages; i++) {
     window.addEventListener('resize', updateCardsToShow);
     
 
-        // Initialize mobile menu
-        function initMobileMenu() {
-            const toggleButton = document.querySelector('.mobile-menu-toggle');
-            if (!toggleButton) return;
-            
-            // Create mobile menu if it doesn't exist
-            if (!document.querySelector('.mobile-menu')) {
-                const mobileMenu = document.createElement('div');
-                mobileMenu.className = 'mobile-menu';
-                mobileMenu.innerHTML = `
-                    <div class="mobile-menu-close">
-                        <i class="fas fa-times"></i>
-                    </div>
-                    <ul>
-                        <li><a href="index.html">TRANG CHỦ</a></li>
-                        <li><a href="ve-chien-dich.html">VỀ CHIẾN DỊCH</a></li>
-                        <li><a href="bang-vinh-danh.html">BẢNG VINH DANH</a></li>
-                        <li><a href="quy-vinh-danh-anh-hung.html">QUỸ VINH DANH ANH HÙNG</a></li>
-                    </ul>
-                `;
-                document.body.appendChild(mobileMenu);
-                
-                const overlay = document.createElement('div');
-                overlay.className = 'mobile-menu-overlay';
-                document.body.appendChild(overlay);
-                
-                // Close menu when clicking on close button or overlay
-                document.querySelector('.mobile-menu-close').addEventListener('click', toggleMobileMenu);
-                overlay.addEventListener('click', toggleMobileMenu);
-            }
-            
-            // Toggle menu when clicking on menu button
-            toggleButton.addEventListener('click', toggleMobileMenu);
-        }
-
-        // Toggle mobile menu
-        function toggleMobileMenu() {
-            const mobileMenu = document.querySelector('.mobile-menu');
-            const overlay = document.querySelector('.mobile-menu-overlay');
-            
-            mobileMenu.classList.toggle('active');
-            overlay.classList.toggle('active');
-        }
-
-        // Pagination functionality
-        document.addEventListener('click', function(e) {
-            if (e.target.classList.contains('dot')) {
-                // Remove active class from all dots
-                document.querySelectorAll('.dot').forEach(dot => {
-                    dot.classList.remove('active');
-                });
-                
-                // Add active class to clicked dot
-                e.target.classList.add('active');
-                
-                // You can implement slide functionality here
-            }
-        });
-
-        // Helper function for rendering activities (if used elsewhere)
-        function renderActivities(containerId, activities) {
-            const container = document.getElementById(containerId);
-            if (!container) return;
-            
-            container.innerHTML = '';
-            activities.forEach(activity => {
-                // Render activity elements
-            });
-        }}
-
         document.addEventListener('DOMContentLoaded', function() {
             const dots = document.querySelectorAll('.hero-pagination .dot');
             const slides = document.querySelectorAll('.hero-text[id^="slide-"]');
@@ -367,25 +272,4 @@ for (let i = 0; i < totalPages; i++) {
                 dots[currentSlide].click();
             }, 5000);
         });
-        document.addEventListener('DOMContentLoaded', function() {
-            // Fetch the data from the PHP file
-            fetch('./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem1.php')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('bit-container').innerHTML = data;
-                    
-                    // Re-initialize any JavaScript that needs to run after content is loaded
-                    initializeSlideshow();
-                })
-                .catch(error => {
-                    console.error('Error fetching content:', error);
-                    document.getElementById('bit-container').innerHTML = 
-                        '<p>Error loading content. Please try again later.</p>';
-                });
-        });
-
-        // Function to initialize slideshow (define this separately or include from the PHP file)
-        function initializeSlideshow() {
-            // Your slideshow initialization code here
-            // This would be similar to the script in your PHP file
-        }
+    }

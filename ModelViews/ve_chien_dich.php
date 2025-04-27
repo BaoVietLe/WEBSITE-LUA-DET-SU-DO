@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chào mừng bạn đến với chuỗi hoạt động về nguồn của khoa Công nghệ thông tin kinh doanh</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link 
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" 
-      rel="stylesheet"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/ve_chien_dich.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <!-- Header will be loaded dynamically -->
     <div id="header-container"></div>
 
     <!-- Main Content -->
-     <div class="hero-section">
+    <div class="hero-section">
         <h1>LỬA DỆT SỬ ĐỎ</h1>
     <div class="hero-content">
         <!-- Left Column -->
@@ -54,71 +54,65 @@
                 <div class="program-info-box">
                   <div class="program-info-number">18K+</div>
                   <div class="program-info-label">LƯỢT TIẾP CẬN</div>
+                    </div>
+                    <div class="program-info-box">
+                        <div class="program-info-number">12K+</div>
+                        <div class="program-info-label">LƯỢT THÍCH</div>
+                    </div>
+                    <div class="program-info-box">
+                        <div class="program-info-number">100+</div>
+                        <div class="program-info-label">NGƯỜI THAM GIA</div>
+                    </div>
                 </div>
-                <div class="program-info-box">
-                  <div class="program-info-number">12K+</div>
-                  <div class="program-info-label">LƯỢT THÍCH</div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="hero-right-column">
+                <div class="hero-image">
+                    <img src="./Footer/Ảnh/HD_1.png" alt="Team Photo">
                 </div>
-                <div class="program-info-box">
-                  <div class="program-info-number">100+</div>
-                  <div class="program-info-label">NGƯỜI THAM GIA</div>
-                </div>
-              </div>
+            </div>
         </div>
-        
-        <!-- Right Column -->
-        <div class="hero-right-column">
-            <div class="hero-image">
-                <img src="./Footer/Ảnh/HD_1.png" alt="Team Photo">
+
+        <div class="activity-photos">
+            <div class="homepage-title">
+                Một số hình ảnh hoạt động tiêu biểu<br>cùng chuỗi hoạt động về nguồn
+            </div>
+            <div class="photo-grid">
+                <div class="photo-item"><img src="images/placeholder.jpg" alt="Hoạt động"></div>
+                <div class="photo-item"><img src="images/placeholder.jpg" alt="Hoạt động"></div>
+                <div class="photo-item"><img src="images/placeholder.jpg" alt="Hoạt động"></div>
+                <div class="photo-item"><img src="images/placeholder.jpg" alt="Hoạt động"></div>
+                <div class="photo-item"><img src="images/placeholder.jpg" alt="Hoạt động"></div>
+                <div class="photo-item"><img src="images/placeholder.jpg" alt="Hoạt động"></div>
             </div>
         </div>
     </div>
-</section>
-
-    <div class="activity-photos">
-        <div class="homepage-title">
-            Một số hình ảnh hoạt động tiêu biểu<br>cùng chuỗi hoạt động về nguồn
-          </div>
-        <div class="photo-grid">
-            <div class="photo-item"><img src="images/placeholder.jpg" alt="Hoạt động"></div>
-            <div class="photo-item"><img src="images/placeholder.jpg" alt="Hoạt động"></div>
-            <div class="photo-item"><img src="images/placeholder.jpg" alt="Hoạt động"></div>
-            <div class="photo-item"><img src="images/placeholder.jpg" alt="Hoạt động"></div>
-            <div class="photo-item"><img src="images/placeholder.jpg" alt="Hoạt động"></div>
-            <div class="photo-item"><img src="images/placeholder.jpg" alt="Hoạt động"></div>
-        </div>
-    </div>
-</div>
 
     <div class="activities-section">
         <div class="section-header">
             <h2 class="red-button">CÁC HOẠT ĐỘNG VỀ NGUỒN</h2>
         </div>
-        
+
         <div class="sub-header-wrapper">
             <div class="sub-header">NHỮNG HOẠT ĐỘNG ĐÃ VÀ ĐANG THỰC HIỆN
             </div>
-          </div>
+        </div>
 
     </div>
-     <!-- Card Slider Container -->
-     <div class="slider-container">
+    <!-- Card Slider Container -->
+    <div class="slider-container">
         <div class="slider-wrapper" id="sliderWrapper">
             <!-- Cards will be added here dynamically -->
         </div>
         <!-- Pagination dots sẽ được thêm vào đây bởi JS -->
     </div>
-</div>
-
-<div class="bit-container" id="bit-container">
-    <!-- Content will be loaded here -->
-    <div class="loading">Loading...</div>
-</div>
-
+    <?php include "./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem1.php"?>
     <!-- Footer will be loaded dynamically -->
     <div id="footer-container"></div>
 
 
     <script defer src="../assets/js/ve_chien_dich.js"></script>
 </body>
+
 </html>
