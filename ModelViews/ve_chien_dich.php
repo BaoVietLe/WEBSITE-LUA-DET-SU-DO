@@ -248,6 +248,7 @@
     <!-- Main Content -->
     <div class="hero-section">
         <h1>LỬA DỆT SỬ ĐỎ</h1>
+
         <div class="hero-content">
             <!-- Left Column -->
             <div class="hero-left-column">
@@ -255,31 +256,37 @@
                     <h2>HOẠT ĐỘNG VỀ NGUỒN CÙNG BIT</h2>
                     <p>Những hoạt động để tìm về cội nguồn lịch sử dân tộc, tìm hiểu những địa danh,
                         di tích lịch sử cách mạng và văn hóa truyền thống của dân tộc.</p>
-                </div>
-                <div class="hero-text" id="slide-2" style="display: none;">
-                    <h2>SỨ MỆNH LƯU GIỮ TRUYỀN THỐNG</h2>
-                    <p>Chúng tôi tin rằng thế hệ trẻ cần hiểu rõ về nguồn cội để vững bước tiến về tương lai. Thông qua
-                        các hoạt động thực tế, sinh viên được trải nghiệm và tiếp nối giá trị văn hóa quý báu của dân
-                        tộc.</p>
-                </div>
-                <div class="hero-text" id="slide-3" style="display: none;">
-                    <h2>ĐỒNG HÀNH CÙNG LỊCH SỬ</h2>
-                    <p>Tham gia cùng chúng tôi trong hành trình khám phá các di tích lịch sử, tìm hiểu về những anh hùng
-                        dân tộc và gắn kết cộng đồng sinh viên qua các hoạt động ý nghĩa.</p>
-                </div>
-
-                <!-- Pagination dots for content navigation -->
-                <div class="hero-pagination">
-                    <div class="dot active"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                </div>
-
-                <!-- Stats section -->
-                <div class="program-info">
-                    <div class="program-info-box">
-                        <div class="program-info-number">18K+</div>
-                        <div class="program-info-label">LƯỢT TIẾP CẬN</div>
+    <div class="hero-content">
+        <!-- Left Column -->
+        <div class="hero-left-column">
+            <div class="hero-text" id="slide-1">
+                <h2>HOẠT ĐỘNG VỀ NGUỒN CÙNG BIT</h2>
+                <p>Chương trình thuộc chuỗi hoạt động Về nguồn - Khoa Công nghệ thông tin kinh doanh chào mừng 50 năm 
+                    ngày Giải phóng miền Nam - thống nhất Đất Nước. Hoạt động thường niên mang ý nghĩa vô cùng to lớn, 
+                    thể hiện tình yêu nước cùng tinh thần dân tộc, hướng về nguồn cội của sinh viên khoa BIT nói riêng 
+                    và sinh viên UEH nói chung.</p>
+            </div>
+            <div class="hero-text" id="slide-2" style="display: none;">
+                <h2>SỨ MỆNH LƯU GIỮ TRUYỀN THỐNG</h2>
+                <p>Chúng tôi tin rằng thế hệ trẻ cần hiểu rõ về nguồn cội để vững bước tiến về tương lai. Thông qua các hoạt động thực tế, sinh viên được trải nghiệm và tiếp nối giá trị văn hóa quý báu của dân tộc.</p>
+            </div>
+            <div class="hero-text" id="slide-3" style="display: none;">
+                <h2>ĐỒNG HÀNH CÙNG LỊCH SỬ</h2>
+                <p>Tham gia cùng chúng tôi trong hành trình khám phá các di tích lịch sử, tìm hiểu về những anh hùng dân tộc và gắn kết cộng đồng sinh viên qua các hoạt động ý nghĩa.</p>
+            </div>
+            
+            <!-- Pagination dots for content navigation -->
+            <div class="hero-pagination">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            
+            <!-- Stats section -->
+            <div class="program-info">
+                <div class="program-info-box">
+                  <div class="program-info-number">18K+</div>
+                  <div class="program-info-label">LƯỢT TIẾP CẬN</div>
                     </div>
                     <div class="program-info-box">
                         <div class="program-info-number">12K+</div>
