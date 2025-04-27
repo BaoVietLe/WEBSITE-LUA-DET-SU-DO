@@ -107,10 +107,8 @@
         </div>
         <!-- Pagination dots sẽ được thêm vào đây bởi JS -->
     </div>
-    </div>
 
-    <div class="bit-container" id="bit-container">
-
+        <?php include "./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem1.php"?>
     <!-- Footer will be loaded dynamically -->
     <div id="footer-container"></div>
 

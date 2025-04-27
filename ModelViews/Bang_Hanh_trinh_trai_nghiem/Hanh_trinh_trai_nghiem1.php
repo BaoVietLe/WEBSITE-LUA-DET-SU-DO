@@ -34,7 +34,7 @@ try {
                     'mssv' => $row['mssv'],
                     'name' => $row['sv_name'],
                     'content' => $row['sv_sharing'],
-                    'avatar_fix' => '../../assets/img/sv/' . $row['sv_img']
+                    'avatar_fix' => '../assets/img/sv/' . $row['sv_img']
                 ];
             }
         } else {
