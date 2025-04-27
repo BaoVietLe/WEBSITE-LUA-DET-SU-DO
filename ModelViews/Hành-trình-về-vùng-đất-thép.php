@@ -115,19 +115,56 @@
             margin-bottom: 20px;
             color: #666;
         }
-        .event-description-emphasize {
-            font-weight: bold;
-        }
 
         
         /* Event Details Card */
-        .event-card {
+        .event-card-wrapper {
+    position: relative;
+    width: full-width;
+    margin-bottom: 40px;
+    padding: 15px;
+    background: linear-gradient(135deg, rgba(247, 118, 34, 0.1), rgba(214, 34, 34, 0.1));
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+}
+
+/* Tạo hiệu ứng nền trang trí */
+.event-card-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/VQNCS.jpg");
+    border-radius: 15px;
+    opacity: 0.5;
+    z-index: 0;
+}
+
+/* Thêm border trang trí cho nền */
+.event-card-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 1px dashed rgba(214, 34, 34, 0.2);
+    border-radius: 12px;
+    z-index: 0;
+}
+.event-card {
             background-color: #fff;
             border-radius: 10px;
             padding: 30px;
             margin-bottom: 40px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1;
+            margin-bottom: 0; /* Bỏ margin vì wrapper đã có */
         }
+
 
         .card-title {
             text-align: center;
@@ -265,27 +302,24 @@
 
         <div class="main-event">
             <div class="event-information">
-                <h1 class="event-title">KỶ NIỆM 34 NĂM<br>NGÀY HỘI CỰU CHIẾN BINH VIỆT NAM</h1>
-                <div class="event-date">06/12/1989 - 06/12/2023</div>
+                <h1 class="event-title">CHÀO MỪNG KỈ NIỆM 94 NĂM<br>NGÀY THÀNH LẬP ĐOÀN TNCS HỒ CHÍ MINH</h1>
+                <div class="event-date">26/3/1931 - 26/3/2025</div>
                 <div class="event-description">
-                    <p class="event-description-emphasize">Hoạt động 1: Hoạt động về nguồn nhân ngày thành lập Hội cựu chiến binh Việt Nam 06/12</p>
-                    <br>  - Đối tượng tham gia: BCH và CTV Đoàn - Hội khoa Công nghệ thông tin kinh doanh.<br>
-                    <br>  - Thời gian diễn ra: Tháng 12/2023.</p>
-
-                    <br><p class="event-description-emphasize">Hoạt động 2: Hoạt động truyền thông cho chủ đề số 2: Về nguồn thuộc hoạt động Radio “Não Cá Vàng”</p>
-                    <br>- Đối tượng tham gia: Toàn thể sinh viên UEH.<br>
-                    <br>- Thời gian diễn ra: ngày 14 - 24/12/2023.<br>
+                    <br>Hoạt động 1: Thăm và tặng quà cho các gia đình chính sách tại địa phương.<br>
+                    <br>Hoạt động 2: Dâng hương tại đền tưởng niệm Liệt sĩ Bến Dược.<br>
+                    <br>Hoạt động 3: Tập huấn cán bộ Đoàn - Hội.<br>
+                    <br>Hoạt động 4: Tham quan tại Địa đạo Bến Dược thuộc Khu di tích lịch sử Địa đạo Củ Chi.<br>
                 </div>
             </div>
             <div class="right-content">
                 <div class="image-info-no-action">
-                    <img src="../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/DẤU ẤN ANH HÙNG.jpg" alt="Hình ảnh hoạt động" class="image-info-no-action-image">
+                    <img src="../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/Vùng đất thép.jpg" alt="Hình ảnh hoạt động" class="image-info-no-action-image">
                     <div class="image-info-no-action-content">
                         <div class="image-info-no-action-title">
-                            KỶ NIỆM 43 NĂM<br>NGÀY HỘI CỰU CHIẾN BINH VIỆT NAM
+                            CHÀO MỪNG KỈ NIỆM 94 NĂM<br>NGÀY THÀNH LẬP ĐOÀN TNCS HỒ CHÍ MINH
                         </div>
                         <div class="image-info-no-action-date">
-                            06/12/1989 - 06/12/2023
+                            26/3/1931 - 26/3/2025
                         </div>
                     </div>
                 </div>
@@ -296,58 +330,51 @@
         <div id="event-container"></div>
 
         <div id="sponsor-section"></div>
-
+        <div class="event-card-wrapper">
         <div class="event-card">
-            <h2 class="card-title">KỶ NIỆM 34 NĂM NGÀY HỘI CỰU CHIẾN BINH VIỆT NAM</h2>
-            <div class="card-date">06/12/1989 - 06/12/2023</div>
-            <div class="card-date-input">From: 14/12/2023 - To: 27/12/2023</div>
+            <h2 class="card-title">CHÀO MỪNG KỈ NIỆM 94 NĂM NGÀY THÀNH LẬP ĐOÀN TNCS HỒ CHÍ MINH</h2>
+            <div class="card-date">26/3/1931 - 26/3/2025</div>
+            <div class="card-date-input">From: 17/3/2025 - To: 26/3/2025</div>
 
             <div class="event-description-list">
                 <p>[BIT][HTVVDT] PHÁT ĐỘNG HOẠT ĐỘNG VỀ NGUỒN NHÂN DỊP 94 NĂM NGÀY THÀNH LẬP ĐOÀN TNCS HỒ CHÍ MINH (26/3/1931 - 26/3/2025) - “HÀNH TRÌNH VỀ VÙNG ĐẤT THÉP”</p>
                 
-                <p>★ “Tuổi hai mươi, anh nằm lại rừng xanh.<br>
-                      Anh không được vui niềm vui đại thắng!<br>
-                      Anh nằm lại nơi rừng hoang núi thẳm.<br>
-                      Hoá thân mình thành sông núi nước Nam.</p>
-
-                <p>★ Tôi lắng nghe trong gió núi mây ngàn.<br>
-                    Có tiếng hát cuộc đời anh vọng mãi.<br>
-                    Xin an lòng những gì anh để lại.<br>
-                    Có chúng tôi xin tiếp tục giữ gìn.”</p>
+                <p>★ 94 năm rực rỡ một chặng đường, Đoàn TNCS Hồ Chí Minh chính biểu tượng của sức trẻ, của lý tưởng cách mạng và khát vọng cống hiến. Nhằm khơi dậy niềm tự hào về truyền thống vẻ vang của Đoàn TNCS Hồ Chí Minh trong mỗi cán bộ, Đoàn viên, thanh niên, cũng như tạo không khí sôi nổi chào mừng và kỷ niệm 94 năm ngày thành lập Đoàn TNCS Hồ Chí Minh (26/3/1931 - 26/3/2025), Đoàn - Hội khoa Công nghệ thông tin kinh doanh quyết định tổ chức hoạt động về nguồn - “Hành trình về vùng Đất thép”.</p>
                 
-                <p>-Trích “Người lính chiến” (Người cầm bút)</p>
+                <p>★ “Hành trình về vùng Đất thép” là một hoạt động về nguồn, thường gắn liền với các chuyến đi thực tế đến Củ Chi – nơi được mệnh danh là "Đất thép Thành Đồng" do những chiến công anh dũng trong kháng chiến. Cụ thể, "vùng Đất thép" thường được hiểu là huyện Củ Chi, TP.HCM, nơi có hệ thống địa đạo nổi tiếng, từng là căn cứ cách mạng quan trọng trong hai cuộc kháng chiến chống Pháp và chống Mỹ.</p>
 
-                <p>Đã bao giờ các bạn rưng rưng nước mắt vì xúc động khi nghe tới những gì người lính Việt Nam ta phải trải qua để đổi lấy thời bình cho chúng ta chưa?</p>
+                <p>★ Chương trình được tổ chức nhằm phát huy tinh thần xung kích, tình nguyện, sáng tạo của tuổi trẻ khoa Công nghệ thông tin kinh doanh nói riêng và sinh viên UEH nói chung, bên cạnh đó tri ân những người lính, người anh hùng đã hy sinh cho nền độc lập dân tộc, thể hiện lòng tôn trọng, lòng biết ơn và tinh thần “Uống nước nhớ nguồn”. </p>
 
-                <p>★ Nếu có dịp xem qua tác phẩm “Mùi Cỏ Cháy” của đạo diễn Nguyễn Hữu Mười, các bạn có thể cảm nhận một cách sâu sắc sự khắc nghiệt của chiến trường, nơi bom đạn rơi nhiều “như cơm bữa”. Biết bao nhiêu người lính lên đường vì lý tưởng cao đẹp, và rồi nằm lại trên mảnh đất mẹ thân yêu, vì tương lai đất nước Việt Nam, vì một mảnh đất hình chữ S vẹn toàn, không thiếu đi một tấc đất, tấc biển.</p>
+                <p class="section-heading">CÁC HOẠT ĐỘNG TRONG CHƯƠNG TRÌNH</p>
+                <p><br>Hoạt động 1: Thăm và tặng quà cho các gia đình chính sách tại địa phương.<br>
+                    <br>Hoạt động 2: Dâng hương tại đền tưởng niệm Liệt sĩ Bến Dược.<br>
+                    <br>Hoạt động 3: Tập huấn cán bộ Đoàn - Hội.<br>
+                    <br>Hoạt động 4: Tham quan tại Địa đạo Bến Dược thuộc Khu di tích lịch sử Địa đạo Củ Chi.<br></p>
 
-                <p>★ Làm sao chúng ta có thể không ghi nhớ công ơn của những người lính cụ Hồ ngày xưa? Vì thế, nhân ngày Hội cựu chiến binh Việt Nam 06/12, để bày tỏ lòng tôn vinh và tri ân những người lính đã dũng cảm tham gia chiến đấu mang lại nền hòa bình cho đất nước, Đoàn - Hội Khoa Công nghệ thông tin kinh doanh phát động Chuỗi hoạt động Về Nguồn với chủ đề “Dấu ấn anh hùng” mong muốn tạo cơ hội cho các bạn sinh viên thể hiện sự tôn trọng, lòng biết ơn, “uống nước nhớ nguồn” đối với công lao to lớn của các vị anh hùng.</p>
+                <p class="section-heading">THÔNG TIN CHƯƠNG TRÌNH</p>
+                <br>✿ Đối tượng tham gia: BCH Đoàn - Hội khoa, CTV Ban chuyên môn, BCH Chi đoàn - Chi hội trực thuộc khoa Công nghệ thông tin kinh doanh.<br>
+                ✿ Thời gian: Ngày 23/3/2025.<br>
+                ✿ Địa điểm diễn ra: Địa đạo Bến Dược thuộc Khu di tích lịch sử Địa đạo Củ Chi, đường tỉnh lộ 15, ấp Phú Hiệp, xã Phú Mỹ Hưng, huyện Củ Chi, thành phố Hồ Chí Minh.<br>
 
-                <p class="section-heading">THÔNG TIN CHI TIẾT HOẠT ĐỘNG CHƯƠNG TRÌNH</p>
-                <p class="event-description-emphasize">Hoạt động 1: Hoạt động về nguồn nhân ngày thành lập Hội cựu chiến binh Việt Nam 06/12</p>
-                <br>  - Đối tượng tham gia: BCH và CTV Đoàn - Hội khoa Công nghệ thông tin kinh doanh.<br>
-                <br>  - Thời gian diễn ra: Tháng 12/2023.</p>
 
-                <br><p class="event-description-emphasize">Hoạt động 2: Hoạt động truyền thông cho chủ đề số 2: Về nguồn thuộc hoạt động Radio “Não Cá Vàng”</p>
-                <br>- Đối tượng tham gia: Toàn thể sinh viên UEH.<br>
-                <br>- Thời gian diễn ra: ngày 14 - 24/12/2023.<br></p>
-
-                <p class="section-heading">QUYỀN LỢI SINH VIÊN</p>
-                ✿ Cơ hội để các bạn sinh viên thể hiện lòng biết ơn sâu sắc đến các anh hùng, người lính thông qua những dòng cảm nghĩ của mình.<br>
-                ✿ Lan tỏa lòng biết ơn, tôn trọng, cũng như tinh thần yêu nước đến với mọi người đặc biệt là các bạn sinh viên UEH.<br>
-                ✿ Sinh viên tham gia ít nhất 1 trong 2 hoạt động sẽ được ghi nhận MSSV.<br>
+                <p class="section-heading">QUYỀN LỢI SINH VIÊN</p>
+                <p>- Được tìm hiểu những thông tin bổ ích về lịch sử, cụ thể là khu di tích lịch sử Địa đạo Củ Chi<br>
+                   - Được đi thăm hỏi, tặng quà cho các gia đình chính sách tại huyện Củ Chi, TP. Hồ Chí Minh.<br>
+                   - Được đi tham quan, tập huấn trực tiếp tại Địa đạo Củ Chi.<br>
+                   - Được ghi nhận MSSV khi tham gia chương trình.</p>
 
                 <p>Theo dõi Fanpage Đoàn - Hội khoa Công nghệ thông tin kinh doanh để biết thêm thông tin về chương trình nhé!</p>
 
                 <p class="section-heading">Mọi thắc mắc vui lòng liên hệ:</p>
                 <p>Fanpage: https://www.facebook.com/BIT.UEH<br>
-                Sđt:  0823.971.080 (Minh Khôi)<br>
-                #BIT #dauananhhung<br>
-                #venguon #naocavang</p>
+                Sđt: 0799860152 (Ngọc Lan) - 0989664606 (Thu Trang)<br>
+                #UEH #BIT #CNTTKT<br>
+                #HTVVDT #HANHTRINHDIVEVUNGDATTHEP</p>
             </div>
         </div>
+        </div>
 
-        <div id="about-section"></div>
+        <?php include "./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem1.php"?>
 
         <!-- Footer will be loaded dynamically -->
         <div id="footer-container"></div>
@@ -388,34 +415,6 @@
             renderActivities('past-activities', data.pastActivities);
             renderActivities('upcoming-activities', data.upcomingActivities);
         });
-     
-            // Load Hanh Trinh Trai Nghiem HTML
-    fetch('./Bang_BTC_chia_se/Bang_BTC.html')
-    .then(response => response.text())
-    .then(html => {
-        document.getElementById('about-section').innerHTML = html;
-
-        // Load JS sau khi đã render HTML
-        const script = document.createElement('script');
-        script.src = './Bang_BTC_chia_se/Bang_BTC.js';
-        script.onload = () => {
-            console.log("JS slideshow loaded");
-
-            // Fetch PHP để lấy dữ liệu
-            fetch('./Bang_BTC_chia_se/Bang_BTC.js')
-                .then(response => response.json())
-                .then(data => {
-                    if (typeof initSlideshow === 'function') {
-                        initSlideshow(data);
-                    } else {
-                        console.warn("initSlideshow chưa sẵn sàng");
-                    }
-                })
-                .catch(err => console.error('Lỗi fetch PHP:', err));
-        };
-        document.body.appendChild(script);
-    })
-    .catch(err => console.error('Lỗi fetch HTML slideshow:', err));
           // Initialize Card Slider
           initCardSlider();
         });

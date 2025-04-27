@@ -121,14 +121,52 @@
 
         
         /* Event Details Card */
-        .event-card {
+        .event-card-wrapper {
+    position: relative;
+    width: full-width;
+    margin-bottom: 40px;
+    padding: 15px;
+    background: linear-gradient(135deg, rgba(247, 118, 34, 0.1), rgba(214, 34, 34, 0.1));
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+}
+
+/* Tạo hiệu ứng nền trang trí */
+.event-card-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/VQNCS.jpg");
+    border-radius: 15px;
+    opacity: 0.5;
+    z-index: 0;
+}
+
+/* Thêm border trang trí cho nền */
+.event-card-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 1px dashed rgba(214, 34, 34, 0.2);
+    border-radius: 12px;
+    z-index: 0;
+}
+.event-card {
             background-color: #fff;
             border-radius: 10px;
             padding: 30px;
             margin-bottom: 40px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1;
+            margin-bottom: 0; /* Bỏ margin vì wrapper đã có */
         }
-
         .card-title {
             text-align: center;
             font-size: 22px;
@@ -296,7 +334,7 @@
         <div id="event-container"></div>
 
         <div id="sponsor-section"></div>
-
+        <div class="event-card-wrapper">
         <div class="event-card">
             <h2 class="card-title">KỶ NIỆM 34 NĂM NGÀY HỘI CỰU CHIẾN BINH VIỆT NAM</h2>
             <div class="card-date">06/12/1989 - 06/12/2023</div>
@@ -346,8 +384,9 @@
                 #venguon #naocavang</p>
             </div>
         </div>
+        </div>
 
-        <div id="about-section"></div>
+        <?php include "./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem1.php"?>
 
         <!-- Footer will be loaded dynamically -->
         <div id="footer-container"></div>
@@ -388,43 +427,9 @@
             renderActivities('past-activities', data.pastActivities);
             renderActivities('upcoming-activities', data.upcomingActivities);
         });
-     
-            // Load Hanh Trinh Trai Nghiem HTML
-    fetch('./Bang_BTC_chia_se/Bang_BTC.html')
-    .then(response => response.text())
-    .then(html => {
-        document.getElementById('about-section').innerHTML = html;
 
-        // Load JS sau khi đã render HTML
-        const script = document.createElement('script');
-        script.src = './Bang_BTC_chia_se/Bang_BTC.js';
-        script.onload = () => {
-            console.log("JS slideshow loaded");
-
-            // Fetch PHP để lấy dữ liệu
-            fetch('./Bang_BTC_chia_se/Bang_BTC.js')
-                .then(response => response.json())
-                .then(data => {
-                    if (typeof initSlideshow === 'function') {
-                        initSlideshow(data);
-                    } else {
-                        console.warn("initSlideshow chưa sẵn sàng");
-                    }
-                })
-                .catch(err => console.error('Lỗi fetch PHP:', err));
-        };
-        document.body.appendChild(script);
-    })
-    .catch(err => console.error('Lỗi fetch HTML slideshow:', err));
           // Initialize Card Slider
           initCardSlider();
-        });
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mainNav = document.getElementById('mainNav');
-        
-        mobileMenuBtn.addEventListener('click', function() {
-            mainNav.classList.toggle('active');
         });
 
         // Testimonial Slider

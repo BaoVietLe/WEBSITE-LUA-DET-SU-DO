@@ -34,28 +34,28 @@ document.addEventListener('DOMContentLoaded', function() {
         title: "Lửa Dệt Sử Đỏ",
         date: "20.04.2025",
         buttonText: "Chi tiết",
-        link: "./Lửa-dệt-sử-đỏ.html"  // Thêm liên kết đến trang HTML tương ứng
+        link: "./Lửa-dệt-sử-đỏ.php"  // Thêm liên kết đến trang HTML tương ứng
     },
     {
         image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/Vùng đất thép.jpg",
         title: "Hành trình về vùng đất thép",
         date: "21.03.2025",
         buttonText: "Chi tiết",
-        link: "./Hành-trình-về-vùng-đất-thép.html"  // Thêm liên kết đến trang HTML tương ứng
+        link: "./Hành-trình-về-vùng-đất-thép.php"  // Thêm liên kết đến trang HTML tương ứng
     },
     {
         image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/VQNCS.jpg",
         title: "Vinh quang người chiến sĩ",
         date: "11.05.2024",
         buttonText: "Chi tiết",
-        link: "./Vinh-quang-người-chiến-sĩ.html"  // Thêm liên kết đến trang HTML tương ứng
+        link: "./Vinh-quang-người-chiến-sĩ.php"  // Thêm liên kết đến trang HTML tương ứng
     },
     {
         image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/DẤU ẤN ANH HÙNG.jpg",
         title: "Dấu ấn anh hùng",
         date: "23.12.2023",
         buttonText: "Chi tiết",
-        link: "./Dấu-ấn-anh-hùng.html"  // Thêm liên kết đến trang HTML tương ứng
+        link: "./Dấu-ấn-anh-hùng.php"  // Thêm liên kết đến trang HTML tương ứng
     }
         ];
 
@@ -229,76 +229,6 @@ for (let i = 0; i < totalPages; i++) {
     window.addEventListener('resize', updateCardsToShow);
     
 
-        // Initialize mobile menu
-        function initMobileMenu() {
-            const toggleButton = document.querySelector('.mobile-menu-toggle');
-            if (!toggleButton) return;
-            
-            // Create mobile menu if it doesn't exist
-            if (!document.querySelector('.mobile-menu')) {
-                const mobileMenu = document.createElement('div');
-                mobileMenu.className = 'mobile-menu';
-                mobileMenu.innerHTML = `
-                    <div class="mobile-menu-close">
-                        <i class="fas fa-times"></i>
-                    </div>
-                    <ul>
-                        <li><a href="index.html">TRANG CHỦ</a></li>
-                        <li><a href="ve-chien-dich.html">VỀ CHIẾN DỊCH</a></li>
-                        <li><a href="bang-vinh-danh.html">BẢNG VINH DANH</a></li>
-                        <li><a href="quy-vinh-danh-anh-hung.html">QUỸ VINH DANH ANH HÙNG</a></li>
-                    </ul>
-                `;
-                document.body.appendChild(mobileMenu);
-                
-                const overlay = document.createElement('div');
-                overlay.className = 'mobile-menu-overlay';
-                document.body.appendChild(overlay);
-                
-                // Close menu when clicking on close button or overlay
-                document.querySelector('.mobile-menu-close').addEventListener('click', toggleMobileMenu);
-                overlay.addEventListener('click', toggleMobileMenu);
-            }
-            
-            // Toggle menu when clicking on menu button
-            toggleButton.addEventListener('click', toggleMobileMenu);
-        }
-
-        // Toggle mobile menu
-        function toggleMobileMenu() {
-            const mobileMenu = document.querySelector('.mobile-menu');
-            const overlay = document.querySelector('.mobile-menu-overlay');
-            
-            mobileMenu.classList.toggle('active');
-            overlay.classList.toggle('active');
-        }
-
-        // Pagination functionality
-        document.addEventListener('click', function(e) {
-            if (e.target.classList.contains('dot')) {
-                // Remove active class from all dots
-                document.querySelectorAll('.dot').forEach(dot => {
-                    dot.classList.remove('active');
-                });
-                
-                // Add active class to clicked dot
-                e.target.classList.add('active');
-                
-                // You can implement slide functionality here
-            }
-        });
-
-        // Helper function for rendering activities (if used elsewhere)
-        function renderActivities(containerId, activities) {
-            const container = document.getElementById(containerId);
-            if (!container) return;
-            
-            container.innerHTML = '';
-            activities.forEach(activity => {
-                // Render activity elements
-            });
-        }}
-
         document.addEventListener('DOMContentLoaded', function() {
             const dots = document.querySelectorAll('.hero-pagination .dot');
             const slides = document.querySelectorAll('.hero-text[id^="slide-"]');
@@ -342,3 +272,4 @@ for (let i = 0; i < totalPages; i++) {
                 dots[currentSlide].click();
             }, 5000);
         });
+    }

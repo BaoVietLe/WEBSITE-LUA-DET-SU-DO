@@ -265,28 +265,28 @@
         title: "Lửa Dệt Sử Đỏ",
         date: "20.04.2025",
         buttonText: "Chi tiết",
-        link: "./Lửa-dệt-sử-đỏ.html"  // Thêm liên kết đến trang HTML tương ứng
+        link: "./Lửa-dệt-sử-đỏ.php"  // Thêm liên kết đến trang HTML tương ứng
     },
     {
         image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/Vùng đất thép.jpg",
         title: "Hành trình về vùng đất thép",
         date: "19.04.2025",
         buttonText: "Chi tiết",
-        link: "./Hành-trình-về-vùng-đất-thép.html"  // Thêm liên kết đến trang HTML tương ứng
+        link: "./Hành-trình-về-vùng-đất-thép.php"  // Thêm liên kết đến trang HTML tương ứng
     },
     {
         image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/VQNCS.jpg",
         title: "Vinh quang người chiến sĩ",
         date: "17.04.2025",
         buttonText: "Chi tiết",
-        link: "./Vinh-quang-người-chiến-sĩ.html"  // Thêm liên kết đến trang HTML tương ứng
+        link: "./Vinh-quang-người-chiến-sĩ.php"  // Thêm liên kết đến trang HTML tương ứng
     },
     {
         image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/DẤU ẤN ANH HÙNG.jpg",
         title: "Dấu ấn anh hùng",
         date: "17.04.2025",
         buttonText: "Chi tiết",
-        link: "./Dấu-ấn-anh-hùng.html"  // Thêm liên kết đến trang HTML tương ứng
+        link: "./Dấu-ấn-anh-hùng.php"  // Thêm liên kết đến trang HTML tương ứng
     }
         ];
 
