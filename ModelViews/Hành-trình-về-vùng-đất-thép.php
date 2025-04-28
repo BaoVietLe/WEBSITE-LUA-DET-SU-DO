@@ -379,14 +379,13 @@
         <div id="footer-container"></div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+       document.addEventListener('DOMContentLoaded', function() {
     // Load header
     fetch('./Header_dự_án/Header_dự_án.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('header-container').innerHTML = data;
-        // Execute navbar initialization code
-        initNavbar();
+            initNavbar();
         });
     
     // Load footer
@@ -395,7 +394,7 @@
         .then(data => {
             document.getElementById('footer-container').innerHTML = data;
         });
-        // Load Thanh chi tiết hoạt động
+// Load Thanh chi tiết hoạt động
 fetch('./Component khác/Thanh_chi_tiet_hoat_dong.html')
     .then(response => response.text())
     .then(data => {
@@ -413,7 +412,7 @@ fetch('./Component khác/Thanh_chi_tiet_hoat_dong.html')
         // Thay đổi thời gian
         const timeElement = tempDiv.querySelector('.time-section .section-content');
         if (timeElement) {
-            timeElement.textContent = '8:00:00 | 20/04/2025 - 17:00:00 | 20/04/2025';
+            timeElement.textContent = '8:00:00 | 23/03/2025 - 17:00:00 | 23/03/2025';
         }
         
         // Thay đổi số lượng tham gia
@@ -440,6 +439,13 @@ fetch('./Component khác/Thanh_chi_tiet_hoat_dong.html')
     .catch(error => {
         console.error('Lỗi khi tải tệp HTML:', error);
     });
+            // Load Sponsor
+    fetch('./Component khác/Sponsor-Section.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('sponsor-section').innerHTML = data;
+        });
+    
     // Load activities data
     fetch('js/activities.json')
         .then(response => response.json())
@@ -447,7 +453,123 @@ fetch('./Component khác/Thanh_chi_tiet_hoat_dong.html')
             renderActivities('past-activities', data.pastActivities);
             renderActivities('upcoming-activities', data.upcomingActivities);
         });
-        function initNavbar() {
+     
+            // Load Hanh Trinh Trai Nghiem HTML
+    fetch('./Bang_BTC_chia_se/Bang_BTC.html')
+    .then(response => response.text())
+    .then(html => {
+        document.getElementById('about-section').innerHTML = html;
+
+        // Load JS sau khi đã render HTML
+        const script = document.createElement('script');
+        script.src = './Bang_BTC_chia_se/Bang_BTC.js';
+        script.onload = () => {
+            console.log("JS slideshow loaded");
+
+            // Fetch PHP để lấy dữ liệu
+            fetch('./Bang_BTC_chia_se/Bang_BTC.js')
+                .then(response => response.json())
+                .then(data => {
+                    if (typeof initSlideshow === 'function') {
+                        initSlideshow(data);
+                    } else {
+                        console.warn("initSlideshow chưa sẵn sàng");
+                    }
+                })
+                .catch(err => console.error('Lỗi fetch PHP:', err));
+        };
+        document.body.appendChild(script);
+    })
+    .catch(err => console.error('Lỗi fetch HTML slideshow:', err));
+          // Initialize Card Slider
+          initCardSlider();
+        });
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+        });
+
+        // Testimonial Slider
+        let slideIndex = 1;
+        
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+            const dots = document.getElementsByClassName("dot");
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            dots[slideIndex-1].className += " active";
+        }
+
+        // Auto change slides every 5 seconds
+        setInterval(function() {
+            slideIndex++;
+            if (slideIndex > document.getElementsByClassName("dot").length) {
+                slideIndex = 1;
+            }
+            currentSlide(slideIndex);
+        }, 5000);
+
+document.addEventListener('DOMContentLoaded', function() {
+    const cards = document.querySelectorAll('.profile-card');
+    const indicatorsContainer = document.getElementById('carousel-indicators');
+
+    let currentIndex = 0;
+    let autoPlayInterval;
+
+    // Tạo các chấm
+    cards.forEach((card, index) => {
+        const indicator = document.createElement('li');
+        if (index === 0) indicator.classList.add('active');
+        indicator.dataset.index = index;
+        indicator.addEventListener('click', function() {
+            goToCard(index);
+            resetAutoPlay(); // Khi người dùng bấm chấm thì reset tự động
+        });
+        indicatorsContainer.appendChild(indicator);
+    });
+
+    function showCard(index) {
+        cards.forEach((card, idx) => {
+            card.style.display = idx === index ? 'block' : 'none';
+        });
+
+        const indicators = indicatorsContainer.querySelectorAll('li');
+        indicators.forEach((ind, idx) => {
+            ind.classList.toggle('active', idx === index);
+        });
+    }
+
+    function goToCard(index) {
+        currentIndex = index;
+        showCard(currentIndex);
+    }
+
+    function nextCard() {
+        currentIndex = (currentIndex + 1) % cards.length;
+        showCard(currentIndex);
+    }
+
+    function startAutoPlay() {
+        autoPlayInterval = setInterval(nextCard, 4000); // 4000ms = 4s đổi 1 lần
+    }
+
+    function resetAutoPlay() {
+        clearInterval(autoPlayInterval);
+        startAutoPlay();
+    }
+
+    // Khi load trang thì hiện card đầu tiên và chạy tự động
+    showCard(currentIndex);
+    startAutoPlay();
+});
+function initNavbar() {
         const navLinks = document.querySelectorAll(".nav-links a");
         const nav = document.querySelector(".nav-links");
         const indicator = document.getElementById("indicator");
@@ -520,30 +642,6 @@ fetch('./Component khác/Thanh_chi_tiet_hoat_dong.html')
             });
         }
     }
-
-        // Testimonial Slider
-        let slideIndex = 1;
-        
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
-        
-        function showSlides(n) {
-            const dots = document.getElementsByClassName("dot");
-            for (let i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            dots[slideIndex-1].className += " active";
-        }
-
-        // Auto change slides every 5 seconds
-        setInterval(function() {
-            slideIndex++;
-            if (slideIndex > document.getElementsByClassName("dot").length) {
-                slideIndex = 1;
-            }
-            currentSlide(slideIndex);
-        }, 5000);
     </script>
 </body>
 </html>

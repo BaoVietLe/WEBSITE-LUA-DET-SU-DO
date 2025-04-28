@@ -1096,32 +1096,6 @@ ul {
     margin-top: 25px;
 }
 
-.slider-button {
-    background-color: #e32212;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 30px;
-    font-size: 1rem;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(227, 34, 18, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.slider-button:hover {
-    background-color: #d01c1c;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(227, 34, 18, 0.4);
-}
-
-.slider-button:active {
-    transform: translateY(-1px);
-}
-
 /* Responsive design */
 /* Responsive design with wrap down functionality */
 @media (max-width: 1200px) {

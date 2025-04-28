@@ -567,8 +567,10 @@
     }
     
     .slider-wrapper {
-      gap: 15px;
-    }
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+  
     
     .title {
       font-size: clamp(2.5rem, 3vw, 4.5rem);
@@ -617,6 +619,11 @@
       padding: 0.75rem;
       text-align: center;
     }
+    .slider-wrapper {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+  }
   }
   
   /* Small devices (landscape phones, less than 768px) */
@@ -726,6 +733,11 @@
     .fund-news-sapotext {
       font-size: clamp(0.75rem, 2vw, 0.875rem);
     }
+    .slider-wrapper {
+      flex-direction: column;
+      justify-content: center;
+      gap: 15px;
+  }
   }
   
   /* Thêm container parent reset cho section có chứa fund-news */
