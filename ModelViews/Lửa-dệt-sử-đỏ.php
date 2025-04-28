@@ -6,10 +6,8 @@
     <title>Thông tin chi tiết hoạt động Lửa dệt sử đỏ</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link 
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" 
-      rel="stylesheet"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"  rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
     <style>
         @import url('../assets/css/File_CSS_chung.css');
         * {
@@ -277,6 +275,189 @@
                 border-bottom: 1px solid #ddd;
             }
         }
+
+        /* CSS BTC */
+        .profile-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .profile-content {
+            display: flex;
+            padding: 20px;
+            align-items: center;
+        }
+/* 
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+        } */
+        .profile-info {
+            padding-left: 30px;
+            flex-grow: 1;
+        }
+
+        .profile-position {
+            color: #666;
+            font-size: 18px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .profile-name {
+            color: #c42f2f;
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .profile-quote {
+            font-style: italic;
+            color: #333;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .profile-details {
+            display: flex;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+        }
+
+        .detail-item {
+            flex: 1;
+            padding: 15px;
+            border-right: 1px solid #e1e1e1;
+        }
+
+        .detail-item:last-child {
+            border-right: none;
+        }
+
+        .detail-label {
+            font-size: 14px;
+            color: #555;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .detail-value {
+            font-size: 14px;
+            color: #333;
+        }
+
+        .contact-button {
+            display: inline-block;
+            background-color: #c42f2f;
+            color: white;
+            padding: 10px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact-button:hover {
+            background-color: #a52727;
+        }
+        #carousel-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+#carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#carousel-indicators li.active {
+    background-color: #333;
+}
+
+        /* Animation for profile transition */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .profile-content.fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        /* Adjust for avatar class as in the other file */
+        .avatar {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Make the card responsive */
+        @media (max-width: 768px) {
+            .profile-content {
+                flex-direction: column;
+            }
+
+            .profile-position, .profile-name, .profile-quote, .contact-button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center
+            }
+            
+            .profile-image, .avatar {
+                margin-bottom: 20px;
+            }
+            
+            .profile-info {
+                padding-left: 0;
+                width: 100%;
+            }
+            
+            .profile-details {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .detail-item {
+                flex: 1;
+                border-right: none;
+                border-bottom: 1px solid #e1e1e1;
+                width: 100%;
+            }
+            
+            .detail-item:last-child {
+                border-bottom: none;
+            }
+        }   
+
     </style>
 </head>
 <body>
@@ -386,8 +567,64 @@
             </div>
         </div>
         </div>
+        
+        <div id="profile-carousel">
+        <?php
+    include '../Config/connect.php';
+    $btc_query = mysqli_query($conn, "SELECT * FROM btc");
+    while ($row = mysqli_fetch_array($btc_query)) {
+?>
+    <div class="profile-card">
+        <div class="section-title">
+            <div class="section-title-nd">CÂU CHUYỆN CỦA NHỮNG NGƯỜI PHỤ TRÁCH</div>
+        </div>
+        <div class="profile-content" id="profile-content">
+            <div class="avatar">
+                <img src="../assets/img/btc/<?php echo !empty($row["btc_img"]) ? $row["btc_img"] : 'default.png'; ?>" alt="Ban Tổ chức">
+            </div>
+            <div class="profile-info">
+                <div class="profile-position" id="staff-position-title">
+                    <?php echo $row["btc_position"]; ?>
+                </div>
+                <h2 class="profile-name" id="staff-name">
+                    <?php echo $row["btc_name"]; ?>
+                </h2>
+                <p class="profile-quote" id="staff-quote">
+                    <?php echo $row["btc_sharing"]; ?>
+                </p>
+                <div class="profile-details">
+                    <div class="detail-item">
+                        <div class="detail-label">Vị trí</div>
+                        <div class="detail-value" id="staff-role">
+                            <?php echo $row["btc_title"]; ?>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Điện thoại</div>
+                        <div class="detail-value" id="staff-phone">
+                            <?php echo $row["btc_phone"]; ?>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Email</div>
+                        <div class="detail-value" id="staff-email">
+                            <?php echo $row["btc_email"]; ?>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <a href="mailto:<?php echo $row['btc_email']; ?>" class="contact-button">Liên hệ ngay</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php
+    }
+?>
+</div>
+<!-- Đây là chỗ để hiện các chấm nè -->
+<ul id="carousel-indicators"></ul>
 
-        <?php include "./Bang_BTC_chia_se/Bang_BTC.php"?>
 
         <!-- Footer will be loaded dynamically -->
         <div id="footer-container"></div>
@@ -529,6 +766,60 @@ fetch('./Component khác/Thanh_chi_tiet_hoat_dong.html')
             }
             currentSlide(slideIndex);
         }, 5000);
+
+document.addEventListener('DOMContentLoaded', function() {
+    const cards = document.querySelectorAll('.profile-card');
+    const indicatorsContainer = document.getElementById('carousel-indicators');
+
+    let currentIndex = 0;
+    let autoPlayInterval;
+
+    // Tạo các chấm
+    cards.forEach((card, index) => {
+        const indicator = document.createElement('li');
+        if (index === 0) indicator.classList.add('active');
+        indicator.dataset.index = index;
+        indicator.addEventListener('click', function() {
+            goToCard(index);
+            resetAutoPlay(); // Khi người dùng bấm chấm thì reset tự động
+        });
+        indicatorsContainer.appendChild(indicator);
+    });
+
+    function showCard(index) {
+        cards.forEach((card, idx) => {
+            card.style.display = idx === index ? 'block' : 'none';
+        });
+
+        const indicators = indicatorsContainer.querySelectorAll('li');
+        indicators.forEach((ind, idx) => {
+            ind.classList.toggle('active', idx === index);
+        });
+    }
+
+    function goToCard(index) {
+        currentIndex = index;
+        showCard(currentIndex);
+    }
+
+    function nextCard() {
+        currentIndex = (currentIndex + 1) % cards.length;
+        showCard(currentIndex);
+    }
+
+    function startAutoPlay() {
+        autoPlayInterval = setInterval(nextCard, 4000); // 4000ms = 4s đổi 1 lần
+    }
+
+    function resetAutoPlay() {
+        clearInterval(autoPlayInterval);
+        startAutoPlay();
+    }
+
+    // Khi load trang thì hiện card đầu tiên và chạy tự động
+    showCard(currentIndex);
+    startAutoPlay();
+});
     </script>
 </body>
 </html>
