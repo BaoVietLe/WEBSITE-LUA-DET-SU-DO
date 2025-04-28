@@ -71,8 +71,25 @@
     /* Logo sizes for different sponsor tiers */
     .organizer-logo {
       height: 50px;
-      max-width: 150px;
-      margin: 0.625rem; /* 10px */
+      margin: 0 10px;
+      object-fit: contain;
+    }
+    /*
+    .diamond-logo {
+      height: 50px; 
+      margin: 0 10px;
+      object-fit: contain;
+    }
+    
+    .gold-logo {
+      height: 40px; 
+      margin: 0 10px;
+      object-fit: contain;
+    }
+    */
+    .silver-logo {
+      height: 35px; /* 70% of organizer logo */
+      margin: 0 10px;
       object-fit: contain;
     }
     
@@ -83,41 +100,7 @@
       object-fit: contain;
     }
     
-    /* Responsive adjustments */
-    @media screen and (max-width: 1200px) {
-      .sponsor-container {
-        padding: 1.5625rem 0.9375rem; /* 25px 15px */
-      }
-      
-      .sponsor-category {
-        min-width: 220px;
-      }
-    }
-    
-    @media screen and (max-width: 992px) {
-      .sponsor-section {
-        justify-content: center;
-      }
-      
-      .sponsor-category {
-        flex: 0 0 calc(50% - 1.875rem); /* 2 columns, accounting for margins */
-        min-width: 200px;
-      }
-      
-      .organizer-logo {
-        height: 45px;
-      }
-      
-      .partner-logo {
-        height: 28px;
-      }
-    }
-    
-    @media screen and (max-width: 768px) {
-      .sponsor-container {
-        padding: 1.25rem 0.625rem; /* 20px 10px */
-      }
-      
+    @media (max-width: 768px) {
       .sponsor-section {
         flex-direction: column;
         margin-bottom: 1.875rem; /* 30px */
@@ -134,42 +117,7 @@
       }
       
       .logo-row {
-        gap: 0.75rem; /* 12px */
-      }
-    }
-    
-    @media screen and (max-width: 480px) {
-      .sponsor-container {
-        padding: 0.9375rem 0.5rem; /* 15px 8px */
-      }
-      
-      .sponsor-category {
-        margin: 0 0.5rem 1.5625rem; /* 0 8px 25px */
-      }
-      
-      .organizer-logo {
-        height: 40px;
-        margin: 0.5rem; /* 8px */
-      }
-      
-      .partner-logo {
-        height: 25px;
-        margin: 0.5rem; /* 8px */
-      }
-    }
-    
-    /* Extra small devices */
-    @media screen and (max-width: 360px) {
-      .sponsor-title {
-        font-size: 0.875rem; /* 14px */
-      }
-      
-      .organizer-logo {
-        height: 35px;
-      }
-      
-      .partner-logo {
-        height: 22px;
+        margin-bottom: 15px;
       }
     }
   </style>
@@ -199,14 +147,13 @@
           <img src="logo-hangcha.png" alt="Hangcha" class="gold-logo">
         </div>
       </div>
-      
+      -->
       <div class="sponsor-category">
         <div class="sponsor-title">NHÀ TÀI TRỢ BẠC</div>
         <div class="logo-row">
-          <img src="logo-example.png" alt="Example" class="silver-logo">
+          <img src="../assets/img/sponsors/Want Want logo1-01.png" alt="Want Want" class="silver-logo">
         </div>
       </div>
-      -->
       
       <div class="sponsor-category">
         <div class="sponsor-title">NHÀ TÀI TRỢ ĐỒNG HÀNH</div>
@@ -214,6 +161,7 @@
           <img src="../assets/img/sponsors/Want Want logo1-01.png" alt="Want Want" class="partner-logo">
           <img src="../assets/img/sponsors/NTT ARES.png" alt="Ares" class="partner-logo">
           <img src="../assets/img/sponsors/NTT EDU EVENT SPONSOR.png" alt="Edu Event Sponsor" class="partner-logo">
+          <img src="../assets/img/sponsors/Want Want logo1-01.png" alt="Want Want" class="partner-logo">
         </div>
       </div>
     </div>

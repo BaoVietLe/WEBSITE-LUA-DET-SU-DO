@@ -63,40 +63,80 @@
     position: relative;
   }
   
+/* Hiệu ứng hover nền đỏ chữ vàng cho nav-links - cả desktop và mobile */
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+/* Nền đỏ khi hover */
+.nav-links a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #ff0000; /* Màu nền đỏ */
+  transition: all 0.3s ease-in-out;
+  z-index: -1;
+  border-radius: 5px;
+}
+
+/* Chữ vàng khi hover */
+.nav-links a:hover {
+  color: #ffff00; /* Màu chữ vàng */
+}
+
+/* Hiệu ứng mở rộng nền đỏ khi hover */
+.nav-links a:hover::before {
+  width: 100%;
+}
+
+/* Điều chỉnh cho mobile */
+@media screen and (max-width: 768px) {
+  /* Trên mobile, mở rộng chiều ngang của khu vực hover */
   .nav-links a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    padding: 10px 20px;
-    transition: color 0.3s ease-in-out;
-    position: relative;
-    z-index: 2; /* Giữ chữ ở trên pseudo-element */
-    display: inline-block;
+    width: 100%;
+    padding: 15px 25px;
+    margin: 5px 0;
+    text-align: left;
   }
-  .nav-links a::after {
+  
+  /* Giữ nguyên hiệu ứng hover như trên desktop */
+  .nav-links a::before {
     content: "";
     position: absolute;
-    top: -2.375rem;
-    left: 50%;
-    width: 100;
-    height:100%;
-    background:var(--web-campaign-1);
-    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
-    z-index: -1; /* Giữ chữ ở trên pseudo-element */
-    border-radius: 2px;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #ff0000;
+    transition: all 0.3s ease-in-out;
+    z-index: -1;
+    border-radius: 5px;
   }
   
   .nav-links a:hover {
-    color: var(--web-campaign-2);
+    color: #ffff00;
   }
   
-  .nav-links a:hover::after {
+  .nav-links a:hover::before {
     width: 100%;
-    left:0;
-    height: 210%;
-    border-radius: 2px;
   }
   
+  /* Đảm bảo menu dropdown đóng đúng khi click */
+  .nav-links.active a:hover::before {
+    width: 100%;
+  }
+}
   /* INDICATOR (dùng cho hiệu ứng JS nếu cần) */
   .indicator {
     position: absolute;
@@ -196,12 +236,132 @@
   .notification-popup[style*="display: block"] {
     animation: fadeIn 0.3s ease-out;
   }
+
+
+  /* Nút hamburger cho mobile */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 1001;
+    margin-right: 15px;
+  }
+  
+  .hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #333;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* Overlay cho mobile */
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .hamburger {
+      display: flex;
+    }
+    
+    .logo {
+      padding: 10px 0;
+      z-index: 1001;
+    }
+    
+    /* Ẩn user section trên mobile hoặc điều chỉnh hiển thị */
+    .user-section {
+      padding: 5px 0;
+      z-index: 1001;
+    }
+    
+    .user-profile {
+      font-size: 14px;
+      padding: 4px 8px;
+    }
+    
+    /* Điều chỉnh navbar cho mobile */
+    .nav-links {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      flex-direction: column;
+      background-color: white;
+      width: 80%;
+      height: 100vh;
+      padding-top: 70px;
+      transition: left 0.3s ease;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      justify-content: flex-start;
+      align-items: flex-start;
+      z-index: 1000;
+    }
+    
+    .nav-links.active {
+      left: 0;
+    }
+    
+    .nav-links li {
+      margin: 10px 0;
+      width: 100%;
+      text-align: left;
+    }
+    
+    .nav-links a {
+      display: block;
+      padding: 15px 25px;
+      width: 100%;
+    }
+    
+    /* Animation cho hamburger menu */
+    .hamburger.active span:nth-child(1) {
+      transform: translateY(9px) rotate(45deg);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+      transform: translateY(-9px) rotate(-45deg);
+    }
+    
+    .overlay.active {
+      display: block;
+    }
+    
+    /* Điều chỉnh notification popup trên mobile */
+    .notification-popup {
+      width: 90%;
+      right: 5%;
+      left: auto;
+      top: 60px;
+    }
+  }
   </style>
 </head>
 <body>
   <!-- Phần thanh Navbar bắt đầu từ đây -->
    <!-- Để khởi chạy, cả nhà tải file này về và nối vào các địa chỉ mục tương ứng dùng header: .../Thanh_Navigation_khoa/Navigation_Bar_khoa.html hoặc có thêm phần js hoặc css để nối tới file cụ thể nhưng không cần thiết-->
   <nav class="navbar">
+        <!-- Hamburger Menu cho Mobile -->
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
     <div class="logo">
       <img src="./Header_dự_án/images/ldsd-logo.png" alt="Logo">
     </div>
@@ -214,6 +374,9 @@
     </ul>
     </div>
   </nav>
+   <!-- Overlay cho mobile menu -->
+   <div class="overlay" id="overlay"></div>
+  
   
   <!-- Link JS để chạy thanh bar - đặt ở cuối body để đảm bảo DOM đã load -->
   <script>
@@ -221,7 +384,47 @@
     const navLinks = document.querySelectorAll(".nav-links a");
     const nav = document.querySelector(".nav-links");
     const indicator = document.getElementById("indicator");
-  
+      // Thêm phần JS cho mobile
+      const hamburger = document.getElementById("hamburger");
+      const overlay = document.getElementById("overlay");
+      
+      // Toggle mobile menu
+      if (hamburger) {
+        hamburger.addEventListener("click", function() {
+          nav.classList.toggle("active");
+          hamburger.classList.toggle("active");
+          overlay.classList.toggle("active");
+          
+          // Ngăn cuộn trang khi menu mở
+          if (nav.classList.contains("active")) {
+            document.body.style.overflow = "hidden";
+          } else {
+            document.body.style.overflow = "auto";
+          }
+        });
+      }
+      
+      // Đóng menu khi click vào overlay
+      if (overlay) {
+        overlay.addEventListener("click", function() {
+          nav.classList.remove("active");
+          hamburger.classList.remove("active");
+          overlay.classList.remove("active");
+          document.body.style.overflow = "auto";
+        });
+      }
+      
+      // Đóng menu khi click vào link
+      navLinks.forEach(link => {
+        link.addEventListener("click", function() {
+          if (window.innerWidth <= 768) {
+            nav.classList.remove("active");
+            hamburger.classList.remove("active");
+            overlay.classList.remove("active");
+            document.body.style.overflow = "auto";
+          }
+        });
+      });
     // Xử lý phần notification popup
     const bellIcon = document.querySelector(".notification-icon");
     const notificationPopup = document.querySelector(".notification-popup");

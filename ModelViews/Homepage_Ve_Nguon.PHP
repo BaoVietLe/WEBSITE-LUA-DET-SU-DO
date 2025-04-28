@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lửa Dệt Sử Đỏ Campaign</title>
+    <title>Trang chủ Lửa Dệt Sử Đỏ</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link 
@@ -29,7 +29,7 @@
             <div class="left-content">
                 <div class="left-content-top">
                     <div class="title" style="font-size: 90px;">Cổng thông tin</div>
-                    <div class="subtitle" style="font-size: 70px;">Lửa Dệt Sử Đỏ</div>
+                    <div class="subtitle" style="font-size: 90px;">Lửa Dệt Sử Đỏ</div>
                     <div class="description" style="font-size: 20px;">Website “Lửa dệt sử đỏ” là dự án website thuộc chuỗi hoạt động chào mừng kỷ niệm 50 năm Giải phóng miền Nam Thống nhất đất nước (30-4-1975 - 30-4-2025) nhằm thúc đẩy tinh thần yêu tổ quốc, yêu đồng bào trong thế hệ sinh viên UEH thông qua giới thiệu các hoạt động về nguồn của khoa Công nghệ thông tin kinh doanh, đồng thời cung cấp đến sinh viên những hiểu biết về các mẹ Việt Nam Anh Hùng, và công khai minh bạch quá trình vận hành quỹ Vinh danh Anh hùng.</div>
                 </div>
 
@@ -41,7 +41,7 @@
                                 <span>LỬA DỆT SỬ ĐỎ</span>
                             </div>
                         </a>
-                        <a href="./ve_chien_dich.php" class="button button-white">
+                        <a href="./Lửa-dệt-sử-đỏ.html" class="button button-white">
                             <div class="button-text">
                                 <span>ĐĂNG KÝ THAM GIA</span>
                                 <span>LỬA DỆT SỬ ĐỎ</span>
@@ -90,7 +90,7 @@
         </div>
     </div>
     <div class="activities-container"> <!-- dùng lại class -->
-        <div id="about-section"></div>
+    <?php include "./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem1.php"?>
     </div>
 
     <!-- Content from test1.html -->
@@ -107,19 +107,15 @@
             <div class="fund-news-container">
                     <!-- Cột trái: ảnh + tiêu đề -->
                     <div class="fund-news-picture">
-                        <img src="./Footer/Ảnh/HD_1.png" alt="Ảnh tổng kết" class="fund-news-picture-img">
-                        <div class="fund-news-title-box">Tổng kết quỹ vinh danh anh hùng <br> tháng 3 - 2025</div>
+                        <img src="../assets/img/Tin bài 1/13.jpg" alt="Ảnh tổng kết" class="fund-news-picture-img">
+                        <div class="fund-news-title-box">Nhìn lại Chặng 1 - Hoạt động 2<br>Triển lãm tem thư Khoa Công nghệ thông tin kinh doanh</div>
                     </div>
 
                     <!-- Cột phải: nội dung + nút -->
                     <div class="fund-news-sapotext">
                         <p>
-                        Tháng Tư – tháng của những kỷ ức lịch sử và lòng biết ơn – Quỹ Vinh danh Anh hùng tiếp tục
-                            hành trình tri ân, lan tỏa những giá trị cao đẹp của tinh thần yêu nước và sự hy sinh thầm
-                            lặng. Bản tổng kết tháng 04/2025 không chỉ ghi lại những con số đóng góp đầy ý nghĩa, mà còn
-                            là câu chuyện về sự chung tay của cộng đồng trong việc giữ gìn và tôn vinh hình ảnh những
-                            người Anh hùng – những ngọn đuốc soi đường cho thế hệ hôm nay. Hãy cùng nhìn lại những dấu
-                            ấn đặc biệt trong tháng vừa qua và cùng thắp sáng thêm ngọn lửa tri ân.
+                        Từ ngày 16-18/04/2025, khoa Công nghệ thông tin kinh doanh đã tổ chức Triển lãm tem thư đưa sinh viên trở về với hình ảnh một Sài Gòn xưa – thân thương và sâu lắng qua từng con tem nhuốm màu thời gian. Là hoạt động thứ hai trong Chặng 1 của chuỗi chương trình “Lửa Dệt Sử Đỏ”, triển lãm đã góp phần lan tỏa tình yêu lịch sử, hun đúc niềm tự hào dân tộc và khơi gợi trong sinh viên tinh thần gìn giữ những giá trị truyền thống giữa dòng chảy đổi thay của thời đại.
+
                         </p>
                         <div class="fund-news-sapotext-button-container">
                         <a href="./Trang_tin_bao.html" class="fund-news-sapotext-button">
@@ -161,7 +157,6 @@
         <!-- Footer will be loaded dynamically -->
         <div id="footer-container"></div>
     </div>
-    <script defer src="./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const buttons = document.querySelectorAll('.btn');
@@ -245,7 +240,9 @@
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('header-container').innerHTML = data;
-                    initMobileMenu();
+                            
+        // Execute navbar initialization code
+        initNavbar();
                 });
 
             // Load footer
@@ -255,36 +252,82 @@
                     document.getElementById('footer-container').innerHTML = data;
                 });
 
-            // Load Hanh Trinh Trai Nghiem HTML
-            fetch('./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.html')
-                .then(response => response.text())
-                .then(html => {
-                    document.getElementById('about-section').innerHTML = html;
-
-                    // Load JS sau khi đã render HTML
-                    const script = document.createElement('script');
-                    script.src = './Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.js';
-                    script.onload = () => {
-                        console.log("JS slideshow loaded");
-
-                        // Fetch PHP để lấy dữ liệu
-                        fetch('./Bang_Hanh_trinh_trai_nghiem/Hanh_trinh_trai_nghiem.php')
-                            .then(response => response.json())
-                            .then(data => {
-                                if (typeof initSlideshow === 'function') {
-                                    initSlideshow(data);
-                                } else {
-                                    console.warn("initSlideshow chưa sẵn sàng");
-                                }
-                            })
-                            .catch(err => console.error('Lỗi fetch PHP:', err));
-                    };
-                    document.body.appendChild(script);
-                })
-                .catch(err => console.error('Lỗi fetch HTML slideshow:', err));
             // Initialize Card Slider
             initCardSlider();
         });
+        function initNavbar() {
+    const navLinks = document.querySelectorAll(".nav-links a");
+    const nav = document.querySelector(".nav-links");
+    const indicator = document.getElementById("indicator");
+    const hamburger = document.getElementById("hamburger");
+    const overlay = document.getElementById("overlay");
+    
+    // Toggle mobile menu
+    if (hamburger) {
+        hamburger.addEventListener("click", function() {
+            nav.classList.toggle("active");
+            hamburger.classList.toggle("active");
+            overlay.classList.toggle("active");
+            
+            // Ngăn cuộn trang khi menu mở
+            if (nav.classList.contains("active")) {
+                document.body.style.overflow = "hidden";
+            } else {
+                document.body.style.overflow = "auto";
+            }
+        });
+    }
+    
+    // Đóng menu khi click vào overlay
+    if (overlay) {
+        overlay.addEventListener("click", function() {
+            nav.classList.remove("active");
+            hamburger.classList.remove("active");
+            overlay.classList.remove("active");
+            document.body.style.overflow = "auto";
+        });
+    }
+    
+    // Đóng menu khi click vào link
+    if (navLinks) {
+        navLinks.forEach(link => {
+            link.addEventListener("click", function() {
+                if (window.innerWidth <= 768) {
+                    nav.classList.remove("active");
+                    hamburger.classList.remove("active");
+                    overlay.classList.remove("active");
+                    document.body.style.overflow = "auto";
+                }
+            });
+        });
+    }
+    
+    // Xử lý phần notification popup
+    const bellIcon = document.querySelector(".notification-icon");
+    const notificationPopup = document.querySelector(".notification-popup");
+  
+    // Kiểm tra xem các phần tử có tồn tại không
+    if (bellIcon && notificationPopup) {
+        // Lắng nghe sự kiện click trên chuông thông báo
+        bellIcon.addEventListener("click", function (event) {
+            event.stopPropagation();
+            
+            // Hiển thị/ẩn popup bằng cách trực tiếp thay đổi style
+            if (notificationPopup.style.display === "block") {
+                notificationPopup.style.display = "none";
+            } else {
+                notificationPopup.style.display = "block";
+            }
+        });
+  
+        // Đóng popup khi click bên ngoài
+        document.addEventListener("click", function (event) {
+            if (!notificationPopup.contains(event.target) && !bellIcon.contains(event.target)) {
+                notificationPopup.style.display = "none";
+            }
+        });
+    }
+}
 
         // Dữ liệu cho slider
         const cardData = [
@@ -293,28 +336,28 @@
         title: "Lửa Dệt Sử Đỏ",
         date: "20.04.2025",
         buttonText: "Chi tiết",
-        link: "./Lửa-dệt-sử-đỏ.html"  // Thêm liên kết đến trang HTML tương ứng
+        link: "./Lửa-dệt-sử-đỏ.php"  // Thêm liên kết đến trang HTML tương ứng
     },
     {
         image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/Vùng đất thép.jpg",
         title: "Hành trình về vùng đất thép",
-        date: "19.04.2025",
+        date: "22.03.2025",
         buttonText: "Chi tiết",
-        link: "./Hành-trình-về-vùng-đất-thép.html"  // Thêm liên kết đến trang HTML tương ứng
+        link: "./Hành-trình-về-vùng-đất-thép.php"  // Thêm liên kết đến trang HTML tương ứng
     },
     {
         image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/VQNCS.jpg",
         title: "Vinh quang người chiến sĩ",
-        date: "17.04.2025",
+        date: "11.05.2024",
         buttonText: "Chi tiết",
-        link: "./Vinh-quang-người-chiến-sĩ.html"  // Thêm liên kết đến trang HTML tương ứng
+        link: "./Vinh-quang-người-chiến-sĩ.php"  // Thêm liên kết đến trang HTML tương ứng
     },
     {
         image: "../assets/img/Tổng hợp ctrinh về nguồn/Bài phát động/DẤU ẤN ANH HÙNG.jpg",
         title: "Dấu ấn anh hùng",
-        date: "17.04.2025",
+        date: "23.12.2023",
         buttonText: "Chi tiết",
-        link: "./Dấu-ấn-anh-hùng.html"  // Thêm liên kết đến trang HTML tương ứng
+        link: "./Dấu-ấn-anh-hùng.php"  // Thêm liên kết đến trang HTML tương ứng
     }
         ];
 
@@ -325,211 +368,168 @@
         return;
     }
 
-    // Xóa nội dung cũ nếu có
-    sliderWrapper.innerHTML = '';
+     // Xóa nội dung cũ nếu có
+     sliderWrapper.innerHTML = '';
 
-    // Tạo các card từ dữ liệu
-    function createCardElement(cardInfo) {
-        const card = document.createElement('div');
-        card.className = 'activity-info';
+// Tạo các card từ dữ liệu
+function createCardElement(cardInfo) {
+    const card = document.createElement('div');
+    card.className = 'activity-info';
 
-        card.innerHTML = `
-            <img class="activity-info-image" src="${cardInfo.image}" alt="${cardInfo.title}">
-            <div class="activity-info-content">
-                <div class="activity-info-title">${cardInfo.title}</div>
-                <div class="activity-info-date-button">
-                    <div class="activity-info-date">${cardInfo.date}</div>
-                    <button class="activity-info-button" data-link="${cardInfo.link}">${cardInfo.buttonText}</button>
-                </div>
+    card.innerHTML = `
+        <img class="activity-info-image" src="${cardInfo.image}" alt="${cardInfo.title}">
+        <div class="activity-info-content">
+            <div class="activity-info-title">${cardInfo.title}</div>
+            <div class="activity-info-date-button">
+                <div class="activity-info-date">${cardInfo.date}</div>
+                <button class="activity-info-button" data-link="${cardInfo.link}">${cardInfo.buttonText}</button>
             </div>
-        `;
+        </div>
+    `;
 
-        // Thêm sự kiện click cho button
-        const button = card.querySelector('.activity-info-button');
-        button.addEventListener('click', function() {
-            // Chuyển hướng đến trang HTML được chỉ định
-            window.location.href = this.getAttribute('data-link');
-        });
-
-        return card;
-    }
-
-    // Thêm tất cả các card vào slider
-    cardData.forEach(cardInfo => {
-        const cardElement = createCardElement(cardInfo);
-        sliderWrapper.appendChild(cardElement);
+    // Thêm sự kiện click cho button
+    const button = card.querySelector('.activity-info-button');
+    button.addEventListener('click', function() {
+        // Chuyển hướng đến trang HTML được chỉ định
+        window.location.href = this.getAttribute('data-link');
     });
+
+    return card;
+}
+
+// Thêm tất cả các card vào slider
+cardData.forEach(cardInfo => {
+    const cardElement = createCardElement(cardInfo);
+    sliderWrapper.appendChild(cardElement);
+});
+
+
+// Xác định các biến cấu hình slider
+let cardsPerPage = 3; // Số lượng card hiển thị mỗi trang
+let cardWidth = 400; // Chiều rộng mỗi card
+let cardMargin = 20; // Khoảng cách giữa các card
+let currentPage = 0; // Trang hiện tại
+let totalPages = Math.ceil(cardData.length / cardsPerPage); // Tổng số trang
+
+// Tìm hoặc tạo container cho pagination dots
+const sliderContainer = document.querySelector('.slider-container');
+let paginationContainer;
+
+// Tìm pagination đã có sẵn trong HTML
+const existingPagination = document.querySelector('.pagination');
+
+if (existingPagination) {
+// Sử dụng pagination hiện có
+paginationContainer = existingPagination;
+paginationContainer.innerHTML = ''; // Xóa dots cũ
+} else {
+// Tạo pagination mới nếu không tìm thấy
+paginationContainer = document.createElement('div');
+paginationContainer.className = 'pagination';
+
+// Thêm pagination vào sau slider container
+if (sliderContainer) {
+    sliderContainer.parentNode.insertBefore(paginationContainer, sliderContainer.nextSibling);
+}
+}
+
+// Tạo pagination dots
+for (let i = 0; i < totalPages; i++) {
+const dot = document.createElement('span');
+dot.className = 'dot';
+if (i === 0) dot.classList.add('active');
+dot.dataset.page = i;
+paginationContainer.appendChild(dot);
+}
+
+// Hàm điều chỉnh số lượng card hiển thị theo kích thước màn hình
+function updateCardsToShow() {
+    const containerWidth = document.querySelector('.slider-wrapper').clientWidth;
     
-            // Xác định các biến cấu hình slider
-            let cardsPerPage = 4; // Số lượng card hiển thị mỗi trang
-            let cardWidth = 400; // Chiều rộng mỗi card
-            let cardMargin = 80; // Khoảng cách giữa các card
-            let currentPage = 0; // Trang hiện tại
-            let totalPages = Math.ceil(cardData.length / cardsPerPage); // Tổng số trang
+    if (containerWidth < 768) {
+        cardsPerPage = 1;
+    } else if (containerWidth < 1000) {
+        cardsPerPage = 2;
+    } else {
+        cardsPerPage = 3;
+    }
+    
+    // Cập nhật cardWidth dựa trên kích thước thực tế của card
+    if (sliderWrapper.children.length > 0) {
+        cardWidth = sliderWrapper.children[0].offsetWidth;
+    }
+    
+    // Tính lại tổng số trang
+    totalPages = Math.ceil(cardData.length / cardsPerPage);
+    
+    // Cập nhật lại pagination dots
+    updatePaginationDots();
+    
+    // Đảm bảo trang hiện tại không vượt quá tổng số trang
+    if (currentPage >= totalPages) {
+        currentPage = totalPages - 1;
+    }
+    
+    // Di chuyển slider đến trang hiện tại
+    moveToPage(currentPage);
+}
 
-            // Tìm hoặc tạo container cho pagination dots
-            const sliderContainer = document.querySelector('.slider-container');
-            let paginationContainer;
+// Hàm cập nhật pagination dots
+function updatePaginationDots() {
+    paginationContainer.innerHTML = '';
+    
+    for (let i = 0; i < totalPages; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'dot';
+        if (i === currentPage) dot.classList.add('active');
+        dot.dataset.page = i;
+        paginationContainer.appendChild(dot);
+    }
+    
+    // Thêm lại event listener cho các dots mới
+    document.querySelectorAll('.dot').forEach(dot => {
+        dot.addEventListener('click', function() {
+            const page = parseInt(this.dataset.page);
+            moveToPage(page);
+        });
+    });
+}
 
-            // Tìm pagination đã có sẵn trong HTML
-            const existingPagination = document.querySelector('.pagination');
+// Hàm di chuyển slider đến trang cụ thể
+function moveToPage(page) {
+    if (page < 0 || page >= totalPages) return;
+    
+    currentPage = page;
+    
+    // Di chuyển slider
+    const translateX = currentPage * -(cardsPerPage * (cardWidth + cardMargin));
+    sliderWrapper.style.transform = `translateX(${translateX}px)`;
+    sliderWrapper.style.transition = 'transform 0.3s ease-in-out';
+    
+    // Cập nhật trạng thái active của dots
+    document.querySelectorAll('.dot').forEach((dot, index) => {
+        if (index === currentPage) {
+            dot.classList.add('active');
+        } else {
+            dot.classList.remove('active');
+        }
+    });
+}
 
-            if (existingPagination) {
-                // Sử dụng pagination hiện có
-                paginationContainer = existingPagination;
-                paginationContainer.innerHTML = ''; // Xóa dots cũ
-            } else {
-                // Tạo pagination mới nếu không tìm thấy
-                paginationContainer = document.createElement('div');
-                paginationContainer.className = 'pagination';
+// Thêm event listener cho các dots
+document.querySelectorAll('.dot').forEach(dot => {
+    dot.addEventListener('click', function() {
+        const page = parseInt(this.dataset.page);
+        moveToPage(page);
+    });
+});
 
-                // Thêm pagination vào sau slider container
-                if (sliderContainer) {
-                    sliderContainer.parentNode.insertBefore(paginationContainer, sliderContainer.nextSibling);
-                }
-            }
+// Khởi tạo slider ban đầu
+updateCardsToShow();
 
-            // Tạo pagination dots
-            for (let i = 0; i < totalPages; i++) {
-                const dot = document.createElement('span');
-                dot.className = 'dot';
-                if (i === 0) dot.classList.add('active');
-                dot.dataset.page = i;
-                paginationContainer.appendChild(dot);
-            }
+// Cập nhật slider khi thay đổi kích thước màn hình
+window.addEventListener('resize', updateCardsToShow);
 
-            // Hàm điều chỉnh số lượng card hiển thị theo kích thước màn hình
-            function updateCardsToShow() {
-                const containerWidth = document.querySelector('.slider-container').clientWidth;
-
-                if (containerWidth < 768) {
-                    cardsPerPage = 1;
-                } else if (containerWidth < 1000) {
-                    cardsPerPage = 2;
-                } else {
-                    cardsPerPage = 3;
-                }
-
-                // Cập nhật cardWidth dựa trên kích thước thực tế của card
-                if (sliderWrapper.children.length > 0) {
-                    cardWidth = sliderWrapper.children[0].offsetWidth;
-                }
-
-                // Tính lại tổng số trang
-                totalPages = Math.ceil(cardData.length / cardsPerPage);
-
-                // Cập nhật lại pagination dots
-                updatePaginationDots();
-
-                // Đảm bảo trang hiện tại không vượt quá tổng số trang
-                if (currentPage >= totalPages) {
-                    currentPage = totalPages - 1;
-                }
-
-                // Di chuyển slider đến trang hiện tại
-                moveToPage(currentPage);
-            }
-
-            // Hàm cập nhật pagination dots
-            function updatePaginationDots() {
-                paginationContainer.innerHTML = '';
-
-                for (let i = 0; i < totalPages; i++) {
-                    const dot = document.createElement('div');
-                    dot.className = 'dot';
-                    if (i === currentPage) dot.classList.add('active');
-                    dot.dataset.page = i;
-                    paginationContainer.appendChild(dot);
-                }
-
-                // Thêm lại event listener cho các dots mới
-                document.querySelectorAll('.dot').forEach(dot => {
-                    dot.addEventListener('click', function () {
-                        const page = parseInt(this.dataset.page);
-                        moveToPage(page);
-                    });
-                });
-            }
-
-            // Hàm di chuyển slider đến trang cụ thể
-            function moveToPage(page) {
-                if (page < 0 || page >= totalPages) return;
-
-                currentPage = page;
-
-                // Di chuyển slider
-                const translateX = currentPage * -(cardsPerPage * (cardWidth + cardMargin));
-                sliderWrapper.style.transform = `translateX(${translateX}px)`;
-                sliderWrapper.style.transition = 'transform 0.3s ease-in-out';
-
-                // Cập nhật trạng thái active của dots
-                document.querySelectorAll('.dot').forEach((dot, index) => {
-                    if (index === currentPage) {
-                        dot.classList.add('active');
-                    } else {
-                        dot.classList.remove('active');
-                    }
-                });
-            }
-
-            // Thêm event listener cho các dots
-            document.querySelectorAll('.dot').forEach(dot => {
-                dot.addEventListener('click', function () {
-                    const page = parseInt(this.dataset.page);
-                    moveToPage(page);
-                });
-            });
-
-            // Khởi tạo slider ban đầu
-            updateCardsToShow();
-
-            // Cập nhật slider khi thay đổi kích thước màn hình
-            window.addEventListener('resize', updateCardsToShow);
-
-
-            // Initialize mobile menu
-            function initMobileMenu() {
-                const toggleButton = document.querySelector('.mobile-menu-toggle');
-                if (!toggleButton) return;
-
-                // Create mobile menu if it doesn't exist
-                if (!document.querySelector('.mobile-menu')) {
-                    const mobileMenu = document.createElement('div');
-                    mobileMenu.className = 'mobile-menu';
-                    mobileMenu.innerHTML = `
-                    <div class="mobile-menu-close">
-                        <i class="fas fa-times"></i>
-                    </div>
-                    <ul>
-                        <li><a href="index.html">TRANG CHỦ</a></li>
-                        <li><a href="ve-chien-dich.html">VỀ CHIẾN DỊCH</a></li>
-                        <li><a href="bang-vinh-danh.html">BẢNG VINH DANH</a></li>
-                        <li><a href="quy-vinh-danh-anh-hung.html">QUỸ VINH DANH ANH HÙNG</a></li>
-                    </ul>
-                `;
-                    document.body.appendChild(mobileMenu);
-
-                    const overlay = document.createElement('div');
-                    overlay.className = 'mobile-menu-overlay';
-                    document.body.appendChild(overlay);
-
-                    // Close menu when clicking on close button or overlay
-                    document.querySelector('.mobile-menu-close').addEventListener('click', toggleMobileMenu);
-                    overlay.addEventListener('click', toggleMobileMenu);
-                }
-
-                // Toggle menu when clicking on menu button
-                toggleButton.addEventListener('click', toggleMobileMenu);
-            }
-
-            // Toggle mobile menu
-            function toggleMobileMenu() {
-                const mobileMenu = document.querySelector('.mobile-menu');
-                const overlay = document.querySelector('.mobile-menu-overlay');
-
-                mobileMenu.classList.toggle('active');
-                overlay.classList.toggle('active');
-            }
 
             // Pagination functionality
             document.addEventListener('click', function (e) {
@@ -557,6 +557,7 @@
                 });
             }
         }
+        
     </script>
 </body>
 
