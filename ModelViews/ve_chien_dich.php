@@ -20,60 +20,79 @@
     <!-- Header will be loaded dynamically -->
     <div id="header-container"></div>
 
-    <!-- Main Content -->
-    <div class="hero-section">
-        <h1>LỬA DỆT SỬ ĐỎ</h1>
+<!-- Main Content -->
+<div class="hero-section">
+    <div class="hero-background-overlay"></div>
+    <h1 class="hero-title animate-pulse">Lửa dệt Sử đỏ</h1>
     <div class="hero-content">
         <!-- Left Column -->
-        <div class="hero-left-column">
-            <div class="hero-text" id="slide-1">
-                <h2>HOẠT ĐỘNG VỀ NGUỒN CÙNG BIT</h2>
-                <p>Chương trình thuộc chuỗi hoạt động Về nguồn - Khoa Công nghệ thông tin kinh doanh chào mừng 50 năm 
-                    ngày Giải phóng miền Nam - thống nhất Đất Nước. Hoạt động thường niên mang ý nghĩa vô cùng to lớn, 
-                    thể hiện tình yêu nước cùng tinh thần dân tộc, hướng về nguồn cội của sinh viên khoa BIT nói riêng 
-                    và sinh viên UEH nói chung.</p>
+        <div class="hero-left-column animate-slide-up">
+            <div class="ribbon-container">
+                <div class="ribbon">BIT-er</div>
             </div>
-            <div class="hero-text" id="slide-2" style="display: none;">
-                <h2>SỨ MỆNH LƯU GIỮ TRUYỀN THỐNG</h2>
-                <p>Chúng tôi tin rằng thế hệ trẻ cần hiểu rõ về nguồn cội để vững bước tiến về tương lai. Thông qua các hoạt động thực tế, sinh viên được trải nghiệm và tiếp nối giá trị văn hóa quý báu của dân tộc.</p>
-            </div>
-            <div class="hero-text" id="slide-3" style="display: none;">
-                <h2>ĐỒNG HÀNH CÙNG LỊCH SỬ</h2>
-                <p>Tham gia cùng chúng tôi trong hành trình khám phá các di tích lịch sử, tìm hiểu về những anh hùng dân tộc và gắn kết cộng đồng sinh viên qua các hoạt động ý nghĩa.</p>
+            <div class="hero-text-carousel">
+                <div class="hero-text active animate-fade-in" id="slide-1">
+                    <h2 class="gradient-text">HOẠT ĐỘNG VỀ NGUỒN</h2>
+                    <p>Chương trình thuộc chuỗi hoạt động Về nguồn thường niên mang ý nghĩa thể hiện tinh thần dân tộc, hướng về nguồn cội của sinh viên khoa BIT.</p>
+                </div>
             </div>
             
-            <!-- Pagination dots for content navigation -->
+            <!-- Pagination dots with improved styling -->
             <div class="hero-pagination">
-                <div class="dot active"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
+                <div class="dot active" data-slide="1"></div>
             </div>
             
-            <!-- Stats section -->
+            <!-- Stats section with improved visuals -->
             <div class="program-info">
                 <div class="program-info-box">
-                  <div class="program-info-number">18K+</div>
-                  <div class="program-info-label">LƯỢT TIẾP CẬN</div>
+                    <div class="program-info-icon">
+                        <i class="fas fa-eye"></i>
                     </div>
-                    <div class="program-info-box">
-                        <div class="program-info-number">12K+</div>
-                        <div class="program-info-label">LƯỢT THÍCH</div>
+                    <div class="program-info-number count-up" data-target="18000">18K+</div>
+                    <div class="program-info-label">LƯỢT TIẾP CẬN</div>
+                </div>
+                <div class="program-info-box">
+                    <div class="program-info-icon">
+                        <i class="fas fa-heart"></i>
                     </div>
-                    <div class="program-info-box">
-                        <div class="program-info-number">100+</div>
-                        <div class="program-info-label">NGƯỜI THAM GIA</div>
+                    <div class="program-info-number count-up" data-target="12000">12K+</div>
+                    <div class="program-info-label">LƯỢT THÍCH</div>
+                </div>
+                <div class="program-info-box">
+                    <div class="program-info-icon">
+                        <i class="fas fa-users"></i>
                     </div>
+                    <div class="program-info-number count-up" data-target="100">100+</div>
+                    <div class="program-info-label">NGƯỜI THAM GIA</div>
                 </div>
             </div>
-
-            <!-- Right Column -->
-            <div class="hero-right-column">
-                <div class="hero-image">
-                    <img src="./Footer/Ảnh/HD_1.png" alt="Team Photo">
-                </div>
+            
+            <!-- Call to action button -->
+            <div class="hero-cta">
+                <a href="#" class="cta-button">ĐĂNG KÝ THAM GIA</a>
             </div>
         </div>
 
+        <!-- Right Column -->
+        <div class="hero-right-column animate-slide-right">
+            <div class="hero-image-container">
+                <div class="hero-image">
+                    <div class="image-frame"></div>
+                    <img src="../assets/img/1.jpg" alt="Di tích lịch sử">
+                </div>
+                <div class="image-badge">HƯỚNG ĐẾN KỶ NIỆM 50 NĂM GIẢI PHÓNG MIỀN NAM THỐNG NHẤT ĐẤT NƯỚC (30/4/1975 - 30/4/2025)</div>
+                <div class="decorative-element top-left"></div>
+                <div class="decorative-element top-right"></div>
+                <div class="decorative-element bottom-left"></div>
+                <div class="decorative-element bottom-right"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Decorative elements -->
+    <div class="hero-decorative-shape shape-1"></div>
+    <div class="hero-decorative-shape shape-2"></div>
+</div>
         <div class="activity-photos">
             <div class="homepage-title">
                 Một số hình ảnh hoạt động tiêu biểu<br>cùng chuỗi hoạt động về nguồn

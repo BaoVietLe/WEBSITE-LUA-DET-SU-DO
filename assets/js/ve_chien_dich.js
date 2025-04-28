@@ -300,49 +300,140 @@ for (let i = 0; i < totalPages; i++) {
     
     // Cập nhật slider khi thay đổi kích thước màn hình
     window.addEventListener('resize', updateCardsToShow);
-    
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const dots = document.querySelectorAll('.hero-pagination .dot');
-            const slides = document.querySelectorAll('.hero-text[id^="slide-"]');
+ 
+    document.addEventListener('DOMContentLoaded', function() {
+        // Variables
+        const slides = document.querySelectorAll('.hero-text');
+        const dots = document.querySelectorAll('.hero-pagination .dot');
+        let currentSlide = 0;
+        const slideInterval = 5000; // 5 seconds per slide
+        let slideTimer;
+        
+        // Initialize
+        showSlide(0);
+        startSlideTimer();
+        
+        // Add click events to dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+                resetSlideTimer();
+            });
+        });
+        
+        // Functions
+        function showSlide(index) {
+            // Hide all slides
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
             
-            // Make sure all slides except the first one are hidden initially
-            slides.forEach((slide, index) => {
-                if (index !== 0) {
-                    slide.style.display = 'none';
+            // Remove active class from all dots
+            dots.forEach(dot => {
+                dot.classList.remove('active');
+            });
+            
+            // Show the selected slide
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentSlide = index;
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+        
+        function startSlideTimer() {
+            slideTimer = setInterval(nextSlide, slideInterval);
+        }
+        
+        function resetSlideTimer() {
+            clearInterval(slideTimer);
+            startSlideTimer();
+        }
+        
+        // Count-up animation for numbers
+        const countElements = document.querySelectorAll('.count-up');
+        
+        const observerOptions = {
+            threshold: 0.5
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const element = entry.target;
+                    const target = parseInt(element.getAttribute('data-target'));
+                    let count = 0;
+                    const duration = 2000; // 2 seconds
+                    const increment = target / (duration / 16);
+                    
+                    const counter = setInterval(() => {
+                        count += increment;
+                        
+                        if (count >= target) {
+                            clearInterval(counter);
+                            if (target >= 1000) {
+                                // For thousands, format as 12K+
+                                element.innerText = Math.floor(target/1000) + 'K+';
+                            } else {
+                                element.innerText = target + '+';
+                            }
+                        } else {
+                            if (target >= 1000) {
+                                // For thousands, format as 12K+
+                                element.innerText = Math.floor(count/1000) + 'K+';
+                            } else {
+                                element.innerText = Math.floor(count) + '+';
+                            }
+                        }
+                    }, 16);
+                    
+                    observer.unobserve(element);
                 }
             });
+        }, observerOptions);
+        
+        countElements.forEach(element => {
+            observer.observe(element);
+        });
+        
+        // Enhanced title animation
+        const heroTitle = document.querySelector('.hero-title');
+        if (heroTitle) {
+            // Add flame particles to title
+            createFlameParticles(heroTitle);
             
-            // Add click event listeners to dots
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', () => {
-                    // Remove active class from all dots
-                    dots.forEach(d => d.classList.remove('active'));
-                    
-                    // Add active class to clicked dot
-                    dot.classList.add('active');
-                    
-                    // Hide all slides
-                    slides.forEach(slide => {
-                        slide.style.display = 'none';
-                    });
-                    
-                    // Show the corresponding slide
-                    slides[index].style.display = 'block';
-                    
-                    // Add fade-in animation
-                    slides[index].classList.add('fade-in');
-                    setTimeout(() => {
-                        slides[index].classList.remove('fade-in');
-                    }, 500);
-                });
+            // Add hover effect to title
+            heroTitle.addEventListener('mouseover', () => {
+                heroTitle.classList.add('burning-intense');
             });
             
-            // Optional: Auto-rotate slides every 5 seconds
-            let currentSlide = 0;
-            setInterval(() => {
-                currentSlide = (currentSlide + 1) % dots.length;
-                dots[currentSlide].click();
-            }, 5000);
-        });
-    }
+            heroTitle.addEventListener('mouseout', () => {
+                heroTitle.classList.remove('burning-intense');
+            });
+        }
+        
+        // Function to create flame particles
+        function createFlameParticles(element) {
+            const particleCount = 15; // Number of particles
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('span');
+                particle.className = 'flame-particle';
+                
+                // Random position along the text
+                const posX = Math.random() * 100;
+                
+                // Set CSS variables for animation
+                particle.style.setProperty('--pos-x', `${posX}%`);
+                particle.style.setProperty('--delay', `${Math.random() * 3}s`);
+                particle.style.setProperty('--duration', `${2 + Math.random() * 3}s`);
+                particle.style.setProperty('--size', `${5 + Math.random() * 10}px`);
+                
+                element.appendChild(particle);
+            }
+        }
+    });
+}
