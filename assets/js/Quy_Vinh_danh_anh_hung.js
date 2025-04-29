@@ -161,3 +161,155 @@ document.addEventListener('DOMContentLoaded', function() {
         // Initialize first slide
         showSlide(0);
     });
+    // JavaScript for Responsive Design Enhancements
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Add responsive meta tag if not present
+    if (!document.querySelector('meta[name="viewport"]')) {
+        const meta = document.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, initial-scale=1.0';
+        document.head.appendChild(meta);
+    }
+    
+    // Initialize the slider functionality
+    initSlider();
+    
+    // Handle responsive height adjustments
+    handleResponsiveHeight();
+    
+    // Adjust hero section on small screens
+    adjustHeroSection();
+    
+    // Adjust total amount display for smaller numbers
+    formatTotalAmount();
+});
+
+// Initialize the slider with proper responsive behavior
+function initSlider() {
+    const slides = document.querySelectorAll('.Quy_info_section_content');
+    const dots = document.querySelectorAll('.dot');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    let currentSlide = 0;
+    
+    // Function to update current slide
+    function updateSlide(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        slides[index].classList.add('active');
+        dots[index].classList.add('active');
+        currentSlide = index;
+        
+        // Dynamically adjust slider height
+        const slidesContainer = document.querySelector('.Quy_info_slides');
+        const activeSlide = document.querySelector('.Quy_info_section_content.active');
+        if (slidesContainer && activeSlide) {
+            slidesContainer.style.height = `${activeSlide.offsetHeight}px`;
+        }
+    }
+    
+    // Event listeners for dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => updateSlide(index));
+    });
+    
+    // Event listeners for navigation buttons
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            const newIndex = (currentSlide - 1 + slides.length) % slides.length;
+            updateSlide(newIndex);
+        });
+    }
+    
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            const newIndex = (currentSlide + 1) % slides.length;
+            updateSlide(newIndex);
+        });
+    }
+    
+    // Initialize slider height
+    window.addEventListener('load', () => {
+        updateSlide(currentSlide);
+    });
+    
+    // Adjust slider height on window resize
+    window.addEventListener('resize', () => {
+        updateSlide(currentSlide);
+    });
+}
+
+// Handle responsive height for hero section
+function handleResponsiveHeight() {
+    function adjustHeight() {
+        const heroSection = document.querySelector('.Quy_hero_section');
+        if (heroSection) {
+            // For mobile devices or short screens
+            if (window.innerHeight < 600 || window.innerWidth < 480) {
+                heroSection.style.height = 'auto';
+                heroSection.style.minHeight = '100vh';
+            } else {
+                heroSection.style.height = '100vh';
+            }
+        }
+    }
+    
+    // Initial adjustment
+    adjustHeight();
+    
+    // Adjust on resize
+    window.addEventListener('resize', adjustHeight);
+}
+
+// Adjust hero section contents for smaller screens
+function adjustHeroSection() {
+    const heroTitle = document.querySelector('.Quy_hero_section h1');
+    const totalAmount = document.querySelector('.Quy_hero_section_total_amount');
+    
+    function adjustElements() {
+        if (window.innerWidth <= 480) {
+            // On very small screens, make sure elements don't overlap
+            if (heroTitle && totalAmount) {
+                const titleRect = heroTitle.getBoundingClientRect();
+                const titleBottom = titleRect.top + titleRect.height;
+                
+                // If title is too large, adjust position of total amount
+                if (titleBottom > window.innerHeight * 0.4) {
+                    totalAmount.style.top = `${Math.max(titleBottom + 20, window.innerHeight * 0.45)}px`;
+                }
+            }
+        } else {
+            // Reset inline styles for larger screens
+            if (totalAmount) {
+                totalAmount.style.top = '';
+            }
+        }
+    }
+    
+    // Initial adjustment
+    adjustElements();
+    
+    // Adjust on resize
+    window.addEventListener('resize', adjustElements);
+}
+
+// Format the total amount for better display
+function formatTotalAmount() {
+    const amountElement = document.querySelector('.Quy_hero_section_total_amount h2');
+    if (amountElement) {
+        const amount = amountElement.textContent.trim();
+        
+        // Add commas for thousands separator for better readability
+        const formattedAmount = parseInt(amount.replace(/,/g, '')).toLocaleString('vi-VN');
+        amountElement.textContent = formattedAmount;
+        
+        // Reduce font size if the number is very large
+        if (formattedAmount.length > 10) {
+            amountElement.style.fontSize = '5rem';
+        } else if (formattedAmount.length > 8) {
+            amountElement.style.fontSize = '5.5rem';
+        }
+    }
+}
