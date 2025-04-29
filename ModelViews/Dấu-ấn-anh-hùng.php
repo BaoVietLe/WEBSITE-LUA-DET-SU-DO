@@ -208,8 +208,7 @@
         /* Event Details Card - Fixed Centering */
         .event-card-wrapper {
             position: relative;
-            width: 90%;
-            max-width: 75rem;
+            width: 100%;
             margin: 0 auto 2.5rem;
             padding: 0.9375rem;
             background: linear-gradient(135deg, rgba(247, 118, 34, 0.1), rgba(214, 34, 34, 0.1));
@@ -323,6 +322,18 @@
 
         /* Responsive Styles */
         @media (max-width: 62rem) { /* 992px */
+            .photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .photo-item {
+        width: calc(50% - 15px);
+    }
+    
+    .activity-photos h2 {
+        font-size: 2rem;
+    }
+    
             .main-event {
                 flex-direction: column;
                 align-items: center;
@@ -357,6 +368,13 @@
         }
 
         @media (max-width: 48rem) { /* 768px - mobile phones */
+            .activity-photos {
+        padding: 40px 15px;
+    }
+    
+    .photo-grid {
+        gap: 15px;
+    }
             .header-container,
             .main-event,
             .event-card-wrapper {
@@ -414,6 +432,151 @@
                 margin-left: 0.5rem;
             }
         }
+.activity-photos {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.activity-photos h2 {
+    color: #333;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: 700;
+    position: relative;
+}
+
+.activity-photos h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(to right, #e32212, transparent);
+}
+
+.highlight {
+    color: #e32212;
+    position: relative;
+}
+
+.activity-photos h3 {
+    color: #555;
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    text-align: center;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Enhanced Photo Grid with Responsive Design */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.photo-item {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 
+        0 10px 20px rgba(0, 0, 0, 0.1),
+        0 6px 6px rgba(0, 0, 0, 0.05);
+    position: relative;
+    transition: all 0.4s ease;
+    aspect-ratio: 4/3;
+    background-color: #f5f5f5;
+    cursor: pointer;
+}
+
+.photo-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 
+        0 15px 30px rgba(0, 0, 0, 0.2),
+        0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.photo-item:hover img {
+    transform: scale(1.1);
+}
+
+.photo-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    color: white;
+}
+
+.photo-item:hover .photo-overlay {
+    opacity: 1;
+}
+
+.photo-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.4s ease 0.1s;
+}
+
+.photo-date {
+    font-size: 0.9rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease 0.2s;
+}
+
+.photo-item:hover .photo-title,
+.photo-item:hover .photo-date {
+    transform: translateY(0);
+    opacity: 1;
+}
+@media (max-width: 576px) {
+    .photo-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Single column on mobile */
+    .photo-item {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    .activity-photos h2 {
+        font-size: 1.8rem;
+    }
+    
+    .activity-photos h3 {
+        font-size: 1rem;
+    }
+    
+    .photo-item {
+        aspect-ratio: 16/9;
+    }
+}
     </style>
 </head>
 <body>
@@ -479,7 +642,7 @@
             <div class="card-date-input">From: 14/12/2023 - To: 27/12/2023</div>
 
             <div class="event-description-list">
-                <p>[BIT][HTVVDT] PHÁT ĐỘNG HOẠT ĐỘNG VỀ NGUỒN NHÂN DỊP 94 NĂM NGÀY THÀNH LẬP ĐOÀN TNCS HỒ CHÍ MINH (26/3/1931 - 26/3/2025) - “HÀNH TRÌNH VỀ VÙNG ĐẤT THÉP”</p>
+                <p>[BIT] [CHUỖI HOẠT ĐỘNG KỶ NIỆM 34 NĂM NGÀY HỘI CỰU CHIẾN BINH VIỆT NAM - DẤU ẤN ANH HÙNG]</p>
                 
                 <p>★ “Tuổi hai mươi, anh nằm lại rừng xanh.<br>
                       Anh không được vui niềm vui đại thắng!<br>
@@ -520,7 +683,22 @@
                 Sđt:  0823.971.080 (Minh Khôi)<br>
                 #BIT #dauananhhung<br>
                 #venguon #naocavang</p>
-            </div>
+                <div class="activity-photos">
+                <div class="photo-grid">
+                <div class="photo-item"><img src="images/placeholder.jpg" alt="Hoạt động"></div>
+                <div class="photo-item"><img src="images/placeholder.jpg" alt="Hoạt động"></div>
+                <div class="photo-item"><img src="images/placeholder.jpg" alt="Hoạt động"></div>
+                <div class="photo-item"><img src="images/placeholder.jpg" alt="Hoạt động"></div>
+                <div class="photo-item"><img src="images/placeholder.jpg" alt="Hoạt động"></div>
+                <div class="photo-item"><img src="images/placeholder.jpg" alt="Hoạt động"></div>
+                </div>
+                <div class="sub-header">
+                <a href="https://www.facebook.com/share/v/18owiRcekU/" target="_blank" rel="noopener">
+                Nhấn vào đây để xem chi tiết bài viết
+                </a>
+                </div>
+                </div>
+        </div>
         </div>
         </div>
 
