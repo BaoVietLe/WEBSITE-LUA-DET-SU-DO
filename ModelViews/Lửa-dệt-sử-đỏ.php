@@ -504,6 +504,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: left center;
     transition: transform 0.5s ease;
 }
 
@@ -865,12 +866,12 @@
             </div>
             <div class="activity-photos">
                 <div class="photo-grid">
-                <div class="photo-item"><img src="images/placeholder.jpg" alt="Hoạt động"></div>
-                <div class="photo-item"><img src="images/placeholder.jpg" alt="Hoạt động"></div>
-                <div class="photo-item"><img src="images/placeholder.jpg" alt="Hoạt động"></div>
-                <div class="photo-item"><img src="images/placeholder.jpg" alt="Hoạt động"></div>
-                <div class="photo-item"><img src="images/placeholder.jpg" alt="Hoạt động"></div>
-                <div class="photo-item"><img src="images/placeholder.jpg" alt="Hoạt động"></div>
+                <div class="photo-item"><img src="../assets/img/Tổng hợp ctrinh về nguồn/LDSD/1.jpg" alt="Hoạt động"></div>
+                <div class="photo-item"><img src="../assets/img/Tổng hợp ctrinh về nguồn/LDSD/2.jpg" alt="Hoạt động"></div>
+                <div class="photo-item"><img src="../assets/img/Tổng hợp ctrinh về nguồn/LDSD/3.jpg" alt="Hoạt động"></div>
+                <div class="photo-item"><img src="../assets/img/Tổng hợp ctrinh về nguồn/LDSD/4.jpg" alt="Hoạt động"></div>
+                <div class="photo-item"><img src="../assets/img/Tổng hợp ctrinh về nguồn/LDSD/5.jpg" alt="Hoạt động"></div>
+                <div class="photo-item"><img src="../assets/img/Tổng hợp ctrinh về nguồn/LDSD/6.jpg" alt="Hoạt động"></div>
                 </div>
                 <div class="sub-header">
                 <a href="https://www.facebook.com/share/p/15jiGY7brf/" target="_blank" rel="noopener">
