@@ -1,48 +1,84 @@
-# BANKYTHUAT-WEB
-🇻🇳 TRÂN TRỌNG GIỚI THIỆU DỰ ÁN WEBSITE "LỬA DỆT SỬ ĐỎ" TRỰC THUỘC ĐOÀN - HỘI KHOA CÔNG NGHỆ THÔNG TIN KINH DOANH 🇻🇳
+# 🇻🇳 CÔNG TRÌNH THANH NIÊN: WEBSITE "LỬA DỆT SỬ ĐỎ"
 
-⭐️ Link website: 
-https://lnkd.in/gYzN7P8f
+**Cổng thông tin vinh danh Mẹ Việt Nam Anh Hùng và Hành trình về nguồn Đoàn - Hội khoa Công nghệ thông tin kinh doanh (BIT)**
 
-⭐️ Thời gian: 1 tháng 
+---
 
-⭐️ Điểm nhấn: 
-Trang web được code bằng hệ 3 ngôn ngữ HTML, CSS, JS và sử dụng PHP làm ngôn ngữ back-end.
-+ Trang chủ chứa các thông tin sơ bộ về dự án website
-+ Trang thông tin các hoạt động về nguồn chứa các hình ảnh, thông tin về các hoạt động về nguồn đã và đang được triển khai tại BIT
-+ Trang quỹ Momo Vinh danh Anh hùng - nơi công khai minh bạch toàn bộ quá trình vận hành quỹ 
-+ Trang Bảng vinh danh (dự kiến sắp ra mắt) sử dụng ngôn ngữ PHP để triển khai fetch data về trang và hiển thị trên giao diện dựa trên số data hiện có.
+## 📌 Tổng quan dự án
+Dự án **“Lửa dệt Sử đỏ”** là không gian số lưu giữ ký ức về các ngày về nguồn trang trọng, trưng bày tư liệu, hình ảnh và câu chuyện của cựu chiến binh, Mẹ Việt Nam anh hùng cùng những người có công. Dự án đồng thời là lời mời gọi sinh viên đồng hành qua đóng góp quỹ “Vinh danh Anh hùng” và viết tiếp giá trị “Uống nước nhớ nguồn.”
 
-🔰 Ngoài ra, website còn có các tính năng phụ bao gồm:
-+ Bảng Kinh nghiệm và Trải nghiệm - Nơi sinh viên có thể chia sẻ về hành trình tham gia các hoạt động về nguồn của khoa, được thu thập data qua GG Form từ trước để lọc dữ liệu lên web, được code hoàn toàn bằng PHP để lấy data và hiển thị trên giao diện bằng cách fetch vào các trang cần dùng.
-+ Bảng Câu chuyện của người phụ trách - nơi vinh danh các thành viên BTC đã góp sức cho chương trình, đặc biệt là chương trình Lửa dệt Sử đỏ, được code bằng PHP và fetch vào các trang cần dùng với tính chất tương tự như trên. Các đối tác có thể liên hệ trực tiếp với các bạn này thông qua nút Liên hệ ngay để dẫn đến email của các bạn. 
+* **🌐 Link website:** [Truy cập tại đây](https://lnkd.in/gYzN7P8f)
+* **⏱️ Thời gian thực hiện:** 1 tháng
+* **🛡️ Bản quyền:** Quản lý và sở hữu bởi Đoàn - Hội khoa Công nghệ thông tin kinh doanh (BIT)
+* **📝 Bài viết cảm nghĩ:** [Xem chi tiết](https://lnkd.in/gYGVSMMV)
 
-⭐️ Website được thiết kế chuẩn giao diện UI/UX với tính năng responsive trên mọi thiết bị, đồng thời mang đến câu chuyện tham gia hoạt động Đoàn - Hội không là trải nghiệm lãng phí cho việc nâng cao trải nghiệm học thuật chuyên ngành nếu bạn biết nắm bắt thời cơ tận dụng. 
+---
 
-⭐️ Hiệu suất website được cải tiến với độ trễ không quá 3 giây trong trường hợp cần loading mang đến trải nghiệm tối ưu nhất cho người dùng. 
+## 🛠️ Công nghệ sử dụng
+Dự án được phát triển tối ưu trên nền tảng Web với:
+* **Front-end:** HTML5, CSS3, JavaScript (Đảm bảo giao diện UI/UX mượt mà).
+* **Back-end:** PHP (Xử lý dữ liệu động và kết nối server).
+* **Database:** MySQL (Lưu trữ thông tin hoạt động và quỹ).
+* **Tính năng khác:** Responsive Design (Tương thích mọi thiết bị), Tối ưu Performance (Loading < 3s).
 
-⭐️ Dự án “Lửa dệt Sử đỏ” lưu giữ ký ức về các ngày về nguồn trang trọng, trưng bày tư liệu, hình ảnh và câu chuyện của cựu chiến binh, Mẹ Việt Nam anh hùng cùng những người có công, đồng thời mời sinh viên đồng hành qua đóng góp quỹ “Vinh danh Anh hùng” hoặc tham gia hoạt động về nguồn, viết tiếp giá trị “Uống nước nhớ nguồn.”
+---
 
-⭐️ Link bài cảm nghĩ website: https://lnkd.in/gYGVSMMV 
--------
-Web được thực hiện bởi BANKYTHUAT - 30/4 quản lý và sở hữu bản quyền bởi Đoàn - Hội khoa Công nghệ thông tin kinh doanh
+## ✨ Tính năng chính
 
-🔷️ Trưởng dự án: Bảo Lê Viết 
+### 1. Hệ thống nội dung cốt lõi
+* **Trang chủ:** Giới thiệu tổng quan về sứ mệnh và giá trị của dự án.
+* **Hoạt động về nguồn:** Thư viện hình ảnh và thông tin chi tiết các chuyến đi thực tế tại BIT.
+* **Quỹ Momo "Vinh danh Anh hùng":** Công khai, minh bạch dữ liệu vận hành quỹ đóng góp trực tuyến.
+* **Bảng vinh danh (Coming Soon):** Tự động fetch dữ liệu từ database để vinh danh các cá nhân đóng góp tích cực.
 
-🔷️ Đồng thực hiện: Kim Nguyen Khac Vinh 
+### 2. Tính năng tương tác & Mở rộng
+* **Bảng Kinh nghiệm & Trải nghiệm:** Kết nối dữ liệu từ Google Form qua PHP để hiển thị các chia sẻ thực tế của sinh viên.
+* **Câu chuyện người phụ trách:** Vinh danh đội ngũ BTC dự án. Tích hợp nút **"Liên hệ ngay"** mở trình soạn thảo email trực tiếp để kết nối với các thành viên.
 
-🔷️Cộng sự đồng hành: 
--Nguyễn Thị Diệu Thảo
--Quân Hoàng 
--Hà Quang Đại
--Nguyễn Võ Lan Thanh
+---
 
-🔷️ Hỗ trợ các công tác ngoài lề:
--Gia Huy Trần Viết (hỗ trợ công tác thiết kế giao diện)
--Vân Thúy (hỗ trợ công tác kinh phí vận hành)
-- Nguyen Minh Khoi (hỗ trợ công tác định hướng ý tưởng)
--Hoàng Thị Ánh (hỗ trợ công tác định hướng nội dung)
--Võ Tâm Đan (hỗ trợ công tác truyền thông)
--HOA LÊ THỊ THU (hỗ trợ công tác truyền thông)
+## ⚙️ Hướng dẫn cài đặt
 
-hashtag#UEH hashtag#BIT hashtag#HTML hashtag#CSS hashtag#JS hashtag#PHP hashtag#LUADETSUDO
+Để chạy dự án này trên môi trường local, bạn cần thực hiện các bước sau:
+
+1.  **Cài đặt máy chủ ảo:** Cài đặt XAMPP, WAMP hoặc Laragon (Hỗ trợ PHP và MySQL).
+2.  **Tải mã nguồn:**
+    ```bash
+    git clone [https://github.com/](https://github.com/)[user-name]/lua-det-su-do.git
+    ```
+3.  **Cấu hình dự án:**
+    * Di chuyển thư mục code vào thư mục `htdocs` (nếu dùng XAMPP).
+    * Tạo cơ sở dữ liệu MySQL thông qua `phpMyAdmin`.
+    * Import file `.sql` đi kèm vào cơ sở dữ liệu vừa tạo.
+    * Cập nhật thông tin kết nối (host, username, password, db_name) trong file `config.php`.
+4.  **Truy cập:** Mở trình duyệt và nhập `http://localhost/lua-det-su-do`.
+
+---
+
+## 📖 Hướng dẫn sử dụng
+1.  **Xem tư liệu:** Truy cập mục **Hoạt động** để tra cứu lịch sử và hình ảnh các chuyến về nguồn.
+2.  **Đóng góp:** Vào mục **Quỹ Momo** để quét mã ủng hộ và xem danh sách minh bạch tài chính.
+3.  **Gửi chia sẻ:** Điền form cảm nghĩ để câu chuyện của bạn xuất hiện trên **Bảng Trải nghiệm**.
+4.  **Liên hệ BTC:** Tìm thông tin thành viên tại trang **Câu chuyện phụ trách** và nhấn nút liên hệ để gửi email trực tiếp.
+
+---
+
+## 👥 Thành viên thực hiện
+
+| STT | Họ và Tên | Vai trò | Nhiệm vụ / Hỗ trợ công tác |
+| :---: | :--- | :--- | :--- |
+| 1 | **Bảo Lê Viết** | **Trưởng dự án** | Quản lý chung, điều phối dự án |
+| 2 | **Kim Nguyen Khac Vinh** | **Đồng thực hiện** | Phát triển dự án, lập trình |
+| 3 | Nguyễn Thị Diệu Thảo | Cộng sự | Phối hợp triển khai nội dung |
+| 4 | Quân Hoàng | Cộng sự | Phối hợp triển khai nội dung |
+| 5 | Hà Quang Đại | Cộng sự | Phối hợp triển khai nội dung |
+| 6 | Nguyễn Võ Lan Thanh | Cộng sự | Phối hợp triển khai nội dung |
+| 7 | Gia Huy Trần Viết | Hỗ trợ | Thiết kế giao diện (UI/UX) |
+| 8 | Vân Thúy | Hỗ trợ | Quản lý kinh phí vận hành |
+| 9 | Nguyen Minh Khoi | Hỗ trợ | Định hướng ý tưởng |
+| 10 | Hoàng Thị Ánh | Hỗ trợ | Định hướng nội dung |
+| 11 | Võ Tâm Đan | Hỗ trợ | Công tác truyền thông |
+| 12 | HOA LÊ THỊ THU | Hỗ trợ | Công tác truyền thông |
+
+---
+*Dự án được thực hiện bởi **BANKYTHUAT - 30/4** - Tận dụng sức mạnh công nghệ để bảo tồn giá trị lịch sử.*
